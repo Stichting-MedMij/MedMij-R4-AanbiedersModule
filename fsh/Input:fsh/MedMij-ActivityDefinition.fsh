@@ -18,11 +18,11 @@ Description: "The (FHIR) ActivityDefinition (resource) describes an eHealth acti
 * url 1..
 * title 1..
 * experimental ..0
-* subject[x] ..0
+* subject[x] 0..0
 * date ..0
 * publisher ..0
 * contact ..0
-* useContext ..0
+* useContext ..*
   * ^definition = "The context for the content of the eHealth activity"
   * ^comment = "E.g. the activity is targeted to a certain age group"
 * jurisdiction ..0
@@ -48,9 +48,9 @@ Description: "The (FHIR) ActivityDefinition (resource) describes an eHealth acti
 * intent ..0
 * priority ..0
 * doNotPerform ..0
-* timing[x] ..0
+* timing[x] 0..0
 * location ..0
-* product[x] ..0
+* product[x] 0..0
 * quantity ..0
 * dosage ..0
 * bodySite ..0
