@@ -248,20 +248,12 @@
     "endLine": 41
   },
   {
-    "outputFile": "StructureDefinition-pt-lm-ActivityDefinition.json",
-    "fshName": "LmActivityDefinition",
+    "outputFile": "StructureDefinition-pt-lm-Activity.json",
+    "fshName": "LmActivity",
     "fshType": "Logical",
     "fshFile": "LogicalModels.fsh",
     "startLine": 34,
-    "endLine": 64
-  },
-  {
-    "outputFile": "StructureDefinition-pt-lm-Endpoint.json",
-    "fshName": "LmEnpoint",
-    "fshType": "Logical",
-    "fshFile": "LogicalModels.fsh",
-    "startLine": 148,
-    "endLine": 162
+    "endLine": 55
   },
   {
     "outputFile": "StructureDefinition-pt-lm-Patient.json",
@@ -276,16 +268,16 @@
     "fshName": "LmServiceRequest",
     "fshType": "Logical",
     "fshFile": "LogicalModels.fsh",
-    "startLine": 118,
-    "endLine": 146
+    "startLine": 91,
+    "endLine": 109
   },
   {
     "outputFile": "StructureDefinition-pt-lm-Task.json",
     "fshName": "LmTask",
     "fshType": "Logical",
     "fshFile": "LogicalModels.fsh",
-    "startLine": 66,
-    "endLine": 116
+    "startLine": 57,
+    "endLine": 89
   },
   {
     "outputFile": "Task-ProviderTasks-MainTask-Meetopdracht-Bloeddrukmeting.json",
