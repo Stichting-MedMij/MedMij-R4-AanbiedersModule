@@ -7,7 +7,7 @@ topic: FO
 ## Algemeen
 Aanbiedertaken (ProviderTasks) beschrijft de uitwisseling waarmee een zorgaanbieder patiënt-specifieke digitale activiteiten als taken beschikbaar stelt aan een patiënt, zodat de patiënt deze kan uitvoeren via een Persoonlijke Gezondheidsomgeving (PGO) of een andere eHealth-module.
 
-ProviderTasks en Koppeltaal zijn twee afzonderlijke projecten, maar beogen in de kern hetzelfde doel: het ondersteunen van digitale zorg door het uitwisselen van taken en het kunnen uitvoeren van digitale activiteiten in de context van een behandeling. Koppeltaal richt zich hierbij op gegevens- en workflow-uitwisseling tussen o.a. EPD’s, behandel-/patiëntportalen en eHealth-modules.  ￼
+ProviderTasks en Koppeltaal zijn twee afzonderlijke projecten, maar beogen in de kern hetzelfde doel: het ondersteunen van digitale zorg door het uitwisselen van taken en het kunnen uitvoeren van digitale activiteiten in de context van een behandeling. Koppeltaal richt zich hierbij op gegevens- en workflow-uitwisseling tussen o.a. EPD’s, behandel-/patiëntportalen en eHealth-modules.
 
 Omdat beide projecten FHIR gebruiken om vergelijkbare workflowconcepten (zoals taken en digitale activiteiten) uit te wisselen, is een belangrijk onderdeel van zowel ProviderTasks als Koppeltaal het harmoniseren van de FHIR-profielen. Het doel hiervan is dat dezelfde (of zoveel mogelijk overlappende) profielen herbruikbaar zijn en consistent toegepast kunnen worden in beide projecten.
 
