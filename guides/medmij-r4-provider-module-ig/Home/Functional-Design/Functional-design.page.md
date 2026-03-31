@@ -5,7 +5,7 @@ topic: FO
 # Functioneel ontwerp
 
 ## Algemeen
-Aanbiedertaken (ProviderTasks) beschrijft de uitwisseling waarmee een zorgaanbieder patiënt-specifieke digitale activiteiten als taken beschikbaar stelt aan een patiënt, zodat de patiënt deze kan uitvoeren (bijvoorbeeld via een Persoonlijke Gezondheidsomgeving (PGO) of een andere eHealth-module).
+Aanbiedertaken (ProviderTasks) beschrijft de uitwisseling waarmee een zorgaanbieder patiënt-specifieke digitale activiteiten als taken beschikbaar stelt aan een patiënt, zodat de patiënt deze kan uitvoeren via een Persoonlijke Gezondheidsomgeving (PGO) of een andere eHealth-module.
 
 ProviderTasks en Koppeltaal zijn twee afzonderlijke projecten, maar beogen in de kern hetzelfde doel: het ondersteunen van digitale zorg door het uitwisselen van taken en het kunnen uitvoeren van digitale activiteiten in de context van een behandeling. Koppeltaal richt zich hierbij op gegevens- en workflow-uitwisseling tussen o.a. EPD’s, behandel-/patiëntportalen en eHealth-modules.  ￼
 
