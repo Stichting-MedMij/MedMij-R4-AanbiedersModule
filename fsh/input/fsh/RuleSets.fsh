@@ -2,7 +2,7 @@
 
 RuleSet: Origin
 * extension contains
-    KT2_ResourceOrigin named resource-origin 0..*
+    KT2_ResourceOrigin named resource-origin 0..1
 * extension[resource-origin] ^isModifier = false
 
 RuleSet: PublisherAndContactMedMij

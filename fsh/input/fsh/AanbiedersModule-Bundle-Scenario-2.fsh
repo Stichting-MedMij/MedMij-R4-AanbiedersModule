@@ -42,6 +42,7 @@ Usage: #example
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
   * value = "481365c2-a85c-49cc-bb74-d6d8a6a53b46"
+* url = "https://ns.minddistrict.com/fhir/ActivityDefinition/ed5ea36a-ef8e-417e-827e-8a130287d44d"
 * version = "1.0.0"
 * name = "MeetopdachtBloeddrukmeting"
 * title = "Bloeddrukmeting"
@@ -548,6 +549,7 @@ Usage: #example
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
   * value = "c45485ee-8a42-466b-97ba-ac6537b0bf89"
+* url = "https://ns.minddistrict.com/fhir/ActivityDefinition/f0d9b485-f282-4870-a5f6-a5ea41465239"
 * version = "1.0.0"
 * name = "InformatieCholesterol"
 * title = "Wat is cholesterol en wat zijn de risico's?"
@@ -598,6 +600,7 @@ Usage: #example
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
   * value = "7e5633b6-2cf2-49bf-8f1c-e105c8b82b22"
+* url = "https://ns.minddistrict.com/fhir/ActivityDefinition/708f713b-8f32-43e3-b7dc-749462cc4d49"
 * version = "1.0.0"
 * name = "InformatieBloeddrukmeten"
 * title = "Informatie over thuis bloeddruk meten"
@@ -648,6 +651,7 @@ Usage: #example
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
   * value = "c4bd168d-963c-4360-86fa-39d4b6e08d83"
+* url = "https://ns.minddistrict.com/fhir/ActivityDefinition/b6e103fc-2695-48fd-a0d7-6abe7cb5bbac"
 * version = "1.0.0"
 * name = "VragenlijstHartVaatziekten"
 * title = "Vragenlijst over uw situatie op gebied van hart- en vaatziekten"

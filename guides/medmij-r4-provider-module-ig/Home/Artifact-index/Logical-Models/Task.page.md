@@ -2,7 +2,7 @@
 topic: ptlmTask
 ---
 
-# Report
+# Task
 
 <tabs>
     <tab title="Tree view" active="true">

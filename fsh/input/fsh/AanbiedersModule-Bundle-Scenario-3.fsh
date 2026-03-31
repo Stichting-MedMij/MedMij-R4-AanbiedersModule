@@ -12,6 +12,7 @@ Usage: #example
 * identifier
   * system = "https://hing.zno.com/content/id"
   * value = "a1b1eaa4-ba6b-41dc-b98c-7b1d72c335b5"
+* url = "https://hing.zno.com/fhir/ActivityDefinition/bf5569bf-22b8-449d-90a2-be35503da37d"
 * version = "1.0.0"
 * name = "MeetopdachtSaturatiemeting"
 * title = "Saturatiemeting"
@@ -38,7 +39,7 @@ Usage: #example
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * identifier
-  * system = "http://hinq.nl/taskIdentifier"
+  * system = "https://hing.zno.com/taskIdentifier"
   * value = "MAINTASK-Saturatie"
 * groupIdentifier
   * system = "https://hinq.nl/fhir/identifiers/task-group"
@@ -68,7 +69,7 @@ Usage: #example
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * identifier
-  * system = "http://hinq.nl/taskIdentifier"
+  * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-1"
 * groupIdentifier
   * system = "https://hinq.nl/fhir/identifiers/task-group"
@@ -99,7 +100,7 @@ Usage: #example
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * identifier
-  * system = "http://hinq.nl/taskIdentifier"
+  * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-2"
 * groupIdentifier
   * system = "https://hinq.nl/fhir/identifiers/task-group"
@@ -130,7 +131,7 @@ Usage: #example
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * identifier
-  * system = "http://hinq.nl/taskIdentifier"
+  * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-3"
 * groupIdentifier
   * system = "https://hinq.nl/fhir/identifiers/task-group"
@@ -161,7 +162,7 @@ Usage: #example
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * identifier
-  * system = "http://hinq.nl/taskIdentifier"
+  * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-4"
 * groupIdentifier
   * system = "https://hinq.nl/fhir/identifiers/task-group"
@@ -192,7 +193,7 @@ Usage: #example
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * identifier
-  * system = "http://hinq.nl/taskIdentifier"
+  * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-5"
 * groupIdentifier
   * system = "https://hinq.nl/fhir/identifiers/task-group"
@@ -223,7 +224,7 @@ Usage: #example
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * identifier
-  * system = "http://hinq.nl/taskIdentifier"
+  * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-6"
 * groupIdentifier
   * system = "https://hinq.nl/fhir/identifiers/task-group"
@@ -254,7 +255,7 @@ Usage: #example
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * identifier
-  * system = "http://hinq.nl/taskIdentifier"
+  * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-7"
 * groupIdentifier
   * system = "https://hinq.nl/fhir/identifiers/task-group"
@@ -287,6 +288,7 @@ Usage: #example
 * identifier
   * system = "https://hing.zno.com/content/id"
   * value = "ba7471c5-6b5c-4ac6-83c4-512d195cc9d8"
+* url = "https://hing.zno.com/fhir/ActivityDefinition/3b13c173-d788-4ca6-8264-973abb4b95ce"
 * version = "1.0.0"
 * name = "InformatieLevenMetCOPD"
 * title = "Informatie over leven met COPD"
@@ -306,7 +308,7 @@ Usage: #example
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Leven-COPD)
     * type = "ActivityDefinition"
 * identifier
-  * system = "http://hinq.nl/taskIdentifier"
+  * system = "https://hing.zno.com/taskIdentifier"
   * value = "TASK-1673834"
 * groupIdentifier
   * system = "https://hinq.nl/fhir/identifiers/task-group"
@@ -338,6 +340,7 @@ Usage: #example
 * identifier
   * system = "https://hing.zno.com/content/id"
   * value = "3a8ab931-6106-4df8-ba62-28882f6bfe5f"
+* url = "https://hing.zno.com/fhir/ActivityDefinition/d98a2329-4e69-4334-9c01-01230e3d444e"
 * version = "1.0.0"
 * name = "InstructieInhalatiemedicatie"
 * title = "Instructiemodule inhalatiemedicatie"
@@ -356,7 +359,7 @@ Usage: #example
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Inhalatiemedicatie)
     * type = "ActivityDefinition"
 * identifier
-  * system = "http://hinq.nl/taskIdentifier"
+  * system = "https://hing.zno.com/taskIdentifier"
   * value = "TASK-983823471"
 * groupIdentifier
   * system = "https://hinq.nl/fhir/identifiers/task-group"
@@ -388,6 +391,7 @@ Usage: #example
 * identifier
   * system = "https://hing.zno.com/content/id"
   * value = "669734ff-2c72-4758-b6ac-786a4c8474b4"
+* url = "https://hing.zno.com/fhir/ActivityDefinition/4df11d7e-3439-4ec7-b912-871f048a3f47"
 * version = "1.0.0"
 * name = "VragenlijstWatWiltUBereiken?"
 * title = "Vragenlijst: Wat wilt u bereiken?"
@@ -407,7 +411,7 @@ Usage: #example
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Vragenlijst-Wat-Bereiken)
     * type = "ActivityDefinition"
 * identifier
-  * system = "http://hinq.nl/taskIdentifier"
+  * system = "https://hing.zno.com/taskIdentifier"
   * value = "TASK-74745858"
 * groupIdentifier
   * system = "https://hinq.nl/fhir/identifiers/task-group"

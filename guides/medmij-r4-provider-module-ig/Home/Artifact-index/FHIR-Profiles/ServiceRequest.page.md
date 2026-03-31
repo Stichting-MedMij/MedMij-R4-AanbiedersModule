@@ -2,7 +2,7 @@
 topic: ptServiceRequest
 ---
 
-# Report
+# ServiceRequest
 
 <tabs>
     <tab title="Tree view" active="true">

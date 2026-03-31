@@ -2,7 +2,7 @@
 topic: ptEndpoint
 ---
 
-# Report
+# Endpoint
 
 <tabs>
     <tab title="Tree view" active="true">
