@@ -2,7 +2,7 @@
 topic: ptActivityDefinition
 ---
 
-# Report
+# ActivityDefinition
 
 <tabs>
     <tab title="Tree view" active="true">

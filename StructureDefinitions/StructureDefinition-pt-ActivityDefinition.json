@@ -52,7 +52,7 @@
         "path": "ActivityDefinition.extension",
         "sliceName": "resource-origin",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -84,7 +84,7 @@
         "path": "ActivityDefinition.extension",
         "sliceName": "publisherId",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -93,6 +93,11 @@
             ]
           }
         ]
+      },
+      {
+        "id": "ActivityDefinition.url",
+        "path": "ActivityDefinition.url",
+        "min": 1
       },
       {
         "id": "ActivityDefinition.title",

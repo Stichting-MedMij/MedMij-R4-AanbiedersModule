@@ -218,8 +218,25 @@ The returned data to the PHR should conform to the profiles listed in the table 
 </html>
 
 
-#### Configuration search query Task
-The PHR may use and the source system shall be capable of processing the minimal requirements outlined in the FHIR R4 IG [2.7.1.1 Search on date, number or quantity](https://informatiestandaarden.nictiz.nl/wiki/FHIR:V1.0_FHIR_IG_R4#Search_URLs_and_search_parameters). Example query: 
+#### Configuration search query
+The PHR may use and the source system shall be capable of processing the minimal requirements outlined in the FHIR R4 IG [2.7.1.1 Search on date, number or quantity](https://informatiestandaarden.nictiz.nl/wiki/FHIR:V1.0_FHIR_IG_R4#Search_URLs_and_search_parameters).
 
-For ProviderTasks, the most common use is retrieving open tasks. Retrieve all non-completed tasks for the patient context:
-GET [base]/Task?status:not=completed
+### PATCH (partial update) for task updates
+In addition to full updates (PUT), a source system shall support the FHIR PATCH interaction to update only specific elements of an existing Task (for example, changing Task.status without resending the entire resource). PATCH is defined in the FHIR RESTful API specification, including the supported patch formats and request/response behavior. See FHIR R4 HTTP PATCH: https://hl7.org/fhir/R4/http.html#patch
+
+In the FHIRPath Patch approach, the client sends a Parameters resource that contains one or more operation parameters. Each operation specifies the patch type (e.g., replace), the FHIRPath path that identifies the element to update, and the new value to apply. The following example uses FHIRPath Patch to replace the Task status by setting Task.status to completed:
+
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "operation",
+      "part": [
+        { "name": "type", "valueCode": "replace" },
+        { "name": "path", "valueString": "Task.status" },
+        { "name": "value", "valueCode": "completed" }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 topic: ptlmServiceRequest
 ---
 
-# Report
+# ServiceRequest
 
 <tabs>
     <tab title="Tree view" active="true">

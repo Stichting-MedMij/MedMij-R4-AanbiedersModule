@@ -41,6 +41,7 @@ Usage: #example
 * extension
   * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
+* url = "https://hing.zno.com/fhir/ActivityDefinition/b15d4634-4678-46bd-a55a-e46ef3dfb517"
 * identifier
   * system = "https://hing.zno.com/content/id"
   * value = "60756972-0a15-47e1-8497-2e7d2919ebd7"
@@ -50,7 +51,7 @@ Usage: #example
 * status = #active
 * publisher = "HinqZNO"
 * description = "Bloedglucose meting volgens NHG protocol. Duur: 1 week, 2x per dag"
-* usage = "controle hartfalen"
+* usage = "controle diabetes"
 * timingTiming.repeat
   * boundsDuration.value = 7
   * boundsDuration.system = "http://unitsofmeasure.org"
@@ -537,6 +538,7 @@ Usage: #example
 * identifier
   * system = "https://hing.zno.com/content/id"
   * value = "e767acd0-5928-4b0e-8310-e60e718b603d"
+* url = "https://hing.zno.com/fhir/ActivityDefinition/6b7ac684-ab96-4f7f-a273-602837ae77e2"
 * version = "1.0.0"
 * name = "Informatie over diabetes type 2"
 * title = "Wat is diabetes type 2?"
@@ -575,7 +577,6 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-
 Instance: ProviderTasks-ActivityDefinition-Informatie-Gezonder-Leven
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
 Usage: #example
@@ -588,6 +589,7 @@ Usage: #example
 * identifier
   * system = "https://hing.zno.com/content/id"
   * value = "801e6797-cb52-4020-847a-7440a15b5998"
+* url = "https://hing.zno.com/fhir/ActivityDefinition/39318a5e-889d-48a5-8812-e59247743a0c"
 * version = "1.0.0"
 * name = "InformatieGezonderLeven"
 * title = "Gezonder gaan leven"
@@ -638,6 +640,7 @@ Usage: #example
 * identifier
   * system = "https://hinq.zno.com/content/id"
   * value = "d11eb00f-8659-4af2-97bf-1a0b656e0b4d"
+* url = "https://hing.zno.com/fhir/ActivityDefinition/1bd9c3ed-1862-4e7e-a057-ac75278a8a5a"
 * version = "1.0.0"
 * name = "VragenlijstWoonLeefsituatie"
 * title = "Vragenlijst over de woon- leefsituatie"

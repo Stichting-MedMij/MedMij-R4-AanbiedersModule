@@ -13,18 +13,13 @@ The following FHIR profiles have been introduced for the ProviderTask standard:
 | {{pagelink: LogicalModelsIndex, text: ServiceRequest, anchor: ptlmServiceRequest}} | ServiceRequest | {{pagelink: FHIRProfilesIndex, text: pt-ServiceRequest, anchor: ptServiceRequest}} |
 | {{pagelink: LogicalModelsIndex, text: Endpoint, anchor: ptlmEndpoint}} | Endpoint | {{pagelink: FHIRProfilesIndex, text: pt-Endpoint, anchor: ptEndpoint}} |
 
-**Table 1: Relevant pathology-specific profiles**
+**Table 1: Relevant ProviderTask profiles**
 
 Note the following:
 - The [Nictiz Profiling Guidelines for FHIR R4](https://informatiestandaarden.nictiz.nl/wiki/FHIR:V1.0_FHIR_Profiling_Guidelines_R4) have been used as guidelines for creating the profiles.
 - The (element) descriptions present in the profiles are taken from the respective Logical Model the mapped concept originates from.
 - The ['open world' modeling](https://informatiestandaarden.nictiz.nl/wiki/FHIR:V1.0_FHIR_Profiling_Guidelines_R4#Open_vs._closed_world_modeling) approach is adopted as much as possible. Notable exceptions are cardinalities that have been restricted based on the functional dataset of the MedMij use case, such as several minimum cardinalities.
 
-In Figure 1, the profiles listed above are visualized, as well as the relations between them.
-
-{{render: guides/medmij-r4-pathology-ig/images/Overview FHIR profiles.png}}
-
-**Figure 1: Overview of FHIR profiles**
 ## Other profiles
 FHIR R4 conformance resources developed by Nictiz (based on zib publication 2020) from the [nl-core 0.12.0-beta.4 package](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.4) are used and referenced where possible. In particular, the zibs and corresponding nl-core profiles collected in the table below are used.
 
