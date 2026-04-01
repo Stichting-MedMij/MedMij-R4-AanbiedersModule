@@ -76,8 +76,6 @@ The healthcare provider initiates a digital activity for the patient. The patien
 ### Taks status
 [TO DO]
 
-### Use case: Provider Module
-
 ### Dataset and conformance
 The dataset is specified in the Logical Models:
 - LogicalModel [Task]()
@@ -132,13 +130,13 @@ In the FHIRPath Patch approach, the client sends a `Parameters` resource that co
 ## Last-updated
 [TO DO]
 
-### Launch (PGO → module system)
+## Launch (PGO → module system)
 The launch is based on information in ActivityDefinition and Endpoint (e.g., endpoint.address). In the ProviderTasks this is the step where the PHR starts an external module/application.
 
 The launch is an interaction outside the core REST data exchange and is based on SMART App Launch. The specifications can be found in the [MedMij Solution Design](https://changemanagement.medmij.nl/aanbiedermodules/actueel/).
 
 
-#### Source system: example queries
+## Source system: example queries
 The returned data to the PHR should conform to the profiles listed in the table below. The table below shows in the first four columns the provider module sections, the HCIMs that constitute those sections and the specific content of the provider module specific information. The last column shows the FHIR search queries to obtain the Provider Module information. These queries and expected responses are based on profiles listed in the {{pagelink:FO, text: functional design}}.  
 
 <!DOCTYPE html>
