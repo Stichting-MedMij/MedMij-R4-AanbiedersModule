@@ -13,38 +13,24 @@ This Technical Design (TD) describes the technical implementation of the Provide
 
 The FHIR version used for this IG is HL7 FHIR R4 (4.0.1).
 
-## Workflow model (FHIR Workflow)
-ProviderTasks follows the [FHIR workflow](https://hl7.org/fhir/R4/workflow.html) approach where resources are grouped into Definitions, Requests, and Events:
-- Definitions: reusable definitions of digital activities, primarily represented by the ActivityDefinition resource (for example, an ActivityDefinition that defines a questionnaire-based activity).
-- Requests: patient-specific “orders/requests” indicating that something should be done (e.g., ServiceRequest, Task)
-- Events: records of execution and results (e.g., Observation, Procedure, QuestionnaireResponse). This is out of scope in this TD version. The focus is on Definitions and Requests.
+## Workflow model
 
-FHIR explicitly describes these categories (definitions/requests/events) and their relationships (e.g., requests referencing definitions, events referencing orders, parent-child relationships).
+ProviderTasks follows the [FHIR workflow](https://hl7.org/fhir/R4/workflow.html) approach, where resources are grouped into Definitions, Requests, and Events. In this IG, the focus is on Definitions and Requests. Events (clinical results produced by execution) are out of scope.
 
-### Relationships in ProviderTasks
-- ActivityDefinition (Definition) describes the digital activity (e.g., a launchable module or informational content) and contains generic, reusable information about what the digital activity is and how it should be used, including the technical launch information via Endpoint.
-- ServiceRequest (Request) is optional and is used when patient-specific instructions and/or scheduling are needed that deviate from or complement the generic guidance in the ActivityDefinition (e.g., occurrence schedule and patientInstruction). Tasks may reference the originating ServiceRequest via `Task.basedOn`.
-- Task (Request) is the patient-facing workflow item shown in the PHR (PGO) task list and used for status tracking. Tasks may be grouped (`groupIdentifier`) and may form parent-child relations (`partOf`) for repeating subtasks within one activity.
-- Event resources (out of scope): Observations/QuestionnaireResponse/etc. resulting from execution (not specified here).
+### Definitions, Requests, and Events
+- **Definitions:** reusable definitions of digital activities, primarily represented by the **ActivityDefinition** resource (for example, an ActivityDefinition that defines a questionnaire-based activity).
+- **Requests:** patient-specific orders/requests indicating that something should be done (e.g., ServiceRequest, Task).
+- **Events (out of scope):** records of execution and results (e.g., Observation, Procedure, QuestionnaireResponse).
 
+### Core relationships in ProviderTasks
+- **ActivityDefinition (Definition):** describes the digital activity and provides generic, reusable information on what the activity is and how it should be used. If the activity is launchable, ActivityDefinition references one or more **Endpoint(s)** that provide the technical access/launch details.
+- **ServiceRequest (Request, optional):** used when patient-specific scheduling and/or instructions are needed that deviate from or complement the generic ActivityDefinition guidance (e.g., `occurrence` and `patientInstruction`). Tasks may reference the originating ServiceRequest via `Task.basedOn`.
+- **Task (Request):** the patient-facing workflow item shown in the PHR/PGO task list and used for status tracking. Tasks may be grouped (`groupIdentifier`) and may form parent-child relations (`partOf`) for repeating subtasks within one activity.
 
-#### Workflow relationships and grouping
-
-Link to Modules (ActivityDefinition):
-- The Tasks (main task and subtasks) contain a link to ActivityDefinition that defines the launchable digital activity (what should be launched or performed).
-- The ActivityDefinition references one or more Endpoint(s) that expose the activity and provide the technical access/launch details.
-
-Main task and subtasks:
-- If subtasks are used, there is always a main (parent) task representing the overall activity/module.
-- Subtasks reference the main task via Task.partOf.
-- Subtasks are only used for repeating tasks of a single digital activity (one ActivityDefinition). Therefore, subtasks linked via Task.partOf SHALL NOT reference a different ActivityDefinition than their main task.
-- Grouping of tasks within a single digital care module can be done using Task.groupIdentifier.
-
-Link to order (ServiceRequest)
-- A Task can reference the originating ServiceRequest via Task.basedOn.
-- The ServiceRequest represents the clinical order for the digital activity and may include:
-    - the patient-specific requested schedule (occurrence);
-    - patient-specific instructions (patientInstruction).
+### Grouping and hierarchy
+- **Link to definition:** main tasks and subtasks link to the same ActivityDefinition that defines what should be launched or performed.
+- **Main task and subtasks:** if subtasks are used, there is always a main (parent) task representing the overall activity/module. Subtasks reference the main task via `Task.partOf`. Subtasks are only used for repeating tasks within a single digital activity; therefore, subtasks linked via `Task.partOf` SHALL NOT reference a different ActivityDefinition than their main task.
+- **Grouping:** tasks belonging to the same digital care module/program can be grouped using `Task.groupIdentifier` (e.g., for filtering and display).
 
 ## Actors involved
 
