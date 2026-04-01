@@ -23,7 +23,7 @@ ProviderTasks follows the [FHIR workflow](https://hl7.org/fhir/R4/workflow.html)
 - **Events (out of scope):** records of execution and results (e.g., Observation, Procedure, QuestionnaireResponse).
 
 ### Core relationships in ProviderTasks
-- **ActivityDefinition (Definition):** describes the digital activity and provides generic, reusable information on what the activity is and how it should be used. If the activity is launchable, ActivityDefinition references one or more **Endpoint(s)** that provide the technical access/launch details.
+- **ActivityDefinition** (Definition): describes the digital activity and provides generic, reusable information on what the activity is and how it should be used. If the activity is launchable, ActivityDefinition references one or more **Endpoint(s)** that provide the technical access/launch details.
 - **ServiceRequest (Request, optional):** used when patient-specific scheduling and/or instructions are needed that deviate from or complement the generic ActivityDefinition guidance (e.g., `occurrence` and `patientInstruction`). Tasks may reference the originating ServiceRequest via `Task.basedOn`.
 - **Task (Request):** the patient-facing workflow item shown in the PHR/PGO task list and used for status tracking. Tasks may be grouped (`groupIdentifier`) and may form parent-child relations (`partOf`) for repeating subtasks within one activity.
 
