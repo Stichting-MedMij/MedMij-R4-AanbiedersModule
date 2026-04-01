@@ -9,7 +9,7 @@ This Technical Design (TD) describes the technical implementation of the Provide
 - the involved actors and systems;
 - the FHIR profiles and resources to be used;
 - the transactions (search/retrieve/update) including example queries;
-- the workflow relationships between definitions, orders/requests, and workflow items.
+- the workflow relationships between definitions, requests, and workflow items.
 
 The FHIR version used for this IG is HL7 FHIR R4 (4.0.1).
 
@@ -23,26 +23,28 @@ ProviderTasks follows the [FHIR workflow](https://hl7.org/fhir/R4/workflow.html)
 - **Events (out of scope):** records of execution and results (e.g., Observation, Procedure, QuestionnaireResponse).
 
 ### Core relationships in ProviderTasks
-- **ActivityDefinition** (Definition): describes the digital activity and provides generic, reusable information on what the activity is and how it should be used. If the activity is launchable, ActivityDefinition references one or more **Endpoint(s)** that provide the technical access/launch details.
-- **ServiceRequest (Request, optional):** used when patient-specific scheduling and/or instructions are needed that deviate from or complement the generic ActivityDefinition guidance (e.g., `occurrence` and `patientInstruction`). Tasks may reference the originating ServiceRequest via `Task.basedOn`.
-- **Task (Request):** the patient-facing workflow item shown in the PHR/PGO task list and used for status tracking. Tasks may be grouped (`groupIdentifier`) and may form parent-child relations (`partOf`) for repeating subtasks within one activity.
+- **ActivityDefinition (Definition):** describes the digital activity and provides generic, reusable information on what the activity is and how it should be used. If the activity is launchable, ActivityDefinition references one or more Endpoint(s) that provide the technical access/launch details.
+- **ServiceRequest (Request (optional)):** used when patient-specific scheduling and/or instructions are needed that deviate from or complement the generic ActivityDefinition guidance (e.g., `occurrence` and `patientInstruction`). Tasks may reference the originating ServiceRequest via `Task.basedOn`.
+- **Task (Request):** the patient-facing workflow item shown in the PHR task list and used for status tracking. Tasks may be grouped (`groupIdentifier`) and may form parent-child relations (`partOf`) for repeating subtasks within one activity.
 
 ### Grouping and hierarchy
-- **Link to definition:** main tasks and subtasks link to the same ActivityDefinition that defines what should be launched or performed.
 - **Main task and subtasks:** if subtasks are used, there is always a main (parent) task representing the overall activity/module. Subtasks reference the main task via `Task.partOf`. Subtasks are only used for repeating tasks within a single digital activity; therefore, subtasks linked via `Task.partOf` SHALL NOT reference a different ActivityDefinition than their main task.
+- **Link to definition:** main tasks and subtasks link to the same ActivityDefinition that defines what should be launched or performed.
 - **Grouping:** tasks belonging to the same digital care module/program can be grouped using `Task.groupIdentifier` (e.g., for filtering and display).
+
+### Taks status
+[TO DO]
 
 ## Actors involved
 
-| Actor | | System | | FHIR CapabilityStatement |
-|| --- | --- | --- | --- | --- | --- |
-| **Name** | **Description** | **Name** | **Description** | **Name** | **Description** |
-| Patient | User who performs the digital activity | PHR | Personal health record (PHR)| [TO DO] | FHIR client requirements |
-| Healthcare provider | User who initiates the digtial activity | source system (XIS) | Healthcare information system | [TO DO] | FHIR server requirements |
-| Module system | System that delivers the digital activity | module system | Healthcare information system | [TO DO] | FHIR client requirements |
+| Actor | Description | System | Role in exchange |
+| --- | --- | --- | --- |
+| Patient | Performs the digital activity | PHR/PGO | Retrieves tasks, launches activities, views status |
+| Healthcare provider | Initiates digital activities for a patient | Source system (XIS) | Creates/maintains tasks (and optional ServiceRequest) |
+| Module system | Delivers the digital activity | External module/application | Executes the activity after launch, triggers status updates |
 
 ## Boundaries and relationships
-This FHIR IG covers use cases for exchanging task data between healthcare providers and patients (typically through a PHR).
+This IG covers use cases for exchanging task data between healthcare providers and patients (typically through a PHR).
 
 This IG guide assumes that a PHR is able to connect with a source system. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/aanbiedermodules/actueel/).
 
@@ -59,21 +61,16 @@ The healthcare provider initiates a digital activity for the patient. The patien
 - LAUNCH (PHR → module system): start the external module/application using information from ActivityDefinition and referenced Endpoint.
 - UPDATE status (Module system → source system): update `Task.status` for both main tasks and subtasks to reflect progress and completion.
 
-### Taks status
-[TO DO]
-
-### Dataset and conformance
+### Dataset
 The dataset is specified in the Logical Models:
 - LogicalModel [Task]()
 - LogicalModel [Definition]()
 - LogicalModel [ServiceRequest]()
 - LogicalModel [Patient]()
 
-Test material (fixtures) and example instances are published separately as test artifacts in the Implementation Guide.
+## Retrieve task list (PHR → Source System)
 
-## Retrieve task list (PHR/PGO → Source System)
-
-#### PHR: request message
+### PHR: request message
 The PHR system requests task data using individual [search](https://hl7.org/fhir/R4/search.html) interactions. The task data exchange consists of multiple FHIR resources with specific constraints. These interactions are performed using an HTTP GET as shown below:
 
 `GET [base]/[type]{?[parameters]}`
