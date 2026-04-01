@@ -96,7 +96,7 @@ Terugkoppeling:
 
 #### Precondities
 - De patiënt beschikt over een PGO die voldoet aan de MedMij-eisen.
-- De patiënt heeft toestemming gegeven voor elektronische uitwisseling van gegevens tussen bronsysteem en PGO.
+- De patiënt heeft toestemming gegeven voor elektronische uitwisseling van gegevens tussen zorgaanbieder en PGO.
 - De patiënt is bekend in het bronsysteem en er is een behandelrelatie.
  
 
