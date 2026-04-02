@@ -45,7 +45,9 @@ Geen nadere specificatie, anders dan genoemd in [de algemene inleiding](https:/
 ### Kwalificatie en testen
 Op dit moment wordt de usecase uit dit ontwerp getoetst in een Proof of Concept (PoC). Later volgt meer informatie over kwalificatie.
 
+In de alpha-testfase vindt geïsoleerd testen plaats met behulp van MedMij-simulatoren. Deze simulatoren simuleren de relevante systeemrollen (PGO en XIS) en ondersteunen leveranciers bij het zowel functioneel als technisch valideren van de uitwisseling.
 
+De simulatoren voeren geautomatiseerde validaties uit om te bepalen of een leverancier implementeert conform de geldende specificaties, waaronder de afspraken en profielen zoals beschreven in deze IG (en de van toepassing zijnde MedMij-richtlijnen). De uitkomsten van deze validaties geven inzicht in conformiteit en eventuele afwijkingen, en vormen input voor door te voeren correcties voordat vervolgtesten (bijv. ketentesten) plaatsvinden.
 
 ## Usecases
 
@@ -133,13 +135,12 @@ Terugkoppeling:
 ### Bedrijfsrollen
 Deze usecase onderscheidt twee bedrijfsrollen, namelijk de Persoon en de (Zorg)Aanbieder zoals te zien in onderstaande tabel.
 
-Tabel 1 Bedrijfsrollen
-
 | Bedrijfsrol (actor) | Beschrijving bedrijfsrol |
 | --- | --- |
 | Patiënt | Gebruiker van de PGO |
 | Zorgaanbieder | Gebruiker van het bronsysteem |
 
+**Tabel 1 Bedrijfsrollen**
 
 ### Informatieoverdracht
 Zowel de persoon als de (zorg)aanbieder maken ieder gebruik van een informatiesysteem:
@@ -151,24 +152,13 @@ Zowel de persoon als de (zorg)aanbieder maken ieder gebruik van een informatiesy
 #### Systemen en systeemrollen
 Deze systemen kennen ieder verschillende systeemrollen.
 
-Tabel 2 Systeemrol
-
 | Systeem | Naam systeemrol | Systeemrolcode | Omschrijving |
 | --- | --- | --- | --- |
 | PGO | TaakGegevensRaadplegend | PT-1.0.0-alpha.1-TGR-FHIR | Raadplegen taken bij de zorgaanbieder|
 | XIS| TaakGegevensBeschikbaarstellend | PT-1.0.0-alpha.1-TGB-FHIR | Beschikbaar stellen taken aan de patiënt |
 | Modulesysteem | DigitaleActiviteitUitvoerder | PA-1.0.0-alpha.1-DAU-FHIR | Levert de digitale activiteit en ondersteunt de uitvoering/afronding van de activiteit |
 
-### Transacties en transactiegroepen
-Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op basis van transacties, een verzameling van transacties (bijvoorbeeld een vraag- en antwoordbericht) vormt een zogeheten transactiegroep.
-
-Tabel 3 Transactiegroep
-
-| Transactiegroep | Transactie | Systeemrolcode | Systeem | Bedrijfsrol |
-| --- | --- | --- | --- | --- |
-| Verzamelen Taakgegevens (PULL) | Beschikbaar stellen Taken | PT-1.0.0-alpha.1-TGR-FHIR | XIS | Zorgaanbieder |
-| Verzamelen Taakgegevens (PULL) | Raadplegen Taken | PT-1.0.0-alpha.1-TGB-FHIR | PGO | Patiënt |
-| Digitale activiteit uitvoeren (LAUNCH) | Launch naar digitale activiteit| PA-1.0.0-alpha.1-DAU-FHIR | Modulesysteem | Patiënt |
+**Tabel 2 Systeemrol**
 
 ### Ontwerp uitwisselen taken
 Functioneel ontwerpprincipes
@@ -197,6 +187,26 @@ De dataset wordt beschreven in de bijbehorende Logical Models:
 - LogicalModel [Patient](https://simplifier.net/medmij-r4-provider-module/lmpatient)
 
 
+### Transacties en transactiegroepen
+Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op basis van transacties, een verzameling van transacties (bijvoorbeeld een vraag- en antwoordbericht) vormt een zogeheten transactiegroep. Voor de transacties die tussen de systeemrollen plaatsvinden, beschrijven de bijbehorende CIM's (impliciet) welke gegevenselementen uitgewisseld worden binnen Mondzorg. Voor de technische specificaties, zie het [technisch ontwerp](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Technical-design.md?version=current)
+
+
+| Transactiegroep | Transactie | Systeemrolcode | Systeem | Bedrijfsrol |
+| --- | --- | --- | --- | --- |
+| Verzamelen Taakgegevens (PULL) | Beschikbaar stellen Taken | PT-1.0.0-alpha.1-TGR-FHIR | XIS | Zorgaanbieder |
+| Verzamelen Taakgegevens (PULL) | Raadplegen Taken | PT-1.0.0-alpha.1-TGB-FHIR | PGO | Patiënt |
+| Digitale activiteit uitvoeren (LAUNCH) | Launch naar digitale activiteit| PA-1.0.0-alpha.1-DAU-FHIR | Modulesysteem | Patiënt |
+
+**Tabel 3 Transactiegroep**
+
+De onderstaande tabel geeft een overzicht van alle gegevensdiensten die van toepassing zijn voor AanbiedersTaken. 
+
+| Id | Gegevensdienstnaam zonder versie | Versie |
+| --- | --- | --- | --- |
+| 301 | [Verzamelen - Taken](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/FHIR-Profiles?version=current#ptTask) | 1.0.0-alpha.1 |
+
+**Tabel 4: Gegevensdiensten relevant voor AanbiedersTaken**
+
 ### Weergaverichtlijn
 
 #### Scope weergaverichtlijn 
@@ -207,4 +217,4 @@ De richtlijn geeft handvatten voor:
 De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van taken. 
 
 #### Inhoud weergaverichtlijn
-De weergaverichtlijn voor taken is [hier]() te vinden.
+De weergaverichtlijn maakt nog geen onderdeel uit van deze alpha-versie. Deze wordt toegevoegd en gepubliceerd bij de beta-versie.

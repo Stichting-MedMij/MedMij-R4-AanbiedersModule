@@ -46,7 +46,9 @@ ProviderTasks follows the [FHIR workflow](https://hl7.org/fhir/R4/workflow.html)
 ## Boundaries and relationships
 This IG covers use cases for exchanging task data between healthcare providers and patients (typically through a PHR).
 
-This IG guide assumes that a PHR is able to connect with a source system. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/aanbiedermodules/actueel/).
+This IG guide assumes that a PHR is able to connect with a source system. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/aanbiedermodules/actueel/). 
+
+Each transaction is performed in the context of a specific authenticated patient, which has been established using the authentication mechanisms outlined in the MedMij Afsprakenstelsel (also see the MedMij FHIR IG by Nictiz), i.e. via an OAuth2 token. Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters for patient identification SHALL NOT be included.
 
 Out of scope for this TD version:
 - Exchange of clinical results produced by executing the activity (Event resources such as Observation or QuestionnaireResponse).
@@ -160,12 +162,6 @@ The returned data to the PHR should conform to the profiles listed in the table 
         </tr>
     </thead>
     <tbody>
-               <tr>
-            <td>1</td>
-            <td>Patiënt</td>
-            <td>Patient</td>
-              <td><a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885819" target="_blank">nl-core-Patient</a></td>
-            <td class="monospace">GET [base]/Patient</td>
         </tr>
          <tr>
             <td>2</td>
