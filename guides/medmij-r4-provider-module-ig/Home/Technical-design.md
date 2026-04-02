@@ -79,10 +79,22 @@ The PHR system requests task data using individual [search](https://hl7.org/fhir
 
 Goal: the patient retrieves open and (optionally) completed tasks, along with the related context required to display the task list and support launching the associated digital activity.
 
-### Response
+#### Read operation
+To resolve referenced resources (such as ActivityDefinition and ServiceRequest) from a retrieved Task, both the client and the server SHALL support the FHIR read interaction. The client follows the references in the Task and retrieves each referenced resource using `GET [base]/[type]/[id]`, so that the PHR can display the necessary context (e.g., generic activity information from ActivityDefinition and patient-specific instructions from ServiceRequest, when present). However, all resources referenced per literal reference SHALL be resolvable per the [MedMij FHIR IG by Nictiz](https://informatiestandaarden.nictiz.nl/wiki/MedMij:IG:V1/FHIR_IG#Including_referenced_resources).
+
+### XIS: Response message
 A Bundle containing Task resource(s) conforming to the ProviderTasks-Task profile, including:
 - the referenced ServiceRequest via `Task.basedOn` (if present);
 - any subtasks linked via `Task.partOf` (if present).
+
+### request last-updated
+The PHR SHALL be able to retrieve only those Task resources that have been updated since a given point in time, to support efficient incremental refresh of the task list. This is done using the standard FHIR _lastUpdated search parameter (based on `meta.lastUpdated`). The PHR determines the time window itself (e.g., since last sync) and includes the desired date/time range in the search query, for example:
+
+`GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00`
+
+Optionally, the PHR/PGO can also provide an upper bound to restrict the period:
+
+`GET [base]/Task?_lastUpdated=ge2026-01-01T00:00:00+01:00&_lastUpdated=le2026-01-31T23:59:59+01:00`
 
 ## Update Task status (module system → Source System)
 This IG uses PATCH for partial updates of Task resources.
@@ -112,8 +124,8 @@ In the FHIRPath Patch approach, the client sends a `Parameters` resource that co
 }
 ``` 
 
-## Last-updated
-[TO DO]
+
+
 
 ## Launch (PGO → module system)
 The launch is based on information in ActivityDefinition and Endpoint (e.g., endpoint.address). In the ProviderTasks this is the step where the PHR starts an external module/application.
@@ -154,7 +166,7 @@ The returned data to the PHR should conform to the profiles listed in the table 
 <table>
     <thead>
         <tr>
-            <th>Section</th>
+            <th>Description</th>
             <th>CIM NL</th>
             <th>HCIM EN</th>
             <th>FHIR Profile </th>
@@ -164,7 +176,7 @@ The returned data to the PHR should conform to the profiles listed in the table 
     <tbody>
         </tr>
          <tr>
-            <td>2</td>
+            <td>Search of the Task</td>
             <td>Taak</td>
             <td>Task</td>
             <td><a href="" target="_blank">pt-Task</a></td>
