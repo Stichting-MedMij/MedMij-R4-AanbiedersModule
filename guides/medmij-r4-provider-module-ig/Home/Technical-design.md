@@ -32,9 +32,10 @@ ProviderTasks follows the [FHIR workflow](https://hl7.org/fhir/R4/workflow.html)
 - **Link to definition:** main tasks and subtasks link to the same ActivityDefinition that defines what should be launched or performed.
 - **Grouping:** tasks belonging to the same digital care module/program can be grouped using `Task.groupIdentifier` (e.g., for filtering and display).
 
+
 {{render: guides/medmij-r4-provider-module-ig/images/Overview ProviderTask relationships.png}}
 
-**Figure 1: overview of ProviderTask releationships**
+**Figure 1: Overview of ProviderTask releationships**
 
 ### Taks status
 [TO DO]
