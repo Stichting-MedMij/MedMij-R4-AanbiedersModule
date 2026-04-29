@@ -1,20 +1,20 @@
-Profile: ProviderTasksServiceRequest
+Profile: ProviderTasksServiceRequestExe
 Parent: ServiceRequest
 Id: pt-ServiceRequest
-Description: "Clinical order for a patient-specific digital activity that a healthcare professional requests for a specific patient, such as completing a questionnaire, performing home measurements, viewing educational content, or launching a third-party module."
+Description: "Patient-specific execution plan for a digital activity. This ServiceRequest captures patient-specific scheduling and instructions that deviate from or complement the generic ActivityDefinition. It is referenced from the patient-facing Task via Task.focus."
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContactMedMij
-* ^purpose = "To represent the clinical order to start or perform a specific digital (eHealth) activity for a patient. This ServiceRequest provides the clinical intent, context, requested schedule, and patient-specific instructions, and can serve as the basis for one or more Task resources that manage execution and tracking of the activity."
+* ^purpose = "To represent the healthcare professional’s order to start a specific digital activity for a patient."
 * insert Copyright
 * .
   * ^short = "ServiceRequest"
   * ^alias = "Zorgopdracht"
 * insert Origin
 * .
-^definition = "Patient-specific clinical order for requesting a digital (eHealth) activity in the ProviderTasks context. It links the patient, the requested activity definition, timing/schedule, and clinical rationale, and may include patient-specific instructions. It can be referenced by Task resources that coordinate execution and status tracking."
+^definition = "Patient-specific execution plan for a digital activity, containing scheduling (occurrence) and patientInstruction. It is referenced from Task via Task.focus."
 * subject only Reference(Patient or Group or Location or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
-  * ^definition = "The patient for whom the activity is requested."
+  * ^definition = "The patient for whom the digital activity applies."
 * requester only Reference(Practitioner or PractitionerRole or Organization or Patient or RelatedPerson or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)
   * ^comment = """
     Each occurrence of the zib HealthProfessional is normally represented by _two_ FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.
@@ -23,4 +23,4 @@ Description: "Clinical order for a patient-specific digital activity that a heal
     """
 * patientInstruction
   * ^short = "Patient-specific instructions"
-  * ^definition = "Patient or consumer-oriented instructions related to the requested activity. Use this element to convey patient-specific guidance that should be shown alongside the Task(s) executing this order (e.g. e.g., home blood pressure monitoring for 8 weeks, once daily in the morning)."
+  * ^definition = "Patient-specific instructions for performing the activity that complement or override the generic instructions defined in the ActivityDefinition, intended to be shown alongside the patient’s Task(s)."
