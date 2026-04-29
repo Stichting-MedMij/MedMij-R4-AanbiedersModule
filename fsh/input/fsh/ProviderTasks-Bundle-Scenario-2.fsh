@@ -1,5 +1,5 @@
 // Bundle with FHIR test instances in FSH format for ProviderTasks test scenario 2
-Instance: ProviderTasks-ServiceRequest-Bloeddrukmeting
+Instance: ProviderTasks-ServiceRequestExecution-Bloeddrukmeting
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest
 Usage: #example
 * text
@@ -29,6 +29,20 @@ U gaat gedurende 1 week zelf uw bloeddruk meten. Volg hierbij deze stappen:
 3. Noteer de waarden direct na de meting in uw app.
 4. Voer dit dagelijks uit gedurende 7 dagen en neem de resultaten mee naar uw volgende afspraak.
 """
+
+Instance: ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest
+Usage: #example
+* text
+  * status = #empty
+  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* identifier
+  * system = "http://medrie/servicerequest/id"
+  * value = "2025-1111999"
+* status = #active
+* intent = #plan
+* subject = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 
 Instance: ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition

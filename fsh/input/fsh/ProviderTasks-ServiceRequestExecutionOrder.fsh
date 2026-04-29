@@ -1,6 +1,6 @@
-Profile: ProviderTasksServiceRequestExe
+Profile: ProviderTasksServiceRequestExecutionOrder
 Parent: ServiceRequest
-Id: pt-ServiceRequest
+Id: pt-ServiceRequest-ExecutionOrder
 Description: "Patient-specific execution plan for a digital activity. This ServiceRequest captures patient-specific scheduling and instructions that deviate from or complement the generic ActivityDefinition. It is referenced from the patient-facing Task via Task.focus."
 * insert DefaultNarrative
 * ^status = #draft
@@ -8,8 +8,8 @@ Description: "Patient-specific execution plan for a digital activity. This Servi
 * ^purpose = "To represent the healthcare professional’s order to start a specific digital activity for a patient."
 * insert Copyright
 * .
-  * ^short = "ServiceRequest"
-  * ^alias = "Zorgopdracht"
+  * ^short = "Patient-specific execution details"
+  * ^alias = "Uitvoeringsopdracht"
 * insert Origin
 * .
 ^definition = "Patient-specific execution plan for a digital activity, containing scheduling (occurrence) and patientInstruction. It is referenced from Task via Task.focus."

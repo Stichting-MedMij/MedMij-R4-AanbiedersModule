@@ -1,6 +1,6 @@
-Profile: ProviderTasksServiceRequestDigitalActivity
+Profile: ProviderTasksServiceRequestDigitalGroupPlan
 Parent: ServiceRequest
-Id: pt-ServiceRequest-DigitalActivity
+Id: pt-ServiceRequest-DigitalGroupPlan
 Description: "Clinical order to initiate a digital activity for a specific patient. This ServiceRequest identifies which digital activity is requested. Patient-specific scheduling and instructions are provided in a separate ServiceRequest"
 * insert DefaultNarrative
 * ^status = #draft
@@ -8,8 +8,8 @@ Description: "Clinical order to initiate a digital activity for a specific patie
 * ^purpose = "To represent the healthcare professional’s order to start a specific digital activity for a patient."
 * insert Copyright
 * .
-  * ^short = "ServiceRequest"
-  * ^alias = "Zorgopdracht"
+  * ^short = "ServiceRequest digital activity"
+  * ^alias = "Module-opdracht"
 * insert Origin
 * .
 ^definition = "Patient-specific clinical order to initiate a digital activity. It is referenced from the patient-facing Task via Task.basedOn."

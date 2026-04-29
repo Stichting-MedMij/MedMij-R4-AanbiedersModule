@@ -1,5 +1,5 @@
 // Bundle with FHIR test instances in FSH format for ProviderTasks test scenario 1
-Instance: ProviderTasks-ServiceRequest-Glucosemeting
+Instance: ProviderTasks-ServiceRequestExecution-Glucosemeting
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest
 Usage: #example
 * text
@@ -31,6 +31,20 @@ U gaat gedurende 1 week zelf uw bloedglucose meten. Volg hierbij deze stappen:
 5. Noteer de waarden direct na de meting in uw app.
 6. Voer dit dagelijks uit gedurende 7 dagen en neem de resultaten mee naar uw volgende afspraak.
 """
+
+Instance: ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest
+Usage: #example
+* text
+  * status = #empty
+  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* identifier
+  * system = "http://medrie/servicerequest/id"
+  * value = "2025-1111234"
+* status = #active
+* intent = #plan
+* subject = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 
 Instance: ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
