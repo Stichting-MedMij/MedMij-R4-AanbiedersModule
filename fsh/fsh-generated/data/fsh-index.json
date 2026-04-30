@@ -261,7 +261,7 @@
     "fshType": "Profile",
     "fshFile": "ProviderTasks-ServiceRequestDigitalGroupPlan.fsh",
     "startLine": 1,
-    "endLine": 19
+    "endLine": 20
   },
   {
     "outputFile": "StructureDefinition-pt-ServiceRequest-ExecutionOrder.json",
@@ -269,7 +269,7 @@
     "fshType": "Profile",
     "fshFile": "ProviderTasks-ServiceRequestExecutionOrder.fsh",
     "startLine": 1,
-    "endLine": 26
+    "endLine": 27
   },
   {
     "outputFile": "StructureDefinition-pt-Task.json",
