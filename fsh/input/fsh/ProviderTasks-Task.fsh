@@ -18,11 +18,16 @@ Description: "This (FHIR) Task profile describes a patient-specific actionable i
   * ^definition = "A link to the ActivityDefinition that defines the launchable eHealth activity (i.e., what module/content should be launched or performed) associated with this Task. In both MedMij and Koppeltaal implementations, this link is carried using the Koppeltaal instantiates extension."
   * valueReference only Reference(ProviderTasksActivityDefinition)
 * identifier 1..
-* groupIdentifier
-  * ^definition = "An identifier that links together multiple tasks and other requests that were created in the same context. The groupIdentifier (system/value pair) can be used to group and filter related Tasks (e.g., all tasks belonging to the same digital activity or workflow package). In this profile, groupIdentifier.type.text is used to provide a human-readable group label for display in the PGO."
+* basedOn only Reference(ProviderTasksServiceRequestDigitalGroupPlan)
+  * ^short = "Digital group plan"
+  * ^definition = "Reference to the ServiceRequest that initiates the digital group plan for the patient. This is the module-level order and links the Task to the requested digital group plan."
 * partOf only Reference(ProviderTasksTask)
 * description
   * ^definition = "A free-text description of what is to be performed. Implementers should ensure the text is readable on mobile applications."
+* focus 0..1
+* focus only Reference(ProviderTasksServiceRequestExecutionOrder)
+  * ^short = "Patient-specific execution details"
+  * ^definition = "Reference to the ServiceRequest that contains patient-specific scheduling and/or instructions that deviate from or complement the generic ActivityDefinition guidance."
 * for 1..
 * for only Reference(http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
   * ^definition = "The patient who benefits from the performance of the service specified in the task."

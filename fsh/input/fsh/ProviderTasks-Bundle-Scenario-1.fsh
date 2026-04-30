@@ -106,7 +106,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-1
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-1
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -119,42 +119,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-1"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
-* status = #completed
-* intent = #order
-* priority = #routine
-* description = "voer de meetopdracht (title activityDefinition) uit"
-* for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
-* executionPeriod
-  * start = "2025-12-22T08:00:00+01:00"
-  * end = "2025-12-22T00:00:00+01:00"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
-* owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
-
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-2
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
-Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
-* extension
-  * url = $koppeltaal-instantiates
-  * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
-    * type = "ActivityDefinition"
-* identifier
-  * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-2"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #completed
 * intent = #order
 * priority = #routine
@@ -168,7 +134,35 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-3
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-2
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
+Usage: #example
+* text
+  * status = #empty
+  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* extension
+  * url = $koppeltaal-instantiates
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
+    * type = "ActivityDefinition"
+* identifier
+  * system = "http://medrie.nl/taskIdentifier"
+  * value = "SUBTASK-Glucose-2"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
+* status = #completed
+* intent = #order
+* priority = #routine
+* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
+* executionPeriod
+  * start = "2025-12-22T08:00:00+01:00"
+  * end = "2025-12-22T00:00:00+01:00"
+* authoredOn = "2025-12-22T08:00:00+01:00"
+* lastModified = "2025-12-22T08:00:00+01:00"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
+* owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
+
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -181,11 +175,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-3"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #completed
 * intent = #order
 * priority = #routine
@@ -199,7 +190,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-4
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -212,11 +203,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-4"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #cancelled
 * intent = #order
 * priority = #routine
@@ -230,7 +218,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-5
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-5
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -243,11 +231,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-5"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -261,7 +246,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-6
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-6
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -274,11 +259,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-6"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -292,7 +274,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-7
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-7
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -305,11 +287,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-7"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -323,7 +302,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-8
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-8
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -336,11 +315,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-8"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -354,7 +330,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-9
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-9
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -367,11 +343,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-9"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -385,7 +358,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-10
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-10
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -398,11 +371,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-10"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -416,7 +386,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-11
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-11
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -429,11 +399,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-11"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -447,7 +414,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-12
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-12
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -460,11 +427,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-12"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -478,7 +442,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-13
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-13
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -491,11 +455,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-13"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -509,7 +470,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Glucosemeting-14
+Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-14
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -522,11 +483,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-14"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -574,10 +532,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Informatie-diabetes-12345"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -624,10 +580,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Informatie-Gezonderleven-6789"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #requested
 * intent = #order
 * priority = #routine
@@ -676,10 +630,8 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Vragenlijst-Woonsituatie-9642"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
+  * display = "Digitale zorgmodule Diabetes"
 * status = #requested
 * intent = #order
 * priority = #routine

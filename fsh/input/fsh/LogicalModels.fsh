@@ -82,8 +82,6 @@ Description: "Patient-specific workflow item that requests execution of a define
   * ActivityDefinition 0..1 Reference(ActivityDefinition) "Reference to the ActivityDefinition that describes the activity to launch/perform."
     * ^alias = "ActivityDefinition"
 * Identifier 0..1 Identifier "Business identifier that uniquely identifies this Task instance within or across systems."
-* GroupIdentifier 0..1 Identifier "Identifier used to group related tasks (e.g., tasks belonging to the same digital care module/program)."
-  * ^alias = "GroepIdentifier"
 * BasedOn 0..1 Reference(ServiceRequest) "Order(s) on which this Task is based. Typically a ServiceRequest represents the clinical order that triggered this patient-facing activity, and it may also carry patient-specific instructions for the activity (e.g., via ServiceRequest.patientInstruction)."
   * ^alias = "GebaseerdOp"
 * PartOf 0..1 Reference(Task) "Parent task of which this task is a part. Used to link subtasks (e.g., individual measurement moments) to a main task."
@@ -115,7 +113,7 @@ Description: "Patient-specific workflow item that requests execution of a define
   * Period 0..1 Period "Time window during which this Task restriction applies. For example the period in which the task may be performed."
     * ^alias = "GeldigBinnen"
 
-Logical: LmServiceRequest
+Logical: LmServiceRequestExecutionOrder
 Parent: http://hl7.org/fhir/StructureDefinition/Element
 Id: pt-lm-ServiceRequest
 Title: "ServiceRequest"
