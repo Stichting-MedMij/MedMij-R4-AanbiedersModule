@@ -89,8 +89,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-1"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #completed
 * intent = #order
 * priority = #routine
@@ -118,8 +117,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-2"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #completed
 * intent = #order
 * priority = #routine
@@ -147,8 +145,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-3"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #completed
 * intent = #order
 * priority = #routine
@@ -176,8 +173,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-4"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #cancelled
 * intent = #order
 * priority = #routine
@@ -205,8 +201,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-5"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -234,8 +229,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-6"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -263,8 +257,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-7"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -292,8 +285,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-8"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -321,8 +313,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-9"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -350,8 +341,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-10"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -379,8 +369,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-11"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -408,8 +397,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-12"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -437,8 +425,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-13"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -466,8 +453,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Glucose-14"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -515,8 +501,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Informatie-diabetes-12345"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -563,8 +548,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Informatie-Gezonderleven-6789"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #requested
 * intent = #order
 * priority = #routine
@@ -613,8 +597,7 @@ Usage: #example
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Vragenlijst-Woonsituatie-9642"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-  * display = "Digitale zorgmodule Diabetes"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting) "Digitale zorgmodule Diabetes"
 * status = #requested
 * intent = #order
 * priority = #routine

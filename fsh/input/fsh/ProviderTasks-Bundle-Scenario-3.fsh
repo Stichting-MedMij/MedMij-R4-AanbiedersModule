@@ -1,5 +1,19 @@
 // Bundle with FHIR test instances in FSH format for ProviderTasks test scenario 3
 
+Instance: ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan
+Usage: #example
+* text
+  * status = #empty
+  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* identifier
+  * system = "http://hing.zno.com/servicerequest/id"
+  * value = "2025-33344555"
+* status = #active
+* intent = #plan
+* subject = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
+* requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
+
 Instance: ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
 Usage: #example
@@ -28,7 +42,7 @@ Usage: #example
   * period = 1
   * periodUnit = #d
 
-Instance: ProviderTasks-MainTask-Meetopdracht-Saturatiemeting
+Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-1
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -38,44 +52,10 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
-* identifier
-  * system = "https://hing.zno.com/taskIdentifier"
-  * value = "MAINTASK-Saturatie"
-* groupIdentifier
-  * system = "https://hinq.nl/fhir/identifiers/task-group"
-  * value = "module-COPD-2026"
-  * type.text = "Digitale zorgmodule COPD"
-* status = #received
-* intent = #order
-* priority = #routine
-* description = "Meet je saturatie voor 1 week, 1x per dag"
-* for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
-* executionPeriod
-  * start = "2026-01-05"
-  * end = "2026-01-11"
-* authoredOn = "2026-01-05T08:00:00+01:00"
-* lastModified = "2026-01-05T08:00:00+01:00"
-* requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
-* owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
-
-Instance: ProviderTasks-SubTask-Meetopdracht-Saturatiemeting-1
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
-Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
-* extension
-  * url = $koppeltaal-instantiates
-  * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
-    * type = "ActivityDefinition"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-1"
-* groupIdentifier
-  * system = "https://hinq.nl/fhir/identifiers/task-group"
-  * value = "module-COPD-2026"
-  * type.text = "Digitale zorgmodule COPD"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Saturatiemeting)
 * status = #received
 * intent = #order
 * priority = #routine
@@ -89,7 +69,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Saturatiemeting-2
+Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -99,14 +79,10 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-2"
-* groupIdentifier
-  * system = "https://hinq.nl/fhir/identifiers/task-group"
-  * value = "module-COPD-2026"
-  * type.text = "Digitale zorgmodule COPD"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Saturatiemeting)
 * status = #received
 * intent = #order
 * priority = #routine
@@ -120,7 +96,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Saturatiemeting-3
+Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -130,14 +106,10 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-3"
-* groupIdentifier
-  * system = "https://hinq.nl/fhir/identifiers/task-group"
-  * value = "module-COPD-2026"
-  * type.text = "Digitale zorgmodule COPD"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Saturatiemeting)
 * status = #received
 * intent = #order
 * priority = #routine
@@ -151,7 +123,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Saturatiemeting-4
+Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -161,14 +133,10 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-4"
-* groupIdentifier
-  * system = "https://hinq.nl/fhir/identifiers/task-group"
-  * value = "module-COPD-2026"
-  * type.text = "Digitale zorgmodule COPD"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Saturatiemeting)
 * status = #received
 * intent = #order
 * priority = #routine
@@ -182,7 +150,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Saturatiemeting-5
+Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-5
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -192,14 +160,10 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-5"
-* groupIdentifier
-  * system = "https://hinq.nl/fhir/identifiers/task-group"
-  * value = "module-COPD-2026"
-  * type.text = "Digitale zorgmodule COPD"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Saturatiemeting)
 * status = #received
 * intent = #order
 * priority = #routine
@@ -213,7 +177,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Saturatiemeting-6
+Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-6
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -223,14 +187,10 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-6"
-* groupIdentifier
-  * system = "https://hinq.nl/fhir/identifiers/task-group"
-  * value = "module-COPD-2026"
-  * type.text = "Digitale zorgmodule COPD"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Saturatiemeting)
 * status = #received
 * intent = #order
 * priority = #routine
@@ -244,7 +204,7 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
-Instance: ProviderTasks-SubTask-Meetopdracht-Saturatiemeting-7
+Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-7
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * text
@@ -254,14 +214,10 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-7"
-* groupIdentifier
-  * system = "https://hinq.nl/fhir/identifiers/task-group"
-  * value = "module-COPD-2026"
-  * type.text = "Digitale zorgmodule COPD"
-* partOf = Reference(ProviderTasks-MainTask-Meetopdracht-Saturatiemeting)
 * status = #received
 * intent = #order
 * priority = #routine
@@ -307,13 +263,10 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Leven-COPD)
     * type = "ActivityDefinition"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "TASK-1673834"
-* groupIdentifier
-  * system = "https://hinq.nl/fhir/identifiers/task-group"
-  * value = "module-COPD-2026"
-  * type.text = "Digitale zorgmodule COPD"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -358,13 +311,10 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Inhalatiemedicatie)
     * type = "ActivityDefinition"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "TASK-983823471"
-* groupIdentifier
-  * system = "https://hinq.nl/fhir/identifiers/task-group"
-  * value = "module-COPD-2026"
-  * type.text = "Digitale zorgmodule COPD"
 * status = #requested
 * intent = #order
 * priority = #routine
@@ -410,13 +360,10 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Vragenlijst-Wat-Bereiken)
     * type = "ActivityDefinition"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "TASK-74745858"
-* groupIdentifier
-  * system = "https://hinq.nl/fhir/identifiers/task-group"
-  * value = "module-COPD-2026"
-  * type.text = "Digitale zorgmodule COPD"
 * status = #requested
 * intent = #order
 * priority = #routine
