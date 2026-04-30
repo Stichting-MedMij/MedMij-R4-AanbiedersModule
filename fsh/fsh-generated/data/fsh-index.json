@@ -4,24 +4,24 @@
     "fshName": "ProviderTasks-ActivityDefinition-Informatie-Cholesterol",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 554,
-    "endLine": 572
+    "startLine": 481,
+    "endLine": 499
   },
   {
     "outputFile": "ActivityDefinition-ProviderTasks-ActivityDefinition-Informatie-Diabetes.json",
     "fshName": "ProviderTasks-ActivityDefinition-Informatie-Diabetes",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 501,
-    "endLine": 519
+    "startLine": 484,
+    "endLine": 502
   },
   {
     "outputFile": "ActivityDefinition-ProviderTasks-ActivityDefinition-Informatie-Gezonder-Leven.json",
     "fshName": "ProviderTasks-ActivityDefinition-Informatie-Gezonder-Leven",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 550,
-    "endLine": 568
+    "startLine": 533,
+    "endLine": 551
   },
   {
     "outputFile": "ActivityDefinition-ProviderTasks-ActivityDefinition-Informatie-Inhalatiemedicatie.json",
@@ -44,8 +44,8 @@
     "fshName": "ProviderTasks-ActivityDefinition-Informatie-Thuismeting",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 605,
-    "endLine": 623
+    "startLine": 530,
+    "endLine": 548
   },
   {
     "outputFile": "ActivityDefinition-ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting.json",
@@ -76,8 +76,8 @@
     "fshName": "ProviderTasks-ActivityDefinition-Vragenlijst-Uw-Situatie",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 656,
-    "endLine": 674
+    "startLine": 579,
+    "endLine": 597
   },
   {
     "outputFile": "ActivityDefinition-ProviderTasks-ActivityDefinition-Vragenlijst-Wat-Bereiken.json",
@@ -92,40 +92,40 @@
     "fshName": "ProviderTasks-ActivityDefinition-Vragenlijst-WoonLeefsituatie",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 599,
-    "endLine": 617
+    "startLine": 582,
+    "endLine": 600
   },
   {
     "outputFile": "Endpoint-ProviderTasks-Endpoint-HINQ.json",
     "fshName": "ProviderTasks-Endpoint-HINQ",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 648,
-    "endLine": 661
+    "startLine": 631,
+    "endLine": 644
   },
   {
     "outputFile": "Endpoint-ProviderTasks-Endpoint-Minddistrict.json",
     "fshName": "ProviderTasks-Endpoint-Minddistrict",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 706,
-    "endLine": 719
+    "startLine": 627,
+    "endLine": 640
   },
   {
     "outputFile": "Organization-ProviderTasks-Organization-Huisartsenpraktijk-De-Haard.json",
     "fshName": "ProviderTasks-Organization-Huisartsenpraktijk-De-Haard",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 745,
-    "endLine": 770
+    "startLine": 728,
+    "endLine": 753
   },
   {
     "outputFile": "Patient-ProviderTasks-Patient-De-Groot.json",
     "fshName": "ProviderTasks-Patient-De-Groot",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 721,
-    "endLine": 764
+    "startLine": 642,
+    "endLine": 685
   },
   {
     "outputFile": "Patient-ProviderTasks-Patient-Van-Dijk.json",
@@ -140,24 +140,24 @@
     "fshName": "ProviderTasks-Patient-Van-Duinen",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 663,
-    "endLine": 706
+    "startLine": 646,
+    "endLine": 689
   },
   {
     "outputFile": "Practitioner-ProviderTasks-Practitioner-De-Haard.json",
     "fshName": "ProviderTasks-Practitioner-De-Haard",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 719,
-    "endLine": 743
+    "startLine": 702,
+    "endLine": 726
   },
   {
     "outputFile": "Practitioner-ProviderTasks-Practitioner-De-Jong.json",
     "fshName": "ProviderTasks-Practitioner-De-Jong",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 777,
-    "endLine": 801
+    "startLine": 698,
+    "endLine": 722
   },
   {
     "outputFile": "Practitioner-ProviderTasks-Practitioner-Van-Rijn.json",
@@ -172,16 +172,16 @@
     "fshName": "ProviderTasks-PractitionerRole-De-Haard",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 708,
-    "endLine": 717
+    "startLine": 691,
+    "endLine": 700
   },
   {
     "outputFile": "PractitionerRole-ProviderTasks-PractitionerRole-De-Jong.json",
     "fshName": "ProviderTasks-PractitionerRole-De-Jong",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 766,
-    "endLine": 775
+    "startLine": 687,
+    "endLine": 696
   },
   {
     "outputFile": "PractitionerRole-ProviderTasks-PractitionerRole-Van-Rijn.json",
@@ -312,140 +312,12 @@
     "endLine": 114
   },
   {
-    "outputFile": "Task-ProviderTasks-MainTask-Meetopdracht-Bloeddrukmeting.json",
-    "fshName": "ProviderTasks-MainTask-Meetopdracht-Bloeddrukmeting",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 75,
-    "endLine": 104
-  },
-  {
-    "outputFile": "Task-ProviderTasks-MainTask-Meetopdracht-Glucosemeting.json",
-    "fshName": "ProviderTasks-MainTask-Meetopdracht-Glucosemeting",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 78,
-    "endLine": 107
-  },
-  {
     "outputFile": "Task-ProviderTasks-MainTask-Meetopdracht-Saturatiemeting.json",
     "fshName": "ProviderTasks-MainTask-Meetopdracht-Saturatiemeting",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-3.fsh",
     "startLine": 31,
     "endLine": 59
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-1.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-1",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 106,
-    "endLine": 136
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-10.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-10",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 394,
-    "endLine": 424
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-11.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-11",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 426,
-    "endLine": 456
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-12.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-12",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 458,
-    "endLine": 488
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-13.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-13",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 490,
-    "endLine": 520
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-14.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-14",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 522,
-    "endLine": 552
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-2.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-2",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 138,
-    "endLine": 168
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-3.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-3",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 170,
-    "endLine": 200
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-4.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-4",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 202,
-    "endLine": 232
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-5.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-5",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 234,
-    "endLine": 264
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-6.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-6",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 266,
-    "endLine": 296
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-7.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-7",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 298,
-    "endLine": 328
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-8.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-8",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 330,
-    "endLine": 360
-  },
-  {
-    "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-9.json",
-    "fshName": "ProviderTasks-SubTask-Meetopdracht-Bloeddrukmeting-9",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 362,
-    "endLine": 392
   },
   {
     "outputFile": "Task-ProviderTasks-SubTask-Meetopdracht-Saturatiemeting-1.json",
@@ -508,24 +380,24 @@
     "fshName": "ProviderTasks-Task-Informatie-Cholesterol",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 574,
-    "endLine": 602
+    "startLine": 501,
+    "endLine": 527
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Informatie-Diabetes.json",
     "fshName": "ProviderTasks-Task-Informatie-Diabetes",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 522,
-    "endLine": 548
+    "startLine": 505,
+    "endLine": 531
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Informatie-Gezonder-Leven.json",
     "fshName": "ProviderTasks-Task-Informatie-Gezonder-Leven",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 570,
-    "endLine": 596
+    "startLine": 553,
+    "endLine": 579
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Informatie-Informatie-Inhalatiemedicatie.json",
@@ -540,8 +412,8 @@
     "fshName": "ProviderTasks-Task-Informatie-Thuis-Bloeddrukmeten",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 625,
-    "endLine": 653
+    "startLine": 550,
+    "endLine": 576
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Informatie-leven-COPD.json",
@@ -552,124 +424,236 @@
     "endLine": 328
   },
   {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-1.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-1",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 75,
+    "endLine": 102
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-10.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-10",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 336,
+    "endLine": 363
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-11.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-11",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 365,
+    "endLine": 392
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-12.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-12",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 394,
+    "endLine": 421
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-13.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-13",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 423,
+    "endLine": 450
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-14.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-14",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 452,
+    "endLine": 479
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-2.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-2",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 104,
+    "endLine": 131
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-3.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-3",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 133,
+    "endLine": 160
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-4.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-4",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 162,
+    "endLine": 189
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-5.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-5",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 191,
+    "endLine": 218
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-6.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-6",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 220,
+    "endLine": 247
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-7.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-7",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 249,
+    "endLine": 276
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-8.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-8",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 278,
+    "endLine": 305
+  },
+  {
+    "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-9.json",
+    "fshName": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-9",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 307,
+    "endLine": 334
+  },
+  {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-1.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-1",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 109,
-    "endLine": 135
+    "startLine": 79,
+    "endLine": 106
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-10.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-10",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 361,
-    "endLine": 387
+    "startLine": 340,
+    "endLine": 367
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-11.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-11",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 389,
-    "endLine": 415
+    "startLine": 369,
+    "endLine": 396
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-12.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-12",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 417,
-    "endLine": 443
+    "startLine": 398,
+    "endLine": 425
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-13.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-13",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 445,
-    "endLine": 471
+    "startLine": 427,
+    "endLine": 454
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-14.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-14",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 473,
-    "endLine": 499
+    "startLine": 456,
+    "endLine": 482
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-2.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-2",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 137,
-    "endLine": 163
+    "startLine": 108,
+    "endLine": 135
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-3.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-3",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 165,
-    "endLine": 191
+    "startLine": 137,
+    "endLine": 164
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-4.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-4",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 193,
-    "endLine": 219
+    "startLine": 166,
+    "endLine": 193
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-5.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-5",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 221,
-    "endLine": 247
+    "startLine": 195,
+    "endLine": 222
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-6.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-6",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 249,
-    "endLine": 275
+    "startLine": 224,
+    "endLine": 251
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-7.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-7",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 277,
-    "endLine": 303
+    "startLine": 253,
+    "endLine": 280
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-8.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-8",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 305,
-    "endLine": 331
+    "startLine": 282,
+    "endLine": 309
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Meetopdracht-Glucosemeting-9.json",
     "fshName": "ProviderTasks-Task-Meetopdracht-Glucosemeting-9",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 333,
-    "endLine": 359
+    "startLine": 311,
+    "endLine": 338
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Vragenlijst-Uw-Situatie.json",
     "fshName": "ProviderTasks-Task-Vragenlijst-Uw-Situatie",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 676,
-    "endLine": 704
+    "startLine": 599,
+    "endLine": 625
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Vragenlijst-Wat-Bereiken.json",
@@ -684,7 +668,7 @@
     "fshName": "ProviderTasks-Task-Vragenlijst-WoonLeefsituatie",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 620,
-    "endLine": 646
+    "startLine": 603,
+    "endLine": 629
   }
 ]
