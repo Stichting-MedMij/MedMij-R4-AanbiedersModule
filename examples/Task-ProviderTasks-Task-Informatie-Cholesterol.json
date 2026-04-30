@@ -19,19 +19,18 @@
       }
     }
   ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting",
+      "display": "Digitale zorgmodule CVRM"
+    }
+  ],
   "identifier": [
     {
       "system": "http://medrie.nl/taskIdentifier",
       "value": "SUBTASK-Informatie-Cholesterol-1"
     }
   ],
-  "groupIdentifier": {
-    "system": "https://medrie.nl/fhir/identifiers/task-group",
-    "value": "module-CVRM-2025",
-    "type": {
-      "text": "Digitale zorgmodule CVRM"
-    }
-  },
   "status": "received",
   "intent": "order",
   "priority": "routine",

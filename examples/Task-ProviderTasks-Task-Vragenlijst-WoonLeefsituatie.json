@@ -25,13 +25,12 @@
       "value": "TASK-Vragenlijst-Woonsituatie-9642"
     }
   ],
-  "groupIdentifier": {
-    "system": "https://medrie.nl/fhir/identifiers/task-group",
-    "value": "module-diabetes-2025",
-    "type": {
-      "text": "Digitale zorgmodule Diabetes"
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting",
+      "display": "Digitale zorgmodule Diabetes"
     }
-  },
+  ],
   "status": "requested",
   "intent": "order",
   "priority": "routine",

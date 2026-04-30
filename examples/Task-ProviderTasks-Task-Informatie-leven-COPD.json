@@ -19,19 +19,18 @@
       }
     }
   ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting",
+      "display": "Digitale zorgmodule COPD"
+    }
+  ],
   "identifier": [
     {
-      "system": "http://hinq.nl/taskIdentifier",
+      "system": "https://hing.zno.com/taskIdentifier",
       "value": "TASK-1673834"
     }
   ],
-  "groupIdentifier": {
-    "system": "https://hinq.nl/fhir/identifiers/task-group",
-    "value": "module-COPD-2026",
-    "type": {
-      "text": "Digitale zorgmodule COPD"
-    }
-  },
   "status": "received",
   "intent": "order",
   "priority": "routine",

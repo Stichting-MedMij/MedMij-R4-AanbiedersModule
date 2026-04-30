@@ -1,6 +1,6 @@
 {
   "resourceType": "Task",
-  "id": "ProviderTasks-Task-Informatie-Diabetes",
+  "id": "ProviderTasks-Task-Meetopdracht-Glucosemeting-10",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/pt-Task"
@@ -14,7 +14,7 @@
     {
       "url": "http://vzvz.nl/fhir/StructureDefinition/instantiates",
       "valueReference": {
-        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Informatie-Diabetes",
+        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting",
         "type": "ActivityDefinition"
       }
     }
@@ -22,7 +22,7 @@
   "identifier": [
     {
       "system": "http://medrie.nl/taskIdentifier",
-      "value": "TASK-Informatie-diabetes-12345"
+      "value": "SUBTASK-Glucose-10"
     }
   ],
   "basedOn": [
@@ -34,17 +34,20 @@
   "status": "received",
   "intent": "order",
   "priority": "routine",
-  "description": "Lees wat diabetes type 2 is en wat je zelf kunt doen",
+  "description": "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app",
+  "focus": {
+    "reference": "ServiceRequest/ProviderTasks-ServiceRequestExecution-Glucosemeting"
+  },
   "for": {
     "reference": "Patient/ProviderTasks-Patient-Van-Duinen",
     "display": "Tom van Duinen"
   },
   "executionPeriod": {
-    "start": "2025-12-22",
-    "end": "2025-12-28"
+    "start": "2025-12-26T18:00:00+01:00",
+    "end": "2025-12-26T00:00:00+01:00"
   },
-  "authoredOn": "2025-12-23T07:00:00+01:00",
-  "lastModified": "2025-12-23T07:00:00+01:00",
+  "authoredOn": "2025-12-22T08:00:00+01:00",
+  "lastModified": "2025-12-22T08:00:00+01:00",
   "requester": {
     "reference": "PractitionerRole/ProviderTasks-PractitionerRole-De-Haard",
     "display": "A. de Haard, Huisarts"

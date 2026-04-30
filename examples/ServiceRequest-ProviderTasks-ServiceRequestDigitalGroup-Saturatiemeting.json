@@ -1,0 +1,29 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting",
+  "meta": {
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "identifier": [
+    {
+      "system": "http://hing.zno.com/servicerequest/id",
+      "value": "2025-33344555"
+    }
+  ],
+  "status": "active",
+  "intent": "plan",
+  "subject": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
+    "display": "Sanne van Dijk"
+  },
+  "requester": {
+    "reference": "PractitionerRole/ProviderTasks-PractitionerRole-Van-Rijn",
+    "display": "M. van Rijn, huisarts"
+  }
+}

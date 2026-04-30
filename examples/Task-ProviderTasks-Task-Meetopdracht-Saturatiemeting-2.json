@@ -1,6 +1,6 @@
 {
   "resourceType": "Task",
-  "id": "ProviderTasks-Task-Informatie-Informatie-Inhalatiemedicatie",
+  "id": "ProviderTasks-Task-Meetopdracht-Saturatiemeting-2",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/pt-Task"
@@ -14,7 +14,7 @@
     {
       "url": "http://vzvz.nl/fhir/StructureDefinition/instantiates",
       "valueReference": {
-        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Informatie-Inhalatiemedicatie",
+        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting",
         "type": "ActivityDefinition"
       }
     }
@@ -28,23 +28,23 @@
   "identifier": [
     {
       "system": "https://hing.zno.com/taskIdentifier",
-      "value": "TASK-983823471"
+      "value": "SUBTASK-Saturatie-2"
     }
   ],
-  "status": "requested",
+  "status": "received",
   "intent": "order",
   "priority": "routine",
-  "description": "In deze module leer je hoe je je inhalatiemedicatie goed gebruikt. Je krijgt stap-voor-stap uitleg voor jouw inhalator, tips om veelgemaakte fouten te voorkomen en een handig geheugensteuntje voor vaste innamemomenten. Zo komt de medicatie beter in je longen en heb je meer kans op minder klachten. Je leest ook wanneer je contact opneemt met je zorgverlener, bijvoorbeeld bij toenemende benauwdheid of bijwerkingen.",
+  "description": "Meet je zuurstofsaturatie (SpO2) met de saturatiemeter",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
     "display": "Sanne van Dijk"
   },
   "executionPeriod": {
-    "start": "2025-01-05",
-    "end": "2025-01-11"
+    "start": "2026-01-06",
+    "end": "2026-01-06"
   },
-  "authoredOn": "2025-12-24T07:00:00+01:00",
-  "lastModified": "2025-12-24T07:00:00+01:00",
+  "authoredOn": "2026-01-05T08:00:00+01:00",
+  "lastModified": "2026-01-05T08:00:00+01:00",
   "requester": {
     "reference": "PractitionerRole/ProviderTasks-PractitionerRole-Van-Rijn",
     "display": "M. van Rijn, huisarts"

@@ -1,6 +1,6 @@
 {
   "resourceType": "Task",
-  "id": "ProviderTasks-Task-Vragenlijst-Uw-Situatie",
+  "id": "ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-2",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/pt-Task"
@@ -14,7 +14,7 @@
     {
       "url": "http://vzvz.nl/fhir/StructureDefinition/instantiates",
       "valueReference": {
-        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Vragenlijst-Uw-Situatie",
+        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting",
         "type": "ActivityDefinition"
       }
     }
@@ -28,23 +28,26 @@
   "identifier": [
     {
       "system": "http://medrie.nl/taskIdentifier",
-      "value": "SUBTASK-Informatie-Situatie-1"
+      "value": "SUBTASK-Bloeddruk-2"
     }
   ],
-  "status": "failed",
+  "status": "received",
   "intent": "order",
   "priority": "routine",
-  "description": "In deze vragenlijst beantwoord je vragen over jouw situatie rond hart- en vaatziekten. Denk aan klachten, leefstijl (zoals bewegen, roken en voeding) en andere factoren die invloed kunnen hebben op je gezondheid. Je antwoorden helpen jou en je zorgverlener om een compleet beeld te krijgen en samen te bepalen welke stappen het meest belangrijk zijn.",
+  "description": "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast.",
+  "focus": {
+    "reference": "ServiceRequest/ProviderTasks-ServiceRequestExecution-Bloeddrukmeting"
+  },
   "for": {
     "reference": "Patient/ProviderTasks-Patient-De-Groot",
     "display": "Koos de Groot"
   },
   "executionPeriod": {
     "start": "2025-12-22",
-    "end": "2025-12-28"
+    "end": "2025-12-22"
   },
-  "authoredOn": "2025-12-23T18:00:00+01:00",
-  "lastModified": "2025-12-23T18:00:00+01:00",
+  "authoredOn": "2025-12-22T08:00:00+01:00",
+  "lastModified": "2025-12-22T08:00:00+01:00",
   "requester": {
     "reference": "PractitionerRole/ProviderTasks-PractitionerRole-De-Jong",
     "display": "L. de Jong, Huisarts"
