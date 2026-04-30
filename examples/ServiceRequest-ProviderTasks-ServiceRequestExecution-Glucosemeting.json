@@ -1,9 +1,9 @@
 {
   "resourceType": "ServiceRequest",
-  "id": "ProviderTasks-ServiceRequest-Glucosemeting",
+  "id": "ProviderTasks-ServiceRequestExecution-Glucosemeting",
   "meta": {
     "profile": [
-      "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest"
+      "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder"
     ]
   },
   "text": {

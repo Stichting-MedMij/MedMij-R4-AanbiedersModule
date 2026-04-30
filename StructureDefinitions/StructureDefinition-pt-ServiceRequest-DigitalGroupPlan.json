@@ -1,12 +1,12 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "pt-ServiceRequest",
+  "id": "pt-ServiceRequest-DigitalGroupPlan",
   "text": {
     "status": "empty",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
-  "url": "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest",
-  "name": "ProviderTasksServiceRequest",
+  "url": "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan",
+  "name": "ProviderTasksServiceRequestDigitalGroupPlan",
   "status": "draft",
   "publisher": "MedMij",
   "contact": [
@@ -21,8 +21,8 @@
       ]
     }
   ],
-  "description": "Clinical order for a patient-specific digital activity that a healthcare professional requests for a specific patient, such as completing a questionnaire, performing home measurements, viewing educational content, or launching a third-party module.",
-  "purpose": "To represent the clinical order to start or perform a specific digital (eHealth) activity for a patient. This ServiceRequest provides the clinical intent, context, requested schedule, and patient-specific instructions, and can serve as the basis for one or more Task resources that manage execution and tracking of the activity.",
+  "description": "Clinical order to initiate a digital group plan for a specific patient. This ServiceRequest identifies which digital group plan is requested. Patient-specific scheduling and instructions are provided in a separate ServiceRequest",
+  "purpose": "To represent the healthcare professional’s order to start a specific digital group plan for a patient.",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -35,10 +35,10 @@
       {
         "id": "ServiceRequest",
         "path": "ServiceRequest",
-        "short": "ServiceRequest",
-        "definition": "Patient-specific clinical order for requesting a digital (eHealth) activity in the ProviderTasks context. It links the patient, the requested activity definition, timing/schedule, and clinical rationale, and may include patient-specific instructions. It can be referenced by Task resources that coordinate execution and status tracking.",
+        "short": "ServiceRequest digital group plan",
+        "definition": "Patient-specific clinical order to initiate a digital group plan. It is referenced from the patient-facing Task via Task.basedOn.",
         "alias": [
-          "Zorgopdracht",
+          "Module-opdracht",
           "referral",
           "referral request",
           "transfer of care request"
@@ -108,12 +108,6 @@
             ]
           }
         ]
-      },
-      {
-        "id": "ServiceRequest.patientInstruction",
-        "path": "ServiceRequest.patientInstruction",
-        "short": "Patient-specific instructions",
-        "definition": "Patient or consumer-oriented instructions related to the requested activity. Use this element to convey patient-specific guidance that should be shown alongside the Task(s) executing this order (e.g. e.g., home blood pressure monitoring for 8 weeks, once daily in the morning)."
       }
     ]
   }

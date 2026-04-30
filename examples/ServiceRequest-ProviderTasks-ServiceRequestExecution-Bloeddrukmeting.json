@@ -1,9 +1,9 @@
 {
   "resourceType": "ServiceRequest",
-  "id": "ProviderTasks-ServiceRequest-Bloeddrukmeting",
+  "id": "ProviderTasks-ServiceRequestExecution-Bloeddrukmeting",
   "meta": {
     "profile": [
-      "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest"
+      "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder"
     ]
   },
   "text": {
