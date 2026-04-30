@@ -74,6 +74,11 @@
         ]
       },
       {
+        "id": "ServiceRequest.intent",
+        "path": "ServiceRequest.intent",
+        "patternCode": "order"
+      },
+      {
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
         "definition": "The patient for whom the digital activity applies.",

@@ -21,7 +21,7 @@
       ]
     }
   ],
-  "description": "Clinical order to initiate a digital group plan for a specific patient. This ServiceRequest identifies which digital group plan is requested. Patient-specific scheduling and instructions are provided in a separate ServiceRequest",
+  "description": "Clinical request representing the selected digital group plan for a specific patient. This ServiceRequest identifies which digital group plan is requested. Patient-specific scheduling and instructions are provided in a separate ServiceRequest",
   "purpose": "To represent the healthcare professional’s order to start a specific digital group plan for a patient.",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
@@ -72,6 +72,11 @@
             ]
           }
         ]
+      },
+      {
+        "id": "ServiceRequest.intent",
+        "path": "ServiceRequest.intent",
+        "patternCode": "plan"
       },
       {
         "id": "ServiceRequest.subject",
