@@ -1,7 +1,7 @@
 Profile: ProviderTasksServiceRequestDigitalGroupPlan
 Parent: ServiceRequest
 Id: pt-ServiceRequest-DigitalGroupPlan
-Description: "Clinical order to initiate a digital group plan for a specific patient. This ServiceRequest identifies which digital group plan is requested. Patient-specific scheduling and instructions are provided in a separate ServiceRequest"
+Description: "Clinical request representing the selected digital group plan for a specific patient. This ServiceRequest identifies which digital group plan is requested. Patient-specific scheduling and instructions are provided in a separate ServiceRequest"
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContactMedMij
@@ -13,6 +13,7 @@ Description: "Clinical order to initiate a digital group plan for a specific pat
 * insert Origin
 * .
 ^definition = "Patient-specific clinical order to initiate a digital group plan. It is referenced from the patient-facing Task via Task.basedOn."
+* intent = #plan
 * subject only Reference(Patient or Group or Location or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
   * ^definition = "The patient for whom the activity is requested."
 * requester only Reference(Practitioner or PractitionerRole or Organization or Patient or RelatedPerson or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)

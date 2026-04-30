@@ -13,6 +13,7 @@ Description: "Patient-specific execution plan for a digital activity. This Servi
 * insert Origin
 * .
 ^definition = "Patient-specific execution plan for a digital activity, containing scheduling (occurrence) and patientInstruction. It is referenced from Task via Task.focus."
+* intent = #order
 * subject only Reference(Patient or Group or Location or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
   * ^definition = "The patient for whom the digital activity applies."
 * requester only Reference(Practitioner or PractitionerRole or Organization or Patient or RelatedPerson or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)
