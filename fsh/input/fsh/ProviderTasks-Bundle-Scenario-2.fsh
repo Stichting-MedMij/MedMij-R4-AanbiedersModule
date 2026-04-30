@@ -1,6 +1,6 @@
 // Bundle with FHIR test instances in FSH format for ProviderTasks test scenario 2
 Instance: ProviderTasks-ServiceRequestExecution-Bloeddrukmeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder
 Usage: #example
 * text
   * status = #empty
@@ -31,7 +31,7 @@ U gaat gedurende 1 week zelf uw bloeddruk meten. Volg hierbij deze stappen:
 """
 
 Instance: ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-GroupPlan
 Usage: #example
 * text
   * status = #empty
