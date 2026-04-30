@@ -43,6 +43,7 @@ Usage: #example
   * value = "2025-1111234"
 * status = #active
 * intent = #plan
+* code.text = "Digitale zorgmodule Diabetes"
 * subject = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 
