@@ -31,7 +31,7 @@ U gaat gedurende 1 week zelf uw bloeddruk meten. Volg hierbij deze stappen:
 """
 
 Instance: ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-GroupPlan
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan
 Usage: #example
 * text
   * status = #empty

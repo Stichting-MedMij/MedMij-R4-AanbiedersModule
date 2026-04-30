@@ -33,7 +33,7 @@ U gaat gedurende 1 week zelf uw bloedglucose meten. Volg hierbij deze stappen:
 """
 
 Instance: ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-GroupPlan
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan
 Usage: #example
 * text
   * status = #empty

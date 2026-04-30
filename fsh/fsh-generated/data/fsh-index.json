@@ -192,6 +192,22 @@
     "endLine": 487
   },
   {
+    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestExecution-Bloeddrukmeting.json",
+    "fshName": "ProviderTasks-ServiceRequestExecution-Bloeddrukmeting",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 2,
+    "endLine": 22
+  },
+  {
+    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestExecution-Glucosemeting.json",
+    "fshName": "ProviderTasks-ServiceRequestExecution-Glucosemeting",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
+    "startLine": 2,
+    "endLine": 22
+  },
+  {
     "outputFile": "StructureDefinition-pt-ActivityDefinition.json",
     "fshName": "ProviderTasksActivityDefinition",
     "fshType": "Profile",
