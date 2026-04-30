@@ -85,7 +85,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Glucosemeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "MAINTASK-Glucose"

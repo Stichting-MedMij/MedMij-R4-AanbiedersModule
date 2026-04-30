@@ -82,7 +82,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "MAINTASK-Bloeddruk"
@@ -113,7 +113,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-1"
@@ -145,7 +145,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-2"
@@ -177,7 +177,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-3"
@@ -209,7 +209,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-4"
@@ -241,7 +241,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-5"
@@ -273,7 +273,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-6"
@@ -305,7 +305,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-7"
@@ -337,7 +337,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-8"
@@ -369,7 +369,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-9"
@@ -401,7 +401,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-10"
@@ -433,7 +433,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-11"
@@ -465,7 +465,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-12"
@@ -497,7 +497,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-13"
@@ -529,7 +529,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequest-Bloeddrukmeting)
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting)
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "SUBTASK-Bloeddruk-14"

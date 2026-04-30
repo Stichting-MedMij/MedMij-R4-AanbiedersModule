@@ -192,6 +192,22 @@
     "endLine": 487
   },
   {
+    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting.json",
+    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 33,
+    "endLine": 45
+  },
+  {
+    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting.json",
+    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
+    "startLine": 35,
+    "endLine": 47
+  },
+  {
     "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestExecution-Bloeddrukmeting.json",
     "fshName": "ProviderTasks-ServiceRequestExecution-Bloeddrukmeting",
     "fshType": "Instance",
