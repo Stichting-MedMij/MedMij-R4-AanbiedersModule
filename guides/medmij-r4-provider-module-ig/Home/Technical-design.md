@@ -14,17 +14,25 @@ This Technical Design (TD) describes the technical implementation of the Provide
 The FHIR version used for this IG is HL7 FHIR R4 (4.0.1).
 
 ## Workflow model
-For this use case, the [HL7 Clinical Order Workflows IG (COW)](https://build.fhir.org/ig/HL7/fhir-cow-ig/en/index.html) has been used as the guiding framework. Clinical Order Workflows provides shared data models and coordination rules for Request-fulfilment workflows (e.g., order initiation, order grouping, status tracking and outcome sharing). The patterns and concepts in this Technical Design (such as the use of ServiceRequest as the grouping item for related Tasks, and the use of Task for tracking patient-facing execution and status) are aligned with the guidance from that IG.
+For this use case, the [HL7 Clinical Order Workflows IG (COW)](https://build.fhir.org/ig/HL7/fhir-cow-ig/en/index.html) has been used as the guiding framework. Clinical Order Workflows provides shared data models and coordination rules for Request-fulfilment workflows (e.g., order initiation, order grouping, status tracking and outcome sharing). The patterns and concepts in this Technical Design are aligned with the guidance from that IG.
 
 ### Definitions, Requests, and Events
-- **Definitions:** reusable definitions of digital activities, primarily represented by the **ActivityDefinition** resource (for example, an ActivityDefinition that defines a questionnaire-based activity).
-- **Requests:** patient-specific orders/requests indicating that something should be done. In this IG, Requests are represented by two ServiceRequest profiles; `pt-ServiceRequest-DigitalGroupPlan` (the grouping item for related Tasks) and `pt-ServiceRequest-ExecutionOrder` (patient-specific execution details for a single activity).
-- **Events (out of scope):** records of execution and results (e.g., Observation, Procedure, QuestionnaireResponse).
-- **Task (Request/Event):** per the [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html#12.5.1.1) the Task resource takes on characteristics of both Requests and Events and shares characteristics from both patterns. In this IG, Task is used as the patient-facing workflow item that represents the request to perform a digital activity (Request side) and at the same time tracks the execution and status of that activity (Event side, within the scope of this IG limited to status tracking).
+The [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html#12.5.1.1) groups workflow-relevant resources into three categories: Definitions, Requests, and Events. The **Task** resource takes on characteristics of both Requests and Events (FHIR R4 Workflow spec, footnote ‡) and is therefore listed under both categories below.
 
-### Core relationships in ProviderTasks
+- **Definitions:** reusable definitions of digital activities, primarily represented by the **ActivityDefinition** resource (for example, an ActivityDefinition that defines a questionnaire activity).
+- **Requests:** patient-specific orders/requests indicating that something should be done. In this IG, two distinct Request resource types are used:
+  - **ServiceRequest** — the clinical order, represented by two profiles in this IG:
+    - `pt-ServiceRequest-DigitalGroupPlan` — the grouping item for related Tasks.
+    - `pt-ServiceRequest-ExecutionOrder` — patient-specific execution details for a single activity.
+  - **Task** — the patient-facing request to perform a digital activity. Task also carries Event characteristics; see the Events bullet below.
+- **Events:** records of execution and results.
+  - Clinical results produced by executing a digital activity (e.g., Observation, Procedure, QuestionnaireResponse) are **out of scope** for this IG.
+  - The Event-side of the **Task** resource is in scope and is used to track execution progress and completion through `Task.status`.
+
+
+### Relationships in ProviderTasks
 - **ActivityDefinition (Definition):** describes the digital activity and provides generic, reusable information on what the activity is and how it should be used. If the activity is launchable, ActivityDefinition references one or more Endpoint(s) that provide the technical access/launch details.
-- **ServiceRequest – DigitalGroupPlan (Request):** the patient-specific clinical order that identifies which digital group plan/module is requested for the patient. It acts as the grouping item that ties related Tasks together and is referenced from each Task via `Task.basedOn`. The human-readable name of the digital group plan is carried in `ServiceRequest.code.text`.
+- **ServiceRequest – DigitalGroupPlan (Request):** the patient-specific clinical request that identifies which digital group plan/module is requested for the patient. It acts as the grouping item that ties related Tasks together and is referenced from each Task via `Task.basedOn`. The human-readable name of the digital group plan is carried in `ServiceRequest.code.text`.
 - **ServiceRequest – ExecutionOrder (Request, optional):** the patient-specific execution plan for a single digital activity, containing scheduling (`occurrence`) and `patientInstruction` that deviate from or complement the generic ActivityDefinition guidance. It is referenced from a Task via `Task.focus`.
 - **Task (Request/Event):** the patient-facing workflow item shown in the PHR task list. Task is treated as a hybrid Request/Event resource per the FHIR R4 Workflow specification: it represents the request to perform a digital activity for the patient and at the same time carries the execution status of that activity. Each Task represents one digital activity and links to the `pt-ServiceRequest-DigitalGroupPlan` via `Task.basedOn` (grouping) and, when patient-specific execution details are needed, to a `pt-ServiceRequest-ExecutionOrder` via `Task.focus`.
 
@@ -33,14 +41,6 @@ Tasks that belong to the same digital care module are grouped through a shared *
 - **Grouping mechanism:** every Task references the same `pt-ServiceRequest-DigitalGroupPlan` via `Task.basedOn`. All Tasks that share the same `Task.basedOn` reference belong to the same digital group plan and can be presented and filtered together in the PHR.
 - **Group name:** the human-readable name of the digital group plan is carried in `ServiceRequest.code.text` of the referenced DigitalGroupPlan. This same name is used as the display label of the Task group in the PHR; the value in `ServiceRequest.code.text` MUST match the name used to identify the group in the `Task.basedOn` reference.
 - **Link to definition:** each Task in the group still links to its own ActivityDefinition (via the Koppeltaal `instantiates` extension), which describes the specific digital activity to be launched or performed. Different Tasks within the same group MAY reference different ActivityDefinitions.
-
-### ServiceRequest profiles
-This IG defines two distinct ServiceRequest profiles. They serve different purposes and are referenced from the Task in different ways. A single Task MAY reference both at the same time.
-
-| Profile | Purpose | Referenced from | Intent |
-| --- | --- | --- | --- |
-| `pt-ServiceRequest-DigitalGroupPlan` | Identifies the digital group plan/module that the patient should perform. Acts as the grouping item that ties related Tasks together. | `Task.basedOn` | `plan` |
-| `pt-ServiceRequest-ExecutionOrder` | Carries patient-specific execution details for a single digital activity (`occurrence`, `patientInstruction`) that deviate from or complement the generic ActivityDefinition. | `Task.focus` | `order` |
 
 #### How to implement
 - **Source system (XIS):**
@@ -54,7 +54,7 @@ This IG defines two distinct ServiceRequest profiles. They serve different purpo
   - For each individual Task, the PHR uses the `pt-ActivityDefinition` for generic activity information and, when present, the `pt-ServiceRequest-ExecutionOrder` for the patient-specific scheduling and instructions.
 
 
-{{render: guides/medmij-r4-provider-module-ig/images/Overview ProviderTask relationships.png}}
+{{render: guides/medmij-r4-provider-module-ig/}}
 
 **Figure 1: Overview of ProviderTask releationships**
 
@@ -200,62 +200,72 @@ The returned data to the PHR should conform to the profiles listed in the table 
             <th>Description</th>
             <th>CIM NL</th>
             <th>HCIM EN</th>
-            <th>FHIR Profile </th>
+            <th>FHIR Profile</th>
             <th>Search URL</th>
         </tr>
     </thead>
     <tbody>
-        </tr>
-         <tr>
-            <td>Search of the Task</td>
+        <tr>
+            <td>Retrieve task list</td>
             <td>Taak</td>
             <td>Task</td>
             <td><a href="" target="_blank">pt-Task</a></td>
-            <td class="monospace">GET [base]/Task</td>
+            <td class="monospace">GET [base]/Task?owner=Patient/[patient-id]</td>
         </tr>
-         <tr>
-            <td>3</td>
+        <tr>
+            <td>Retrieve digital activity</td>
             <td>Digitale activiteit</td>
             <td>ActivityDefinition</td>
             <td><a href="" target="_blank">pt-ActivityDefinition</a></td>
-            <td class="monospace"> See Task </td>
+            <td class="monospace">See Task (resolved via the <code>instantiates</code> extension)</td>
         </tr>
-         <tr>
-            <td>4</td>
-            <td>Zorgopdracht</td>
-            <td>ServiceRequest</td>
-            <td><a href="" target="_blank">pt-ServiceRequest</a></td>
-            <td class="monospace">See Task</td>
+        <tr>
+            <td>Retrieve digital group plan</td>
+            <td>Zorgopdracht (digitaal groepsplan)</td>
+            <td>ServiceRequest (digital group plan)</td>
+            <td><a href="" target="_blank">pt-ServiceRequest-DigitalGroupPlan</a></td>
+            <td class="monospace">See Task (resolved via Task.basedOn)</td>
         </tr>
-         <tr>
-            <td>5</td>
+        <tr>
+            <td>Retrieve patient-specific execution details</td>
+            <td>Zorgopdracht (uitvoeringsopdracht)</td>
+            <td>ServiceRequest (execution order)</td>
+            <td><a href="" target="_blank">pt-ServiceRequest-ExecutionOrder</a></td>
+            <td class="monospace">See Task (resolved via Task.focus)</td>
+        </tr>
+        <tr>
+            <td>Retrieve launch endpoint</td>
             <td>Endpoint</td>
             <td>Endpoint</td>
             <td><a href="" target="_blank">pt-Endpoint</a></td>
-            <td class="monospace"> See ActivityDefinition </td>
+            <td class="monospace">See ActivityDefinition (resolved via ActivityDefinition.endpoint)</td>
         </tr>
-         <tr>
-            <td>6</td>
+        <tr>
+            <td>Update task status</td>
             <td>Taak</td>
             <td>Task</td>
             <td><a href="" target="_blank">pt-Task</a></td>
             <td class="monospace">PATCH [base]/Task/[id]</td>
         </tr>
         <tr>
-            <td>7</td>
+            <td>Retrieve healthcare provider</td>
             <td>Zorgaanbieder</td>
             <td>HealthcareProvider</td>
-            <td><a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885775" target="_blank">nl-core-HealthcareProvider
-            <a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885776" target="_blank">nl-core-HealthcareProvider-Organization</a></td>
-            <td class="monospace">See PractitionerRole</td>
+            <td>
+                <a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885775" target="_blank">nl-core-HealthcareProvider</a>,
+                <a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885776" target="_blank">nl-core-HealthcareProvider-Organization</a>
+            </td>
+            <td class="monospace">See Task and ServiceRequest (resolved via Task.requester / ServiceRequest.requester &rarr; PractitionerRole.organization)</td>
         </tr>
         <tr>
-            <td>8</td>
+            <td>Retrieve health professional</td>
             <td>Zorgverlener</td>
             <td>HealthProfessional</td>
-            <td><a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885777" target="_blank">nl-core-HealthProfessional-Practitioner 
-             <a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885778" target="_blank">nl-core-HealthProfessional-PractitionerRole</a></td>
-            <td class="monospace">See Task and ServiceRequest</td>
+            <td>
+                <a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885777" target="_blank">nl-core-HealthProfessional-Practitioner</a>,
+                <a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885778" target="_blank">nl-core-HealthProfessional-PractitionerRole</a>
+            </td>
+            <td class="monospace">See Task and ServiceRequest (resolved via Task.requester / ServiceRequest.requester)</td>
         </tr>
     </tbody>
 </table>
