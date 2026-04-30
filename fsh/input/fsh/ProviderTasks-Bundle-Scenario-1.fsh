@@ -71,40 +71,10 @@ Usage: #example
   * boundsDuration.system = "http://unitsofmeasure.org"
   * boundsDuration.code = #d
   * boundsDuration.unit = "day"
-  * frequency = 2
+  * frequency = 1
   * period = 1
   * periodUnit = #d
 
-Instance: ProviderTasks-MainTask-Meetopdracht-Glucosemeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
-Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
-* extension
-  * url = $koppeltaal-instantiates
-  * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
-    * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting)
-* identifier
-  * system = "http://medrie.nl/taskIdentifier"
-  * value = "MAINTASK-Glucose"
-* groupIdentifier
-  * system = "https://medrie.nl/fhir/identifiers/task-group"
-  * value = "module-diabetes-2025"
-  * type.text = "Digitale zorgmodule Diabetes"
-* status = #in-progress
-* intent = #order
-* priority = #routine
-* description = "Meet je bloedglucose voor 1 week, 2x per dag"
-* for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
-* executionPeriod
-  * start = "2025-12-22"
-  * end = "2025-12-28"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
-* owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-1
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
@@ -125,6 +95,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-22T08:00:00+01:00"
@@ -153,6 +124,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-22T08:00:00+01:00"
@@ -181,6 +153,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-23T08:00:00+01:00"
@@ -209,6 +182,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-23T18:00:00+01:00"
@@ -237,6 +211,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-24T08:00:00+01:00"
@@ -265,6 +240,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-24T18:00:00+01:00"
@@ -293,6 +269,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-25T08:00:00+01:00"
@@ -321,6 +298,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-25T18:00:00+01:00"
@@ -349,6 +327,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-26T08:00:00+01:00"
@@ -377,6 +356,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-26T18:00:00+01:00"
@@ -405,6 +385,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-27T08:00:00+01:00"
@@ -433,6 +414,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-27T18:00:00+01:00"
@@ -461,6 +443,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-28T08:00:00+01:00"
