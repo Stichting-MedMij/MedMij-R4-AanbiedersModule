@@ -6,6 +6,7 @@
       "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan"
     ]
   },
+  "intent": "plan",
   "text": {
     "status": "empty",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
@@ -17,7 +18,9 @@
     }
   ],
   "status": "active",
-  "intent": "plan",
+  "code": {
+    "text": "Digitale zorgmodule COPD"
+  },
   "subject": {
     "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
     "display": "Sanne van Dijk"
