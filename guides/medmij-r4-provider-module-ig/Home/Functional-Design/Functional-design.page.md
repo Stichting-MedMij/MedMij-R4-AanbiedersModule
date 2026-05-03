@@ -31,7 +31,11 @@ Dit ontwerp is conform specificaties genoemd in [de algemene inleiding](https:/
 ### Reikwijdte
 De reikwijdte van dit ontwerp beslaat:
 - de functionele beschrijving van het uitwisselen van patient-specifieke digitale activiteiten (taken) die door de zorgaanbieder worden aangevraagd en via Aanbiedertaken beschikbaar worden gesteld;
-- de bijbehorende dataset (Logical Models) die nodig is voor deze uitwisseling, inclusief de relaties tussen de zorgopdracht (ServiceRequest), de taak (Task) en de digitale activiteit (ActivityDefinition).
+- de bijbehorende dataset (Logical Models) die nodig is voor deze uitwisseling, inclusief de relaties tussen de digitale activiteit (ActivityDefinition), de zorgopdracht in de rol van digitaal groepsplan (ServiceRequest – DigitalGroupPlan), de zorgopdracht in de rol van uitvoeringsopdracht (ServiceRequest – ExecutionOrder) en de taak (Task);
+- het bijwerken van de status van een taak vanuit het modulesysteem naar het bronsysteem.
+
+Buiten scope van deze versie:
+- het uitwisselen van inhoudelijke resultaten die ontstaan bij het uitvoeren van een digitale activiteit (zoals Observation, Procedure of QuestionnaireResponse).
 
 
 ### Infrastructuur
@@ -90,7 +94,7 @@ Uitvoering:
 - De patiënt voert één of meerdere taken uit in de externe module/applicatie.
 
 Terugkoppeling:
-- Na het uitvoeren van de digitale activiteit gaat de patiënt terug naar de PGO. De status van de taak (en eventuele subtaken) wordt bijgewerkt in het bronsysteem, zodat de voortgang en afronding zichtbaar zijn in de takenlijst. Het terugkoppelen van inhoudelijke resultaten (zoals de beantwoording van een vragenlijst) valt in deze versie buiten scope. De focus ligt op de taken en de workflow zelf.
+- Na het uitvoeren van de digitale activiteit gaat de patiënt terug naar de PGO. De status van de taak wordt bijgewerkt in het bronsysteem, zodat de voortgang en afronding zichtbaar zijn in de takenlijst. Statusupdates worden per individuele taak doorgevoerd; er is geen hoofd-/subtaak hiërarchie. Het terugkoppelen van inhoudelijke resultaten (zoals de beantwoording van een vragenlijst) valt in deze versie buiten scope. De focus ligt op de taken en de workflow zelf.
 
 
 
@@ -107,12 +111,13 @@ Terugkoppeling:
 - Zorgaanbieder selecteert een digitale activiteit die past bij het zorgproces (bijv. CVRM/diabetes/COPD). 
 
 2. Aanmaken en beschikbaar stellen van taken:
-- Het bronsysteem maakt één of meerdere Task resources aan en stelt deze beschikbaar aan de patiënt, inclusief:
-	- een koppeling naar de digitale activiteit (ActivityDefinition);
-	- één taak (of meerdere taken) die de patiënt in de PGO ziet;
-	- optioneel zijn reperterende subtaken (bijv. losse meetmomenten), gekoppeld aan een hoofdtaak;
+- Het bronsysteem maakt per digitale activiteit één taak aan en stelt deze beschikbaar aan de patiënt. Wanneer meerdere digitale activiteiten in samenhang worden aangevraagd (bijv. binnen één digitale zorgmodule), worden de bijbehorende taken gegroepeerd via een gedeelde zorgopdracht in de rol van digitaal groepsplan. Per taak worden de volgende relaties en gegevens vastgelegd:
+	- een koppeling naar de digitale activiteit (ActivityDefinition) waarop de taak gebaseerd is;
+	- de gedeelde zorgopdracht (digitaal groepsplan) waaraan de taak is gekoppeld voor groepering;
 	- een uitvoerdatum/uitvoerperiode, indien van toepassing;
-	- patiënt-specifieke instructies via een zorgopdracht (ServiceRequest), die aan de taak is gekoppeld, indien van toepassing.
+	- patiënt-specifieke uitvoeringsinstructies en/of planning via een zorgopdracht in de rol van uitvoeringsopdracht (ServiceRequest – ExecutionOrder), die aan de taak is gekoppeld, indien van toepassing.
+
+Er is geen hoofd-/subtaak hiërarchie tussen taken: elke taak vertegenwoordigt één digitale activiteit. Taken die bij elkaar horen, worden uitsluitend gegroepeerd via de gedeelde zorgopdracht (digitaal groepsplan).
 
 3. Patiënt informeren:
 - De patiënt wordt geïnformeerd (bijv. per e-mail) dat er een nieuwe taak klaarstaat in de PGO.
@@ -124,7 +129,7 @@ Terugkoppeling:
 - De patiënt start de digitale activiteit vanuit de PGO (launch naar de module/applicatie) en voert de activiteit uit in de externe applicatie. 
 
 6. Statusupdates:
-- De status van de taak (en eventuele subtaken) wordt bijgewerkt in het bronsysteem, zodat voortgang en afronding zichtbaar zijn in de takenlijst voor de zorgaanbieder en patiënt. De patiënt kan op elk moment de takenlijst opnieuw ophalen.
+- De status van de individuele taak wordt door het modulesysteem bijgewerkt in het bronsysteem (bijv. naar 'in uitvoering' of 'afgerond'), zodat voortgang en afronding zichtbaar zijn in de takenlijst voor de zorgaanbieder en patiënt. Statusupdates worden per taak toegepast; er is geen hoofd-/subtaak hiërarchie. De patiënt kan op elk moment de takenlijst opnieuw ophalen.
 
 
 #### Postconditie
@@ -154,9 +159,9 @@ Deze systemen kennen ieder verschillende systeemrollen.
 
 | Systeem | Naam systeemrol | Systeemrolcode | Omschrijving |
 | --- | --- | --- | --- |
-| PGO | TaakGegevensRaadplegend | PT-1.0.0-alpha.1-TGR-FHIR | Raadplegen taken bij de zorgaanbieder|
-| XIS| TaakGegevensBeschikbaarstellend | PT-1.0.0-alpha.1-TGB-FHIR | Beschikbaar stellen taken aan de patiënt |
-| Modulesysteem | DigitaleActiviteitUitvoerder | PA-1.0.0-alpha.1-DAU-FHIR | Levert de digitale activiteit en ondersteunt de uitvoering/afronding van de activiteit |
+| PGO | TaakGegevensRaadplegend | PT-1.0.0-alpha.1-TGR-FHIR | Raadplegen taken bij de zorgaanbieder |
+| XIS | TaakGegevensBeschikbaarstellend | PT-1.0.0-alpha.1-TGB-FHIR | Beschikbaar stellen taken aan de patiënt en verwerken van statusupdates van taken |
+| Modulesysteem | DigitaleActiviteitUitvoerder | PA-1.0.0-alpha.1-DAU-FHIR | Levert de digitale activiteit, ondersteunt de uitvoering/afronding ervan, en koppelt de taakstatus terug naar het bronsysteem |
 
 **Tabel 2 Systeemrol**
 
@@ -164,38 +169,49 @@ Deze systemen kennen ieder verschillende systeemrollen.
 Functioneel ontwerpprincipes
 
 **Digitale activiteit als herbruikbare definitie**
-De ActivityDefinition beschrijft de digitale activiteit als een generieke instructie/definitie: wat de activiteit inhoudt en hoe deze in algemene zin uitgevoerd of gebruikt wordt (bijv. “Thuismetingen bloeddruk”)
+De ActivityDefinition beschrijft de digitale activiteit als een generieke, herbruikbare definitie: wat de activiteit inhoudt en hoe deze in algemene zin uitgevoerd of gebruikt wordt (bijv. “Thuismetingen bloeddruk”). Wanneer de activiteit launchbaar is, verwijst de digitale activiteit naar één of meerdere endpoints met de technische toegangs-/launchdetails.
 
-**Zorgopdracht als patiënt-specifieke aanvraag**
-Een ServiceRequest wordt gebruikt wanneer er patiënt-specifieke instructies nodig zijn die afwijken van of aanvullend zijn op de generieke informatie in de ActivityDefinition. 
+**Zorgopdracht in twee rollen**
+Binnen Aanbiedertaken wordt de zorgopdracht in twee onderscheidende rollen gebruikt:
+
+- *Zorgopdracht – digitaal groepsplan:* de patiënt-specifieke aanvraag waarmee een digitaal groepsplan/zorgmodule voor de patiënt wordt geïnitieerd. Deze zorgopdracht fungeert als groepering: alle taken die binnen hetzelfde groepsplan horen verwijzen naar dezelfde zorgopdracht. De naam van het digitaal groepsplan wordt in deze zorgopdracht vastgelegd en gebruikt als groepslabel in de takenlijst van de PGO.
+- *Zorgopdracht – uitvoeringsopdracht (optioneel):* het patiënt-specifieke uitvoeringsplan voor één digitale activiteit, met onder meer planning en patiënt-specifieke instructies die afwijken van of aanvullend zijn op de generieke informatie in de digitale activiteit. Een uitvoeringsopdracht wordt aan de bijbehorende taak gekoppeld.
 
 **Taak als uitvoerbaar item voor de patiënt**
-De Task is het item dat de patiënt in de PGO ziet en waarop de voortgang wordt bijgehouden (openstaand, in uitvoering, afgerond). Een Task kan verwijzen naar de bijbehorende zorgopdracht.
+De Task is het item dat de patiënt in de PGO ziet en waarop de voortgang wordt bijgehouden (openstaand, in uitvoering, afgerond). Elke taak vertegenwoordigt één digitale activiteit en verwijst:
 
-**Subtaken voor herhaling binnen één activiteit**
-Wanneer een activiteit uit meerdere herhaalmomenten of deelstappen bestaat (bijv. losse meetmomenten), worden deze gemodelleerd als subtaken en gekoppeld aan een hoofdtaak. Subtaken worden alleen gebruikt voor herhaling binnen dezelfde digitale activiteit.
+- naar de digitale activiteit (ActivityDefinition) die uitgevoerd of gestart moet worden;
+- naar de gedeelde zorgopdracht (digitaal groepsplan) voor groepering met andere taken binnen hetzelfde groepsplan;
+- (optioneel) naar een zorgopdracht (uitvoeringsopdracht) wanneer er patiënt-specifieke uitvoeringsdetails zijn.
+
+**Eén taak per digitale activiteit, geen hoofd-/subtaak hiërarchie**
+Elke digitale activiteit voor de patiënt wordt gemodelleerd als één taak. Er bestaat geen hoofd-/subtaak hiërarchie tussen taken. Wanneer meerdere activiteiten bij elkaar horen, worden deze niet als subtaken gemodelleerd maar gegroepeerd via de gedeelde zorgopdracht (digitaal groepsplan). Statusupdates worden per individuele taak toegepast.
 
 **Groepering voor overzicht en filtering**
-Taken die bij elkaar horen (bijv. binnen één digitale zorgmodule zoals CVRM of Diabetes) worden gegroepeerd met groupIdentifier, zodat PGO’s taken overzichtelijk kunnen presenteren en filteren.
+Taken die bij elkaar horen (bijv. binnen één digitale zorgmodule zoals CVRM of Diabetes) verwijzen allemaal naar dezelfde zorgopdracht (digitaal groepsplan). PGO’s gebruiken deze gedeelde verwijzing om bij elkaar horende taken overzichtelijk onder dezelfde groep te presenteren en te filteren. De groepsnaam in de PGO is gelijk aan de naam van het digitaal groepsplan zoals vastgelegd in de bijbehorende zorgopdracht.
 
 
 ### Dataset
 De dataset wordt beschreven in de bijbehorende Logical Models:
 - LogicalModel [Taak](https://simplifier.net/medmij-r4-provider-module/lmtask)
 - LogicalModel [Digitale activiteit](https://simplifier.net/medmij-r4-provider-module/lmactivitydefinition)
-- LogicalModel [Zorgopdracht](https://simplifier.net/medmij-r4-provider-module/lmservicerequest)
+- LogicalModel [Zorgopdracht – uitvoeringsopdracht](https://simplifier.net/medmij-r4-provider-module/lmservicerequest)
 - LogicalModel [Patient](https://simplifier.net/medmij-r4-provider-module/lmpatient)
+
+De zorgopdracht in de rol van *digitaal groepsplan* wordt gemodelleerd op basis van dezelfde resource (ServiceRequest) en wordt in dit ontwerp functioneel beschreven via de groepering van taken; voor de technische uitwerking zie het [technisch ontwerp](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Technical-design.md?version=current).
 
 
 ### Transacties en transactiegroepen
-Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op basis van transacties, een verzameling van transacties (bijvoorbeeld een vraag- en antwoordbericht) vormt een zogeheten transactiegroep. Voor de transacties die tussen de systeemrollen plaatsvinden, beschrijven de bijbehorende CIM's (impliciet) welke gegevenselementen uitgewisseld worden binnen Mondzorg. Voor de technische specificaties, zie het [technisch ontwerp](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Technical-design.md?version=current)
+Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op basis van transacties; een verzameling van transacties (bijvoorbeeld een vraag- en antwoordbericht) vormt een zogeheten transactiegroep. Voor de transacties die tussen de systeemrollen plaatsvinden, beschrijven de bijbehorende CIM's (impliciet) welke gegevenselementen uitgewisseld worden binnen Aanbiedertaken. Voor de technische specificaties, zie het [technisch ontwerp](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Technical-design.md?version=current).
 
 
 | Transactiegroep | Transactie | Systeemrolcode | Systeem | Bedrijfsrol |
 | --- | --- | --- | --- | --- |
-| Verzamelen Taakgegevens (PULL) | Beschikbaar stellen Taken | PT-1.0.0-alpha.1-TGR-FHIR | XIS | Zorgaanbieder |
-| Verzamelen Taakgegevens (PULL) | Raadplegen Taken | PT-1.0.0-alpha.1-TGB-FHIR | PGO | Patiënt |
-| Digitale activiteit uitvoeren (LAUNCH) | Launch naar digitale activiteit| PA-1.0.0-alpha.1-DAU-FHIR | Modulesysteem | Patiënt |
+| Verzamelen Taakgegevens (PULL) | Beschikbaar stellen Taken | PT-1.0.0-alpha.1-TGB-FHIR | XIS | Zorgaanbieder |
+| Verzamelen Taakgegevens (PULL) | Raadplegen Taken | PT-1.0.0-alpha.1-TGR-FHIR | PGO | Patiënt |
+| Digitale activiteit uitvoeren (LAUNCH) | Launch naar digitale activiteit | PA-1.0.0-alpha.1-DAU-FHIR | Modulesysteem | Patiënt |
+| Bijwerken Taakstatus (UPDATE) | Bijwerken Taakstatus | PA-1.0.0-alpha.1-DAU-FHIR | Modulesysteem | Patiënt |
+| Bijwerken Taakstatus (UPDATE) | Verwerken Taakstatus | PT-1.0.0-alpha.1-TGB-FHIR | XIS | Zorgaanbieder |
 
 **Tabel 3 Transactiegroep**
 
