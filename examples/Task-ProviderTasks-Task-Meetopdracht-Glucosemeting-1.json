@@ -27,7 +27,7 @@
   ],
   "basedOn": [
     {
-      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting",
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-Diabetes",
       "display": "Digitale zorgmodule Diabetes"
     }
   ],

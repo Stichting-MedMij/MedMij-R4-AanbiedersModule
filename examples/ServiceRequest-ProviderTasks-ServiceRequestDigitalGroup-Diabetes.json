@@ -1,6 +1,6 @@
 {
   "resourceType": "ServiceRequest",
-  "id": "ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting",
+  "id": "ProviderTasks-ServiceRequestDigitalGroup-Diabetes",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan"

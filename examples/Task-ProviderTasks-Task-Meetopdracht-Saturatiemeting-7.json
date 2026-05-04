@@ -21,7 +21,7 @@
   ],
   "basedOn": [
     {
-      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting",
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-COPD",
       "display": "Digitale zorgmodule COPD"
     }
   ],

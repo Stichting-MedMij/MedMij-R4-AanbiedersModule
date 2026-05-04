@@ -21,7 +21,7 @@
   ],
   "basedOn": [
     {
-      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting",
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-CVRM",
       "display": "Digitale zorgmodule CVRM"
     }
   ],

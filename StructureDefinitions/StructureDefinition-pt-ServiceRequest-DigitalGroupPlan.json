@@ -79,6 +79,26 @@
         "patternCode": "plan"
       },
       {
+        "id": "ServiceRequest.code",
+        "path": "ServiceRequest.code",
+        "short": "Digital group plan identifier",
+        "definition": "Identifies which digital group plan is requested for the patient. The human-readable (display) name of the digital group plan is carried in `code.text` and is used as the group label in the PHR.",
+        "alias": [
+          "Identificatie digitaal groepsplan"
+        ],
+        "min": 1
+      },
+      {
+        "id": "ServiceRequest.code.text",
+        "path": "ServiceRequest.code.text",
+        "short": "Display name of the digital group plan",
+        "definition": "Human-readable name of the digital group plan. This name is used as the display label of the Task group in the PHR and MUST match the name used to identify the group in the `Task.basedOn` reference. The source system fills this element with the (display) name of the digital group plan when a healthcare professional starts a digital group plan/module for a patient.",
+        "alias": [
+          "Naam digitaal groepsplan"
+        ],
+        "min": 1
+      },
+      {
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
         "definition": "The patient for whom the activity is requested.",
