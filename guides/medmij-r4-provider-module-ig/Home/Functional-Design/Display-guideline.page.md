@@ -1,37 +1,35 @@
 ---
-
-## topic: Weergaverichtlijn
+topic: Weergaverichtlijn
+---
 
 # Weergaverichtlijn
 
 ## Inleiding
-
 Dit is de weergaverichtlijn voor de gegevensdienst Aanbiedertaken (ProviderTasks).
 
 De richtlijn bevat mock-ups die bedoeld zijn ter inspiratie. Persoonlijke gezondheidsomgevingen (PGO's) kunnen deze voorbeelden naar eigen inzicht visueel vormgeven, zolang de gebruiksvriendelijkheid behouden blijft.
 
 ## Doel
-
 Deze richtlijn heeft als doel om duidelijke handvatten te bieden voor een patiëntvriendelijke en begrijpelijke weergave van aanbiedertaken in de PGO. De richtlijn ondersteunt ontwikkelaars en zorgverleners bij het:
-
 - gebruiken van begrijpelijke en patiëntvriendelijke termen en toelichtingen;
 - structureren en presenteren van een overzicht van gegevens op een manier die aansluit bij de informatiebehoefte van PGO-gebruikers.
 
-De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van gegevens.
+De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van gegevens. Ook geeft de richtlijn géén handvatten voor de flow, het synchroniseren of het ophalen van gegevens en de technische launch van een aanbiedertaak. Voor die onderwerpen wordt verwezen naar het Afsprakenstelsel (AS) en de implementation guide.
 
 ## Scope
-
 De scope van deze richtlijn bestaat uit de aanbiedertaak-gegevens die worden weergegeven in de PGO. Gegevens die via andere MedMij-gegevensdiensten verzameld worden in de PGO zijn hierin niet meegenomen.
 
-## Inhoud richtlijn
+Onderwerpen die buiten de scope van deze richtlijn vallen (en elders worden behandeld, bijvoorbeeld in het Afsprakenstelsel of de implementation guide):
+- Inloggen en authenticeren bij de zorgaanbieder.
+- Het synchroniseren of incrementeel ophalen van taken (inclusief waarschuwingen bij verouderde gegevens en aanbevelingen rondom langdurige toestemming).
+- De technische uitwerking van het starten/launchen van een aanbiedertaak.
 
+## Inhoud richtlijn
 Het inloggen en authenticeren bij de zorgaanbieder is niet opgenomen in deze richtlijn.
 De gebruiker gaat in de PGO naar het overzicht Aanbiedertaken en/of overzicht Zorgaanbieder ‑ Aanbiedertaken waar de aanbiedertaken getoond worden.
 
 ### Overzichtsscherm aanbiedertaken
-
 Er zijn twee weergaven gedefinieerd voor het overzicht van de aanbiedertaken:
-
 - Scenario 1: Overzicht Aanbiedertaken (met alle aanbiedertaken van alle zorgaanbieders in één overzicht)
 - Scenario 2: Overzicht Zorgaanbieder ‑ Aanbiedertaken (met alle aanbiedertaken van één zorgaanbieder in één overzicht). Dit scenario is optioneel, omdat het uitgangspunt is dat de taken van alle zorgaanbieders worden getoond.
 
@@ -39,61 +37,52 @@ Het scenario, hieronder uitgewerkt, geeft weer hoe een UX-design getoond kan wor
 
 In deze richtlijn zijn mock-ups opgenomen ter inspiratie. Daaronder is het Logical Model (LM) apart opgenomen, niet in een mock-up, maar in tabelvorm.
 
-### Mock-ups overzichtsscherm aanbiedertaken
-
-++Overzicht Aanbiedertaken++
+### Mock-ups overzichtsschermen aanbiedertaken
+<u>Overzicht Aanbiedertaken</u>
 
 In het Overzicht Aanbiedertaken heeft het overzichtsscherm één pagina waar de datavelden getoond worden, voor alle zorgaanbieders.
 
 Het overzichtsscherm bestaat uit twee secties (deze mogen ook tabs zijn): een statussectie en een sectie met de afzonderlijke digitale activiteiten. De afzonderlijke digitale activiteiten worden gegroepeerd in drie groepen:
-
 1. Te doen (`ready`, `requested`, `received`, `in-progress`)
 2. Gereed (`completed`)
 3. Gestopt (`failed`, `cancelled`)
 
-Welke velden in het overzichtsscherm gebruikt worden, blijkt uit de onderstaande opsomming van de FHIR-elementen per resource:
-
+Welke velden in het overzichtsscherm gebruikt kunnen worden, blijkt uit de onderstaande opsomming van de FHIR-elementen per resource:
 - `Task.status`
 - `Task.requester.practitionerRole.organization.name`
 - `Task.groupIdentifier` (functioneel: een groepsnaam, bijvoorbeeld de naam van de digitale zorgmodule)
-- `Task.description`
 - `Task.executionPeriod.start`
 - `Task.executionPeriod.end`
 - `ActivityDefinition.title`
 
+Niet alle bovenstaande velden hoeven in het overzichtsscherm getoond te worden. Welke velden minimaal getoond moeten worden, blijkt uit de prioritering (MoSCoW) in de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}}. Lege velden hoeven niet getoond te worden. Op kleinere schermen (mobiel) en bij PDF/A-weergave is de beschikbare ruimte beperkt; de PGO is vrij om de status als tabblad of filter op te nemen en zo ruimte te creëren voor andere velden, en om aanvullende velden enkel in het detailscherm te tonen.
+
 **Figuur 1: Voorbeeld Overzicht Aanbiedertaken (mock-up volgt)**
 
-Het is aan de PGO om een melding in het takenscherm te tonen wanneer er voor een zorgaanbieder langer dan een door de PGO bepaalde periode geen taakgegevens zijn opgehaald.
-
-Nb 1. In het overzichtsscherm worden alleen hoofdtaken of enkelvoudige taken getoond. Dat zijn taken waarbij `Task.partOf` geen waarde heeft. In het geval van een hoofdtaak worden vervolgens in het detailscherm de relevante subtaken getoond.
-
-Nb 2. Indien er meerdere zorgaanbieders zijn waarbij in het verleden gegevens verzameld zijn en die zorgaanbieder staat op de ZAL met de gegevensdienst Aanbiedertaken, dan zal er voor die zorgaanbieders een ophaalactie moeten worden gedaan.
+Nb. In het overzichtsscherm worden alleen hoofdtaken of enkelvoudige taken getoond. Dat zijn taken waarbij `Task.partOf` geen waarde heeft. In het geval van een hoofdtaak worden vervolgens in het detailscherm de relevante subtaken getoond.
 
 De acceptatiecriteria voor het overzichtsscherm zijn als volgt.
 
-
-| Nr  | Acceptatiecriteria                                                                                                                                                                                                                               |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | Standaard worden alle gegevens van de geraadpleegde zorgaanbieder(s) overzichtelijk weergegeven, gesorteerd op datum. Het overzichtsscherm opent met het filter "te doen".                                                                       |
-| 2   | Je kunt zoeken op (delen van) de gegevens of op informatie uit de andere datavelden in het overzichtsscherm. De gebruiker moet minimaal 3 karakters invoeren. Dit is met name relevant voor het tabblad met afgehandelde taken (historie).       |
-| 3   | Voor de datavelden in het overzichtsscherm (met uitzondering van `Task.description`) is het mogelijk om te filteren op één of meerdere waarden.                                                                                                  |
-| 4   | Voor het datumveld in het overzichtsscherm kun je een specifieke periode selecteren.                                                                                                                                                             |
-| 5   | Alle datavelden in het overzichtsscherm (met uitzondering van `Task.description`) zijn sorteerbaar.                                                                                                                                              |
-| 6   | De datavelden in het overzichtsscherm zijn begrijpelijk en gebruiksvriendelijk geformuleerd. Zie de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}} voor de aanbevolen termen per opgehaald dataveld. |
-| 7   | De standaard sortering van de open taken is: eerst uit te voeren taak bovenaan. De standaard sortering van de afgeronde en gestopte taken is: meest recent uitgevoerde taak bovenaan.                                                            |
-
+| Nr | Acceptatiecriteria |
+| --- | --- |
+| 1 | Standaard worden alle gegevens van de geraadpleegde zorgaanbieder(s) overzichtelijk weergegeven, gesorteerd op datum. Het overzichtsscherm opent met het filter "te doen". Wanneer er geen open taken zijn, wordt een passende melding getoond (bijvoorbeeld "Er zijn geen nieuwe taken"). |
+| 2 | Je kunt zoeken op (delen van) de gegevens of op informatie uit de andere datavelden in het overzichtsscherm. Het bepalen van een eventuele drempel voor het aantal in te voeren karakters is aan de PGO (advies: maximaal drie karakters). Het zoekveld is met name relevant voor het tabblad met afgehandelde taken (historie). |
+| 3 | Filteren op datavelden in het overzichtsscherm is mogelijk; voor velden met meerdere mogelijke waarden (bijvoorbeeld de zorgorganisatie) is een multi-select filter wenselijk. Filteren op `Task.description` is niet voorzien. Welke overige datavelden filterbaar zijn is aan de PGO; voor het datumveld geldt criterium 4. |
+| 4 | Voor het datumveld in het overzichtsscherm kun je een specifieke periode selecteren. |
+| 5 | Alle datavelden in het overzichtsscherm (met uitzondering van `Task.description`) zijn sorteerbaar. |
+| 6 | De datavelden in het overzichtsscherm zijn begrijpelijk en gebruiksvriendelijk geformuleerd. Zie de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}} voor de aanbevolen termen per opgehaald dataveld. |
+| 7 | De standaard sortering van de open taken is: eerst uit te voeren taak bovenaan. De standaard sortering van de afgeronde en gestopte taken is: meest recent uitgevoerde taak bovenaan. |
+| 8 | De PGO toont in elk geval de datavelden met prioriteit M (must have) uit de specificatietabel. De PGO is vrij om aanvullende velden te tonen of deze (uitsluitend) in het detailscherm op te nemen. Lege velden hoeven niet getoond te worden. |
 
 ### Detailscherm aanbiedertaken
-
 Dit detailscherm krijgt een PGO-gebruiker te zien na het selecteren van een specifieke regel in het overzichtsscherm. De in de mock-up weergegeven gegevens dienen uitsluitend ter demonstratie.
 
 ### Mock-up detailscherm aanbiedertaken
-
 In het detailscherm zijn de volgende velden zichtbaar:
-
 - `Task.status`
 - `Task.requester.practitionerRole.organization.name`
 - `Task.requester.practitionerRole.practitioner.name`
+- `Task.description`
 - `Task.executionPeriod.start`
 - `Task.executionPeriod.end`
 - `ActivityDefinition.title`
@@ -108,199 +97,382 @@ Nb 2. Indien er sprake is van een repeterende taak, worden in het detailscherm a
 Nb 3. De patiëntinstructie is een specifieke instructie voor de patiënt. Deze instructie kan door de zorgverlener worden ingevoerd bij het klaarzetten van de digitale activiteit voor de patiënt. Algemene instructies horen in de module zichtbaar te zijn en zijn daarom geen onderdeel van deze weergaverichtlijn. De patiëntinstructie is niet altijd aanwezig.
 
 ### Starten/Launchen van een aanbiedertaak
-
-Bij het starten van een taak moet de patiënt geïnformeerd worden dat het vervolg van de taak in de omgeving van de zorgaanbieder draait.
+Bij het starten van een taak moet de patiënt geïnformeerd worden dat het vervolg van de taak in de omgeving van de zorgaanbieder draait. De technische uitwerking van de launch valt buiten de scope van deze richtlijn; daarvoor wordt verwezen naar het Afsprakenstelsel (AS) en de implementation guide.
 
 ### Aanbiedertaakgegevens
-
 Hieronder wordt een voorbeeld in tabelvorm gegeven van het overzichts- en detailscherm voor een hoofdtaak met onderliggende digitale activiteiten.
 
-++Overzichtsscherm++
+<u>Overzichtsscherm</u>
 
-
-| Titel                  | Status        | Periode                   | Zorgorganisatie             |
-| ---------------------- | ------------- | ------------------------- | --------------------------- |
-| Gezonder gaan leven    | Aangevraagd   | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard |
+| Titel | Status | Periode | Zorgorganisatie |
+| --- | --- | --- | --- |
+| Gezonder gaan leven | Aangevraagd | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard |
 | Bloedglucose monitoren | In uitvoering | 15-12-2025 t/m 22-12-2025 | Huisartsenpraktijk de Haard |
 
+<u>Detailscherm</u>
 
-++Detailscherm++
+| Geselecteerde regel: Gezonder gaan leven | |
+| --- | --- |
+| Titel | Gezonder gaan leven |
+| Status | Aangevraagd |
+| Periode | 22-12-2025 t/m 28-12-2025 |
+| Zorgverlener | A. de Haard |
+| Zorgorganisatie | Huisartsenpraktijk de Haard |
+| Patiëntinstructie | (optionele specifieke instructie van de zorgverlener) |
+| Actieknop | Start |
 
+<u>Onderliggende digitale activiteiten (subtaken)</u>
 
-| Geselecteerde regel: Gezonder gaan leven |                                                       |
-| ---------------------------------------- | ----------------------------------------------------- |
-| Titel                                    | Gezonder gaan leven                                   |
-| Status                                   | Aangevraagd                                           |
-| Periode                                  | 22-12-2025 t/m 28-12-2025                             |
-| Zorgverlener                             | A. de Haard                                           |
-| Zorgorganisatie                          | Huisartsenpraktijk de Haard                           |
-| Patiëntinstructie                        | (optionele specifieke instructie van de zorgverlener) |
-| Actieknop                                | Start                                                 |
+| Titel digitale activiteit | Beschrijving | Periode van uitvoer | Behandelcontext | Zorgorganisatie |
+| --- | --- | --- | --- | --- |
+| Bloedglucosemeting | 1 week 2x per dag bloedglucosemeting | 22-12-2025 t/m 28-12-2025 | Diabetes | Huisartsenpraktijk de Haard |
+| Gezonder gaan leven | Leestips voor een gezondere leefstijl | 22-12-2025 t/m 28-12-2025 | Diabetes | Huisartsenpraktijk de Haard |
+| Vragenlijst over de woon-leefsituatie | Vul de vragenlijst in | 22-12-2025 t/m 28-12-2025 | Diabetes | Huisartsenpraktijk de Haard |
 
+<br/>
 
-++Onderliggende digitale activiteiten (subtaken)++
-
-
-| Titel digitale activiteit             | Beschrijving                          | Periode van uitvoer       | Behandelcontext | Zorgorganisatie             |
-| ------------------------------------- | ------------------------------------- | ------------------------- | --------------- | --------------------------- |
-| Bloedglucosemeting                    | 1 week 2x per dag bloedglucosemeting  | 22-12-2025 t/m 28-12-2025 | Diabetes        | Huisartsenpraktijk de Haard |
-| Gezonder gaan leven                   | Leestips voor een gezondere leefstijl | 22-12-2025 t/m 28-12-2025 | Diabetes        | Huisartsenpraktijk de Haard |
-| Vragenlijst over de woon-leefsituatie | Vul de vragenlijst in                 | 22-12-2025 t/m 28-12-2025 | Diabetes        | Huisartsenpraktijk de Haard |
-
-
-  
-
-
-##  Tabel met specificaties
-
+## <a name="TabelSpecificaties"></a> Tabel met specificaties
 In de tabellen met specificaties staan de gegevens uit de gegevensdienst Verzamelen Aanbiedertaken (ProviderTasks), die relevant zijn voor deze weergaverichtlijn, weergegeven.
 De prioriteit van de te tonen datavelden wordt vastgesteld volgens de MoSCoW-methodiek. Datavelden die niet in de specificatietabel voorkomen, moeten worden beschouwd als datavelden met de letter W.
 
-  
+<br/>
 
+| Prioriteit | Omschrijving |
+| --- | --- |
+| M(ust have) | Nodig voor de basisfunctionaliteit van de toepassing en moet worden geïmplementeerd om het proces succesvol te laten verlopen. |
+| S(hould have) | Belangrijke functionaliteit die niet vereist is, maar die voordelen biedt voor gebruikers en de algehele gebruikservaring. |
+| C(ould have) | Gewenste functionaliteit die waarde toevoegt, maar minder kritisch is en indien nodig kan worden uitgesteld. |
+| W(on't have) | Functionaliteiten die nu buiten scope zijn maar mogelijk in de toekomst worden overwogen. |
 
+<br/>
 
-| Prioriteit    | Omschrijving                                                                                                                   |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| M(ust have)   | Nodig voor de basisfunctionaliteit van de toepassing en moet worden geïmplementeerd om het proces succesvol te laten verlopen. |
-| S(hould have) | Belangrijke functionaliteit die niet vereist is, maar die voordelen biedt voor gebruikers en de algehele gebruikservaring.     |
-| C(ould have)  | Gewenste functionaliteit die waarde toevoegt, maar minder kritisch is en indien nodig kan worden uitgesteld.                   |
-| W(on't have)  | Functionaliteiten die nu buiten scope zijn maar mogelijk in de toekomst worden overwogen.                                      |
+<!-- VASTE KOLOMBREEDTES + PRESERVE WHITESPACE -->
+<style>
+  .pgo-table {
+    width: 100%;
+    table-layout: fixed;  /* respecteert <colgroup> widths */
+    border-collapse: collapse;
+    margin: 0 0 24px 0;
+  }
+  .pgo-table th, .pgo-table td {
+    border: 1px solid #cccccc;
+    padding: 6px 8px;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: pre-wrap; /* behoudt regeleinden en meerdere spaties */
+  }
+  .pgo-table th {
+    background: #f7f7f7;
+    text-align: left;
+  }
+</style>
 
-
-  
-
-
-Toelichting op de kolom "Waar tonen in PGO":
-
-
-| Code | Betekenis                                                                     |
-| ---- | ----------------------------------------------------------------------------- |
-| a    | In overzicht én als detailgegeven                                             |
-| b    | Alleen als detailgegeven                                                      |
-| c    | Niet tonen                                                                    |
-| d    | Niet tonen, wel noodzakelijk voor de launch (verwijzing naar solution design) |
-
-
-  
-
-
-
-
-
-
-
+<!-- 9 KOLOMMEN:
+Naam data-item | Type data-item | Id | Voorbeeld | Waar tonen in PGO (a) in overzicht en als detailgegeven (b) als detailgegeven (c) niet tonen (d) niet tonen, wel noodzakelijk voor de launch | Opmerkingen | Weergavetekst in de PGO | Gebruikersvriendelijke toelichting | Prioriteit (MoSCoW)
+Breedteverdeling: 13% | 9% | 9% | 11% | 10% | 10% | 11% | 21% | 6% (totaal 100%) -->
 
 ### Taak (Task)
-
 Verwijzing: [LogicalModel Task](https://simplifier.net/medmij-r4-provider-module/lmtask)
 
-
-| Naam data-item                           | Type data-item  | Id                                         | Voorbeeld                                                                                                                          | Waar tonen in PGO (a/b/c/d) | Opmerkingen                                                                                                                                                                                                   | Weergavetekst in de PGO  | Gebruikersvriendelijke toelichting                                                                                 | Prioriteit (MoSCoW) |
-| ---------------------------------------- | --------------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------- |
-| **Taak**                                 | **Rootconcept** | pt-lm-Task                                 |                                                                                                                                    |                             |                                                                                                                                                                                                               | Taak                     |                                                                                                                    |                     |
-| Instantiates::ActivityDefinition         | Reference       | pt-lm-Task.Instantiates.ActivityDefinition | ProviderModule-ActivityDefinition-Vragenlijst-WoonLeefsituatie                                                                     | c                           | Verwijzing naar de digitale activiteit (LM ActivityDefinition).                                                                                                                                               |                          |                                                                                                                    | M                   |
-| Identifier                               | Item            | pt-lm-Task.Identifier                      | system: "http://medrie.nl/taskIdentifier" value: "TASK-Vragenlijst-Woonsituatie-9642"                                              | b / c                       | Business identifier is verplicht (uniek binnen of over systemen heen).                                                                                                                                        |                          |                                                                                                                    | M                   |
-| GroupIdentifier                          | Item            | pt-lm-Task.GroupIdentifier                 | system: "https://medrie.nl/fhir/identifiers/task-group" value: "module-diabetes-2025" display/text: "Digitale zorgmodule Diabetes" | a                           | Wordt gebruikt om gerelateerde taken (bijv. taken binnen één digitale zorgmodule) te groeperen en te filteren in het overzicht.                                                                               | Zorgmodule of Groep      | De zorgmodule of het programma waar deze taak toe behoort.                                                         | M                   |
-| BasedOn::ServiceRequest                  | Reference       | pt-lm-Task.BasedOn                         | ServiceRequest/ProviderModule-ServiceRequest-Glucosemeting                                                                         | c                           | De zorgopdracht waar de taak op gebaseerd is. Discussiepunt MedMij.                                                                                                                                           |                          |                                                                                                                    | C                   |
-| PartOf::Task                             | Reference       | pt-lm-Task.PartOf                          | Task/ProviderModule-MainTask-Meetopdracht-Glucosemeting                                                                            | c                           | Verwijzing naar een hoofdtaak. Gebruikt om subtaken (bijv. losse meetmomenten) te koppelen aan een hoofdtaak. In het overzichtsscherm worden alleen hoofdtaken of enkelvoudige taken (zonder partOf) getoond. |                          |                                                                                                                    | M                   |
-| Status                                   | Item            | pt-lm-Task.Status                          | requested                                                                                                                          | a                           | Bepaalt in welke groep de taak in het overzichtsscherm valt: Te doen (ready, requested, received, in-progress), Gereed (completed) of Gestopt (failed, cancelled).                                            | Status                   | Patiëntvriendelijke vertaling van de statuscode (bijv. "Aangevraagd", "In uitvoering", "Afgerond", "Geannuleerd"). | M                   |
-| Intent                                   | Item            | pt-lm-Task.Intent                          | order                                                                                                                              | c                           | Voor patiëntgerichte activiteiten doorgaans 'order'.                                                                                                                                                          |                          |                                                                                                                    | C                   |
-| Priority                                 | Item            | pt-lm-Task.Priority                        | routine                                                                                                                            | c                           |                                                                                                                                                                                                               |                          |                                                                                                                    | C                   |
-| Description                              | Item            | pt-lm-Task.Description                     | Vul de vragenlijst in over je woon-/leefsituatie                                                                                   | a                           | Korte, voor de patiënt leesbare omschrijving van de taak. Niet sorteerbaar of filterbaar.                                                                                                                     | Omschrijving             |                                                                                                                    | M                   |
-| For::Patient                             | Reference       | pt-lm-Task.For                             | Tom van Duinen                                                                                                                     | c                           | De patiënt voor wie de taak bedoeld is. Wordt normaal gesproken niet getoond in de PGO (eigen account).                                                                                                       |                          |                                                                                                                    | W                   |
-| ExecutionPeriod                          | Item            | pt-lm-Task.ExecutionPeriod                 | 2025-12-22 tot en met 2025-12-28                                                                                                   | a                           | Tijdvenster waarin de taak uitgevoerd moet/mag worden (start en eind).                                                                                                                                        | Periode van uitvoer      |                                                                                                                    | M                   |
-| AuthoredOn                               | Item            | pt-lm-Task.AuthoredOn                      | 2025-12-23T18:00:00+01:00                                                                                                          | c                           | Datum/tijd waarop de taak is aangemaakt.                                                                                                                                                                      |                          |                                                                                                                    | C                   |
-| LastModified                             | Item            | pt-lm-Task.LastModified                    | 2025-12-23T18:00:00+01:00                                                                                                          | c                           | Datum/tijd van de laatste wijziging (bijv. statuswijziging).                                                                                                                                                  |                          |                                                                                                                    | C                   |
-| Requester::PractitionerRole.Practitioner | Reference       | pt-lm-Task.Requester                       | A. de Haard, huisarts                                                                                                              | b                           | Zowel de naam als het specialisme tonen.                                                                                                                                                                      | Aanvragende zorgverlener |                                                                                                                    | S                   |
-| Requester::PractitionerRole.Organization | Reference       | pt-lm-Task.Requester                       | Huisartsenpraktijk de Haard                                                                                                        | a                           | Liefst geen afkortingen.                                                                                                                                                                                      | Zorgorganisatie          |                                                                                                                    | M                   |
-| Owner::Patient                           | Reference       | pt-lm-Task.Owner                           | Tom van Duinen                                                                                                                     | c                           | Uitvoerder van de taak. In de huidige scope altijd de patiënt zelf.                                                                                                                                           | Uitvoerder               |                                                                                                                    | W                   |
-| Restriction.Repetitions                  | Item            | pt-lm-Task.Restriction.Repetitions         | (nog geen voorbeeld)                                                                                                               | c                           | Aantal keer dat de taak herhaald moet worden.                                                                                                                                                                 |                          |                                                                                                                    | C                   |
-| Restriction.Period                       | Item            | pt-lm-Task.Restriction.Period              | (nog geen voorbeeld)                                                                                                               | c                           | Periode waarin de restrictie van toepassing is.                                                                                                                                                               |                          |                                                                                                                    | C                   |
-| LastUpdated                              | Item            | (niet in LM)                               |                                                                                                                                    | c                           | Niet in het LM, maar wel relevant. Betreft de `lastUpdated` aan de bron en kan PGO-zijdig gebruikt worden voor incrementele synchronisatie (max(_lastUpdated)).                                               |                          |                                                                                                                    | C                   |
-
+<!-- TAAK -->
+<table class="pgo-table">
+  <colgroup>
+    <col style="width:13%"><col style="width:9%"><col style="width:9%"><col style="width:11%">
+    <col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:21%"><col style="width:6%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Naam data-item</th><th>Type data-item</th><th>Id</th><th>Voorbeeld</th>
+      <th>Waar tonen in PGO (a) in overzicht en als detailgegeven (b) als detailgegeven (c) niet tonen (d) niet tonen, wel noodzakelijk voor de launch</th>
+      <th>Opmerkingen</th><th>Weergavetekst in de PGO</th><th>Gebruikersvriendelijke toelichting</th><th>Prioriteit (MoSCoW)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Taak</strong></td><td><strong>Rootconcept</strong></td><td>pt-lm-Task</td><td></td><td></td>
+      <td></td><td>Taak</td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>Instantiates::ActivityDefinition</td><td>Reference</td><td>pt-lm-Task.Instantiates.ActivityDefinition</td><td>ProviderModule-ActivityDefinition-Vragenlijst-WoonLeefsituatie</td><td>c</td>
+      <td>Verwijzing naar de digitale activiteit (LM ActivityDefinition).</td><td></td><td></td><td>M</td>
+    </tr>
+    <tr>
+      <td>Identifier</td><td>Item</td><td>pt-lm-Task.Identifier</td><td>system: "http://medrie.nl/taskIdentifier"<br/>value: "TASK-Vragenlijst-Woonsituatie-9642"</td><td>b / c</td>
+      <td>Business identifier is verplicht (uniek binnen of over systemen heen).</td><td></td><td></td><td>M</td>
+    </tr>
+    <tr>
+      <td>GroupIdentifier</td><td>Item</td><td>pt-lm-Task.GroupIdentifier</td><td>system: "https://medrie.nl/fhir/identifiers/task-group"<br/>value: "module-diabetes-2025"<br/>display/text: "Digitale zorgmodule Diabetes"</td><td>a</td>
+      <td>Wordt gebruikt om gerelateerde taken (bijv. taken binnen één digitale zorgmodule) te groeperen en te filteren in het overzicht. Open tekstveld; geen vaste valueset.</td><td>Zorgmodule of Groep</td><td>De zorgmodule of het programma waar deze taak toe behoort.</td><td>M</td>
+    </tr>
+    <tr>
+      <td>BasedOn::ServiceRequest</td><td>Reference</td><td>pt-lm-Task.BasedOn</td><td>ServiceRequest/ProviderModule-ServiceRequest-Glucosemeting</td><td>c</td>
+      <td>De zorgopdracht waar de taak op gebaseerd is. Discussiepunt MedMij.</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>PartOf::Task</td><td>Reference</td><td>pt-lm-Task.PartOf</td><td>Task/ProviderModule-MainTask-Meetopdracht-Glucosemeting</td><td>c</td>
+      <td>Verwijzing naar een hoofdtaak. Gebruikt om subtaken (bijv. losse meetmomenten) te koppelen aan een hoofdtaak. In het overzichtsscherm worden alleen hoofdtaken of enkelvoudige taken (zonder <code>partOf</code>) getoond.</td><td></td><td></td><td>M</td>
+    </tr>
+    <tr>
+      <td>Status</td><td>Item</td><td>pt-lm-Task.Status</td><td>requested</td><td>a</td>
+      <td>Bepaalt in welke groep de taak in het overzichtsscherm valt: Te doen (<code>ready</code>, <code>requested</code>, <code>received</code>, <code>in-progress</code>), Gereed (<code>completed</code>) of Gestopt (<code>failed</code>, <code>cancelled</code>).</td><td>Status</td><td>Patiëntvriendelijke vertaling van de statuscode (bijv. "Aangevraagd", "In uitvoering", "Afgerond", "Geannuleerd").</td><td>M</td>
+    </tr>
+    <tr>
+      <td>Intent</td><td>Item</td><td>pt-lm-Task.Intent</td><td>order</td><td>c</td>
+      <td>Voor patiëntgerichte activiteiten doorgaans 'order'.</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Priority</td><td>Item</td><td>pt-lm-Task.Priority</td><td>routine</td><td>c</td>
+      <td></td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Description</td><td>Item</td><td>pt-lm-Task.Description</td><td>Vul de vragenlijst in over je woon-/leefsituatie</td><td>b</td>
+      <td>Voor de patiënt leesbare omschrijving van de taak. In de praktijk vaak een langer veld; alleen in het detailscherm tonen. Niet sorteerbaar of filterbaar.</td><td>Omschrijving</td><td></td><td>M</td>
+    </tr>
+    <tr>
+      <td>For::Patient</td><td>Reference</td><td>pt-lm-Task.For</td><td>Tom van Duinen</td><td>c</td>
+      <td>De patiënt voor wie de taak bedoeld is. Wordt normaal gesproken niet getoond in de PGO (eigen account).</td><td></td><td></td><td>W</td>
+    </tr>
+    <tr>
+      <td>ExecutionPeriod</td><td>Item</td><td>pt-lm-Task.ExecutionPeriod</td><td>2025-12-22 tot en met 2025-12-28</td><td>a</td>
+      <td>Tijdvenster waarin de taak uitgevoerd moet/mag worden (start en eind). De invulvereisten (welke onderdelen verplicht of optioneel zijn) worden beschreven in de implementation guide.</td><td>Periode van uitvoer</td><td></td><td>M</td>
+    </tr>
+    <tr>
+      <td>AuthoredOn</td><td>Item</td><td>pt-lm-Task.AuthoredOn</td><td>2025-12-23T18:00:00+01:00</td><td>c</td>
+      <td>Datum/tijd waarop de taak is aangemaakt.</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>LastModified</td><td>Item</td><td>pt-lm-Task.LastModified</td><td>2025-12-23T18:00:00+01:00</td><td>c</td>
+      <td>Datum/tijd van de laatste wijziging (bijv. statuswijziging).</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Requester::PractitionerRole.Practitioner</td><td>Reference</td><td>pt-lm-Task.Requester</td><td>A. de Haard, huisarts</td><td>b</td>
+      <td>Zowel de naam als het specialisme tonen.</td><td>Aanvragende zorgverlener</td><td></td><td>S</td>
+    </tr>
+    <tr>
+      <td>Requester::PractitionerRole.Organization</td><td>Reference</td><td>pt-lm-Task.Requester</td><td>Huisartsenpraktijk de Haard</td><td>a</td>
+      <td>Liefst geen afkortingen.</td><td>Zorgorganisatie</td><td></td><td>M</td>
+    </tr>
+    <tr>
+      <td>Owner::Patient</td><td>Reference</td><td>pt-lm-Task.Owner</td><td>Tom van Duinen</td><td>c</td>
+      <td>Uitvoerder van de taak. In de huidige scope altijd de patiënt zelf.</td><td>Uitvoerder</td><td></td><td>W</td>
+    </tr>
+    <tr>
+      <td>Restriction.Repetitions</td><td>Item</td><td>pt-lm-Task.Restriction.Repetitions</td><td>(nog geen voorbeeld)</td><td>c</td>
+      <td>Aantal keer dat de taak herhaald moet worden.</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Restriction.Period</td><td>Item</td><td>pt-lm-Task.Restriction.Period</td><td>(nog geen voorbeeld)</td><td>c</td>
+      <td>Periode waarin de restrictie van toepassing is.</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>LastUpdated</td><td>Item</td><td>(niet in LM)</td><td></td><td>c</td>
+      <td>Niet in het LM, maar wel relevant. Functioneert als metadata: betreft de <code>lastUpdated</code> aan de bron en kan PGO-zijdig gebruikt worden voor incrementele synchronisatie (max(_lastUpdated)). Wordt niet getoond aan de patiënt; helpt het ontbreken van notificaties op te vangen.</td><td></td><td></td><td>C</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Digitale activiteit (ActivityDefinition)
-
 Verwijzing: [LogicalModel ActivityDefinition](https://simplifier.net/medmij-r4-provider-module/lmactivitydefinition)
 
-
-| Naam data-item          | Type data-item  | Id                                      | Voorbeeld                                              | Waar tonen in PGO (a/b/c/d) | Opmerkingen                                                                                 | Weergavetekst in de PGO | Gebruikersvriendelijke toelichting | Prioriteit (MoSCoW) |
-| ----------------------- | --------------- | --------------------------------------- | ------------------------------------------------------ | --------------------------- | ------------------------------------------------------------------------------------------- | ----------------------- | ---------------------------------- | ------------------- |
-| **Digitale Activiteit** | **Rootconcept** | pt-lm-ActivityDefinition                |                                                        |                             | Herbruikbare definitie van een te starten digitale (eHealth) activiteit.                    | Activiteit              |                                    |                     |
-| ModuleEndpoint          | Reference       | pt-lm-ActivityDefinition.ModuleEndpoint | Endpoint/ProviderModule-Endpoint-Module                | d                           | Endpoint waar de activiteit gestart wordt. Niet tonen, wel noodzakelijk voor de launch.     |                         |                                    | M                   |
-| Identifier              | Item            | pt-lm-ActivityDefinition.Identifier     |                                                        | c                           | Business identifier van de ActivityDefinition.                                              |                         |                                    | C                   |
-| Version                 | Item            | pt-lm-ActivityDefinition.Version        | 1.0.0                                                  | c                           | Versie van de gepubliceerde activiteit.                                                     |                         |                                    | C                   |
-| Name                    | Item            | pt-lm-ActivityDefinition.Name           | VragenlijstWoonLeefsituatie                            | c                           | Computer-friendly naam.                                                                     |                         |                                    | W                   |
-| Title                   | Item            | pt-lm-ActivityDefinition.Title          | Vragenlijst over de woon-leefsituatie                  | a                           | Mens-leesbare titel die in het overzicht en detail wordt getoond.                           | Activiteit (titel)      |                                    | M                   |
-| Status                  | Item            | pt-lm-ActivityDefinition.Status         | active                                                 | c                           | Status van de definitie (bijv. draft, active, retired).                                     |                         |                                    | C                   |
-| Publisher               | Item            | pt-lm-ActivityDefinition.Publisher      | HinqZNO                                                | c                           | Organisatie die verantwoordelijk is voor de publicatie van de activiteit (moduleaanbieder). |                         |                                    | C                   |
-| Description             | Item            | pt-lm-ActivityDefinition.Description    | Vragenlijst beschrijving voor patiënt en zorgaanbieder | c                           | Beschrijving (markdown). Niet patiëntspecifiek.                                             |                         |                                    | C                   |
-| Usage                   | Item            | pt-lm-ActivityDefinition.Usage          |                                                        | c                           | Bedoeld voor de zorgverlener bij het selecteren/toewijzen.                                  |                         |                                    | W                   |
-| Timing                  | Item            | pt-lm-ActivityDefinition.Timing         | 7d, 2x per dag (optioneel)                             | c                           | Aanbevolen timing op definitieniveau. Patiëntspecifieke timing hoort bij de ServiceRequest. |                         |                                    | C                   |
-
+<!-- DIGITALE ACTIVITEIT -->
+<table class="pgo-table">
+  <colgroup>
+    <col style="width:13%"><col style="width:9%"><col style="width:9%"><col style="width:11%">
+    <col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:21%"><col style="width:6%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Naam data-item</th><th>Type data-item</th><th>Id</th><th>Voorbeeld</th>
+      <th>Waar tonen in PGO (a) in overzicht en als detailgegeven (b) als detailgegeven (c) niet tonen (d) niet tonen, wel noodzakelijk voor de launch</th>
+      <th>Opmerkingen</th><th>Weergavetekst in de PGO</th><th>Gebruikersvriendelijke toelichting</th><th>Prioriteit (MoSCoW)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Digitale Activiteit</strong></td><td><strong>Rootconcept</strong></td><td>pt-lm-ActivityDefinition</td><td></td><td></td>
+      <td>Herbruikbare definitie van een te starten digitale (eHealth) activiteit.</td><td>Activiteit</td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>ModuleEndpoint</td><td>Reference</td><td>pt-lm-ActivityDefinition.ModuleEndpoint</td><td>Endpoint/ProviderModule-Endpoint-Module</td><td>d</td>
+      <td>Endpoint waar de activiteit gestart wordt. Niet tonen, wel noodzakelijk voor de launch.</td><td></td><td></td><td>M</td>
+    </tr>
+    <tr>
+      <td>Identifier</td><td>Item</td><td>pt-lm-ActivityDefinition.Identifier</td><td></td><td>c</td>
+      <td>Business identifier van de ActivityDefinition.</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Version</td><td>Item</td><td>pt-lm-ActivityDefinition.Version</td><td>1.0.0</td><td>c</td>
+      <td>Versie van de gepubliceerde activiteit.</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Name</td><td>Item</td><td>pt-lm-ActivityDefinition.Name</td><td>VragenlijstWoonLeefsituatie</td><td>c</td>
+      <td>Computer-friendly naam.</td><td></td><td></td><td>W</td>
+    </tr>
+    <tr>
+      <td>Title</td><td>Item</td><td>pt-lm-ActivityDefinition.Title</td><td>Vragenlijst over de woon-leefsituatie</td><td>a</td>
+      <td>Mens-leesbare titel die in het overzicht en detail wordt getoond.</td><td>Activiteit (titel)</td><td></td><td>M</td>
+    </tr>
+    <tr>
+      <td>Status</td><td>Item</td><td>pt-lm-ActivityDefinition.Status</td><td>active</td><td>c</td>
+      <td>Status van de definitie (bijv. draft, active, retired).</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Publisher</td><td>Item</td><td>pt-lm-ActivityDefinition.Publisher</td><td>HinqZNO</td><td>c</td>
+      <td>Organisatie die verantwoordelijk is voor de publicatie van de activiteit (moduleaanbieder).</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Description</td><td>Item</td><td>pt-lm-ActivityDefinition.Description</td><td>Vragenlijst beschrijving voor patiënt en zorgaanbieder</td><td>c</td>
+      <td>Beschrijving (markdown). Niet patiëntspecifiek.</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Usage</td><td>Item</td><td>pt-lm-ActivityDefinition.Usage</td><td></td><td>c</td>
+      <td>Bedoeld voor de zorgverlener bij het selecteren/toewijzen.</td><td></td><td></td><td>W</td>
+    </tr>
+    <tr>
+      <td>Timing</td><td>Item</td><td>pt-lm-ActivityDefinition.Timing</td><td>7d, 2x per dag (optioneel)</td><td>c</td>
+      <td>Aanbevolen timing op definitieniveau. Patiëntspecifieke timing hoort bij de ServiceRequest.</td><td></td><td></td><td>C</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Zorgopdracht (ServiceRequest)
-
 Verwijzing: [LogicalModel ServiceRequest](https://simplifier.net/medmij-r4-provider-module/lmservicerequest)
 
 Voor de ServiceRequest hebben we twee varianten:
 
 **Variant 1 — Groeperende zorgopdracht.** De zorgverlener vraagt een set aan digitale interventies aan (bijv. een digitale zorgmodule). De ServiceRequest dient hier momenteel geen ander doel dan het groeperen van de taken. Workflow compliant.
 
-
-| Naam data-item             | Type data-item  | Id                               | Voorbeeld                                                                           | Waar tonen in PGO (a/b/c/d) | Opmerkingen                                                   | Weergavetekst in de PGO | Gebruikersvriendelijke toelichting | Prioriteit (MoSCoW) |
-| -------------------------- | --------------- | -------------------------------- | ----------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------- | ----------------------- | ---------------------------------- | ------------------- |
-| **ServiceRequest (groep)** | **Rootconcept** | pt-lm-ServiceRequest             |                                                                                     |                             | Groeperende zorgopdracht voor een digitale zorgmodule.        |                         |                                    |                     |
-| Identifier                 | Item            | pt-lm-ServiceRequest.Identifier  | system: "https://medrie.nl/fhir/identifiers/SR-group" value: "module-diabetes-2025" | c                           | Mogelijk nodig voor sortering/groepering aan PGO-zijde.       |                         |                                    | C                   |
-| Code (text)                | Item            | (FHIR: ServiceRequest.code.text) | "Digitale zorgmodule Diabetes"                                                      | a                           | Wordt in het overzicht getoond via `Task.basedOn.display`.    | Zorgmodule              |                                    | M                   |
-| Status                     | Item            | pt-lm-ServiceRequest.Status      | active                                                                              | c                           |                                                               |                         |                                    | C                   |
-| Intent                     | Item            | pt-lm-ServiceRequest.Intent      | order                                                                               | c                           |                                                               |                         |                                    | C                   |
-| Subject                    | Reference       | pt-lm-ServiceRequest.Subject     | De patiënt                                                                          | c                           |                                                               |                         |                                    | W                   |
-| Requester                  | Reference       | pt-lm-ServiceRequest.Requester   | A. de Haard, huisarts                                                               | c                           | Aanvragende zorgverlener wordt al getoond via Task.requester. |                         |                                    | C                   |
-| AuthoredOn                 | Item            | pt-lm-ServiceRequest.AuthoredOn  | 2025-12-23T18:00:00+01:00                                                           | c                           |                                                               |                         |                                    | C                   |
-
+<!-- SERVICEREQUEST (GROEP) -->
+<table class="pgo-table">
+  <colgroup>
+    <col style="width:13%"><col style="width:9%"><col style="width:9%"><col style="width:11%">
+    <col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:21%"><col style="width:6%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Naam data-item</th><th>Type data-item</th><th>Id</th><th>Voorbeeld</th>
+      <th>Waar tonen in PGO (a) in overzicht en als detailgegeven (b) als detailgegeven (c) niet tonen (d) niet tonen, wel noodzakelijk voor de launch</th>
+      <th>Opmerkingen</th><th>Weergavetekst in de PGO</th><th>Gebruikersvriendelijke toelichting</th><th>Prioriteit (MoSCoW)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ServiceRequest (groep)</strong></td><td><strong>Rootconcept</strong></td><td>pt-lm-ServiceRequest</td><td></td><td></td>
+      <td>Groeperende zorgopdracht voor een digitale zorgmodule.</td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>Identifier</td><td>Item</td><td>pt-lm-ServiceRequest.Identifier</td><td>system: "https://medrie.nl/fhir/identifiers/SR-group"<br/>value: "module-diabetes-2025"</td><td>c</td>
+      <td>Mogelijk nodig voor sortering/groepering aan PGO-zijde.</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Code (text)</td><td>Item</td><td>(FHIR: ServiceRequest.code.text)</td><td>"Digitale zorgmodule Diabetes"</td><td>a</td>
+      <td>Wordt in het overzicht getoond via <code>Task.basedOn.display</code>.</td><td>Zorgmodule</td><td></td><td>M</td>
+    </tr>
+    <tr>
+      <td>Status</td><td>Item</td><td>pt-lm-ServiceRequest.Status</td><td>active</td><td>c</td>
+      <td></td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Intent</td><td>Item</td><td>pt-lm-ServiceRequest.Intent</td><td>order</td><td>c</td>
+      <td></td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Subject</td><td>Reference</td><td>pt-lm-ServiceRequest.Subject</td><td>De patiënt</td><td>c</td>
+      <td></td><td></td><td></td><td>W</td>
+    </tr>
+    <tr>
+      <td>Requester</td><td>Reference</td><td>pt-lm-ServiceRequest.Requester</td><td>A. de Haard, huisarts</td><td>c</td>
+      <td>Aanvragende zorgverlener wordt al getoond via Task.requester.</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>AuthoredOn</td><td>Item</td><td>pt-lm-ServiceRequest.AuthoredOn</td><td>2025-12-23T18:00:00+01:00</td><td>c</td>
+      <td></td><td></td><td></td><td>C</td>
+    </tr>
+  </tbody>
+</table>
 
 **Variant 2 — Patiëntspecifieke zorgopdracht.** Wordt alleen gebruikt als er voor een taak in de module een patiëntspecifieke instructie of een afwijkende timing moet worden vastgelegd.
 
-
-| Naam data-item                        | Type data-item  | Id                                      | Voorbeeld                                                          | Waar tonen in PGO (a/b/c/d) | Opmerkingen                                                                                | Weergavetekst in de PGO | Gebruikersvriendelijke toelichting | Prioriteit (MoSCoW) |
-| ------------------------------------- | --------------- | --------------------------------------- | ------------------------------------------------------------------ | --------------------------- | ------------------------------------------------------------------------------------------ | ----------------------- | ---------------------------------- | ------------------- |
-| **ServiceRequest (patiëntspecifiek)** | **Rootconcept** | pt-lm-ServiceRequest                    |                                                                    | b                           | Patiëntspecifieke zorgopdracht.                                                            |                         |                                    |                     |
-| Identifier                            | Item            | pt-lm-ServiceRequest.Identifier         |                                                                    | c                           |                                                                                            |                         |                                    | C                   |
-| Status                                | Item            | pt-lm-ServiceRequest.Status             | active                                                             | c                           |                                                                                            |                         |                                    | C                   |
-| Intent                                | Item            | pt-lm-ServiceRequest.Intent             | order                                                              | c                           |                                                                                            |                         |                                    | C                   |
-| Subject                               | Reference       | pt-lm-ServiceRequest.Subject            | De patiënt                                                         | c                           |                                                                                            |                         |                                    | W                   |
-| patientInstruction                    | Item            | pt-lm-ServiceRequest.patientInstruction | "Specifieke instructie voor patiënt X, alleen 's avonds gebruiken" | b                           | Optioneel. Specifieke instructie voor de patiënt, alleen tonen indien aanwezig.            | Patiëntinstructie       |                                    | M                   |
-| Occurrence                            | Item            | pt-lm-ServiceRequest.Occurrence         | 7d, 2x per dag                                                     | c                           | Optioneel. Patiëntspecifieke timing (kan afwijken van de timing in de ActivityDefinition). |                         |                                    | C                   |
-| Requester                             | Reference       | pt-lm-ServiceRequest.Requester          | A. de Haard, huisarts                                              | c                           |                                                                                            |                         |                                    | C                   |
-| AuthoredOn                            | Item            | pt-lm-ServiceRequest.AuthoredOn         | 2025-12-23T18:00:00+01:00                                          | c                           |                                                                                            |                         |                                    | C                   |
-
-
-### Endpoint
-
-Verwijzing: [LogicalModel Endpoint](https://simplifier.net/medmij-r4-provider-module/lmenpoint)
-
-De entiteit Endpoint is wel in gebruik, maar de gegevens worden niet getoond in de PGO. De gegevens zijn nodig voor de launch van de digitale activiteit.
-
-
-| Naam data-item       | Type data-item  | Id                                  | Voorbeeld                                                          | Waar tonen in PGO (a/b/c/d) | Opmerkingen                                              | Weergavetekst in de PGO | Gebruikersvriendelijke toelichting | Prioriteit (MoSCoW) |
-| -------------------- | --------------- | ----------------------------------- | ------------------------------------------------------------------ | --------------------------- | -------------------------------------------------------- | ----------------------- | ---------------------------------- | ------------------- |
-| **Endpoint**         | **Rootconcept** | pt-lm-Endpoint                      |                                                                    | d                           | Niet tonen, wel noodzakelijk voor de launch.             |                         |                                    | M                   |
-| ClientId             | Item            | pt-lm-Endpoint.ClientId             | dvaaanbiedersmodulesweb                                            | d                           | Client identifier ('audience') in de DVA token exchange. |                         |                                    | M                   |
-| managingOrganization | Reference       | pt-lm-Endpoint.managingOrganization | Organization/ProviderModule-Organization-Huisartsenpraktijk-Medrie | d                           | Organisatie die het endpoint beheert.                    |                         |                                    | M                   |
-| Address              | Item            | pt-lm-Endpoint.Adress               | https://module.test.5im.nl/web/api/smartonfhir/launch              | d                           | FHIR resource endpoint voor de launch.                   |                         |                                    | M                   |
-
+<!-- SERVICEREQUEST (PATIËNTSPECIFIEK) -->
+<table class="pgo-table">
+  <colgroup>
+    <col style="width:13%"><col style="width:9%"><col style="width:9%"><col style="width:11%">
+    <col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:21%"><col style="width:6%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Naam data-item</th><th>Type data-item</th><th>Id</th><th>Voorbeeld</th>
+      <th>Waar tonen in PGO (a) in overzicht en als detailgegeven (b) als detailgegeven (c) niet tonen (d) niet tonen, wel noodzakelijk voor de launch</th>
+      <th>Opmerkingen</th><th>Weergavetekst in de PGO</th><th>Gebruikersvriendelijke toelichting</th><th>Prioriteit (MoSCoW)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ServiceRequest (patiëntspecifiek)</strong></td><td><strong>Rootconcept</strong></td><td>pt-lm-ServiceRequest</td><td></td><td>b</td>
+      <td>Patiëntspecifieke zorgopdracht. Naamgevingsconventies en verdere uitwerking worden beschreven in de implementation guide.</td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>Identifier</td><td>Item</td><td>pt-lm-ServiceRequest.Identifier</td><td></td><td>c</td>
+      <td></td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Status</td><td>Item</td><td>pt-lm-ServiceRequest.Status</td><td>active</td><td>c</td>
+      <td></td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Intent</td><td>Item</td><td>pt-lm-ServiceRequest.Intent</td><td>order</td><td>c</td>
+      <td></td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Subject</td><td>Reference</td><td>pt-lm-ServiceRequest.Subject</td><td>De patiënt</td><td>c</td>
+      <td></td><td></td><td></td><td>W</td>
+    </tr>
+    <tr>
+      <td>patientInstruction</td><td>Item</td><td>pt-lm-ServiceRequest.patientInstruction</td><td>"Specifieke instructie voor patiënt X, alleen 's avonds gebruiken"</td><td>b</td>
+      <td>Optioneel. Specifieke instructie voor de patiënt, alleen tonen indien aanwezig.</td><td>Patiëntinstructie</td><td></td><td>M</td>
+    </tr>
+    <tr>
+      <td>Occurrence</td><td>Item</td><td>pt-lm-ServiceRequest.Occurrence</td><td>7d, 2x per dag</td><td>c</td>
+      <td>Optioneel. Patiëntspecifieke timing (kan afwijken van de timing in de ActivityDefinition).</td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>Requester</td><td>Reference</td><td>pt-lm-ServiceRequest.Requester</td><td>A. de Haard, huisarts</td><td>c</td>
+      <td></td><td></td><td></td><td>C</td>
+    </tr>
+    <tr>
+      <td>AuthoredOn</td><td>Item</td><td>pt-lm-ServiceRequest.AuthoredOn</td><td>2025-12-23T18:00:00+01:00</td><td>c</td>
+      <td></td><td></td><td></td><td>C</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Lokale gegevens aan PGO-zijde
 
+<!-- LOKALE GEGEVENS -->
+<table class="pgo-table">
+  <colgroup>
+    <col style="width:13%"><col style="width:9%"><col style="width:9%"><col style="width:11%">
+    <col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:21%"><col style="width:6%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Naam data-item</th><th>Type data-item</th><th>Id</th><th>Voorbeeld</th>
+      <th>Waar tonen in PGO (a) in overzicht en als detailgegeven (b) als detailgegeven (c) niet tonen (d) niet tonen, wel noodzakelijk voor de launch</th>
+      <th>Opmerkingen</th><th>Weergavetekst in de PGO</th><th>Gebruikersvriendelijke toelichting</th><th>Prioriteit (MoSCoW)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Laatste_ophaal_ZA</td><td>Item</td><td>(lokaal)</td><td>2000-01-01T00:00:00+01:00</td><td>a</td>
+      <td>Initiële datum of <code>max(_lastUpdated)</code>. Wordt gebruikt om incrementeel taakgegevens op te halen bij de zorgaanbieder.</td><td>Laatst opgehaald</td><td></td><td>M</td>
+    </tr>
+  </tbody>
+</table>
 
-| Naam data-item    | Type data-item | Id       | Voorbeeld                 | Waar tonen in PGO (a/b/c/d) | Opmerkingen                                                                                                          | Weergavetekst in de PGO | Gebruikersvriendelijke toelichting | Prioriteit (MoSCoW) |
-| ----------------- | -------------- | -------- | ------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------- | ---------------------------------- | ------------------- |
-| Laatste_ophaal_ZA | Item           | (lokaal) | 2000-01-01T00:00:00+01:00 | a                           | Initiële datum of `max(_lastUpdated)`. Wordt gebruikt om incrementeel taakgegevens op te halen bij de zorgaanbieder. | Laatst opgehaald        |                                    | M                   |
+## Aandachtspunten
 
-
-### Aandachtspunten
+**Patiëntgegevens.** Het Logical Model `pt-lm-Patient` (naam, geboortedatum, geslacht) wordt niet als aparte sectie uitgewerkt in deze richtlijn. Binnen de scope van Aanbiedertaken is de patiënt altijd de PGO-gebruiker zelf en worden zijn/haar gegevens niet apart in het overzicht of detailscherm getoond. De referenties `Task.For` en `Task.Owner` naar de patiënt zijn daarom in de specificatietabel gemarkeerd met `c` (niet tonen).
 
 **Deduplicatie.** Voor de taak gebeurt deduplicatie op basis van een business identifier. Voor gerelateerde resources (bijvoorbeeld een gekoppelde ActivityDefinition) is het wenselijk dat ook deze een unieke business identifier krijgen, om verweesde objecten in de PGO te voorkomen.
 
