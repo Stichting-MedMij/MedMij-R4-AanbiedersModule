@@ -53,7 +53,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-1"
@@ -80,7 +80,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-2"
@@ -107,7 +107,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-3"
@@ -134,7 +134,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-4"
@@ -161,7 +161,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-5"
@@ -188,7 +188,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-6"
@@ -215,7 +215,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "SUBTASK-Saturatie-7"
@@ -264,7 +264,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Leven-COPD)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "TASK-1673834"
@@ -312,7 +312,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Inhalatiemedicatie)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "TASK-983823471"
@@ -361,7 +361,7 @@ Usage: #example
   * url = $koppeltaal-instantiates
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Vragenlijst-Wat-Bereiken)
     * type = "ActivityDefinition"
-* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting) "Digitale zorgmodule COPD"
+* basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
   * value = "TASK-74745858"

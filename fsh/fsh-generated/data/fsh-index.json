@@ -192,28 +192,28 @@
     "endLine": 435
   },
   {
-    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting.json",
-    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting",
+    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-COPD.json",
+    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-COPD",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-3.fsh",
+    "startLine": 3,
+    "endLine": 16
+  },
+  {
+    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-CVRM.json",
+    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-CVRM",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
     "startLine": 33,
     "endLine": 46
   },
   {
-    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting.json",
-    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting",
+    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-Diabetes.json",
+    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-Diabetes",
     "fshType": "Instance",
     "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
     "startLine": 35,
     "endLine": 48
-  },
-  {
-    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting.json",
-    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-3.fsh",
-    "startLine": 3,
-    "endLine": 16
   },
   {
     "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestExecution-Bloeddrukmeting.json",
@@ -261,7 +261,7 @@
     "fshType": "Profile",
     "fshFile": "ProviderTasks-ServiceRequestDigitalGroupPlan.fsh",
     "startLine": 1,
-    "endLine": 20
+    "endLine": 28
   },
   {
     "outputFile": "StructureDefinition-pt-ServiceRequest-ExecutionOrder.json",
