@@ -15,7 +15,13 @@ Description: "Clinical request representing the selected digital group plan for 
 ^definition = "Patient-specific clinical order to initiate a digital group plan. It is referenced from the patient-facing Task via Task.basedOn."
 * intent = #plan
 * code 1..1
+  * ^short = "Digital group plan identifier"
+  * ^definition = "Identifies which digital group plan is requested for the patient. The human-readable (display) name of the digital group plan is carried in `code.text` and is used as the group label in the PHR."
+  * ^alias = "Identificatie digitaal groepsplan"
   * text 1..1
+    * ^short = "Display name of the digital group plan"
+    * ^definition = "Human-readable name of the digital group plan. This name is used as the display label of the Task group in the PHR and MUST match the name used to identify the group in the `Task.basedOn` reference. The source system fills this element with the (display) name of the digital group plan when a healthcare professional starts a digital group plan/module for a patient."
+    * ^alias = "Naam digitaal groepsplan"
 * subject only Reference(Patient or Group or Location or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
   * ^definition = "The patient for whom the activity is requested."
 * requester only Reference(Practitioner or PractitionerRole or Organization or Patient or RelatedPerson or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)
