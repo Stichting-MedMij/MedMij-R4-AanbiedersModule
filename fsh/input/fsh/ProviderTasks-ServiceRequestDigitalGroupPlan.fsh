@@ -14,6 +14,8 @@ Description: "Clinical request representing the selected digital group plan for 
 * .
 ^definition = "Patient-specific clinical order to initiate a digital group plan. It is referenced from the patient-facing Task via Task.basedOn."
 * intent = #plan
+* code 1..1
+  * text 1..1
 * subject only Reference(Patient or Group or Location or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
   * ^definition = "The patient for whom the activity is requested."
 * requester only Reference(Practitioner or PractitionerRole or Organization or Patient or RelatedPerson or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)
