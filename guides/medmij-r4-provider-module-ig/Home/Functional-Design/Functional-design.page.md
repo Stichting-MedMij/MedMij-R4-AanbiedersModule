@@ -90,7 +90,7 @@ Ontvangst:
 - De patiënt ontvangt een melding (via mail) dat er een digitale activiteit klaarstaat: “Meet je bloeddruk 2× per dag gedurende 7 dagen”.
 
 Takenlijst raadplegen:
-- De patiënt opent de PGO en raadpleegt de takenlijst. Per taak ziet de patiënt de taakomschrijving, status en uitvoerperiode.
+- De patiënt opent de PGO en raadpleegt de takenlijst. Per taak ziet de patiënt de taakomschrijving, status en het tijdschema voor uitvoering (inclusief eventuele herhalingen, zoals afgeleid uit de uitvoeringsopdracht).
 
 Starten van de activiteit:
 - De patiënt start de digitale activiteit vanuit de PGO, door een externe module/applicatie te openen (“Start module”). Hiermee wordt de uitvoering van de activiteit gestart in een externe applicatie met de juiste context.
@@ -119,8 +119,7 @@ Terugkoppeling:
 - Het bronsysteem maakt per digitale activiteit één taak aan en stelt deze beschikbaar aan de patiënt. Wanneer meerdere digitale activiteiten in samenhang worden aangevraagd (bijv. binnen één digitale zorgmodule), worden de bijbehorende taken gegroepeerd via een gedeelde zorgopdracht in de rol van digitaal groepsplan. Per taak worden de volgende relaties en gegevens vastgelegd:
 	- een koppeling naar de digitale activiteit (ActivityDefinition) waarop de taak gebaseerd is;
 	- de gedeelde zorgopdracht (digitaal groepsplan) waaraan de taak is gekoppeld voor groepering;
-	- een uitvoerdatum/uitvoerperiode, indien van toepassing;
-	- patiënt-specifieke uitvoeringsinstructies en/of planning via een zorgopdracht in de rol van uitvoeringsopdracht (ServiceRequest – ExecutionOrder), die aan de taak is gekoppeld, indien van toepassing.
+	- patiënt-specifieke uitvoeringsinstructies en/of het tijdschema voor de uitvoering van de activiteit, vastgelegd in een zorgopdracht in de rol van uitvoeringsopdracht (ServiceRequest – ExecutionOrder), die aan de taak is gekoppeld. Een uitvoeringsopdracht is in zijn algemeenheid optioneel, maar verplicht aanwezig wanneer er een (herhalend) tijdschema voor de activiteit geldt (bijv. "2× per dag gedurende 7 dagen").
 
 Er is geen hoofd-/subtaak hiërarchie tussen taken: elke taak vertegenwoordigt één digitale activiteit. Taken die bij elkaar horen, worden uitsluitend gegroepeerd via de gedeelde zorgopdracht (digitaal groepsplan).
 
@@ -180,14 +179,17 @@ De ActivityDefinition beschrijft de digitale activiteit als een generieke, herbr
 Binnen Aanbiedertaken wordt de zorgopdracht in twee onderscheidende rollen gebruikt:
 
 - *Zorgopdracht – digitaal groepsplan:* de patiënt-specifieke aanvraag waarmee een digitaal groepsplan/zorgmodule voor de patiënt wordt geïnitieerd. Deze zorgopdracht fungeert als groepering: alle taken die binnen hetzelfde groepsplan horen verwijzen naar dezelfde zorgopdracht. De naam van het digitaal groepsplan wordt in deze zorgopdracht vastgelegd en gebruikt als groepslabel in de takenlijst van de PGO.
-- *Zorgopdracht – uitvoeringsopdracht (optioneel):* het patiënt-specifieke uitvoeringsplan voor één digitale activiteit, met onder meer planning en patiënt-specifieke instructies die afwijken van of aanvullend zijn op de generieke informatie in de digitale activiteit. Een uitvoeringsopdracht wordt aan de bijbehorende taak gekoppeld.
+- *Zorgopdracht – uitvoeringsopdracht:* het patiënt-specifieke uitvoeringsplan voor één digitale activiteit, met patiënt-specifieke instructies en het tijdschema voor de uitvoering. Een uitvoeringsopdracht wordt aan de bijbehorende taak gekoppeld. De uitvoeringsopdracht is in zijn algemeenheid optioneel, alleen nodig wanneer er patiënt-specifieke uitvoeringsdetails zijn, maar is verplicht aanwezig wanneer er een (herhalend) tijdschema voor de activiteit geldt.
 
 **Taak als uitvoerbaar item voor de patiënt**
 De Task is het item dat de patiënt in de PGO ziet en waarop de voortgang wordt bijgehouden (openstaand, in uitvoering, afgerond). Elke taak vertegenwoordigt één digitale activiteit en verwijst:
 
 - naar de digitale activiteit (ActivityDefinition) die uitgevoerd of gestart moet worden;
 - naar de gedeelde zorgopdracht (digitaal groepsplan) voor groepering met andere taken binnen hetzelfde groepsplan;
-- (optioneel) naar een zorgopdracht (uitvoeringsopdracht) wanneer er patiënt-specifieke uitvoeringsdetails zijn.
+- (optioneel; verplicht bij een (herhalend) tijdschema) naar een zorgopdracht (uitvoeringsopdracht) wanneer er patiënt-specifieke uitvoeringsdetails zijn.
+
+**Tijdschema in de uitvoeringsopdracht**
+Het tijdschema voor de uitvoering van een digitale activiteit voor een bepaalde periode of herhalend (bijv. "2× per dag gedurende 7 dagen"). De digitale activiteit (ActivityDefinition) kan generieke timing-informatie op moduleniveau bevatten als referentie voor de zorgaanbieder, maar het patiënt-specifieke tijdschema komt altijd uit de uitvoeringsopdracht. PGO's lezen het tijdschema dat aan de patiënt getoond wordt, inclusief eventuele herhalingen, uitsluitend uit de uitvoeringsopdracht. Hiermee is er één eenduidige bron voor het tijdschema en wordt duplicatie of inconsistentie tussen resources voorkomen.
 
 **Eén taak per digitale activiteit, geen hoofd-/subtaak hiërarchie**
 Elke digitale activiteit voor de patiënt wordt gemodelleerd als één taak. Er bestaat geen hoofd-/subtaak hiërarchie tussen taken. Wanneer meerdere activiteiten bij elkaar horen, worden deze niet als subtaken gemodelleerd maar gegroepeerd via de gedeelde zorgopdracht (digitaal groepsplan). Statusupdates worden per individuele taak toegepast.
