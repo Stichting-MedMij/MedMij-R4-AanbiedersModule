@@ -1,6 +1,6 @@
 // Bundle with FHIR test instances in FSH format for ProviderTasks test scenario 3
 
-Instance: ProviderTasks-ServiceRequestDigitalGroup-Saturatiemeting
+Instance: ProviderTasks-ServiceRequestDigitalGroup-COPD
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan
 Usage: #example
 * text

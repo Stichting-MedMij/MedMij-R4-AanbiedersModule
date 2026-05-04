@@ -30,7 +30,7 @@ U gaat gedurende 1 week zelf uw bloeddruk meten. Volg hierbij deze stappen:
 4. Voer dit dagelijks uit gedurende 7 dagen en neem de resultaten mee naar uw volgende afspraak.
 """
 
-Instance: ProviderTasks-ServiceRequestDigitalGroup-Bloeddrukmeting
+Instance: ProviderTasks-ServiceRequestDigitalGroup-CVRM
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan
 Usage: #example
 * text

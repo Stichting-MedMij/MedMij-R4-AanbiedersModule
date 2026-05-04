@@ -32,7 +32,7 @@ U gaat gedurende 1 week zelf uw bloedglucose meten. Volg hierbij deze stappen:
 6. Voer dit dagelijks uit gedurende 7 dagen en neem de resultaten mee naar uw volgende afspraak.
 """
 
-Instance: ProviderTasks-ServiceRequestDigitalGroup-Glucosemeting
+Instance: ProviderTasks-ServiceRequestDigitalGroup-Diabetes
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan
 Usage: #example
 * text
