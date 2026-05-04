@@ -7,7 +7,12 @@ topic: FO
 ## Algemeen
 Aanbiedertaken (ProviderTasks) beschrijft de uitwisseling waarmee een zorgaanbieder patiënt-specifieke digitale activiteiten als taken beschikbaar stelt aan een patiënt, zodat de patiënt deze kan uitvoeren via een Persoonlijke Gezondheidsomgeving (PGO) of een andere eHealth-module.
 
-ProviderTasks en Koppeltaal zijn twee afzonderlijke projecten, maar beogen in de kern hetzelfde doel: het ondersteunen van digitale zorg door het uitwisselen van taken en het kunnen uitvoeren van digitale activiteiten in de context van een behandeling. Koppeltaal richt zich hierbij op gegevens- en workflow-uitwisseling tussen o.a. EPD’s, behandel-/patiëntportalen en eHealth-modules.
+ProviderTasks en Koppeltaal zijn als afzonderlijke projecten ingericht omdat ze ieder een eigen domein, doelgroep en afsprakenkader bedienen:
+
+- **Aanbiedertaken** valt binnen het MedMij-domein en betreft de uitwisseling tussen zorgaanbieder en patiënt: de zorgaanbieder zet digitale activiteiten uit, de patiënt raadpleegt en start deze via een PGO.
+- **Koppeltaal** richt zich op gegevens- en workflow-uitwisseling tussen zorginformatiesystemen onderling, onder andere EPD’s, behandel-/patiëntportalen en eHealth-modules, in de context van een behandeling.
+
+In de kern beogen beide projecten echter hetzelfde: het ondersteunen van digitale zorg door het uitwisselen van taken en het kunnen uitvoeren van digitale activiteiten in de context van een behandeling. Het naast elkaar bestaan van twee projecten weerspiegelt dus niet twee verschillende doelen, maar twee verschillende contexten waarin dat doel wordt gerealiseerd.
 
 Omdat beide projecten FHIR gebruiken om vergelijkbare workflowconcepten (zoals taken en digitale activiteiten) uit te wisselen, is een belangrijk onderdeel van zowel ProviderTasks als Koppeltaal het harmoniseren van de FHIR-profielen. Het doel hiervan is dat dezelfde (of zoveel mogelijk overlappende) profielen herbruikbaar zijn en consistent toegepast kunnen worden in beide projecten.
 
@@ -218,7 +223,7 @@ Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op ba
 De onderstaande tabel geeft een overzicht van alle gegevensdiensten die van toepassing zijn voor AanbiedersTaken. 
 
 | Id | Gegevensdienstnaam zonder versie | Versie |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | 301 | [Verzamelen - Taken](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/FHIR-Profiles?version=current#ptTask) | 1.0.0-alpha.1 |
 
 **Tabel 4: Gegevensdiensten relevant voor AanbiedersTaken**
@@ -233,4 +238,4 @@ De richtlijn geeft handvatten voor:
 De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van taken. 
 
 #### Inhoud weergaverichtlijn
-De weergaverichtlijn maakt nog geen onderdeel uit van deze alpha-versie. Deze wordt toegevoegd en gepubliceerd bij de beta-versie.
+De volledige weergaverichtlijn (inclusief mock-ups van het overzichts) en detailscherm, acceptatiecriteria en de tabellen met specificaties (per logical model, met MoSCoW-prioritering en weergaveteksten) is opgenomen in een aparte pagina: {{pagelink: Weergaverichtlijn, text: Weergaverichtlijn Aanbiedertaken}}.
