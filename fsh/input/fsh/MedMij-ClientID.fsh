@@ -6,7 +6,7 @@ Description: "The client ID from the Endpoint resource extension is used as an i
 * insert PublisherAndContactMedMij
 * . ..1
   * ^comment = """
-The purpose of client ID is to perform impersonation during token exchange, which results in a launch token of type: medmij:token-type:one-time-code and a smart_launch_context being stored in the DVA authorisation server for that client ID.
+The purpose of client ID is to perform impersonation during token exchange, which results in a launch token of type: urn:medmij:token-type:launch-code and a smart_launch_context being stored in the DVA authorisation server for that client ID.
  
 The launch token is used again as the value for the launch parameter in the SmartOnFhir launch URL. 
  
