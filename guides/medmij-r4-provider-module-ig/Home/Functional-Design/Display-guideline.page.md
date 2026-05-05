@@ -33,7 +33,7 @@ Er zijn twee weergaven gedefinieerd voor het overzicht van de aanbiedertaken:
 - Scenario 1: Overzicht Aanbiedertaken (met alle aanbiedertaken van alle zorgaanbieders in één overzicht)
 - Scenario 2: Overzicht Zorgaanbieder ‑ Aanbiedertaken (met alle aanbiedertaken van één zorgaanbieder in één overzicht). Dit scenario is optioneel, omdat het uitgangspunt is dat de taken van alle zorgaanbieders worden getoond.
 
-Het scenario, hieronder uitgewerkt, geeft weer hoe een UX-design getoond kan worden. Een PGO is vrij om scenario 2 te ondersteunen. De richtlijn gaat ervan uit dat de PGO een responsief ontwerp ondersteunt.
+Het scenario, hieronder uitgewerkt, geeft weer hoe een UX-design getoond kan worden. Een PGO is vrij om scenario 2 te ondersteunen. 
 
 In deze richtlijn zijn mock-ups opgenomen ter inspiratie. Daaronder is het Logical Model (LM) apart opgenomen, niet in een mock-up, maar in tabelvorm.
 
@@ -50,14 +50,15 @@ Het overzichtsscherm bestaat uit twee secties (deze mogen ook tabs zijn): een st
 Welke velden in het overzichtsscherm gebruikt kunnen worden, blijkt uit de onderstaande opsomming van de FHIR-elementen per resource:
 - `Task.status`
 - `Task.requester.practitionerRole.organization.name`
-- `Task.groupIdentifier` (functioneel: een groepsnaam, bijvoorbeeld de naam van de digitale zorgmodule)
 - `Task.executionPeriod.start`
 - `Task.executionPeriod.end`
 - `ActivityDefinition.title`
 
-Niet alle bovenstaande velden hoeven in het overzichtsscherm getoond te worden. Welke velden minimaal getoond moeten worden, blijkt uit de prioritering (MoSCoW) in de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}}. Lege velden hoeven niet getoond te worden. Op kleinere schermen (mobiel) en bij PDF/A-weergave is de beschikbare ruimte beperkt; de PGO is vrij om de status als tabblad of filter op te nemen en zo ruimte te creëren voor andere velden, en om aanvullende velden enkel in het detailscherm te tonen.
+Niet alle bovenstaande velden hoeven in het overzichtsscherm getoond te worden. Welke velden minimaal getoond moeten worden, blijkt uit de prioritering (MoSCoW) in de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}}. Lege velden hoeven niet getoond te worden. 
 
-**Figuur 1: Voorbeeld Overzicht Aanbiedertaken (mock-up volgt)**
+**Figuur 1: Voorbeeld Overzicht Aanbiedertaken**
+
+{{render: guides/medmij-r4-provider-module-ig/images/overzichtschermTaken.png}}
 
 Nb. In het overzichtsscherm worden alleen hoofdtaken of enkelvoudige taken getoond. Dat zijn taken waarbij `Task.partOf` geen waarde heeft. In het geval van een hoofdtaak worden vervolgens in het detailscherm de relevante subtaken getoond.
 
@@ -90,9 +91,6 @@ In het detailscherm zijn de volgende velden zichtbaar:
 
 **Figuur 2: Voorbeeld Detailscherm Aanbiedertaken (mock-up volgt)**
 
-Nb 1. De actieknop heeft een betekenis afhankelijk van de status. **Start** voor nog uit te voeren taken en **Bekijken** voor klaar/gestopte taken.
-
-Nb 2. Indien er sprake is van een repeterende taak, worden in het detailscherm alle beschikbare exemplaren getoond die voldoen aan het filtercriterium. Er is dan sprake van hoofd- en subtaken die middels `Task.partOf` aan elkaar gekoppeld zijn.
 
 Nb 3. De patiëntinstructie is een specifieke instructie voor de patiënt. Deze instructie kan door de zorgverlener worden ingevoerd bij het klaarzetten van de digitale activiteit voor de patiënt. Algemene instructies horen in de module zichtbaar te zijn en zijn daarom geen onderdeel van deze weergaverichtlijn. De patiëntinstructie is niet altijd aanwezig.
 
