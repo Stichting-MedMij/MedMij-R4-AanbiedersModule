@@ -19,16 +19,7 @@ Usage: #example
   * frequency = 2
   * frequencyMax = 2
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
-* patientInstruction = """
-Beste patiënt,
-
-U gaat gedurende 1 week zelf uw bloeddruk meten. Volg hierbij deze stappen:
-
-1. Meet uw bloeddruk elke ochtend vóór het ontbijt (nuchter).
-2. Meet uw bloeddruk elke avond vóór het avondeten.
-3. Noteer de waarden direct na de meting in uw app.
-4. Voer dit dagelijks uit gedurende 7 dagen en neem de resultaten mee naar uw volgende afspraak.
-"""
+* patientInstruction = "Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten."
 
 Instance: ProviderTasks-ServiceRequestDigitalGroup-CVRM
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan

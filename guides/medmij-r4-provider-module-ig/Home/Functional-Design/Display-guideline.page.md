@@ -14,46 +14,52 @@ Deze richtlijn heeft als doel om duidelijke handvatten te bieden voor een patië
 - gebruiken van begrijpelijke en patiëntvriendelijke termen en toelichtingen;
 - structureren en presenteren van een overzicht van gegevens op een manier die aansluit bij de informatiebehoefte van PGO-gebruikers.
 
-De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van gegevens. Ook geeft de richtlijn géén handvatten voor de flow, het synchroniseren of het ophalen van gegevens en de technische launch van een aanbiedertaak. Voor die onderwerpen wordt verwezen naar het Afsprakenstelsel (AS) en de implementation guide.
+De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van gegevens. Ook geeft de richtlijn géén handvatten voor de flow, het synchroniseren of het ophalen van gegevens en de technische launch van een aanbiedermodule. Voor die onderwerpen wordt verwezen naar het Solution Design en de FHIR implementation guide.
 
 ## Scope
 De scope van deze richtlijn bestaat uit de aanbiedertaak-gegevens die worden weergegeven in de PGO. Gegevens die via andere MedMij-gegevensdiensten verzameld worden in de PGO zijn hierin niet meegenomen.
 
-Onderwerpen die buiten de scope van deze richtlijn vallen (en elders worden behandeld, bijvoorbeeld in het Afsprakenstelsel of de implementation guide):
+Onderwerpen die buiten de scope van deze richtlijn vallen:
 - Inloggen en authenticeren bij de zorgaanbieder.
 - Het synchroniseren of incrementeel ophalen van taken (inclusief waarschuwingen bij verouderde gegevens en aanbevelingen rondom langdurige toestemming).
-- De technische uitwerking van het starten/launchen van een aanbiedertaak.
+- Het starten/launchen van een aanbiedermodule
 
 ## Inhoud richtlijn
-Het inloggen en authenticeren bij de zorgaanbieder is niet opgenomen in deze richtlijn.
-De gebruiker gaat in de PGO naar het overzicht Aanbiedertaken en/of overzicht Zorgaanbieder ‑ Aanbiedertaken waar de aanbiedertaken getoond worden.
+Om taken in te zien, navigeert de gebruiker in de PGO naar het takenoverzicht. Vanuit dit overzicht kan de gebruiker een specifieke taak openen om de bijbehorende details te bekijken. Deze richtlijn beschrijft hoe het overzichtsscherm en het detailscherm vormgegeven kunnen worden, en geeft aanbevelingen voor de weergave van de afzonderlijke datavelden.
+
+Het overzichts- en detailscherm worden geïllustreerd met mock-ups, die ter inspiratie dienen. De aanbevelingen voor de afzonderlijke datavelden zijn uitgewerkt in een specificatietabel, gebaseerd op het Logical Model (LM).
 
 ### Overzichtsscherm aanbiedertaken
 Er zijn twee weergaven gedefinieerd voor het overzicht van de aanbiedertaken:
-- Scenario 1: Overzicht Aanbiedertaken (met alle aanbiedertaken van alle zorgaanbieders in één overzicht)
-- Scenario 2: Overzicht Zorgaanbieder ‑ Aanbiedertaken (met alle aanbiedertaken van één zorgaanbieder in één overzicht). Dit scenario is optioneel, omdat het uitgangspunt is dat de taken van alle zorgaanbieders worden getoond.
+- Scenario 1: Overzicht taken (met alle aanbiedertaken van alle zorgaanbieders in één overzicht)
+- Scenario 2: Overzicht taken per zorgaanbieder (met alle aanbiedertaken van één zorgaanbieder in één overzicht). Dit scenario is optioneel, omdat het uitgangspunt is dat de taken van alle zorgaanbieders worden getoond.
 
 Het scenario, hieronder uitgewerkt, geeft weer hoe een UX-design getoond kan worden. Een PGO is vrij om scenario 2 te ondersteunen. 
 
-In deze richtlijn zijn mock-ups opgenomen ter inspiratie. Daaronder is het Logical Model (LM) apart opgenomen, niet in een mock-up, maar in tabelvorm.
+### Mock-ups overzichtsschermenen aanbiedertaken
+<u>Overzicht taken</u>
 
-### Mock-ups overzichtsschermen aanbiedertaken
-<u>Overzicht Aanbiedertaken</u>
+In het overzicht taken heeft het overzichtsscherm één pagina waar de datavelden getoond worden, voor alle zorgaanbieders.
 
-In het Overzicht Aanbiedertaken heeft het overzichtsscherm één pagina waar de datavelden getoond worden, voor alle zorgaanbieders.
+Het overzichtsscherm bestaat uit twee secties (deze mogen ook tabs zijn): een statussectie en een sectie met de afzonderlijke taken en bijhorende digitale activiteiten. 
 
-Het overzichtsscherm bestaat uit twee secties (deze mogen ook tabs zijn): een statussectie en een sectie met de afzonderlijke digitale activiteiten. De afzonderlijke digitale activiteiten worden gegroepeerd in drie groepen:
+{{render: guides/medmij-r4-provider-module-ig/images/overzichtsschermTaken.png}}
+
+**Figuur 1: Voorbeeld Overzicht taken**
+
+<u>Overzicht taken per zorgaanbieder</u>
+
+{{render: guides/medmij-r4-provider-module-ig/images/overzichttakenperzorgaanbieder.png}}
+
+**Figuur 2: Voorbeeld Overzicht taken per zorgaanbieder**
+
+
+#### Groeperen taken per status
+De afzonderlijke taken worden gegroepeerd in drie groepen:
 1. Te doen ( FHIR-status: `ready`, `requested`, `received`, `in-progress`)
 2. Gereed (FHIR-status: `completed`)
 3. Gestopt (FHIR-status: `failed`, `cancelled`)
 
-Niet alle bovenstaande velden hoeven in het overzichtsscherm getoond te worden. Welke velden minimaal getoond moeten worden, blijkt uit de prioritering (MoSCoW) in de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}}. Lege velden hoeven niet getoond te worden. 
-
-**Figuur 1: Voorbeeld Overzicht Aanbiedertaken**
-
-{{render: guides/medmij-r4-provider-module-ig/images/overzichtschermTaken.png}}
-
-Nb. In het overzichtsscherm worden alleen hoofdtaken of enkelvoudige taken getoond. Dat zijn taken waarbij `Task.partOf` geen waarde heeft. In het geval van een hoofdtaak worden vervolgens in het detailscherm de relevante subtaken getoond.
 
 De acceptatiecriteria voor het overzichtsscherm zijn als volgt.
 
@@ -61,7 +67,7 @@ De acceptatiecriteria voor het overzichtsscherm zijn als volgt.
 | --- | --- |
 | 1 | Standaard worden alle gegevens van de geraadpleegde zorgaanbieder(s) overzichtelijk weergegeven, gesorteerd op datum. Het overzichtsscherm opent met het filter "te doen". Wanneer er geen open taken zijn, wordt een passende melding getoond (bijvoorbeeld "Er zijn geen nieuwe taken"). |
 | 2 | Je kunt zoeken op (delen van) de gegevens of op informatie uit de andere datavelden in het overzichtsscherm. Het bepalen van een eventuele drempel voor het aantal in te voeren karakters is aan de PGO (advies: maximaal drie karakters). Het zoekveld is met name relevant voor het tabblad met afgehandelde taken (historie). |
-| 3 | Filteren op datavelden in het overzichtsscherm is mogelijk; voor velden met meerdere mogelijke waarden (bijvoorbeeld de zorgorganisatie) is een multi-select filter wenselijk. Filteren op `Task.description` is niet voorzien. Welke overige datavelden filterbaar zijn is aan de PGO; voor het datumveld geldt criterium 4. |
+| 3 | Voor de datavelden in het overzichtsscherm is het mogelijk om te filteren op één of meerdere waarden. Filteren op `Task.description` is niet voorzien. Voor het datumveld geldt criterium 4. |
 | 4 | Voor het datumveld in het overzichtsscherm kun je een specifieke periode selecteren. |
 | 5 | Alle datavelden in het overzichtsscherm (met uitzondering van `Task.description`) zijn sorteerbaar. |
 | 6 | De datavelden in het overzichtsscherm zijn begrijpelijk en gebruiksvriendelijk geformuleerd. Zie de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}} voor de aanbevolen termen per opgehaald dataveld. |
@@ -71,7 +77,16 @@ De acceptatiecriteria voor het overzichtsscherm zijn als volgt.
 ### Detailscherm aanbiedertaken
 Dit detailscherm krijgt een PGO-gebruiker te zien na het selecteren van een specifieke regel in het overzichtsscherm. De in de mock-up weergegeven gegevens dienen uitsluitend ter demonstratie.
 
-### Mock-up detailscherm aanbiedertaken
+#### Mock-ups detailscherm aanbiedertaken
+
+{{render: guides/medmij-r4-provider-module-ig/images/detailscherm1.png}}
+
+{{render: guides/medmij-r4-provider-module-ig/images/detailscherm2.png}}
+
+{{render: guides/medmij-r4-provider-module-ig/images/detailscherm3.png}}
+
+**Figuur 3: Voorbeeld detailschermen**
+
 In het detailscherm zijn de volgende velden zichtbaar:
 - `Task.status`
 - `Task.requester.practitionerRole.organization.name`
@@ -82,25 +97,31 @@ In het detailscherm zijn de volgende velden zichtbaar:
 - `ActivityDefinition.title`
 - `ServiceRequest.patientInstruction` (alleen indien er een patiëntspecifieke instructie bestaat)
 
-**Figuur 2: Voorbeeld Detailscherm Aanbiedertaken (mock-up volgt)**
 
+De patiëntinstructie is een specifieke instructie voor de patiënt. Deze instructie kan door de zorgverlener worden ingevoerd bij het klaarzetten van de digitale activiteit voor de patiënt. Algemene instructies horen in de module zichtbaar te zijn en zijn daarom geen onderdeel van deze weergaverichtlijn. De patiëntinstructie is niet altijd aanwezig.
 
-Nb 3. De patiëntinstructie is een specifieke instructie voor de patiënt. Deze instructie kan door de zorgverlener worden ingevoerd bij het klaarzetten van de digitale activiteit voor de patiënt. Algemene instructies horen in de module zichtbaar te zijn en zijn daarom geen onderdeel van deze weergaverichtlijn. De patiëntinstructie is niet altijd aanwezig.
-
-### Starten/Launchen van een aanbiedertaak
-Bij het starten van een taak moet de patiënt geïnformeerd worden dat het vervolg van de taak in de omgeving van de zorgaanbieder draait. De technische uitwerking van de launch valt buiten de scope van deze richtlijn; daarvoor wordt verwezen naar het Afsprakenstelsel (AS) en de implementation guide.
+Niet alle bovenstaande velden hoeven in het overzichtsscherm getoond te worden. Welke velden minimaal getoond moeten worden, blijkt uit de prioritering (MoSCoW) in de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}}. Lege velden hoeven niet getoond te worden. 
 
 ### Aanbiedertaakgegevens
-Hieronder wordt een voorbeeld in tabelvorm gegeven van het overzichts- en detailscherm voor een hoofdtaak met onderliggende digitale activiteiten.
+Hieronder wordt een voorbeeld in tabelvorm gegeven van het overzichts- en detailscherm voor een taak met een digitale activiteit.
 
 <u>Overzichtsscherm</u>
 
 | Titel | Status | Periode | Zorgorganisatie |
 | --- | --- | --- | --- |
 | Gezonder gaan leven | Aangevraagd | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard |
-| Bloedglucose monitoren | In uitvoering | 15-12-2025 t/m 22-12-2025 | Huisartsenpraktijk de Haard |
+| Bloedglucose meting volgens NHG protocol | In uitvoering | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard |
 
 <u>Detailscherm</u>
+
+| Geselecteerde regel: Bloedglucose meting volgens NHG protocol | |
+| --- | --- |
+| Titel | Bloedglucose meting volgens NHG protocol |
+| Status | In uitvoering |
+| Periode | 22-12-2025 t/m 28-12-2025 |
+| Zorgverlener | A. de Haard |
+| Zorgorganisatie | Huisartsenpraktijk de Haard |
+| Patiëntinstructie | n.v.t. |
 
 | Geselecteerde regel: Gezonder gaan leven | |
 | --- | --- |
@@ -109,8 +130,7 @@ Hieronder wordt een voorbeeld in tabelvorm gegeven van het overzichts- en detail
 | Periode | 22-12-2025 t/m 28-12-2025 |
 | Zorgverlener | A. de Haard |
 | Zorgorganisatie | Huisartsenpraktijk de Haard |
-| Patiëntinstructie | (optionele specifieke instructie van de zorgverlener) |
-| Actieknop | Start |
+| Patiëntinstructie | n.v.t. |
 
 <u>Onderliggende digitale activiteiten (subtaken)</u>
 
