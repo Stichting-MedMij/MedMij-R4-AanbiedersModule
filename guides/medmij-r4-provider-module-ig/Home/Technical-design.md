@@ -31,7 +31,7 @@ The [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html#12.5.
 
 
 ### Relationships in ProviderTasks
-- **ActivityDefinition (Definition):** describes the digital activity and provides generic, reusable information on what the activity is and how it should be used. If the activity is launchable, ActivityDefinition references one or more Endpoint(s) that provide the technical access/launch details.
+- **ActivityDefinition (Definition):** describes the digital activity and provides generic, reusable information on what the activity is and how it should be used. If the activity is launchable, ActivityDefinition reference one Endpoint that provide the technical access/launch details.
 - **ServiceRequest – DigitalGroupPlan (Request):** the patient-specific clinical request that identifies which digital group plan/module is requested for the patient. It acts as the grouping item that ties related Tasks together and is referenced from each Task via `Task.basedOn`. The human-readable name of the digital group plan is carried in `ServiceRequest.code.text`.
 - **ServiceRequest – ExecutionOrder (Request, optional):** the patient-specific execution plan for a single digital activity, containing scheduling (`occurrence[x]`) and `patientInstruction`. It is referenced from a Task via `Task.focus`. **Design rule:** whenever a recurring schedule applies to an activity, a `pt-ServiceRequest-ExecutionOrder` SHALL be present and the schedule SHALL be carried in `ServiceRequest.occurrence[x]` (typically `occurrenceTiming`).
 - **Task (Request/Event):** the patient-facing workflow item shown in the PHR task list. Task is treated as a hybrid Request/Event resource per the FHIR R4 Workflow specification: it represents the request to perform a digital activity for the patient and at the same time carries the execution status of that activity. Each Task represents one digital activity and links to the `pt-ServiceRequest-DigitalGroupPlan` via `Task.basedOn` (grouping) and, when patient-specific execution details are needed, to a `pt-ServiceRequest-ExecutionOrder` via `Task.focus`.
@@ -58,9 +58,6 @@ Tasks that belong to the same digital care module are grouped through a shared *
 
 **Figure 1: Overview of ProviderTask releationships**
 
-### Taks status
-[TO DO]
-
 ## Actors involved
 
 | Actor | Description | System | Role in exchange |
@@ -72,7 +69,7 @@ Tasks that belong to the same digital care module are grouped through a shared *
 ## Boundaries and relationships
 This IG covers use cases for exchanging task data between healthcare providers and patients (typically through a PHR).
 
-This IG guide assumes that a PHR is able to connect with a source system. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/aanbiedermodules/actueel/). 
+This IG guide assumes that a PHR is able to connect with a source system. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/medmij-service-requests/actueel/v0-8-aanbiedermodules). 
 
 Each transaction is performed in the context of a specific authenticated patient, which has been established using the authentication mechanisms outlined in the MedMij Afsprakenstelsel (also see the MedMij FHIR IG by Nictiz), i.e. via an OAuth2 token. Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters for patient identification SHALL NOT be included.
 
@@ -106,9 +103,6 @@ Goal: the patient retrieves open and (optionally) completed tasks, along with th
 
 `GET [base]/Task?owner=Patient/[patient-id]`
 
-#### filter Taks.owner
-[TO DO]
-
 #### Read operation
 To resolve referenced resources (such as ActivityDefinition and ServiceRequest) from a retrieved Task, both the client and the server SHALL support the FHIR read interaction. The client follows the references in the Task and retrieves each referenced resource using `GET [base]/[type]/[id]`, so that the PHR can display the necessary context (e.g., generic activity information from ActivityDefinition and patient-specific instructions from ServiceRequest, when present). All resources referenced per literal reference SHALL be resolvable per the [MedMij FHIR IG by Nictiz](https://informatiestandaarden.nictiz.nl/wiki/MedMij:IG:V1/FHIR_IG#Including_referenced_resources).
 
@@ -137,6 +131,7 @@ Goal: write back progress/completion after the patient interacted with the activ
 ### PATCH (partial update) for task updates
 In addition to full updates (PUT), a source system SHALL support the FHIR PATCH interaction to update specific elements of an existing Task (e.g., changing `Task.status` without resending the entire resource). PATCH is defined in the FHIR RESTful API specification: https://hl7.org/fhir/R4/http.html#patch
 
+#### FHIRPath Patch
 In the FHIRPath Patch approach, the client sends a `Parameters` resource that contains one or more `operation` entries. Each operation specifies the patch type (e.g., `replace`), the FHIRPath path to update, and the new value. The following example uses FHIRPath Patch to replace the Task status by setting `Task.status` to `completed`:
 
 ```json
@@ -155,13 +150,27 @@ In the FHIRPath Patch approach, the client sends a `Parameters` resource that co
 }
 ``` 
 
+#### JSON Patch
+In the JSON Patch (RFC 6902) approach, the client sends a JSON array containing one or more operation objects. Each object specifies the operation type (e.g., replace), the JSON Pointer path to the element being updated, and the new value. The following example uses JSON Patch to replace the Task status by setting the /status element to completed:
 
+HTTP request: 
+PATCH [base]/Task/[id]
+Content-Type: application/json-patch+json
 
+```json
+[
+  {
+    "op": "replace",
+    "path": "/status",
+    "value": "completed"
+  }
+]
+```
 
 ## Launch (PGO → module system)
 The launch is based on information in ActivityDefinition and Endpoint (e.g., endpoint.address). In the ProviderTasks this is the step where the PHR starts an external module/application.
 
-The launch is an interaction outside the core REST data exchange and is based on SMART App Launch. The specifications can be found in the [MedMij Solution Design](https://changemanagement.medmij.nl/aanbiedermodules/actueel/).
+The launch is an interaction outside the core REST data exchange and is based on SMART App Launch. The specifications can be found in the [MedMij Solution Design](https://changemanagement.medmij.nl/medmij-service-requests/actueel/v0-8-aanbiedermodules).
 
 
 ## Source system: example queries
