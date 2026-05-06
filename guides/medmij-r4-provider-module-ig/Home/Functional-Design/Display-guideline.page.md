@@ -87,20 +87,9 @@ Dit detailscherm krijgt een PGO-gebruiker te zien na het selecteren van een spec
 
 **Figuur 3: Voorbeeld detailschermen**
 
-In het detailscherm zijn de volgende velden zichtbaar:
-- `Task.status`
-- `Task.requester.practitionerRole.organization.name`
-- `Task.requester.practitionerRole.practitioner.name`
-- `Task.description`
-- `Task.executionPeriod.start`
-- `Task.executionPeriod.end`
-- `ActivityDefinition.title`
-- `ServiceRequest.patientInstruction` (alleen indien er een patiëntspecifieke instructie bestaat)
-
-
 De patiëntinstructie is een specifieke instructie voor de patiënt. Deze instructie kan door de zorgverlener worden ingevoerd bij het klaarzetten van de digitale activiteit voor de patiënt. Algemene instructies horen in de module zichtbaar te zijn en zijn daarom geen onderdeel van deze weergaverichtlijn. De patiëntinstructie is niet altijd aanwezig.
 
-Niet alle bovenstaande velden hoeven in het overzichtsscherm getoond te worden. Welke velden minimaal getoond moeten worden, blijkt uit de prioritering (MoSCoW) in de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}}. Lege velden hoeven niet getoond te worden. 
+Welke velden minimaal getoond moeten worden in het overzichtscherm en detailscherm, blijkt uit de prioritering (MoSCoW) in de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}}. Lege velden hoeven niet getoond te worden. 
 
 ### Aanbiedertaakgegevens
 Hieronder wordt een voorbeeld in tabelvorm gegeven van het overzichts- en detailscherm voor een taak met een digitale activiteit.
@@ -202,7 +191,7 @@ Verwijzing: [LogicalModel Task](https://simplifier.net/medmij-r4-provider-module
     </tr>
     <tr>
       <td>BasedOn::ServiceRequestDigitalGroupPlan</td><td>Reference</td><td>pt-lm-Task.BasedOn</td><td>Digitale zorgmodule Diabetes</td><td>b</td>
-      <td>Toon hier alleen de waarde van `code.text`</td><td></td><td></td><td>C</td>
+      <td>Toon hier alleen de waarde van `code.text` uit het ServiceRequest</td><td></td><td></td><td>C</td>
     </tr>
     <tr>
       <td>Status</td><td>Item</td><td>pt-lm-Task.Status</td><td>Requested</td><td>a</td>
@@ -258,16 +247,16 @@ Verwijzing: [LogicalModel ActivityDefinition](https://simplifier.net/medmij-r4-p
   <tbody>
     <tr>
       <td><strong>Digitale Activiteit</strong></td><td><strong>Rootconcept</strong></td><td>pt-lm-ActivityDefinition</td><td></td><td></td>
-      <td>Herbruikbare definitie van een te starten digitale (eHealth) activiteit.</td><td>Activiteit</td><td></td><td></td>
+      <td>Herbruikbare definitie van een te starten digitale (eHealth) activiteit.</td><td>Digitale activiteit</td><td></td><td></td>
     </tr>
     <tr>
       <td>Title</td><td>Item</td><td>pt-lm-ActivityDefinition.Title</td><td>Vragenlijst over de woon-leefsituatie</td><td>a</td>
-      <td>Mens-leesbare titel die in het overzichtsscherm taken wordt getoond.</td><td>Titel van de digitale activiteit</td><td></td><td>M</td>
+      <td>Mens-leesbare titel die in het overzichtsscherm taken wordt getoond.</td><td></td><td></td><td>M</td>
     </tr>
   </tbody>
 </table>
 
-### Zorgopdracht (ServiceRequest)
+### Uitvoeringsplan (ServiceRequest)
 Verwijzing: [LogicalModel ServiceRequest](https://simplifier.net/medmij-r4-provider-module/lmservicerequest)
 
 Wordt alleen gebruikt als er voor een taak in de module een patiëntspecifieke instructie is of tijdschema moet worden vastgelegd.
@@ -292,11 +281,11 @@ Wordt alleen gebruikt als er voor een taak in de module een patiëntspecifieke i
     </tr>
     <tr>
       <td>patientInstruction</td><td>Item</td><td>pt-lm-ServiceRequest.patientInstruction</td><td>Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten.</td><td>b</td>
-      <td>Patiëntspecifiek uitvoeringsopdracht voor een digitale activiteit, met daarin o.a. de planning (tijdschema) en patiënteninstructies. </td><td>Patiëntinstructie</td><td></td><td>M</td>
+      <td>Patiëntspecifiek uitvoeringsopdracht voor een digitale activiteit</td><td>Patiëntinstructie</td><td></td><td>M</td>
     </tr>
     <tr>
       <td>Occurrence</td><td>Item</td><td>pt-lm-ServiceRequest.Occurrence</td><td>start: 22-12-2025, eind: 28-12-2025, schema: 7d, 2x per dag</td><td>c</td>
-      <td>Optioneel. Patiëntspecifieke timing (kan afwijken van de timing in de ActivityDefinition).</td><td></td><td></td><td>C</td>
+      <td>Optioneel. Patiëntspecifieke tijdschema</td><td>Tijdschema</td><td></td><td>C</td>
     </tr>
     <tr>
       <td>Requester</td><td>Reference</td><td>pt-lm-ServiceRequest.Requester</td><td>A. de Haard, huisarts</td><td>c</td>
