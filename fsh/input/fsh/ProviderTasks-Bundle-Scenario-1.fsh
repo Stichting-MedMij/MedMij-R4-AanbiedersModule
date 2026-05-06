@@ -523,7 +523,7 @@ Usage: #example
 * title = "Gezonder gaan leven"
 * status = #active
 * publisher = "HinqZNO"
-* description = "Leefstijlmodule binnen de digitale zorgmodule Diabetes: praktische informatie en motivatie voor gezonder leven (voeding, beweging, gewicht, stoppen met roken, alcohol en slaap) ter ondersteuning van glykemische controle en cardiovasculair risicomanagement."
+* description = "Leestips voor een gezondere leefstijl."
 
 Instance: ProviderTasks-Task-Informatie-Gezonder-Leven
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task

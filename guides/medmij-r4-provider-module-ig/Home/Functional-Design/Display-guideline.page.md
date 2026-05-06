@@ -107,21 +107,12 @@ Hieronder wordt een voorbeeld in tabelvorm gegeven van het overzichts- en detail
 
 <u>Overzichtsscherm</u>
 
-| Titel | Status | Periode | Zorgorganisatie |
-| --- | --- | --- | --- |
-| Gezonder gaan leven | Aangevraagd | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard |
-| Bloedglucose meting volgens NHG protocol | In uitvoering | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard |
+| Titel | Status | Periode | Zorgorganisatie | Toelichting | Digitale zorgmodule |
+| --- | --- | --- | --- | --- | -- |
+| Gezonder gaan leven | Aangevraagd | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard | Lees tips voor gezonder leven (voeding, bewegen en volhouden) | Digitale zorgmodule Diabetes |
+| Bloedglucose meting volgens NHG protocol | In uitvoering | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard | Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app | Digitale zorgmodule Diabetes |
 
 <u>Detailscherm</u>
-
-| Geselecteerde regel: Bloedglucose meting volgens NHG protocol | |
-| --- | --- |
-| Titel | Bloedglucose meting volgens NHG protocol |
-| Status | In uitvoering |
-| Periode | 22-12-2025 t/m 28-12-2025 |
-| Zorgverlener | A. de Haard |
-| Zorgorganisatie | Huisartsenpraktijk de Haard |
-| Patiëntinstructie | n.v.t. |
 
 | Geselecteerde regel: Gezonder gaan leven | |
 | --- | --- |
@@ -132,13 +123,22 @@ Hieronder wordt een voorbeeld in tabelvorm gegeven van het overzichts- en detail
 | Zorgorganisatie | Huisartsenpraktijk de Haard |
 | Patiëntinstructie | n.v.t. |
 
-<u>Onderliggende digitale activiteiten (subtaken)</u>
+| Geselecteerde regel: Bloedglucose meting volgens NHG protocol | |
+| --- | --- |
+| Titel | Bloedglucose meting volgens NHG protocol |
+| Status | In uitvoering |
+| Periode | 22-12-2025 t/m 28-12-2025 |
+| Zorgverlener | A. de Haard |
+| Zorgorganisatie | Huisartsenpraktijk de Haard |
+| Patiëntinstructie | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. |
 
-| Titel digitale activiteit | Beschrijving | Periode van uitvoer | Behandelcontext | Zorgorganisatie |
-| --- | --- | --- | --- | --- |
-| Bloedglucosemeting | 1 week 2x per dag bloedglucosemeting | 22-12-2025 t/m 28-12-2025 | Diabetes | Huisartsenpraktijk de Haard |
-| Gezonder gaan leven | Leestips voor een gezondere leefstijl | 22-12-2025 t/m 28-12-2025 | Diabetes | Huisartsenpraktijk de Haard |
-| Vragenlijst over de woon-leefsituatie | Vul de vragenlijst in | 22-12-2025 t/m 28-12-2025 | Diabetes | Huisartsenpraktijk de Haard |
+<u>Onderliggende digitale activiteiten</u>
+
+| Titel digitale activiteit | Periode van uitvoer | Zorgorganisatie |
+| --- | --- | --- |
+| Bloedglucose meting volgens NHG protocol | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard |
+| Gezonder gaan leven | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard |
+| Vragenlijst over de woon-leefsituatie | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard |
 
 <br/>
 
