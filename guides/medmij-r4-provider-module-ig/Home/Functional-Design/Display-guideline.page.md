@@ -43,16 +43,9 @@ In deze richtlijn zijn mock-ups opgenomen ter inspiratie. Daaronder is het Logic
 In het Overzicht Aanbiedertaken heeft het overzichtsscherm één pagina waar de datavelden getoond worden, voor alle zorgaanbieders.
 
 Het overzichtsscherm bestaat uit twee secties (deze mogen ook tabs zijn): een statussectie en een sectie met de afzonderlijke digitale activiteiten. De afzonderlijke digitale activiteiten worden gegroepeerd in drie groepen:
-1. Te doen (`ready`, `requested`, `received`, `in-progress`)
-2. Gereed (`completed`)
-3. Gestopt (`failed`, `cancelled`)
-
-Welke velden in het overzichtsscherm gebruikt kunnen worden, blijkt uit de onderstaande opsomming van de FHIR-elementen per resource:
-- `Task.status`
-- `Task.requester.practitionerRole.organization.name`
-- `Task.executionPeriod.start`
-- `Task.executionPeriod.end`
-- `ActivityDefinition.title`
+1. Te doen ( FHIR-status: `ready`, `requested`, `received`, `in-progress`)
+2. Gereed (FHIR-status: `completed`)
+3. Gestopt (FHIR-status: `failed`, `cancelled`)
 
 Niet alle bovenstaande velden hoeven in het overzichtsscherm getoond te worden. Welke velden minimaal getoond moeten worden, blijkt uit de prioritering (MoSCoW) in de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}}. Lege velden hoeven niet getoond te worden. 
 
