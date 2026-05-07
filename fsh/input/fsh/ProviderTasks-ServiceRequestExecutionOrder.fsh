@@ -40,5 +40,5 @@ Id: pt-dataset-100-alpha1-20260511
 Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * -> "pt-dataelement-15" "ServiceRequest"
 * patientInstruction -> "pt-dataelement-16" "patientInstruction"
-* occurrenceTiming -> "pt-dataelement-17" "Occurrence"
+* occurrence[x] -> "pt-dataelement-17" "Occurrence"
 * requester -> "pt-dataelement-18" "Requester"
