@@ -192,30 +192,6 @@
     "endLine": 435
   },
   {
-    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-COPD.json",
-    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-COPD",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-3.fsh",
-    "startLine": 3,
-    "endLine": 16
-  },
-  {
-    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-CVRM.json",
-    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-CVRM",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
-    "startLine": 24,
-    "endLine": 37
-  },
-  {
-    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-Diabetes.json",
-    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-Diabetes",
-    "fshType": "Instance",
-    "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
-    "startLine": 24,
-    "endLine": 37
-  },
-  {
     "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestExecution-Bloeddrukmeting.json",
     "fshName": "ProviderTasks-ServiceRequestExecution-Bloeddrukmeting",
     "fshType": "Instance",
@@ -232,32 +208,32 @@
     "endLine": 22
   },
   {
-    "outputFile": "StructureDefinition-pt-ActivityDefinition.json",
-    "fshName": "ProviderTasksActivityDefinition",
-    "fshType": "Profile",
-    "fshFile": "ProviderTasks-ActivityDefinition.fsh",
-    "startLine": 1,
-    "endLine": 47
-  },
-  {
-    "outputFile": "StructureDefinition-pt-ClientID.json",
-    "fshName": "ProviderTaskClientID",
+    "outputFile": "StructureDefinition-PtClientID.json",
+    "fshName": "PtClientID",
     "fshType": "Extension",
     "fshFile": "MedMij-ClientID.fsh",
     "startLine": 1,
     "endLine": 19
   },
   {
+    "outputFile": "StructureDefinition-pt-ActivityDefinition.json",
+    "fshName": "PtActivityDefinition",
+    "fshType": "Profile",
+    "fshFile": "ProviderTasks-ActivityDefinition.fsh",
+    "startLine": 1,
+    "endLine": 47
+  },
+  {
     "outputFile": "StructureDefinition-pt-Endpoint.json",
-    "fshName": "ProviderTasksEndpoint",
+    "fshName": "PtEndpoint",
     "fshType": "Profile",
     "fshFile": "ProviderTasks-Endpoint.fsh",
     "startLine": 1,
     "endLine": 10
   },
   {
-    "outputFile": "StructureDefinition-pt-ServiceRequest-DigitalGroupPlan.json",
-    "fshName": "ProviderTasksServiceRequestDigitalGroupPlan",
+    "outputFile": "StructureDefinition-pt-ServiceRequest-Digital-GroupPlan.json",
+    "fshName": "PtServiceRequestDigitalGroupPlan",
     "fshType": "Profile",
     "fshFile": "ProviderTasks-ServiceRequestDigitalGroupPlan.fsh",
     "startLine": 1,
@@ -265,7 +241,7 @@
   },
   {
     "outputFile": "StructureDefinition-pt-ServiceRequest-ExecutionOrder.json",
-    "fshName": "ProviderTasksServiceRequestExecutionOrder",
+    "fshName": "PtServiceRequestExecutionOrder",
     "fshType": "Profile",
     "fshFile": "ProviderTasks-ServiceRequestExecutionOrder.fsh",
     "startLine": 1,
@@ -273,7 +249,7 @@
   },
   {
     "outputFile": "StructureDefinition-pt-Task.json",
-    "fshName": "ProviderTasksTask",
+    "fshName": "PtTask",
     "fshType": "Profile",
     "fshFile": "ProviderTasks-Task.fsh",
     "startLine": 1,

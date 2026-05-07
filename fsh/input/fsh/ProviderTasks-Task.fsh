@@ -17,13 +17,13 @@ Description: "This (FHIR) Task profile describes a patient-specific actionable i
   * ^short = "Reference to ActivityDefinition" 
   * ^definition = "A link to the ActivityDefinition that defines the launchable eHealth activity (i.e., what module/content should be launched or performed) associated with this Task. In both MedMij and Koppeltaal implementations, this link is carried using the Koppeltaal instantiates extension."
   * ^alias = "DigitaleActiviteit"
-  * valueReference only Reference(ProviderTasksActivityDefinition)
+  * valueReference only Reference(PtActivityDefinition)
 * identifier 1..
-* basedOn only Reference(ProviderTasksServiceRequestDigitalGroupPlan)
+* basedOn only Reference(PtServiceRequestDigitalGroupPlan)
   * ^short = "Digital group plan"
   * ^definition = "Reference to the ServiceRequest that initiates the digital group plan for the patient. This is the module-level order and links the Task to the requested digital group plan."
   * ^alias = "GebaseerdOp"
-* partOf only Reference(ProviderTasksTask)
+* partOf only Reference(PtTask)
 * status
   * ^short = "Status"
   * ^definition = "Current state of the Task in the workflow (e.g., requested, received, accepted, in-progress, completed, cancelled)."
@@ -40,7 +40,7 @@ Description: "This (FHIR) Task profile describes a patient-specific actionable i
   * ^definition = "Time window in which the task should be performed (start/end), if applicable."
   * ^alias = "Periode"
 * focus 0..1
-* focus only Reference(ProviderTasksServiceRequestExecutionOrder)
+* focus only Reference(PtServiceRequestExecutionOrder)
   * ^short = "Patient-specific execution details"
   * ^definition = "Reference to the ServiceRequest that contains patient-specific scheduling and/or instructions that deviate from or complement the generic ActivityDefinition guidance."
 * for 1..
