@@ -199,47 +199,43 @@ Verwijzing: [LogicalModel Task](https://simplifier.net/medmij-r4-provider-module
   </thead>
   <tbody>
     <tr>
-      <td><strong>Taak</strong></td><td><strong>Rootconcept</strong></td><td>pt-lm-Task</td><td></td><td></td>
+      <td><strong>Taak</strong></td><td><strong>Rootconcept</strong></td><td>pt-dataelement-1</td><td></td><td></td>
       <td></td><td>Taak</td><td></td><td></td>
     </tr>
     <tr>
-      <td>Instantiates::ActivityDefinition</td><td>Reference</td><td>pt-lm-Task.Instantiates.ActivityDefinition</td><td>Bloedglucose meting volgens NHG protocol</td><td>a</td>
+      <td>Instantiates::ActivityDefinition</td><td>Reference</td><td>pt-dataelement-2</td><td>Bloedglucose meting volgens NHG protocol</td><td>a</td>
       <td>Titel van de digitale activiteit.</td><td></td><td></td><td>M</td>
     </tr>
     <tr>
-      <td>BasedOn::ServiceRequestDigitalGroupPlan</td><td>Reference</td><td>pt-lm-Task.BasedOn</td><td>Digitale zorgmodule Diabetes</td><td>b</td>
+      <td>BasedOn::ServiceRequestDigitalGroupPlan</td><td>Reference</td><td>pt-dataelement-3</td><td>Digitale zorgmodule Diabetes</td><td>b</td>
       <td>Toon hier alleen de waarde van `code.text` uit het ServiceRequest.</td><td></td><td></td><td>C</td>
     </tr>
     <tr>
-      <td>Status</td><td>Item</td><td>pt-lm-Task.Status</td><td>Requested</td><td>a</td>
+      <td>Status</td><td>Item</td><td>pt-dataelement-4</td><td>Requested</td><td>a</td>
       <td></td><td>Status</td><td>Patiëntvriendelijke vertaling van de statuscode (bijv. "Aangevraagd", "In uitvoering", "Afgerond", "Geannuleerd").</td><td>M</td>
     </tr>
     <tr>
-      <td>Priority</td><td>Item</td><td>pt-lm-Task.Priority</td><td>Routine</td><td>b</td>
+      <td>Priority</td><td>Item</td><td>pt-dataelement-5</td><td>Routine</td><td>b</td>
       <td></td><td></td><td></td><td>C</td>
     </tr>
     <tr>
-      <td>Description</td><td>Item</td><td>pt-lm-Task.Description</td><td>Vul de vragenlijst in over je woon-/leefsituatie</td><td>b</td>
+      <td>Description</td><td>Item</td><td>pt-dataelement-6</td><td>Vul de vragenlijst in over je woon-/leefsituatie</td><td>b</td>
       <td>Voor de patiënt leesbare omschrijving van de taak.</td><td>Omschrijving</td><td></td><td>M</td>
     </tr>
     <tr>
-      <td>ExecutionPeriod</td><td>Item</td><td>pt-lm-Task.ExecutionPeriod</td><td>2025-12-22 tot en met 2025-12-28</td><td>a</td>
+      <td>ExecutionPeriod</td><td>Item</td><td>pt-dataelement-7</td><td>2025-12-22 tot en met 2025-12-28</td><td>a</td>
       <td>Tijdvenster waarin de taak uitgevoerd moet/mag worden (start en eind).</td><td>Periode van uitvoer</td><td></td><td>M</td>
     </tr>
     <tr>
-      <td>AuthoredOn</td><td>Item</td><td>pt-lm-Task.AuthoredOn</td><td>2025-12-23T18:00:00+01:00</td><td>c</td>
-      <td>Datum/tijd waarop de taak is aangemaakt.</td><td></td><td></td><td>C</td>
-    </tr>
-    <tr>
-      <td>Requester::PractitionerRole.Practitioner</td><td>Reference</td><td>pt-lm-Task.Requester</td><td>A. de Haard, huisarts</td><td>b</td>
+      <td>Requester::PractitionerRole.Practitioner</td><td>Reference</td><td>pt-dataelement-8</td><td>A. de Haard, huisarts</td><td>b</td>
       <td>Zowel de naam als het specialisme tonen.</td><td>Aanvragende zorgverlener</td><td></td><td>S</td>
     </tr>
     <tr>
-      <td>Requester::PractitionerRole.Organization</td><td>Reference</td><td>pt-lm-Task.Requester</td><td>Huisartsenpraktijk de Haard</td><td>a</td>
+      <td>Requester::PractitionerRole.Organization</td><td>Reference</td><td>pt-dataelement-8</td><td>Huisartsenpraktijk de Haard</td><td>a</td>
       <td>Voluit weergeven; bij voorkeur geen afkortingen gebruiken.</td><td>Zorgorganisatie</td><td></td><td>M</td>
     </tr>
     <tr>
-      <td>Focus::ServiceRequestExecutionOrder</td><td>Reference</td><td>pt-lm-Task.focus</td><td></td><td>b</td>
+      <td>Focus::ServiceRequestExecutionOrder</td><td>Reference</td><td></td><td></td><td>b</td>
       <td>Uitvoeringsopdracht voor onder andere patiëntspecifieke instructies en het tijdschema.</td><td></td><td></td><td>C</td>
     </tr>
   </tbody>
@@ -263,11 +259,11 @@ Verwijzing: [LogicalModel ActivityDefinition](https://simplifier.net/medmij-r4-p
   </thead>
   <tbody>
     <tr>
-      <td><strong>Digitale Activiteit</strong></td><td><strong>Rootconcept</strong></td><td>pt-lm-ActivityDefinition</td><td></td><td></td>
+      <td><strong>Digitale Activiteit</strong></td><td><strong>Rootconcept</strong></td><td>pt-dataelement-9</td><td></td><td></td>
       <td>Herbruikbare definitie van een te starten digitale (eHealth) activiteit.</td><td>Digitale activiteit</td><td></td><td></td>
     </tr>
     <tr>
-      <td>Title</td><td>Item</td><td>pt-lm-ActivityDefinition.Title</td><td>Vragenlijst over de woon-/leefsituatie</td><td>a</td>
+      <td>Title</td><td>Item</td><td>pt-dataelement-10</td><td>Vragenlijst over de woon-/leefsituatie</td><td>a</td>
       <td>Voor de mens leesbare titel die in het overzichtsscherm met taken wordt getoond.</td><td></td><td></td><td>M</td>
     </tr>
   </tbody>
@@ -293,19 +289,19 @@ Wordt alleen gebruikt als er voor een taak in de module een patiëntspecifieke i
   </thead>
   <tbody>
     <tr>
-      <td><strong>ServiceRequest uitvoeringsopdracht</strong></td><td><strong>Rootconcept</strong></td><td>pt-lm-ServiceRequest</td><td></td><td></td>
+      <td><strong>ServiceRequest uitvoeringsopdracht</strong></td><td><strong>Rootconcept</strong></td><td>pt-dataelement-15</td><td></td><td></td>
       <td></td><td></td><td></td><td></td>
     </tr>
     <tr>
-      <td>patientInstruction</td><td>Item</td><td>pt-lm-ServiceRequest.patientInstruction</td><td>Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten.</td><td>b</td>
+      <td>patientInstruction</td><td>Item</td><td>pt-dataelement-16</td><td>Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten.</td><td>b</td>
       <td>Patiëntspecifieke uitvoeringsopdracht voor een digitale activiteit.</td><td>Patiëntinstructie</td><td></td><td>M</td>
     </tr>
     <tr>
-      <td>Occurrence</td><td>Item</td><td>pt-lm-ServiceRequest.Occurrence</td><td>start: 22-12-2025, eind: 28-12-2025, schema: 7d, 2x per dag</td><td>c</td>
+      <td>Occurrence</td><td>Item</td><td>pt-dataelement-17</td><td>start: 22-12-2025, eind: 28-12-2025, schema: 7d, 2x per dag</td><td>c</td>
       <td>Optioneel. Patiëntspecifiek tijdschema.</td><td>Tijdschema</td><td></td><td>C</td>
     </tr>
     <tr>
-      <td>Requester</td><td>Reference</td><td>pt-lm-ServiceRequest.Requester</td><td>A. de Haard, huisarts</td><td>c</td>
+      <td>Requester</td><td>Reference</td><td>pt-dataelement-18</td><td>A. de Haard, huisarts</td><td>c</td>
       <td></td><td></td><td></td><td>C</td>
     </tr>
   </tbody>
