@@ -14,7 +14,7 @@ Description: "Patient-specific task that tells a patient what to do as part of a
 * .
   * ^alias = "Taak"
 * ActivityDefinition 0..1 Reference(ActivityDefinition) "Reference to the digital activity definition associated with this task."
-  * ^alias = "DigtaleActiviteit"
+  * ^alias = "DigitaleActiviteit"
 * BasedOn 0..1 Reference(ServiceRequest) "Clinical order that triggered this patient task. May include patient-specific instructions and the requested schedule."
   * ^alias = "GebaseerdOp"
 * Status 0..1 code "Current state of the Task in the workflow (e.g., requested, received, accepted, in-progress, completed, cancelled)."
@@ -27,6 +27,19 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^alias = "Periode"
 * Requester 0..1 Reference(Practitioner) "The person or role who requested or initiated this Task."
   * ^alias = "Aanvrager"
+
+Mapping: LmTaskMedMij-100-alpha1
+Source: LmTask
+Id: pt-dataset-100-alpha1-20260507
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260507"
+* . -> "pt-dataelement-1" "Task"
+* ActivityDefinition -> "pt-dataelement-2" "ActivityDefinition"
+* BasedOn -> "pt-dataelement-3" "BasedOn"
+* Status -> "pt-dataelement-4" "Status"
+* Priority -> "pt-dataelement-5" "Priority"
+* Description -> "pt-dataelement-6" "Description"
+* ExecutionPeriod -> "pt-dataelement-7" "ExecutionPeriod"
+* Requester -> "pt-dataelement-8" "Requester"
 
 Logical: LmActivity
 Parent: http://hl7.org/fhir/StructureDefinition/Element
@@ -51,6 +64,17 @@ Description: "Reusable definition of a digital activity (module) that can be sel
 * Timing 0..1 Timing "Generic recommendation for how often/when the activity is typically performed. Patient-specific scheduling belongs in the clinical order (e.g., ServiceRequest)."
   * ^alias = "Tijdschema"
 
+Mapping: LmActivityMedMij-100-alpha1
+Source: LmActivity
+Id: pt-dataset-100-alpha1-20260507
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260507"
+* . -> "pt-dataelement-9" "Activity"
+* Title -> "pt-dataelement-10" "Title"
+* Status -> "pt-dataelement-11" "Status"
+* Publisher -> "pt-dataelement-12" "Publisher"
+* Description -> "pt-dataelement-13" "Description"
+* Timing -> "pt-dataelement-14" "Timing"
+
 Logical: LmServiceRequest
 Parent: http://hl7.org/fhir/StructureDefinition/Element
 Id: pt-lm-ServiceRequest
@@ -70,4 +94,13 @@ Description: "Patient-specific clinical order for a digital activity, created by
   * ^alias = "Tijdschema"
 * Requester 0..1 Reference(Practitioner) "Healthcare professional that requests this activity for the patient."
   * ^alias = "Aanvrager"
+
+Mapping: LmServiceRequestMedMij-100-alpha1
+Source: LmServiceRequest
+Id: pt-dataset-100-alpha1-20260507
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260507"
+* . -> "pt-dataelement-15" "ServiceRequest"
+* patientInstruction -> "pt-dataelement-16" "patientInstruction"
+* Occurrence -> "pt-dataelement-17" "Occurrence"
+* Requester -> "pt-dataelement-18" "Requester"
 
