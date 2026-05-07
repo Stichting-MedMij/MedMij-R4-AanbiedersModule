@@ -25,6 +25,12 @@
   "purpose": "To represent the healthcare professional’s order to start a specific digital activity for a patient.",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "pt-dataset-100-alpha1-20260511",
+      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+    }
+  ],
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
@@ -42,6 +48,13 @@
           "referral",
           "referral request",
           "transfer of care request"
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-15",
+            "comment": "ServiceRequest"
+          }
         ]
       },
       {
@@ -96,9 +109,53 @@
         ]
       },
       {
+        "id": "ServiceRequest.occurrence[x]",
+        "path": "ServiceRequest.occurrence[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "short": "Occurrence",
+        "definition": "Requested schedule for performing the activity (e.g., duration, frequency, time of day).",
+        "alias": [
+          "Tijdschema"
+        ]
+      },
+      {
+        "id": "ServiceRequest.occurrence[x]:occurrenceTiming",
+        "path": "ServiceRequest.occurrence[x]",
+        "sliceName": "occurrenceTiming",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Timing"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-17",
+            "comment": "Occurrence"
+          }
+        ]
+      },
+      {
         "id": "ServiceRequest.requester",
         "path": "ServiceRequest.requester",
+        "short": "Requester",
+        "definition": "Healthcare professional that requests this activity for the patient.",
         "comment": "Each occurrence of the zib HealthProfessional is normally represented by _two_ FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.\n\nIn rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.",
+        "alias": [
+          "Aanvrager",
+          "orderer"
+        ],
         "type": [
           {
             "code": "Reference",
@@ -112,13 +169,31 @@
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
             ]
           }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-18",
+            "comment": "Requester"
+          }
         ]
       },
       {
         "id": "ServiceRequest.patientInstruction",
         "path": "ServiceRequest.patientInstruction",
         "short": "Patient-specific instructions",
-        "definition": "Patient-specific instructions for performing the activity that complement or override the generic instructions defined in the ActivityDefinition, intended to be shown alongside the patient’s Task(s)."
+        "definition": "Patient-oriented instructions that may differ from or add to the generic activity information (e.g., fasting measurements, preferred timing, preparation steps). These instructions should be shown alongside the Task(s) created from this order.",
+        "alias": [
+          "PatiëntenInstructie"
+        ],
+        "min": 1,
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-16",
+            "comment": "patientInstruction"
+          }
+        ]
       }
     ]
   }

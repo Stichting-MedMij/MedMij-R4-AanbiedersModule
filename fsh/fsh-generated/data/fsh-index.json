@@ -237,7 +237,7 @@
     "fshType": "Profile",
     "fshFile": "ProviderTasks-ActivityDefinition.fsh",
     "startLine": 1,
-    "endLine": 26
+    "endLine": 47
   },
   {
     "outputFile": "StructureDefinition-pt-ClientID.json",
@@ -269,7 +269,7 @@
     "fshType": "Profile",
     "fshFile": "ProviderTasks-ServiceRequestExecutionOrder.fsh",
     "startLine": 1,
-    "endLine": 27
+    "endLine": 35
   },
   {
     "outputFile": "StructureDefinition-pt-Task.json",
@@ -277,47 +277,31 @@
     "fshType": "Profile",
     "fshFile": "ProviderTasks-Task.fsh",
     "startLine": 1,
-    "endLine": 46
+    "endLine": 62
   },
   {
-    "outputFile": "StructureDefinition-pt-lm-ActivityDefinition.json",
-    "fshName": "LmActivityDefinition",
+    "outputFile": "StructureDefinition-pt-lm-Activity.json",
+    "fshName": "LmActivity",
     "fshType": "Logical",
     "fshFile": "LogicalModels.fsh",
-    "startLine": 34,
-    "endLine": 64
-  },
-  {
-    "outputFile": "StructureDefinition-pt-lm-Endpoint.json",
-    "fshName": "LmEnpoint",
-    "fshType": "Logical",
-    "fshFile": "LogicalModels.fsh",
-    "startLine": 146,
-    "endLine": 160
-  },
-  {
-    "outputFile": "StructureDefinition-pt-lm-Patient.json",
-    "fshName": "LmPatient",
-    "fshType": "Logical",
-    "fshFile": "LogicalModels.fsh",
-    "startLine": 3,
-    "endLine": 32
+    "startLine": 44,
+    "endLine": 65
   },
   {
     "outputFile": "StructureDefinition-pt-lm-ServiceRequest.json",
-    "fshName": "LmServiceRequestExecutionOrder",
+    "fshName": "LmServiceRequest",
     "fshType": "Logical",
     "fshFile": "LogicalModels.fsh",
-    "startLine": 116,
-    "endLine": 144
+    "startLine": 78,
+    "endLine": 96
   },
   {
     "outputFile": "StructureDefinition-pt-lm-Task.json",
     "fshName": "LmTask",
     "fshType": "Logical",
     "fshFile": "LogicalModels.fsh",
-    "startLine": 66,
-    "endLine": 114
+    "startLine": 3,
+    "endLine": 29
   },
   {
     "outputFile": "Task-ProviderTasks-Task-Informatie-Cholesterol.json",

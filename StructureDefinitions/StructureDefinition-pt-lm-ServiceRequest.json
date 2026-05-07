@@ -22,10 +22,16 @@
       ]
     }
   ],
-  "description": "Patient-specific clinical order for a digital (eHealth) activity that a healthcare professional requests for a patient, such as completing a questionnaire, performing home measurements, viewing educational content, or launching a third-party module.",
-  "purpose": "To represent the clinical order to start or perform a specific digital (eHealth) activity for a patient. This ServiceRequest provides the clinical intent, context, requested schedule, and patient-specific instructions, and can serve as the basis for one or more Task resources that manage execution and tracking of the activity.",
+  "description": "Patient-specific clinical order for a digital activity, created by a healthcare professional for a patient.",
+  "purpose": "To represent a healthcare professional’s clinical order to start or perform a specific digital activity for a patient. The ServiceRequest captures the intended schedule and patient-specific instructions and can serve as the basis for one or more patient-facing Tasks that track execution and completion.",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "pt-dataset-100-alpha1-20260511",
+      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+    }
+  ],
   "kind": "logical",
   "abstract": true,
   "type": "http://medmij.nl/fhir/StructureDefinition/pt-lm-ServiceRequest",
@@ -37,83 +43,23 @@
         "id": "pt-lm-ServiceRequest",
         "path": "pt-lm-ServiceRequest",
         "short": "ServiceRequest",
-        "definition": "Patient-specific clinical order for a digital (eHealth) activity that a healthcare professional requests for a patient, such as completing a questionnaire, performing home measurements, viewing educational content, or launching a third-party module.",
+        "definition": "Patient-specific clinical order for a digital activity, created by a healthcare professional for a patient.",
         "alias": [
           "Zorgopdracht"
-        ]
-      },
-      {
-        "id": "pt-lm-ServiceRequest.Identifier",
-        "path": "pt-lm-ServiceRequest.Identifier",
-        "short": "Business identifier that uniquely identifies this ServiceRequest within or across systems.",
-        "definition": "Business identifier that uniquely identifies this ServiceRequest within or across systems.",
-        "alias": [
-          "Identifier"
         ],
-        "min": 0,
-        "max": "*",
-        "type": [
+        "mapping": [
           {
-            "code": "Identifier"
-          }
-        ]
-      },
-      {
-        "id": "pt-lm-ServiceRequest.Status",
-        "path": "pt-lm-ServiceRequest.Status",
-        "short": "Current state of the service request (e.g. draft, active, completed, cancelled).",
-        "definition": "Current state of the service request (e.g. draft, active, completed, cancelled).",
-        "alias": [
-          "Status"
-        ],
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ]
-      },
-      {
-        "id": "pt-lm-ServiceRequest.Intent",
-        "path": "pt-lm-ServiceRequest.Intent",
-        "short": "Indicates the level of authority or intention associated with the request (e.g., order or plan).",
-        "definition": "Indicates the level of authority or intention associated with the request (e.g., order or plan).",
-        "alias": [
-          "Bedoeling"
-        ],
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ]
-      },
-      {
-        "id": "pt-lm-ServiceRequest.Subject",
-        "path": "pt-lm-ServiceRequest.Subject",
-        "short": "Patient for whom the digital activity is requested.",
-        "definition": "Patient for whom the digital activity is requested.",
-        "alias": [
-          "Patiënt"
-        ],
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Patient"
-            ]
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-15",
+            "comment": "ServiceRequest"
           }
         ]
       },
       {
         "id": "pt-lm-ServiceRequest.patientInstruction",
         "path": "pt-lm-ServiceRequest.patientInstruction",
-        "short": "Patient or consumer-oriented instructions for how the requested activity should be performed. Use this element for patient-specific guidance that should be shown alongside the Task(s) executing this order (e.g., home blood pressure monitoring for 8 weeks, once daily in the morning).",
-        "definition": "Patient or consumer-oriented instructions for how the requested activity should be performed. Use this element for patient-specific guidance that should be shown alongside the Task(s) executing this order (e.g., home blood pressure monitoring for 8 weeks, once daily in the morning).",
+        "short": "Patient-oriented instructions that may differ from or add to the generic activity information (e.g., fasting measurements, preferred timing, preparation steps). These instructions should be shown alongside the Task(s) created from this order.",
+        "definition": "Patient-oriented instructions that may differ from or add to the generic activity information (e.g., fasting measurements, preferred timing, preparation steps). These instructions should be shown alongside the Task(s) created from this order.",
         "alias": [
           "PatiëntenInstructie"
         ],
@@ -123,13 +69,20 @@
           {
             "code": "string"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-16",
+            "comment": "patientInstruction"
+          }
         ]
       },
       {
         "id": "pt-lm-ServiceRequest.Occurrence",
         "path": "pt-lm-ServiceRequest.Occurrence",
-        "short": "Requested schedule for performing the provider module, such as duration, frequency and time of day.",
-        "definition": "Requested schedule for performing the provider module, such as duration, frequency and time of day.",
+        "short": "Requested schedule for performing the activity (e.g., duration, frequency, time of day).",
+        "definition": "Requested schedule for performing the activity (e.g., duration, frequency, time of day).",
         "alias": [
           "Tijdschema"
         ],
@@ -139,13 +92,20 @@
           {
             "code": "Timing"
           }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-17",
+            "comment": "Occurrence"
+          }
         ]
       },
       {
         "id": "pt-lm-ServiceRequest.Requester",
         "path": "pt-lm-ServiceRequest.Requester",
-        "short": "Healthcare professional role that requests this activity for the patient.",
-        "definition": "Healthcare professional role that requests this activity for the patient.",
+        "short": "Healthcare professional that requests this activity for the patient.",
+        "definition": "Healthcare professional that requests this activity for the patient.",
         "alias": [
           "Aanvrager"
         ],
@@ -155,24 +115,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/PractitionerRole"
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
             ]
           }
-        ]
-      },
-      {
-        "id": "pt-lm-ServiceRequest.AuthoredOn",
-        "path": "pt-lm-ServiceRequest.AuthoredOn",
-        "short": "Date and time when this service request was created.",
-        "definition": "Date and time when this service request was created.",
-        "alias": [
-          "AanmaakDatumTijd"
         ],
-        "min": 0,
-        "max": "1",
-        "type": [
+        "mapping": [
           {
-            "code": "dateTime"
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-18",
+            "comment": "Requester"
           }
         ]
       }
