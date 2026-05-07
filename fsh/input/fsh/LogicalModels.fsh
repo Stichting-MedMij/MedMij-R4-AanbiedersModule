@@ -31,6 +31,20 @@ Description: "The person for whom the task is intended."
 * Gender from http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.0.1.1--20200901000000 (required)
   * ^alias = "Geslacht"
 
+Mapping: LmPatientMedMij-100-alpha1
+Source: LmPatient
+Id: pt-dataset-100-alpha1-20260507
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260507"
+* . -> "pt-dataelement-1" "Patient"
+* NameInformation -> "pt-dataelement-2" "NameInformation"
+* NameInformation.FirstNames -> "pt-dataelement-3" "FirstNames"
+* NameInformation.Initials -> "pt-dataelement-4" "Initials"
+* NameInformation.LastName -> "pt-dataelement-5" "LastName"
+* NameInformation.LastName.Prefix -> "pt-dataelement-6" "Prefix"
+* NameInformation.LastName.LastName -> "pt-dataelement-7" "LastName"
+* DateOfBirth -> "pt-dataelement-8" "DateOfBirth"
+* Gender -> "pt-dataelement-9" "Gender"
+
 Logical: LmActivityDefinition
 Parent: http://hl7.org/fhir/StructureDefinition/Element
 Id: pt-lm-ActivityDefinition
@@ -62,6 +76,22 @@ Description: "Reusable definition of a launchable digital (eHealth) activity tha
   * ^alias = "Gebruik"
 * Timing 0..1 Timing "Recommended timing for the activity when applied in a workflow (e.g., once, recurring, over a period). Patient-specific scheduling belongs in ServiceRequest resources."
   * ^alias = "Tijdschema"
+
+Mapping: LmActivityDefinitionMedMij-100-alpha1
+Source: LmActivityDefinition
+Id: pt-dataset-100-alpha1-20260507
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260507"
+* . -> "pt-dataelement-10" "ActivityDefinition"
+* ModuleEndpoint -> "pt-dataelement-11" "ModuleEndpoint"
+* Identifier -> "pt-dataelement-12" "Identifier"
+* Version -> "pt-dataelement-13" "Version"
+* Name -> "pt-dataelement-14" "Name"
+* Title -> "pt-dataelement-15" "Title"
+* Status -> "pt-dataelement-16" "Status"
+* Publisher -> "pt-dataelement-17" "Publisher"
+* Description -> "pt-dataelement-18" "Description"
+* Usage -> "pt-dataelement-19" "Usage"
+* Timing -> "pt-dataelement-20" "Timing"
 
 Logical: LmTask
 Parent: http://hl7.org/fhir/StructureDefinition/Element
@@ -113,6 +143,30 @@ Description: "Patient-specific workflow item that requests execution of a define
   * Period 0..1 Period "Time window during which this Task restriction applies. For example the period in which the task may be performed."
     * ^alias = "GeldigBinnen"
 
+Mapping: LmTaskMedMij-100-alpha1
+Source: LmTask
+Id: pt-dataset-100-alpha1-20260507
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260507"
+* . -> "pt-dataelement-21" "Task"
+* Instantiates -> "pt-dataelement-22" "Instantiates"
+* Instantiates.ActivityDefinition -> "pt-dataelement-23" "ActivityDefinition"
+* Identifier -> "pt-dataelement-24" "Identifier"
+* BasedOn -> "pt-dataelement-25" "BasedOn"
+* PartOf -> "pt-dataelement-26" "PartOf"
+* Status -> "pt-dataelement-27" "Status"
+* Intent -> "pt-dataelement-28" "Intent"
+* Priority -> "pt-dataelement-29" "Priority"
+* Description -> "pt-dataelement-30" "Description"
+* For -> "pt-dataelement-31" "For"
+* ExecutionPeriod -> "pt-dataelement-32" "ExecutionPeriod"
+* AuthoredOn -> "pt-dataelement-33" "AuthoredOn"
+* LastModified -> "pt-dataelement-34" "LastModified"
+* Requester -> "pt-dataelement-35" "Requester"
+* Owner -> "pt-dataelement-36" "Owner"
+* Restriction -> "pt-dataelement-37" "Restriction"
+* Restriction.Repetitions -> "pt-dataelement-38" "Repetitions"
+* Restriction.Period -> "pt-dataelement-39" "Period"
+
 Logical: LmServiceRequestExecutionOrder
 Parent: http://hl7.org/fhir/StructureDefinition/Element
 Id: pt-lm-ServiceRequest
@@ -143,6 +197,20 @@ Description: "Patient-specific clinical order for a digital (eHealth) activity t
 * AuthoredOn 0..1 dateTime "Date and time when this service request was created."
   * ^alias = "AanmaakDatumTijd"
 
+Mapping: LmServiceRequestExecutionOrderMedMij-100-alpha1
+Source: LmServiceRequestExecutionOrder
+Id: pt-dataset-100-alpha1-20260507
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260507"
+* . -> "pt-dataelement-40" "ServiceRequest"
+* Identifier -> "pt-dataelement-41" "Identifier"
+* Status -> "pt-dataelement-42" "Status"
+* Intent -> "pt-dataelement-43" "Intent"
+* Subject -> "pt-dataelement-44" "Subject"
+* patientInstruction -> "pt-dataelement-45" "patientInstruction"
+* Occurrence -> "pt-dataelement-46" "Occurrence"
+* Requester -> "pt-dataelement-47" "Requester"
+* AuthoredOn -> "pt-dataelement-48" "AuthoredOn"
+
 Logical: LmEnpoint
 Parent: http://hl7.org/fhir/StructureDefinition/Element
 Id: pt-lm-Endpoint
@@ -158,3 +226,12 @@ Description: "This (FHIR) Endpoint profile represents the technical FHIR REST en
   * ^comment = "Maps to Endpoint.extension('http://medmij.nl/fhir/StructureDefinition/ext-ClientID').valueString"
 * managingOrganization 0..1 Reference(Organization) "The organization responsible for operating and maintaining this FHIR REST endpoint (the source system/XIS) that exposes ProviderModule task data and related context."
 * Adress 0..1 dateTime "FHIR resource endpoint"
+
+Mapping: LmEnpointMedMij-100-alpha1
+Source: LmEnpoint
+Id: pt-dataset-100-alpha1-20260507
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260507"
+* . -> "pt-dataelement-49" "Endpoint"
+* ClientId -> "pt-dataelement-50" "ClientId"
+* managingOrganization -> "pt-dataelement-51" "managingOrganization"
+* Adress -> "pt-dataelement-52" "Adress"
