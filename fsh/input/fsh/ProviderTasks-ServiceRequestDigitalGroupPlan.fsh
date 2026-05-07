@@ -1,6 +1,6 @@
-Profile: ProviderTasksServiceRequestDigitalGroupPlan
+Profile: PtServiceRequestDigitalGroupPlan
 Parent: ServiceRequest
-Id: pt-ServiceRequest-DigitalGroupPlan
+Id: pt-ServiceRequest-Digital-GroupPlan
 Description: "Clinical request representing the selected digital group plan for a specific patient. This ServiceRequest identifies which digital group plan is requested. Patient-specific scheduling and instructions are provided in a separate ServiceRequest"
 * insert DefaultNarrative
 * ^status = #draft

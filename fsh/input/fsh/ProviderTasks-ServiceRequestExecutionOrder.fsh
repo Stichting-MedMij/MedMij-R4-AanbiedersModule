@@ -1,18 +1,18 @@
-Profile: ProviderTasksServiceRequestExecutionOrder
+Profile: PtServiceRequestExecutionOrder
 Parent: ServiceRequest
 Id: pt-ServiceRequest-ExecutionOrder
-Description: "Patient-specific execution plan for a digital activity. This ServiceRequest captures patient-specific scheduling and instructions that deviate from or complement the generic ActivityDefinition. It is referenced from the patient-facing Task via Task.focus."
+Description: "Patient-specific execution plan for a digital activity. This ServiceRequest captures patient-specific scheduling and instructions that deviate from or complement the generic ActivityDefinition. It is referenced from the patient-facing Task via `Task.focus`."
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContactMedMij
 * ^purpose = "To represent the healthcare professional’s order to start a specific digital activity for a patient."
 * insert Copyright
 * .
-  * ^short = "Patient-specific execution details"
+  * ^short = "Patient instruction"
   * ^alias = "Uitvoeringsopdracht"
 * insert Origin
 * .
-^definition = "Patient-specific execution plan for a digital activity, containing scheduling (occurrence) and patientInstruction. It is referenced from Task via Task.focus."
+^definition = "Patient-specific execution plan for a digital activity, containing scheduling (occurrence) and patient instruction. It is referenced from Task via `Task.focus`."
 * intent = #order
 * subject only Reference(Patient or Group or Location or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
   * ^definition = "The patient for whom the digital activity applies."
@@ -39,6 +39,6 @@ Source: ProviderTasksServiceRequestExecutionOrder
 Id: pt-dataset-100-alpha1-20260511
 Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * -> "pt-dataelement-15" "ServiceRequest"
-* patientInstruction -> "pt-dataelement-16" "patientInstruction"
+* PatientInstruction -> "pt-dataelement-16" "PatientInstruction"
 * occurrence[x] -> "pt-dataelement-17" "Occurrence"
 * requester -> "pt-dataelement-18" "Requester"
