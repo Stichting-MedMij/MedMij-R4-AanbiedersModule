@@ -88,7 +88,7 @@ Description: "Patient-specific clinical order for a digital activity, created by
 * ^abstract = true
 * .
   * ^alias = "Zorgopdracht"
-* patientInstruction 1..1 string "Patient-oriented instructions that may differ from or add to the generic activity information (e.g., fasting measurements, preferred timing, preparation steps). These instructions should be shown alongside the Task(s) created from this order."
+* PatientInstruction 1..1 string "Patient-oriented instructions that may differ from or add to the generic activity information (e.g., fasting measurements, preferred timing, preparation steps). These instructions should be shown alongside the Task(s) created from this order."
   * ^alias = "PatiëntenInstructie"
 * Occurrence[x] 0..1 dateTime or Period or Timing "Requested schedule for performing the activity (e.g., duration, frequency, time of day)."
   * ^alias = "Tijdschema"
