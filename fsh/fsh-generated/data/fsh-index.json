@@ -192,6 +192,30 @@
     "endLine": 435
   },
   {
+    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-COPD.json",
+    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-COPD",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-3.fsh",
+    "startLine": 3,
+    "endLine": 16
+  },
+  {
+    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-CVRM.json",
+    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-CVRM",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-2.fsh",
+    "startLine": 24,
+    "endLine": 37
+  },
+  {
+    "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestDigitalGroup-Diabetes.json",
+    "fshName": "ProviderTasks-ServiceRequestDigitalGroup-Diabetes",
+    "fshType": "Instance",
+    "fshFile": "ProviderTasks-Bundle-Scenario-1.fsh",
+    "startLine": 24,
+    "endLine": 37
+  },
+  {
     "outputFile": "ServiceRequest-ProviderTasks-ServiceRequestExecution-Bloeddrukmeting.json",
     "fshName": "ProviderTasks-ServiceRequestExecution-Bloeddrukmeting",
     "fshType": "Instance",
@@ -232,7 +256,7 @@
     "endLine": 10
   },
   {
-    "outputFile": "StructureDefinition-pt-ServiceRequest-Digital-GroupPlan.json",
+    "outputFile": "StructureDefinition-pt-ServiceRequest-DigitalGroupPlan.json",
     "fshName": "PtServiceRequestDigitalGroupPlan",
     "fshType": "Profile",
     "fshFile": "ProviderTasks-ServiceRequestDigitalGroupPlan.fsh",

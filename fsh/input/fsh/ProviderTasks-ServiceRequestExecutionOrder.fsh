@@ -35,7 +35,7 @@ Description: "Patient-specific execution plan for a digital activity. This Servi
   * ^alias = "PatiëntenInstructie"
 
 Mapping: ProviderTasksServiceRequestExecutionOrderMedMij-100-alpha1
-Source: ProviderTasksServiceRequestExecutionOrder
+Source: PtServiceRequestExecutionOrder
 Id: pt-dataset-100-alpha1-20260511
 Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * -> "pt-dataelement-15" "ServiceRequest"
