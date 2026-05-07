@@ -16,8 +16,7 @@ Description: "Patient-specific execution plan for a digital activity. This Servi
 * intent = #order
 * subject only Reference(Patient or Group or Location or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
   * ^definition = "The patient for whom the digital activity applies."
-* occurrence[x] only Timing
-* occurrenceTiming
+* occurrence[x]
   * ^short = "Occurrence"
   * ^definition = "Requested schedule for performing the activity (e.g., duration, frequency, time of day)."
   * ^alias = "Tijdschema"
