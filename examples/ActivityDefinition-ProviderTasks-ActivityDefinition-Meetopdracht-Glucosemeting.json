@@ -18,6 +18,7 @@
       }
     }
   ],
+  "url": "https://hing.zno.com/fhir/ActivityDefinition/b15d4634-4678-46bd-a55a-e46ef3dfb517",
   "identifier": [
     {
       "system": "https://hing.zno.com/content/id",
@@ -30,7 +31,7 @@
   "status": "active",
   "publisher": "HinqZNO",
   "description": "Bloedglucose meting volgens NHG protocol. Duur: 1 week, 2x per dag",
-  "usage": "controle hartfalen",
+  "usage": "controle diabetes",
   "timingTiming": {
     "repeat": {
       "boundsDuration": {
@@ -39,7 +40,7 @@
         "code": "d",
         "unit": "day"
       },
-      "frequency": 2,
+      "frequency": 1,
       "period": 1,
       "periodUnit": "d"
     }

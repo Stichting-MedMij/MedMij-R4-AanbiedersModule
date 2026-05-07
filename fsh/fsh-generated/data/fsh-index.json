@@ -232,20 +232,20 @@
     "endLine": 22
   },
   {
-    "outputFile": "StructureDefinition-PtClientID.json",
-    "fshName": "PtClientID",
-    "fshType": "Extension",
-    "fshFile": "MedMij-ClientID.fsh",
-    "startLine": 1,
-    "endLine": 19
-  },
-  {
     "outputFile": "StructureDefinition-pt-ActivityDefinition.json",
     "fshName": "PtActivityDefinition",
     "fshType": "Profile",
     "fshFile": "ProviderTasks-ActivityDefinition.fsh",
     "startLine": 1,
     "endLine": 47
+  },
+  {
+    "outputFile": "StructureDefinition-pt-ClientID.json",
+    "fshName": "PtClientID",
+    "fshType": "Extension",
+    "fshFile": "MedMij-ClientID.fsh",
+    "startLine": 1,
+    "endLine": 19
   },
   {
     "outputFile": "StructureDefinition-pt-Endpoint.json",

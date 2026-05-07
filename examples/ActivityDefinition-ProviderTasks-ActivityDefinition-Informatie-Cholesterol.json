@@ -24,6 +24,7 @@
       "value": "c45485ee-8a42-466b-97ba-ac6537b0bf89"
     }
   ],
+  "url": "https://ns.minddistrict.com/fhir/ActivityDefinition/f0d9b485-f282-4870-a5f6-a5ea41465239",
   "version": "1.0.0",
   "name": "InformatieCholesterol",
   "title": "Wat is cholesterol en wat zijn de risico's?",

@@ -24,6 +24,7 @@
       "value": "c4bd168d-963c-4360-86fa-39d4b6e08d83"
     }
   ],
+  "url": "https://ns.minddistrict.com/fhir/ActivityDefinition/b6e103fc-2695-48fd-a0d7-6abe7cb5bbac",
   "version": "1.0.0",
   "name": "VragenlijstHartVaatziekten",
   "title": "Vragenlijst over uw situatie op gebied van hart- en vaatziekten",

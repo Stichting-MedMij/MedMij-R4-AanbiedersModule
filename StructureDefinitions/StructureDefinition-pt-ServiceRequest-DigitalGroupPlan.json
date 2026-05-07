@@ -1,0 +1,139 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pt-ServiceRequest-DigitalGroupPlan",
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+  },
+  "url": "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan",
+  "name": "PtServiceRequestDigitalGroupPlan",
+  "status": "draft",
+  "publisher": "MedMij",
+  "contact": [
+    {
+      "name": "MedMij",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@medmij.nl",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "Clinical request representing the selected digital group plan for a specific patient. This ServiceRequest identifies which digital group plan is requested. Patient-specific scheduling and instructions are provided in a separate ServiceRequest",
+  "purpose": "To represent the healthcare professional’s order to start a specific digital group plan for a patient.",
+  "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ServiceRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ServiceRequest",
+        "path": "ServiceRequest",
+        "short": "ServiceRequest digital group plan",
+        "definition": "Patient-specific clinical order to initiate a digital group plan. It is referenced from the patient-facing Task via Task.basedOn.",
+        "alias": [
+          "Module-opdracht",
+          "referral",
+          "referral request",
+          "transfer of care request"
+        ]
+      },
+      {
+        "id": "ServiceRequest.extension",
+        "path": "ServiceRequest.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ServiceRequest.extension:resource-origin",
+        "path": "ServiceRequest.extension",
+        "sliceName": "resource-origin",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://koppeltaal.nl/fhir/StructureDefinition/resource-origin"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.intent",
+        "path": "ServiceRequest.intent",
+        "patternCode": "plan"
+      },
+      {
+        "id": "ServiceRequest.code",
+        "path": "ServiceRequest.code",
+        "short": "Digital group plan identifier",
+        "definition": "Identifies which digital group plan is requested for the patient. The human-readable (display) name of the digital group plan is carried in `code.text` and is used as the group label in the PHR.",
+        "alias": [
+          "Identificatie digitaal groepsplan"
+        ],
+        "min": 1
+      },
+      {
+        "id": "ServiceRequest.code.text",
+        "path": "ServiceRequest.code.text",
+        "short": "Display name of the digital group plan",
+        "definition": "Human-readable name of the digital group plan. This name is used as the display label of the Task group in the PHR and MUST match the name used to identify the group in the `Task.basedOn` reference. The source system fills this element with the (display) name of the digital group plan when a healthcare professional starts a digital group plan/module for a patient.",
+        "alias": [
+          "Naam digitaal groepsplan"
+        ],
+        "min": 1
+      },
+      {
+        "id": "ServiceRequest.subject",
+        "path": "ServiceRequest.subject",
+        "definition": "The patient for whom the activity is requested.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.org/fhir/StructureDefinition/Group",
+              "http://hl7.org/fhir/StructureDefinition/Location",
+              "http://hl7.org/fhir/StructureDefinition/Device",
+              "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.requester",
+        "path": "ServiceRequest.requester",
+        "comment": "Each occurrence of the zib HealthProfessional is normally represented by _two_ FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.\n\nIn rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Practitioner",
+              "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+              "http://hl7.org/fhir/StructureDefinition/Organization",
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "http://hl7.org/fhir/StructureDefinition/Device",
+              "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
