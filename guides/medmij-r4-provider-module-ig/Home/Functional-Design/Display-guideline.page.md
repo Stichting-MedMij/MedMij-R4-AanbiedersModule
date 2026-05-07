@@ -7,7 +7,7 @@ topic: Weergaverichtlijn
 ## Inleiding
 Dit is de weergaverichtlijn voor de gegevensdienst Aanbiedertaken (ProviderTasks).
 
-De richtlijn bevat mock-ups die bedoeld zijn ter inspiratie. Persoonlijke gezondheidsomgevingen (PGO's) kunnen deze voorbeelden naar eigen inzicht visueel vormgeven, zolang de gebruiksvriendelijkheid behouden blijft.
+De richtlijn bevat een aantal verplichte acceptatiecriteria. De getoonde mock-ups zijn bedoeld ter inspiratie. Persoonlijke gezondheidsomgevingen (PGO's) kunnen deze voorbeelden naar eigen inzicht visueel vormgeven, zolang de gebruiksvriendelijkheid behouden blijft, en aan de acceptatiecriteria is voldaan.
 
 ## Doel
 Deze richtlijn heeft als doel om duidelijke handvatten te bieden voor een patiëntvriendelijke en begrijpelijke weergave van aanbiedertaken in de PGO. De richtlijn ondersteunt ontwikkelaars en zorgverleners bij het:
@@ -27,19 +27,16 @@ Onderwerpen die buiten de scope van deze richtlijn vallen:
 ## Inhoud richtlijn
 Om taken in te zien, navigeert de gebruiker in de PGO naar het takenoverzicht. Vanuit dit overzicht kan de gebruiker een specifieke taak openen om de bijbehorende details te bekijken. Deze richtlijn beschrijft hoe het overzichtsscherm en het detailscherm vormgegeven kunnen worden, en geeft aanbevelingen voor de weergave van de afzonderlijke datavelden.
 
-Het overzichts- en detailscherm worden geïllustreerd met mock-ups, die ter inspiratie dienen. De aanbevelingen voor de afzonderlijke datavelden zijn uitgewerkt in een specificatietabel, gebaseerd op het Logical Model.
+De weergaverichtlijn beschrijft twee schermen:
+- Overzicht van alle taken van alle zorgaanbieders in één overzicht
+- Detailgegevens per taak
 
-### Overzichtsscherm aanbiedertaken
-Er zijn twee weergaven gedefinieerd voor het overzicht van de aanbiedertaken:
-- Scenario 1: Overzicht taken (alle aanbiedertaken van alle zorgaanbieders in één overzicht).
-- Scenario 2: Overzicht taken per zorgaanbieder (alle aanbiedertaken van één zorgaanbieder in één overzicht). Dit scenario is optioneel; het uitgangspunt is namelijk dat de taken van alle zorgaanbieders worden getoond.
-
-De hieronder uitgewerkte scenario's tonen hoe het UX-design eruit kan zien. Het ondersteunen van scenario 2 is optioneel voor een PGO.
+Het overzichts- en detailscherm worden geïllustreerd met mock-ups, die ter inspiratie dienen. De aanbevelingen voor de afzonderlijke datavelden zijn uitgewerkt in een specificatietabel ({{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}}), gebaseerd op het Logical Model.
 
 ### Mock-ups overzichtsschermen aanbiedertaken
 <u>Overzicht taken</u>
 
-In het overzicht taken worden de datavelden van alle zorgaanbieders op één pagina getoond.
+In het overzicht taken worden de taken van alle zorgaanbieders op één pagina getoond.
 
 Het overzichtsscherm bestaat uit twee secties (deze mogen ook als tabs worden weergegeven): een statussectie en een sectie met de afzonderlijke taken en de bijbehorende digitale activiteiten.
 
@@ -53,13 +50,11 @@ Het overzichtsscherm bestaat uit twee secties (deze mogen ook als tabs worden we
 
 **Figuur 2: Voorbeeld Overzicht taken per zorgaanbieder**
 
-
 #### Groeperen taken per status
 De afzonderlijke taken worden ingedeeld in drie groepen:
 1. Te doen (FHIR-status: `ready`, `requested`, `received`, `in-progress`)
 2. Gereed (FHIR-status: `completed`)
 3. Gestopt (FHIR-status: `failed`, `cancelled`)
-
 
 De acceptatiecriteria voor het overzichtsscherm zijn als volgt.
 
@@ -75,7 +70,7 @@ De acceptatiecriteria voor het overzichtsscherm zijn als volgt.
 | 8 | De PGO toont minimaal de datavelden met prioriteit M (must have) uit de specificatietabel. De PGO is vrij om aanvullende velden te tonen of deze (uitsluitend) in het detailscherm op te nemen. Lege velden hoeven niet getoond te worden. |
 
 ### Detailscherm aanbiedertaken
-Het detailscherm wordt aan de PGO-gebruiker getoond nadat deze een specifieke regel in het overzichtsscherm heeft geselecteerd. De gegevens in de mock-up dienen uitsluitend ter demonstratie.
+Dit detailscherm krijgt een PGO-gebruiker te zien na het selecteren van een specifieke regel in het overzichtsscherm. De in de mock-up weergegeven gegevens dienen uitsluitend ter demonstratie.
 
 #### Mock-ups detailscherm aanbiedertaken
 
@@ -86,6 +81,13 @@ Het detailscherm wordt aan de PGO-gebruiker getoond nadat deze een specifieke re
 {{render: guides/medmij-r4-provider-module-ig/images/detailscherm3.png}}
 
 **Figuur 3: Voorbeeld detailschermen**
+
+De acceptatiecriteria voor het weergeven van een pathologieverslag in het detailscherm zijn hieronder opgenomen.
+
+| Nr | Acceptatiecriteria |
+| --- | --- |
+| 1 | Voor bepaalde termen in de aanbiedertaakgegevens worden nog patiëntvriendelijke termen gedefinieerd. Zodra deze beschikbaar zijn, toont de PGO de patiëntvriendelijke term in plaats van de oorspronkelijke term. |
+| 2 | De datavelden in het detailscherm zijn begrijpelijk en gebruiksvriendelijk geformuleerd. Zie de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}} voor de aanbevolen termen per opgehaald dataveld. |
 
 De patiëntinstructie is een specifieke instructie voor de patiënt. Deze instructie kan door de zorgverlener worden ingevoerd bij het klaarzetten van de digitale activiteit voor de patiënt. Algemene instructies horen in de module zelf zichtbaar te zijn en vallen daarom buiten deze weergaverichtlijn. De patiëntinstructie is niet altijd aanwezig.
 
