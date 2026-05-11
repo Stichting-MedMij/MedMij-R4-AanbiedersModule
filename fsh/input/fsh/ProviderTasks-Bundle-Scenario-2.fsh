@@ -81,7 +81,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -109,7 +109,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -137,7 +137,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -165,7 +165,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -193,7 +193,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -221,7 +221,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -249,7 +249,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -277,7 +277,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -305,7 +305,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -333,7 +333,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -361,7 +361,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -389,7 +389,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -417,7 +417,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -445,7 +445,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast."
+* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -541,7 +541,7 @@ Usage: #example
 * status = #requested
 * intent = #order
 * priority = #routine
-* description = "In deze module leer je stap voor stap hoe je thuis je bloeddruk goed meet. Je krijgt tips over voorbereiding (eerst 5 minuten rustig zitten), de juiste houding, hoe je de manchet plaatst en wanneer je het beste meet. Ook lees je wat je kunt doen om meetfouten te voorkomen (zoals praten tijdens het meten of meten direct na koffie of inspanning) en hoe je je waarden in de app noteert. Zo worden je metingen betrouwbaarder en kan je zorgverlener er beter op sturen."
+* description = "Lees deze informatie over hoe je thuis je bloeddruk goed meet."
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-22"
@@ -589,7 +589,7 @@ Usage: #example
 * status = #failed
 * intent = #order
 * priority = #routine
-* description = "In deze vragenlijst beantwoord je vragen over jouw situatie rond hart- en vaatziekten. Denk aan klachten, leefstijl (zoals bewegen, roken en voeding) en andere factoren die invloed kunnen hebben op je gezondheid. Je antwoorden helpen jou en je zorgverlener om een compleet beeld te krijgen en samen te bepalen welke stappen het meest belangrijk zijn."
+* description = "Beantwoord deze vragen over jouw situatie rond hart- en vaatziekten."
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-22"

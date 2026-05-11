@@ -55,7 +55,7 @@ Het overzichtsscherm bestaat uit twee onderdelen (deze mogen ook als tabs worden
 #### Groeperen taken per status
 De afzonderlijke taken worden ingedeeld in drie groepen:
 1. Te doen (FHIR-status: `ready`, `requested`, `received`, `in-progress`)
-2. Gereed (FHIR-status: `completed`)
+2. Klaar (FHIR-status: `completed`)
 3. Gestopt (FHIR-status: `failed`, `cancelled`)
 
 De acceptatiecriteria voor het overzichtsscherm zijn als volgt.
