@@ -58,13 +58,27 @@ De afzonderlijke taken worden ingedeeld in drie groepen:
 2. Klaar (FHIR-status: `completed`)
 3. Gestopt (FHIR-status: `failed`, `cancelled`)
 
+#### Vertalingen taakstatussen
+- concept" voor "draft" 
+- aangevraagd" voor "requested" 
+- "ontvangen" voor "received" 
+- "geaccepteerd" voor "accepted" 
+- "afgewezen" voor "rejected" 
+- "gereed" voor "ready" 
+- "geannuleerd" voor "cancelled" 
+- "bezig" voor "in-progress" 
+- "in de wacht" voor "on-hold" 
+- "mislukt" voor "failed" 
+- "voltooid" voor "completed" 
+- "per ongeluk ingevoerd" voor "entered-in-error" 
+
 De acceptatiecriteria voor het overzichtsscherm zijn als volgt.
 
 | Nr | Acceptatiecriteria |
 | --- | --- |
-| 1 | Standaard worden alle gegevens van de geraadpleegde zorgaanbieder(s) overzichtelijk weergegeven, gesorteerd op datum. Het overzichtsscherm opent met het filter "Te doen". Wanneer er geen openstaande taken zijn, wordt een passende melding getoond (bijvoorbeeld "Er zijn geen nieuwe taken"). |
+| 1 | Standaard worden alle gegevens van alle zorgaanbieder(s) waarbij taakgegevens zijn verzameld, overzichtelijk weergegeven, gesorteerd op datum. Het overzichtsscherm opent met het filter "Te doen". Wanneer er geen openstaande taken zijn, wordt een passende melding getoond (bijvoorbeeld "Er zijn geen nieuwe taken"). |
 | 2 | De gebruiker kan zoeken op (delen van) de gegevens of op informatie uit de andere datavelden in het overzichtsscherm. Het bepalen van een eventuele drempel voor het minimaal aantal in te voeren karakters is aan de PGO (advies: minimaal drie karakters). Het zoekveld is met name relevant voor het tabblad met afgehandelde taken (historie). |
-| 3 | Voor de datavelden in het overzichtsscherm is het mogelijk om te filteren op één of meerdere waarden. Filteren op `Task.description` (Omschrijving) wordt niet ondersteund. Voor het datumveld geldt criterium 4. |
+| 3 | Voor alle datavelden in het overzichtsscherm is het mogelijk om te filteren op één of meerdere waarden. Filteren op `Task.description` (Omschrijving) wordt niet ondersteund. Voor het datumveld geldt criterium 4. |
 | 4 | Voor het datumveld in het overzichtsscherm kan de gebruiker een specifieke periode selecteren. |
 | 5 | Alle datavelden in het overzichtsscherm (met uitzondering van `Task.description`) zijn sorteerbaar. |
 | 6 | De datavelden in het overzichtsscherm zijn begrijpelijk en gebruiksvriendelijk geformuleerd. Zie de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}} voor de aanbevolen termen per opgehaald dataveld. |
@@ -222,7 +236,7 @@ Verwijzing: [LogicalModel Task](https://simplifier.net/medmij-r4-provider-module
     </tr>
     <tr>
       <td>Description</td><td>Item</td><td>pt-dataelement-6</td><td>Vul de vragenlijst in over je woon-/leefsituatie</td><td>b</td>
-      <td>Voor de patiënt leesbare omschrijving van de taak.</td><td>Omschrijving</td><td></td><td>M</td>
+      <td>Voor de patiënt leesbare omschrijving van de taak.</td><td>Omschrijving</td><td></td><td>S</td>
     </tr>
     <tr>
       <td>ExecutionPeriod</td><td>Item</td><td>pt-dataelement-7</td><td>2025-12-22 tot en met 2025-12-28</td><td>a</td>
