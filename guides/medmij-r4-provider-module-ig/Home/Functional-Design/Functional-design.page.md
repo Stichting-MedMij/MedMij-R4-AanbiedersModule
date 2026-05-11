@@ -137,7 +137,8 @@ Er is geen hoofd-/subtaak hiërarchie tussen taken: elke taak vertegenwoordigt �
 
 
 #### Postconditie
-- De patiënt heeft één of meerdere taken uitgevoerd en/of afgerond (status bijgewerkt).
+- De patiënt heeft één of meerdere taken uitgevoerd en/of afgerond.
+- De externe applicatie heeft de status bijgewerkt.
 - De zorgaanbieder kan (op hoofdlijnen) de voortgang volgen via de (bijgewerkte) status van taken.
 
 
