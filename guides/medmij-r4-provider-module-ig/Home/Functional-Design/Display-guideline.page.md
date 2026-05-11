@@ -38,7 +38,9 @@ Het overzichts- en detailscherm worden geïllustreerd met mock-ups, die ter insp
 
 In het overzicht taken worden de taken van alle zorgaanbieders op één pagina getoond.
 
-Het overzichtsscherm bestaat uit twee secties (deze mogen ook als tabs worden weergegeven): een statussectie en een sectie met de afzonderlijke taken en de bijbehorende digitale activiteiten.
+Het overzichtsscherm bestaat uit twee onderdelen (deze mogen ook als tabs worden weergegeven): 
+1. een (taak-)status overzicht
+2. een overzicht met de taken.
 
 {{render: guides/medmij-r4-provider-module-ig/images/overzichtsschermTaken.png}}
 
@@ -46,7 +48,7 @@ Het overzichtsscherm bestaat uit twee secties (deze mogen ook als tabs worden we
 
 <u>Overzicht taken per zorgaanbieder</u>
 
-{{render: guides/medmij-r4-provider-module-ig/images/overzichttakenperzorgaanbieder.png}}
+{{render: guides/medmij-r4-provider-module-ig/images/figuur 2.png}}
 
 **Figuur 2: Voorbeeld Overzicht taken per zorgaanbieder**
 
