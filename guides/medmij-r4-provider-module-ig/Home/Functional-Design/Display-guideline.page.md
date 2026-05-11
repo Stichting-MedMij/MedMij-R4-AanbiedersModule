@@ -59,8 +59,8 @@ De afzonderlijke taken worden ingedeeld in drie groepen:
 3. Gestopt (FHIR-status: `failed`, `cancelled`)
 
 #### Vertalingen taakstatussen
-- concept" voor "draft" 
-- aangevraagd" voor "requested" 
+- "concept" voor "draft" 
+- "aangevraagd" voor "requested" 
 - "ontvangen" voor "received" 
 - "geaccepteerd" voor "accepted" 
 - "afgewezen" voor "rejected" 
