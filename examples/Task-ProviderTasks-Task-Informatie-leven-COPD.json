@@ -34,7 +34,7 @@
   "status": "received",
   "intent": "order",
   "priority": "routine",
-  "description": "Lees praktische tips om met COPD te leven: omgaan met benauwdheid, bewegen, energie verdelen en herkennen van verslechtering.",
+  "description": "Lees de praktische tips om met COPD te leven.",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
     "display": "Sanne van Dijk"

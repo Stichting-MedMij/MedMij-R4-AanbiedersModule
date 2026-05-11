@@ -34,7 +34,7 @@
   "status": "received",
   "intent": "order",
   "priority": "routine",
-  "description": "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten. Noteer de waarde in de app. Je metingen helpen je zorgverlener om te zien hoe het met je gaat en of je behandeling moet worden aangepast.",
+  "description": "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app.",
   "focus": {
     "reference": "ServiceRequest/ProviderTasks-ServiceRequestExecution-Bloeddrukmeting"
   },

@@ -34,7 +34,7 @@
   "status": "requested",
   "intent": "order",
   "priority": "routine",
-  "description": "In deze vragenlijst geef je aan wat je belangrijk vindt en wat je wilt bereiken met je behandeling of begeleiding. Denk aan doelen zoals meer energie, beter kunnen bewegen, minder benauwdheid of je zekerder voelen in het dagelijks leven. Er zijn geen goede of foute antwoorden: het gaat om wat voor jou werkt. Je antwoorden helpen jou en je zorgverlener om samen afspraken te maken die passen bij jouw situatie.",
+  "description": "Beantwoord deze vragen over wat je belangrijk vindt en wat je wilt bereiken met je behandeling of begeleiding.",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
     "display": "Sanne van Dijk"

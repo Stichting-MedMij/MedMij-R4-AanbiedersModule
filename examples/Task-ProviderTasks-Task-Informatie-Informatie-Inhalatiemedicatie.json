@@ -34,7 +34,7 @@
   "status": "requested",
   "intent": "order",
   "priority": "routine",
-  "description": "In deze module leer je hoe je je inhalatiemedicatie goed gebruikt. Je krijgt stap-voor-stap uitleg voor jouw inhalator, tips om veelgemaakte fouten te voorkomen en een handig geheugensteuntje voor vaste innamemomenten. Zo komt de medicatie beter in je longen en heb je meer kans op minder klachten. Je leest ook wanneer je contact opneemt met je zorgverlener, bijvoorbeeld bij toenemende benauwdheid of bijwerkingen.",
+  "description": "Lees hoe je inhalatiemedicatie thuis goed gebruikt.",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
     "display": "Sanne van Dijk"

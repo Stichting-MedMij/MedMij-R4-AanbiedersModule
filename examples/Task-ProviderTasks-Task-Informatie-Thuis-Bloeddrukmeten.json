@@ -34,7 +34,7 @@
   "status": "requested",
   "intent": "order",
   "priority": "routine",
-  "description": "In deze module leer je stap voor stap hoe je thuis je bloeddruk goed meet. Je krijgt tips over voorbereiding (eerst 5 minuten rustig zitten), de juiste houding, hoe je de manchet plaatst en wanneer je het beste meet. Ook lees je wat je kunt doen om meetfouten te voorkomen (zoals praten tijdens het meten of meten direct na koffie of inspanning) en hoe je je waarden in de app noteert. Zo worden je metingen betrouwbaarder en kan je zorgverlener er beter op sturen.",
+  "description": "Lees deze informatie over hoe je thuis je bloeddruk goed meet.",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-De-Groot",
     "display": "Koos de Groot"
