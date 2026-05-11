@@ -82,7 +82,7 @@ Dit detailscherm krijgt een PGO-gebruiker te zien na het selecteren van een spec
 
 **Figuur 3: Voorbeeld detailschermen**
 
-De acceptatiecriteria voor het weergeven van een pathologieverslag in het detailscherm zijn hieronder opgenomen.
+De acceptatiecriteria voor het weergeven van een aanbiedertaak in het detailscherm zijn hieronder opgenomen.
 
 | Nr | Acceptatiecriteria |
 | --- | --- |
@@ -144,7 +144,7 @@ De gegevensdienst Aanbiedertaken (ProviderTasks) bestaat uit drie samenhangende 
 
 - **Taak (Task):** de hoofdresource. Beschrijft de uit te voeren taak en de bijbehorende status, periode, aanvrager en zorgorganisatie.
 - **Digitale activiteit (ActivityDefinition):** de herbruikbare definitie van de digitale activiteit waar de taak naar verwijst (via `Task.instantiates`). Levert onder andere de titel die in het overzichtsscherm wordt getoond.
-- **Uitvoeringsplan (ServiceRequest):** wordt alleen gebruikt wanneer er een patiëntspecifieke instructie of tijdschema bij de taak hoort (via `Task.focus`). Optioneel.
+- **Uitvoeringsopdracht (ServiceRequest):** wordt alleen gebruikt wanneer er een patiënt-specifieke instructie of tijdschema bij de taak hoort (via `Task.focus`). Optioneel.
 
 Voor elk dataveld is in de kolom **"Waar tonen in PGO"** met een letter aangegeven waar het veld weergegeven wordt:
 
@@ -236,7 +236,7 @@ Verwijzing: [LogicalModel Task](https://simplifier.net/medmij-r4-provider-module
     </tr>
     <tr>
       <td>Focus::ServiceRequestExecutionOrder</td><td>Reference</td><td></td><td></td><td>b</td>
-      <td>Uitvoeringsopdracht voor onder andere patiëntspecifieke instructies en het tijdschema.</td><td></td><td></td><td>C</td>
+      <td>Uitvoeringsopdracht voor onder andere patiënt-specifieke instructies en het tijdschema.</td><td></td><td></td><td>C</td>
     </tr>
   </tbody>
 </table>
@@ -269,10 +269,10 @@ Verwijzing: [LogicalModel ActivityDefinition](https://simplifier.net/medmij-r4-p
   </tbody>
 </table>
 
-### Uitvoeringsplan (ServiceRequest)
+### Uitvoeringsopdracht (ServiceRequest)
 Verwijzing: [LogicalModel ServiceRequest](https://simplifier.net/medmij-r4-provider-module/lmservicerequest)
 
-Wordt alleen gebruikt als er voor een taak in de module een patiëntspecifieke instructie of een tijdschema moet worden vastgelegd.
+Wordt alleen gebruikt als er voor een taak in de module een patiënt-specifieke instructie of een tijdschema moet worden vastgelegd.
 
 <!-- SERVICEREQUEST (PATIËNTSPECIFIEK) -->
 <table class="pgo-table">
@@ -294,7 +294,7 @@ Wordt alleen gebruikt als er voor een taak in de module een patiëntspecifieke i
     </tr>
     <tr>
       <td>patientInstruction</td><td>Item</td><td>pt-dataelement-16</td><td>Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten.</td><td>b</td>
-      <td>Patiëntspecifieke uitvoeringsopdracht voor een digitale activiteit.</td><td>Patiëntinstructie</td><td></td><td>M</td>
+      <td>Patiënt-specifieke uitvoeringsopdracht voor een digitale activiteit.</td><td>Patiëntinstructie</td><td></td><td>M</td>
     </tr>
     <tr>
       <td>Occurrence</td><td>Item</td><td>pt-dataelement-17</td><td>start: 22-12-2025, eind: 28-12-2025, schema: 7d, 2x per dag</td><td>c</td>

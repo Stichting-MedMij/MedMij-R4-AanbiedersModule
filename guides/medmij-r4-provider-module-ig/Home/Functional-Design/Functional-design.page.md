@@ -25,7 +25,7 @@ De doelgroep voor deze pagina wijkt niet af van de [algemene doelgroep](https://
 ### Uitgangspunten
 - De uitwisseling is gebaseerd op het MedMij-afsprakenstelsel en op (geharmoniseerde) FHIR-profielen die worden toegepast binnen Aanbiedertaken en Koppeltaal.
 - De zorgaanbieder initieert één of meerdere digitale activiteiten voor een patiënt.
-- De patiënt ziet de taken in de PGO als takenlijst en kan vanuit de PGO een externe module/applicatie starten om een taak uit te voeren. De takenlijst bevat zowel openstaande taken, maar kan daarnaast ook afgeronde taken tonen.
+- De patiënt ziet de taken in de PGO als takenlijst en kan vanuit de PGO een externe module/applicatie starten om een taak uit te voeren. De takenlijst bevat openstaande taken en kan daarnaast ook afgeronde taken tonen.
 - Digitale activiteiten kunnen verschillende typen hebben, zoals informatie bekijken, een vragenlijst invullen of thuismetingen uitvoeren.
 
 
@@ -35,7 +35,7 @@ Dit ontwerp is conform specificaties genoemd in [de algemene inleiding](https:/
 
 ### Reikwijdte
 De reikwijdte van dit ontwerp beslaat:
-- de functionele beschrijving van het uitwisselen van patient-specifieke digitale activiteiten (taken) die door de zorgaanbieder worden aangevraagd en via Aanbiedertaken beschikbaar worden gesteld;
+- de functionele beschrijving van het uitwisselen van patiënt-specifieke digitale activiteiten (taken) die door de zorgaanbieder worden aangevraagd en via Aanbiedertaken beschikbaar worden gesteld;
 - de bijbehorende dataset (Logical Models) die nodig is voor deze uitwisseling, inclusief de relaties tussen de digitale activiteit (ActivityDefinition), de zorgopdracht in de rol van digitaal groepsplan (ServiceRequest – DigitalGroupPlan), de zorgopdracht in de rol van uitvoeringsopdracht (ServiceRequest – ExecutionOrder) en de taak (Task);
 - het bijwerken van de status van een taak vanuit het modulesysteem naar het bronsysteem.
 
@@ -44,7 +44,7 @@ Buiten scope van deze versie:
 
 
 ### Infrastructuur
-Geen nadere specificatie, anders dan genoemd in de [de algemene inleiding](https://informatiestandaarden.nictiz.nl/wiki/MedMij:FO:V1/FunctioneelOntwerp#Infrastructuur) van de functionele ontwerpen binnen MedMij.
+Geen nadere specificatie, anders dan genoemd in [de algemene inleiding](https://informatiestandaarden.nictiz.nl/wiki/MedMij:FO:V1/FunctioneelOntwerp#Infrastructuur) van de functionele ontwerpen binnen MedMij.
 
 
 ### Geografische reikwijdte
@@ -80,7 +80,7 @@ Het doel is dat de patiënt in de PGO inzicht heeft in:
 
 Voor de zorgaanbieder is het doel:
 - het betrouwbaar kunnen uitzetten van digitale activiteiten;
-- het volgen van voortgang (op hoofdlijnen) via statusinformatie;
+- het volgen van voortgang (op hoofdlijnen) via statusinformatie.
 
 
 #### Patient journey Aanbiedertaken
@@ -119,7 +119,7 @@ Terugkoppeling:
 - Het bronsysteem maakt per digitale activiteit één taak aan en stelt deze beschikbaar aan de patiënt. Wanneer meerdere digitale activiteiten in samenhang worden aangevraagd (bijv. binnen één digitale zorgmodule), worden de bijbehorende taken gegroepeerd via een gedeelde zorgopdracht in de rol van digitaal groepsplan. Per taak worden de volgende relaties en gegevens vastgelegd:
 	- een koppeling naar de digitale activiteit (ActivityDefinition) waarop de taak gebaseerd is;
 	- de gedeelde zorgopdracht (digitaal groepsplan) waaraan de taak is gekoppeld voor groepering;
-	- patiënt-specifieke uitvoeringsinstructies en/of het tijdschema voor de uitvoering van de activiteit, vastgelegd in een zorgopdracht in de rol van uitvoeringsopdracht (ServiceRequest – ExecutionOrder), die aan de taak is gekoppeld. Een uitvoeringsopdracht is in zijn algemeenheid optioneel, maar verplicht aanwezig wanneer er een (herhalend) tijdschema voor de activiteit geldt (bijv. "2× per dag gedurende 7 dagen").
+	- patiënt-specifieke uitvoeringsinstructies en/of het tijdschema voor de uitvoering van de activiteit, vastgelegd in een zorgopdracht in de rol van uitvoeringsopdracht (ServiceRequest – ExecutionOrder), die aan de taak is gekoppeld. Een uitvoeringsopdracht is in principe optioneel, maar verplicht aanwezig wanneer er een (herhalend) tijdschema voor de activiteit geldt (bijv. "2× per dag gedurende 7 dagen").
 
 Er is geen hoofd-/subtaak hiërarchie tussen taken: elke taak vertegenwoordigt één digitale activiteit. Taken die bij elkaar horen, worden uitsluitend gegroepeerd via de gedeelde zorgopdracht (digitaal groepsplan).
 
@@ -156,7 +156,7 @@ Deze usecase onderscheidt twee bedrijfsrollen, namelijk de Persoon en de (Zorg)A
 Zowel de persoon als de (zorg)aanbieder maken ieder gebruik van een informatiesysteem:
 - PGO (persoon)
 - Bronsysteem ((zorg)aanbieder)
-- Aanbiedertaken (persoon)
+- Modulesysteem (persoon)
 
 
 #### Systemen en systeemrollen
@@ -168,7 +168,7 @@ Deze systemen kennen ieder verschillende systeemrollen.
 | XIS | TaakGegevensBeschikbaarstellend | PT-1.0.0-alpha.1-TGB-FHIR | Beschikbaar stellen taken aan de patiënt en verwerken van statusupdates van taken |
 | Modulesysteem | DigitaleActiviteitUitvoerder | PA-1.0.0-alpha.1-DAU-FHIR | Levert de digitale activiteit, ondersteunt de uitvoering/afronding ervan, en koppelt de taakstatus terug naar het bronsysteem |
 
-**Tabel 2 Systeemrol**
+**Tabel 2 Systeemrollen**
 
 ### Ontwerp uitwisselen taken
 Functioneel ontwerpprincipes
@@ -180,7 +180,7 @@ De ActivityDefinition beschrijft de digitale activiteit als een generieke, herbr
 Binnen Aanbiedertaken wordt de zorgopdracht in twee onderscheidende rollen gebruikt:
 
 - *Zorgopdracht – digitaal groepsplan:* de patiënt-specifieke aanvraag waarmee een digitaal groepsplan/zorgmodule voor de patiënt wordt geïnitieerd. Deze zorgopdracht fungeert als groepering: alle taken die binnen hetzelfde groepsplan horen verwijzen naar dezelfde zorgopdracht. De naam van het digitaal groepsplan wordt in deze zorgopdracht vastgelegd en gebruikt als groepslabel in de takenlijst van de PGO.
-- *Zorgopdracht – uitvoeringsopdracht:* het patiënt-specifieke uitvoeringsplan voor één digitale activiteit, met patiënt-specifieke instructies en het tijdschema voor de uitvoering. Een uitvoeringsopdracht wordt aan de bijbehorende taak gekoppeld. De uitvoeringsopdracht is in zijn algemeenheid optioneel, alleen nodig wanneer er patiënt-specifieke uitvoeringsdetails zijn, maar is verplicht aanwezig wanneer er een (herhalend) tijdschema voor de activiteit geldt.
+- *Zorgopdracht – uitvoeringsopdracht:* de patiënt-specifieke uitvoeringsopdracht voor één digitale activiteit, met patiënt-specifieke instructies en het tijdschema voor de uitvoering. Een uitvoeringsopdracht wordt aan de bijbehorende taak gekoppeld. De uitvoeringsopdracht is in principe optioneel en alleen nodig wanneer er patiënt-specifieke uitvoeringsdetails zijn, maar verplicht aanwezig wanneer er een (herhalend) tijdschema voor de activiteit geldt.
 
 **Taak als uitvoerbaar item voor de patiënt**
 De Task is het item dat de patiënt in de PGO ziet en waarop de voortgang wordt bijgehouden (openstaand, in uitvoering, afgerond). Elke taak vertegenwoordigt één digitale activiteit en verwijst:
@@ -190,7 +190,7 @@ De Task is het item dat de patiënt in de PGO ziet en waarop de voortgang wordt 
 - (optioneel; verplicht bij een (herhalend) tijdschema) naar een zorgopdracht (uitvoeringsopdracht) wanneer er patiënt-specifieke uitvoeringsdetails zijn.
 
 **Tijdschema in de uitvoeringsopdracht**
-Het tijdschema voor de uitvoering van een digitale activiteit voor een bepaalde periode of herhalend (bijv. "2× per dag gedurende 7 dagen"). De digitale activiteit (ActivityDefinition) kan generieke timing-informatie op moduleniveau bevatten als referentie voor de zorgaanbieder, maar het patiënt-specifieke tijdschema komt altijd uit de uitvoeringsopdracht. PGO's lezen het tijdschema dat aan de patiënt getoond wordt, inclusief eventuele herhalingen, uitsluitend uit de uitvoeringsopdracht. Hiermee is er één eenduidige bron voor het tijdschema en wordt duplicatie of inconsistentie tussen resources voorkomen.
+Het tijdschema beschrijft de uitvoering van een digitale activiteit gedurende een bepaalde periode of in een herhalend patroon (bijv. "2× per dag gedurende 7 dagen"). De digitale activiteit (ActivityDefinition) kan generieke timing-informatie op moduleniveau bevatten als referentie voor de zorgaanbieder, maar het patiënt-specifieke tijdschema komt altijd uit de uitvoeringsopdracht. PGO's lezen het tijdschema dat aan de patiënt getoond wordt, inclusief eventuele herhalingen, uitsluitend uit de uitvoeringsopdracht. Hiermee is er één eenduidige bron voor het tijdschema en wordt duplicatie of inconsistentie tussen resources voorkomen.
 
 **Eén taak per digitale activiteit, geen hoofd-/subtaak hiërarchie**
 Elke digitale activiteit voor de patiënt wordt gemodelleerd als één taak. Er bestaat geen hoofd-/subtaak hiërarchie tussen taken. Wanneer meerdere activiteiten bij elkaar horen, worden deze niet als subtaken gemodelleerd maar gegroepeerd via de gedeelde zorgopdracht (digitaal groepsplan). Statusupdates worden per individuele taak toegepast.
@@ -223,13 +223,13 @@ Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op ba
 
 **Tabel 3 Transactiegroep**
 
-De onderstaande tabel geeft een overzicht van alle gegevensdiensten die van toepassing zijn voor AanbiedersTaken. 
+De onderstaande tabel geeft een overzicht van alle gegevensdiensten die van toepassing zijn voor Aanbiedertaken. 
 
 | Id | Gegevensdienstnaam zonder versie | Versie |
 | --- | --- | --- |
 | 301 | [Verzamelen - Taken](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/FHIR-Profiles?version=current#ptTask) | 1.0.0-alpha.1 |
 
-**Tabel 4: Gegevensdiensten relevant voor AanbiedersTaken**
+**Tabel 4 Gegevensdiensten relevant voor Aanbiedertaken**
 
 ### Weergaverichtlijn
 

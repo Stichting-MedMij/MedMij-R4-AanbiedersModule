@@ -5,7 +5,7 @@ topic: TO
 # FHIR IG
 
 ## Introduction
-This Technical Design (TD) describes the technical implementation of the ProviderTasks (Aanbiedertaken) based on the [Functional Design]() (FD). The TD is the technical counterpart of the FD and describes:
+This Technical Design (TD) describes the technical implementation of the ProviderTasks (Aanbiedertaken) based on the {{pagelink: FO, text: Functional Design}} (FD). The TD is the technical counterpart of the FD and describes:
 - the involved actors and systems;
 - the FHIR profiles and resources to be used;
 - the transactions (search/retrieve/update) including example queries;
@@ -17,7 +17,7 @@ The FHIR version used for this IG is HL7 FHIR R4 (4.0.1).
 For this use case, the [HL7 Clinical Order Workflows IG (COW)](https://build.fhir.org/ig/HL7/fhir-cow-ig/en/index.html) has been used as the guiding framework. Clinical Order Workflows provides shared data models and coordination rules for Request-fulfilment workflows (e.g., order initiation, order grouping, status tracking and outcome sharing). The patterns and concepts in this Technical Design are aligned with the guidance from that IG.
 
 ### Definitions, Requests, and Events
-The [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html#12.5.1.1) groups workflow-relevant resources into three categories: Definitions, Requests, and Events. The **Task** resource takes on characteristics of both Requests and Events (FHIR R4 Workflow spec, footnote ‡) and is therefore listed under both categories below.
+The [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html#12.5.1.1) groups workflow-relevant resources into three categories: Definitions, Requests, and Events. The **Task** resource takes on characteristics of both Requests and Events (see the FHIR R4 Workflow specification, footnote ‡) and is therefore listed under both categories below.
 
 - **Definitions:** reusable definitions of digital activities, primarily represented by the **ActivityDefinition** resource (for example, an ActivityDefinition that defines a questionnaire activity).
 - **Requests:** patient-specific orders/requests indicating that something should be done. In this IG, two distinct Request resource types are used:
@@ -31,7 +31,7 @@ The [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html#12.5.
 
 
 ### Relationships in ProviderTasks
-- **ActivityDefinition (Definition):** describes the digital activity and provides generic, reusable information on what the activity is and how it should be used. If the activity is launchable, ActivityDefinition reference one Endpoint that provide the technical access/launch details.
+- **ActivityDefinition (Definition):** describes the digital activity and provides generic, reusable information on what the activity is and how it should be used. If the activity is launchable, ActivityDefinition references one Endpoint that provides the technical access/launch details.
 - **ServiceRequest – DigitalGroupPlan (Request):** the patient-specific clinical request that identifies which digital group plan/module is requested for the patient. It acts as the grouping item that ties related Tasks together and is referenced from each Task via `Task.basedOn`. The human-readable name of the digital group plan is carried in `ServiceRequest.code.text`.
 - **ServiceRequest – ExecutionOrder (Request, optional):** the patient-specific execution plan for a single digital activity, containing scheduling (`occurrence[x]`) and `patientInstruction`. It is referenced from a Task via `Task.focus`. **Design rule:** whenever a recurring schedule applies to an activity, a `pt-ServiceRequest-ExecutionOrder` SHALL be present and the schedule SHALL be carried in `ServiceRequest.occurrence[x]` (typically `occurrenceTiming`).
 - **Task (Request/Event):** the patient-facing workflow item shown in the PHR task list. Task is treated as a hybrid Request/Event resource per the FHIR R4 Workflow specification: it represents the request to perform a digital activity for the patient and at the same time carries the execution status of that activity. Each Task represents one digital activity and links to the `pt-ServiceRequest-DigitalGroupPlan` via `Task.basedOn` (grouping) and, when patient-specific execution details are needed, to a `pt-ServiceRequest-ExecutionOrder` via `Task.focus`.
@@ -39,7 +39,7 @@ The [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html#12.5.
 ### Grouping of Tasks
 Tasks that belong to the same digital care module are grouped through a shared **ServiceRequest – DigitalGroupPlan**. There is no parent–child hierarchy between Tasks: 
 - **Grouping mechanism:** every Task references the same `pt-ServiceRequest-DigitalGroupPlan` via `Task.basedOn`. All Tasks that share the same `Task.basedOn` reference belong to the same digital group plan and can be presented and filtered together in the PHR.
-- **Group name:** the human-readable name of the digital group plan is carried in `ServiceRequest.code.text` of the referenced DigitalGroupPlan. This same name is used as the display label of the Task group in the PHR; the value in `ServiceRequest.code.text` MUST match the name used to identify the group in the `Task.basedOn` reference.
+- **Group name:** the human-readable name of the digital group plan is carried in `ServiceRequest.code.text` of the referenced DigitalGroupPlan. This same name is used as the display label of the Task group in the PHR.
 - **Link to definition:** each Task in the group still links to its own ActivityDefinition (via the Koppeltaal `instantiates` extension), which describes the specific digital activity to be launched or performed. Different Tasks within the same group MAY reference different ActivityDefinitions.
 
 #### How to implement
@@ -54,9 +54,9 @@ Tasks that belong to the same digital care module are grouped through a shared *
   - For each individual Task, the PHR uses the `pt-ActivityDefinition` for generic activity information and, when present, the `pt-ServiceRequest-ExecutionOrder` for the patient-specific scheduling and instructions. Any schedule for the activity, including a recurring schedule, is read exclusively from `ServiceRequest.occurrence[x]` on the ExecutionOrder.
 
 
-{{render: guides/medmij-r4-provider-module-ig/}}
+{{render: guides/medmij-r4-provider-module-ig/images/Overview ProviderTask relationships.png}}
 
-**Figure 1: Overview of ProviderTask releationships**
+**Figure 1: Overview of ProviderTask relationships**
 
 ## Actors involved
 
@@ -69,7 +69,7 @@ Tasks that belong to the same digital care module are grouped through a shared *
 ## Boundaries and relationships
 This IG covers use cases for exchanging task data between healthcare providers and patients (typically through a PHR).
 
-This IG guide assumes that a PHR is able to connect with a source system. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/medmij-service-requests/actueel/v0-8-aanbiedermodules). 
+This IG assumes that a PHR is able to connect with a source system. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/medmij-service-requests/actueel/v0-8-aanbiedermodules).
 
 Each transaction is performed in the context of a specific authenticated patient, which has been established using the authentication mechanisms outlined in the MedMij Afsprakenstelsel (also see the MedMij FHIR IG by Nictiz), i.e. via an OAuth2 token. Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters for patient identification SHALL NOT be included.
 
@@ -88,10 +88,10 @@ The healthcare provider initiates a digital activity for the patient. The patien
 
 ### Dataset
 The dataset is specified in the Logical Models:
-- LogicalModel [Task]()
-- LogicalModel [Definition]()
-- LogicalModel [ServiceRequest-ExecutionOrder]()
-- LogicalModel [Patient]()
+- LogicalModel [Task](https://simplifier.net/medmij-r4-provider-module/lmtask)
+- LogicalModel [ActivityDefinition](https://simplifier.net/medmij-r4-provider-module/lmactivitydefinition)
+- LogicalModel [ServiceRequest-ExecutionOrder](https://simplifier.net/medmij-r4-provider-module/lmservicerequest)
+- LogicalModel [Endpoint](https://simplifier.net/medmij-r4-provider-module/lmendpoint)
 
 ## Retrieve task list (PHR → Source System)
 The PHR system requests task data using individual [search](https://hl7.org/fhir/R4/search.html) interactions. The task data exchange consists of multiple FHIR resources with specific constraints. These interactions are performed using an HTTP GET as shown below:
@@ -112,7 +112,7 @@ A Bundle containing Task resource(s) conforming to the `pt-Task` profile, includ
 - the referenced `pt-ServiceRequest-ExecutionOrder` via `Task.focus` (when patient-specific execution details are present);
 - the referenced `pt-ActivityDefinition` via the `instantiates` extension on the Task.
 
-### request last-updated
+### Request last-updated
 The PHR SHALL be able to retrieve only those Task resources that have been updated since a given point in time, to support efficient incremental refresh of the task list. This is done using the standard FHIR _lastUpdated search parameter (based on `meta.lastUpdated`). The PHR determines the time window itself (e.g., since last sync) and includes the desired date/time range in the search query, for example:
 
 `GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00`
@@ -174,7 +174,7 @@ The launch is an interaction outside the core REST data exchange and is based on
 
 
 ## Source system: example queries
-The returned data to the PHR should conform to the profiles listed in the table below. The table below shows in the first four columns the provider module sections, the HCIMs that constitute those sections and the specific content of the provider module specific information. The last column shows the FHIR search queries to obtain the Provider Module information. These queries and expected responses are based on profiles listed in the {{pagelink:FO, text: functional design}}.  
+The returned data to the PHR should conform to the profiles listed in the table below. The first four columns of the table list the provider module sections, the CIMs that constitute those sections and the provider module-specific content. The last column shows the FHIR search queries used to obtain the Provider Task information. These queries and expected responses are based on the profiles listed in the {{pagelink: FO, text: functional design}}.
 
 <!DOCTYPE html>
 <html lang="nl">
