@@ -96,6 +96,8 @@ Dit detailscherm krijgt een PGO-gebruiker te zien na het selecteren van een spec
 
 {{render: guides/medmij-r4-provider-module-ig/images/detailscherm3.png}}
 
+{{render: guides/medmij-r4-provider-module-ig/images/detailscherm4.png}}
+
 **Figuur 3: Voorbeeld detailschermen**
 
 De acceptatiecriteria voor het weergeven van een aanbiedertaak in het detailscherm zijn hieronder opgenomen.
