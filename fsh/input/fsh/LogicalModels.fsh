@@ -13,9 +13,9 @@ Description: "Patient-specific task that tells a patient what to do as part of a
 * ^abstract = true
 * .
   * ^alias = "Taak"
-* ActivityDefinition 0..1 Reference(ActivityDefinition) "Reference to the digital activity definition associated with this task."
+* ActivityDefinition 0..1 Reference(LmActivity) "Reference to the digital activity definition associated with this task."
   * ^alias = "DigitaleActiviteit"
-* BasedOn 0..1 Reference(ServiceRequest) "Clinical order that triggered this patient task. May include patient-specific instructions and the requested schedule."
+* BasedOn 0..1 Reference(LmServiceRequest) "Clinical order that triggered this patient task. May include patient-specific instructions and the requested schedule."
   * ^alias = "GebaseerdOp"
 * Status 0..1 code "Current state of the Task in the workflow (e.g., requested, received, accepted, in-progress, completed, cancelled)."
   * ^alias = "Status"
@@ -25,7 +25,7 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^alias = "Omschrijving"
 * ExecutionPeriod 0..1 Period "Time window in which the task should be performed (start/end), if applicable."
   * ^alias = "Periode"
-* Requester 0..1 Reference(Practitioner) "The person or role who requested or initiated this Task."
+* Requester 0..1 Reference(MedMijCoreLmHealthProfessional) "The person or role who requested or initiated this Task."
   * ^alias = "Aanvrager"
 
 Mapping: LmTaskMedMij-100-alpha1
@@ -92,7 +92,7 @@ Description: "Patient-specific clinical order for a digital activity, created by
   * ^alias = "PatiëntenInstructie"
 * Occurrence[x] 0..1 dateTime or Period or Timing "Requested schedule for performing the activity (e.g., duration, frequency, time of day)."
   * ^alias = "Tijdschema"
-* Requester 0..1 Reference(Practitioner) "Healthcare professional that requests this activity for the patient."
+* Requester 0..1 Reference(MedMijCoreLmHealthProfessional) "Healthcare professional that requests this activity for the patient."
   * ^alias = "Aanvrager"
 
 Mapping: LmServiceRequestMedMij-100-alpha1
