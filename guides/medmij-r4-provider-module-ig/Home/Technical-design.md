@@ -13,6 +13,8 @@ This Technical Design (TD) describes the technical implementation of the Provide
 
 The FHIR version used for this IG is HL7 FHIR R4 (4.0.1).
 
+This Technical Design is based on the [MedMij FHIR IG by Nictiz](https://informatiestandaarden.nictiz.nl/wiki/MedMij:IG:V1/FHIR_IG#Afsprakenstelsel). That document defines the overarching agreements for MedMij FHIR implementations, including the rules for the use of identifiers. Where this IG does not specify otherwise, the Nictiz guidelines apply.
+
 ## Workflow model
 For this use case, the [HL7 Clinical Order Workflows IG (COW)](https://build.fhir.org/ig/HL7/fhir-cow-ig/en/index.html) has been used as the guiding framework. Clinical Order Workflows provides shared data models and coordination rules for Request-fulfilment workflows (e.g., order initiation, order grouping, status tracking and outcome sharing). The patterns and concepts in this Technical Design are aligned with the guidance from that IG.
 
