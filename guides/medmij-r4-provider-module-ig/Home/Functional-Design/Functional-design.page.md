@@ -204,7 +204,6 @@ De dataset wordt beschreven in de bijbehorende Logical Models:
 - LogicalModel [Taak](https://simplifier.net/medmij-r4-provider-module/lmtask)
 - LogicalModel [Digitale activiteit](https://simplifier.net/medmij-r4-provider-module/lmactivitydefinition)
 - LogicalModel [Zorgopdracht – uitvoeringsopdracht](https://simplifier.net/medmij-r4-provider-module/lmservicerequest)
-- LogicalModel [Patient](https://simplifier.net/medmij-r4-provider-module/lmpatient)
 
 De zorgopdracht in de rol van *digitaal groepsplan* wordt gemodelleerd op basis van dezelfde resource (ServiceRequest) en wordt in dit ontwerp functioneel beschreven via de groepering van taken; voor de technische uitwerking zie het [technisch ontwerp](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Technical-design.md?version=current).
 

@@ -57,18 +57,18 @@ De afzonderlijke taken worden ingedeeld in drie groepen:
 3. Gestopt (FHIR-status: `failed`, `cancelled`)
 
 #### Vertalingen taakstatussen
-- "concept" voor "draft" 
-- "aangevraagd" voor "requested" 
-- "ontvangen" voor "received" 
-- "geaccepteerd" voor "accepted" 
-- "afgewezen" voor "rejected" 
-- "gereed" voor "ready" 
-- "geannuleerd" voor "cancelled" 
-- "bezig" voor "in-progress" 
-- "in de wacht" voor "on-hold" 
-- "mislukt" voor "failed" 
-- "voltooid" voor "completed" 
-- "per ongeluk ingevoerd" voor "entered-in-error" 
+- "concept" voor `draft`
+- "aangevraagd" voor `requested`
+- "ontvangen" voor `received` 
+- "geaccepteerd" voor `accepted`
+- "afgewezen" voor `rejected` 
+- "gereed" voor `ready`
+- "geannuleerd" voor `cancelled`
+- "bezig" voor `in-progress`
+- "in de wacht" voor `on-hold`
+- "mislukt" voor `failed`
+- "voltooid" voor `completed`
+- "per ongeluk ingevoerd" voor `entered-in-error`
 
 De acceptatiecriteria voor het overzichtsscherm zijn als volgt.
 

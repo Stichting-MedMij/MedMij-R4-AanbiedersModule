@@ -56,10 +56,6 @@ Tasks that belong to the same digital care module are grouped through a shared *
   - For each individual Task, the PHR uses the `pt-ActivityDefinition` for generic activity information and, when present, the `pt-ServiceRequest-ExecutionOrder` for the patient-specific scheduling and instructions. Any schedule for the activity, including a recurring schedule, is read exclusively from `ServiceRequest.occurrence[x]` on the ExecutionOrder.
 
 
-{{render: guides/medmij-r4-provider-module-ig/images/Overview ProviderTask relationships.png}}
-
-**Figure 1: Overview of ProviderTask relationships**
-
 ## Actors involved
 
 | Actor | Description | System | Role in exchange |

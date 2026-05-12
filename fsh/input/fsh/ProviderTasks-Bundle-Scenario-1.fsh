@@ -88,7 +88,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-22T08:00:00+01:00"
-  * end = "2025-12-22T00:00:00+01:00"
+  * end = "2025-12-22T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -116,7 +116,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-22T08:00:00+01:00"
-  * end = "2025-12-22T00:00:00+01:00"
+  * end = "2025-12-22T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -144,7 +144,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-23T08:00:00+01:00"
-  * end = "2025-12-23T00:00:00+01:00"
+  * end = "2025-12-23T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -172,7 +172,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-23T18:00:00+01:00"
-  * end = "2025-12-23T00:00:00+01:00"
+  * end = "2025-12-23T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -200,7 +200,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-24T08:00:00+01:00"
-  * end = "2025-12-24T00:00:00+01:00"
+  * end = "2025-12-24T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -228,7 +228,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-24T18:00:00+01:00"
-  * end = "2025-12-24T00:00:00+01:00"
+  * end = "2025-12-24T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -256,7 +256,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-25T08:00:00+01:00"
-  * end = "2025-12-25T00:00:00+01:00"
+  * end = "2025-12-25T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -284,7 +284,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-25T18:00:00+01:00"
-  * end = "2025-12-25T00:00:00+01:00"
+  * end = "2025-12-25T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -312,7 +312,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-26T08:00:00+01:00"
-  * end = "2025-12-26T00:00:00+01:00"
+  * end = "2025-12-26T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -340,7 +340,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-26T18:00:00+01:00"
-  * end = "2025-12-26T00:00:00+01:00"
+  * end = "2025-12-26T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -368,7 +368,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-27T08:00:00+01:00"
-  * end = "2025-12-27T00:00:00+01:00"
+  * end = "2025-12-27T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -396,7 +396,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-27T18:00:00+01:00"
-  * end = "2025-12-27T00:00:00+01:00"
+  * end = "2025-12-27T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -424,7 +424,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-28T08:00:00+01:00"
-  * end = "2025-12-28T00:00:00+01:00"
+  * end = "2025-12-28T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
@@ -451,7 +451,7 @@ Usage: #example
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-28T18:00:00+01:00"
-  * end = "2025-12-28T00:00:00+01:00"
+  * end = "2025-12-28T23:59:00+01:00"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
