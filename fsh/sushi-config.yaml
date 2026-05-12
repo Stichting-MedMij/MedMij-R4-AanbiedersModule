@@ -5,3 +5,4 @@ dependencies:
   nictiz.fhir.nl.r4.nl-core: 0.12.0-beta.1
   nictiz.fhir.nl.r4.zib2020: 0.12.0-beta.1
   koppeltaalv2.00: 0.15.0-beta.9
+  medmij.fhir.nl.r4.core: 1.0.1
