@@ -1,6 +1,6 @@
 {
   "resourceType": "Task",
-  "id": "ProviderTasks-Task-Meetopdracht-Glucosemeting-1",
+  "id": "ProviderTasks-Task-Meetopdracht-Glucosemeting-13",
   "meta": {
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/pt-Task"
@@ -22,7 +22,7 @@
   "identifier": [
     {
       "system": "http://medrie.nl/taskIdentifier",
-      "value": "TASK-Glucose-1"
+      "value": "TASK-Glucose-13"
     }
   ],
   "basedOn": [
@@ -31,10 +31,10 @@
       "display": "Digitale zorgmodule Diabetes"
     }
   ],
-  "status": "completed",
+  "status": "received",
   "intent": "order",
   "priority": "routine",
-  "description": "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken.",
+  "description": "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel.",
   "focus": {
     "reference": "ServiceRequest/ProviderTasks-ServiceRequestExecution-Glucosemeting"
   },
@@ -43,8 +43,8 @@
     "display": "Tom van Duinen"
   },
   "executionPeriod": {
-    "start": "2025-12-22T08:00:00+01:00",
-    "end": "2025-12-22T23:59:00+01:00"
+    "start": "2025-12-28T08:00:00+01:00",
+    "end": "2025-12-28T23:59:00+01:00"
   },
   "authoredOn": "2025-12-22T08:00:00+01:00",
   "lastModified": "2025-12-22T08:00:00+01:00",
