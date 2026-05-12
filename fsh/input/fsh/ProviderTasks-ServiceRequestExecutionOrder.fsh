@@ -4,7 +4,7 @@ Id: pt-ServiceRequest-ExecutionOrder
 Description: "Patient-specific execution plan for a digital activity. This ServiceRequest captures patient-specific scheduling and instructions that deviate from or complement the generic ActivityDefinition. It is referenced from the patient-facing Task via `Task.focus`."
 * insert DefaultNarrative
 * ^status = #draft
-* insert PublisherAndContactMedMij
+* insert PublisherAndContact
 * ^purpose = "To represent the healthcare professional’s order to start a specific digital activity for a patient."
 * insert Copyright
 * .

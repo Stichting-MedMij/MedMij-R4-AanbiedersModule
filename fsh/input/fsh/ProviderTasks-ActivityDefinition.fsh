@@ -3,7 +3,7 @@ Parent: ActivityDefinition
 Id: pt-ActivityDefinition
 Description: "This (FHIR) ActivityDefinition profile describes a reusable definition of a launchable digital (eHealth) activity that can be requested for a patient in MedMij and/or Koppeltaal workflows. It captures the clinical intent and the technical launch information (e.g., endpoint)."
 * ^status = #draft
-* insert PublisherAndContactMedMij
+* insert PublisherAndContact
 * insert Origin
 * insert Copyright
 * . 
