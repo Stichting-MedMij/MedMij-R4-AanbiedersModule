@@ -13,9 +13,9 @@ Description: "Patient-specific task that tells a patient what to do as part of a
 * ^abstract = true
 * .
   * ^alias = "Taak"
-* ActivityDefinition 0..1 Reference(LmActivity) "Reference to the digital activity definition associated with this task."
+* ActivityDefinition 0..1 Reference(pt-lm-Activity) "Reference to the digital activity definition associated with this task."
   * ^alias = "DigitaleActiviteit"
-* BasedOn 0..1 Reference(LmServiceRequest) "Clinical order that triggered this patient task. May include patient-specific instructions and the requested schedule."
+* BasedOn 0..1 Reference(pt-lm-ServiceRequest) "Clinical order that triggered this patient task. May include patient-specific instructions and the requested schedule."
   * ^alias = "GebaseerdOp"
 * Status 0..1 code "Current state of the Task in the workflow (e.g., requested, received, accepted, in-progress, completed, cancelled)."
   * ^alias = "Status"
