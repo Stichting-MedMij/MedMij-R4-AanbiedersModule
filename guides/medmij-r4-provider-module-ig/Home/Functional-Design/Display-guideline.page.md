@@ -42,8 +42,6 @@ Het overzichtsscherm bestaat uit twee onderdelen (deze mogen ook als tabs worden
 1. een (taak-)status overzicht
 2. een overzicht met de taken.
 
-{{render: guides/medmij-r4-provider-module-ig/images/overzichtsschermTaken.png}}
-
 **Figuur 1: Voorbeeld Overzicht taken**
 
 <u>Overzicht taken per zorgaanbieder</u>
@@ -78,12 +76,13 @@ De acceptatiecriteria voor het overzichtsscherm zijn als volgt.
 | --- | --- |
 | 1 | Standaard worden alle gegevens van alle zorgaanbieder(s) waarbij taakgegevens zijn verzameld, overzichtelijk weergegeven, gesorteerd op datum. Het overzichtsscherm opent met het filter "Te doen". Wanneer er geen openstaande taken zijn, wordt een passende melding getoond (bijvoorbeeld "Er zijn geen nieuwe taken"). |
 | 2 | De gebruiker kan zoeken op (delen van) de gegevens of op informatie uit de andere datavelden in het overzichtsscherm. Het bepalen van een eventuele drempel voor het minimaal aantal in te voeren karakters is aan de PGO (advies: minimaal drie karakters). Het zoekveld is met name relevant voor het tabblad met afgehandelde taken (historie). |
-| 3 | Voor alle datavelden in het overzichtsscherm is het mogelijk om te filteren op één of meerdere waarden. Filteren op `Task.description` (Omschrijving) wordt niet ondersteund. Voor het datumveld geldt criterium 4. |
+| 3 | Voor alle datavelden in het overzichtsscherm is het mogelijk om te filteren op één of meerdere waarden, met uitzondering van `Task.description` (Omschrijving). Minimaal moet gefilterd kunnen worden op datum (zie criterium 4), zorgaanbieder en taakstatus. |
 | 4 | Voor het datumveld in het overzichtsscherm kan de gebruiker een specifieke periode selecteren. |
 | 5 | Alle datavelden in het overzichtsscherm (met uitzondering van `Task.description`) zijn sorteerbaar. |
 | 6 | De datavelden in het overzichtsscherm zijn begrijpelijk en gebruiksvriendelijk geformuleerd. Zie de {{pagelink: Weergaverichtlijn, text: Tabel met specificaties, anchor: TabelSpecificaties}} voor de aanbevolen termen per opgehaald dataveld. |
 | 7 | De standaard sortering van openstaande taken is: de eerst uit te voeren taak bovenaan. De standaard sortering van afgeronde en gestopte taken is: de meest recent uitgevoerde taak bovenaan. |
 | 8 | De PGO toont minimaal de datavelden met prioriteit M (must have) uit de specificatietabel. De PGO is vrij om aanvullende velden te tonen of deze (uitsluitend) in het detailscherm op te nemen. Lege velden hoeven niet getoond te worden. |
+| 9 | De PGO toont alleen unieke taken in het overzichtscherm. |
 
 ### Detailscherm aanbiedertaken
 Dit detailscherm krijgt een PGO-gebruiker te zien na het selecteren van een specifieke regel in het overzichtsscherm. De in de mock-up weergegeven gegevens dienen uitsluitend ter demonstratie.
@@ -116,10 +115,10 @@ Hieronder wordt een voorbeeld in tabelvorm gegeven van het overzichts- en detail
 
 <u>Overzichtsscherm</u>
 
-| Titel | Status | Periode | Zorgorganisatie | Toelichting | Digitale zorgmodule |
-| --- | --- | --- | --- | --- | --- |
-| Gezonder gaan leven | Aangevraagd | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard | Leestips voor een gezondere leefstijl. | Digitale zorgmodule Diabetes |
-| Bloedglucose meting volgens NHG protocol | In uitvoering | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard | Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app | Digitale zorgmodule Diabetes |
+| Titel | Status | Periode | Zorgorganisatie | Digitale zorgmodule |
+| --- | --- | --- | --- | --- |
+| Gezonder gaan leven | Aangevraagd | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard | Digitale zorgmodule Diabetes |
+| Bloedglucose meting volgens NHG protocol | In uitvoering | 22-12-2025 t/m 28-12-2025 | Huisartsenpraktijk de Haard | Digitale zorgmodule Diabetes |
 
 <u>Detailscherm</u>
 
@@ -137,6 +136,7 @@ Hieronder wordt een voorbeeld in tabelvorm gegeven van het overzichts- en detail
 | Titel | Bloedglucose meting volgens NHG protocol |
 | Status | In uitvoering |
 | Periode | 22-12-2025 t/m 28-12-2025 |
+| Omschrijving | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken |
 | Zorgverlener | A. de Haard |
 | Zorgorganisatie | Huisartsenpraktijk de Haard |
 | Patiëntinstructie | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. |
@@ -237,8 +237,7 @@ Verwijzing: [LogicalModel Task](https://simplifier.net/medmij-r4-provider-module
       <td></td><td></td><td></td><td>C</td>
     </tr>
     <tr>
-      <td>Description</td><td>Item</td><td>pt-dataelement-6</td><td>Vul de vragenlijst in over je woon-/leefsituatie</td><td>b</td>
-      <td>Voor de patiënt leesbare omschrijving van de taak.</td><td>Omschrijving</td><td></td><td>S</td>
+      <td>Description</td><td>Item</td><td>pt-dataelement-6</td><td>Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken</td><td>Omschrijving</td><td></td><td>M</td>
     </tr>
     <tr>
       <td>ExecutionPeriod</td><td>Item</td><td>pt-dataelement-7</td><td>2025-12-22 tot en met 2025-12-28</td><td>a</td>
