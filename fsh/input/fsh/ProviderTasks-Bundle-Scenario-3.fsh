@@ -56,11 +56,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
-  * value = "SUBTASK-Saturatie-1"
+  * value = "TASK-Saturatie-1"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je zuurstofsaturatie (SpO2) met de saturatiemeter"
+* description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
   * start = "2026-01-05"
@@ -83,11 +83,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
-  * value = "SUBTASK-Saturatie-2"
+  * value = "TASK-Saturatie-2"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je zuurstofsaturatie (SpO2) met de saturatiemeter"
+* description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
   * start = "2026-01-06"
@@ -110,11 +110,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
-  * value = "SUBTASK-Saturatie-3"
+  * value = "TASK-Saturatie-3"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je zuurstofsaturatie (SpO2) met de saturatiemeter"
+* description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
   * start = "2026-01-07"
@@ -137,11 +137,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
-  * value = "SUBTASK-Saturatie-4"
+  * value = "TASK-Saturatie-4"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je zuurstofsaturatie (SpO2) met de saturatiemeter"
+* description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
   * start = "2026-01-08"
@@ -164,11 +164,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
-  * value = "SUBTASK-Saturatie-5"
+  * value = "TASK-Saturatie-5"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je zuurstofsaturatie (SpO2) met de saturatiemeter"
+* description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
   * start = "2026-01-09"
@@ -191,11 +191,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
-  * value = "SUBTASK-Saturatie-6"
+  * value = "TASK-Saturatie-6"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je zuurstofsaturatie (SpO2) met de saturatiemeter"
+* description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
   * start = "2026-01-10"
@@ -218,11 +218,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
 * identifier
   * system = "https://hing.zno.com/taskIdentifier"
-  * value = "SUBTASK-Saturatie-7"
+  * value = "TASK-Saturatie-7"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je zuurstofsaturatie (SpO2) met de saturatiemeter"
+* description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
   * start = "2026-01-11"

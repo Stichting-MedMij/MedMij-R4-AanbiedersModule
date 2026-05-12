@@ -77,11 +77,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-1"
+  * value = "TASK-Bloeddruk-1"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -105,11 +105,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-2"
+  * value = "TASK-Bloeddruk-2"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -133,11 +133,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-3"
+  * value = "TASK-Bloeddruk-3"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -161,11 +161,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-4"
+  * value = "TASK-Bloeddruk-4"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -189,11 +189,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-5"
+  * value = "TASK-Bloeddruk-5"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -217,11 +217,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-6"
+  * value = "TASK-Bloeddruk-6"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -245,11 +245,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-7"
+  * value = "TASK-Bloeddruk-7"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -273,11 +273,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-8"
+  * value = "TASK-Bloeddruk-8"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -301,11 +301,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-9"
+  * value = "TASK-Bloeddruk-9"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -329,11 +329,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-10"
+  * value = "TASK-Bloeddruk-10"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -357,11 +357,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-11"
+  * value = "TASK-Bloeddruk-11"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -385,11 +385,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-12"
+  * value = "TASK-Bloeddruk-12"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -413,11 +413,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-13"
+  * value = "TASK-Bloeddruk-13"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -441,11 +441,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Bloeddruk-14"
+  * value = "TASK-Bloeddruk-14"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app."
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Bloeddrukmeting)
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
@@ -489,7 +489,7 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Informatie-Cholesterol-1"
+  * value = "TASK-Informatie-Cholesterol-1"
 * status = #received
 * intent = #order
 * priority = #routine
@@ -537,11 +537,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Informatie-Bloeddruk-1"
+  * value = "TASK-Informatie-Bloeddruk-1"
 * status = #requested
 * intent = #order
 * priority = #routine
-* description = "Lees deze informatie over hoe je thuis je bloeddruk goed meet."
+* description = "Lees deze informatie over hoe je thuis je bloeddruk kan meten."
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-22"
@@ -585,11 +585,11 @@ Usage: #example
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Informatie-Situatie-1"
+  * value = "TASK-Informatie-Situatie-1"
 * status = #failed
 * intent = #order
 * priority = #routine
-* description = "Beantwoord deze vragen over jouw situatie rond hart- en vaatziekten."
+* description = "Beantwoord deze vragen over jouw situatie rondom hart- en vaatziekten."
 * for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-22"

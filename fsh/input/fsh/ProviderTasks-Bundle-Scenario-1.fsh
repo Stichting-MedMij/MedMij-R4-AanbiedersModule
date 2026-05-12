@@ -78,12 +78,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-1"
+  * value = "TASK-Glucose-1"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #completed
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -106,12 +106,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-2"
+  * value = "TASK-Glucose-2"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #completed
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -134,12 +134,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-3"
+  * value = "TASK-Glucose-3"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #completed
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -162,12 +162,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-4"
+  * value = "TASK-Glucose-4"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #cancelled
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -190,12 +190,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-5"
+  * value = "TASK-Glucose-5"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -218,12 +218,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-6"
+  * value = "TASK-Glucose-6"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -246,12 +246,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-7"
+  * value = "TASK-Glucose-7"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -274,12 +274,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-8"
+  * value = "TASK-Glucose-8"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -302,12 +302,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-9"
+  * value = "TASK-Glucose-9"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -330,12 +330,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-10"
+  * value = "TASK-Glucose-10"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -358,12 +358,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-11"
+  * value = "TASK-Glucose-11"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -386,12 +386,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-12"
+  * value = "TASK-Glucose-12"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -414,12 +414,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-13"
+  * value = "TASK-Glucose-13"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -442,12 +442,12 @@ Usage: #example
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
-  * value = "SUBTASK-Glucose-14"
+  * value = "TASK-Glucose-14"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-Diabetes) "Digitale zorgmodule Diabetes"
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app"
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-28T18:00:00+01:00"
@@ -542,7 +542,7 @@ Usage: #example
 * status = #requested
 * intent = #order
 * priority = #routine
-* description = "Lees tips voor gezonder leven (voeding, bewegen en volhouden)"
+* description = "Lees tips voor een gezonder leven: voeding, bewegen en volhouden"
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-22"
@@ -591,7 +591,7 @@ Usage: #example
 * status = #requested
 * intent = #order
 * priority = #routine
-* description = "Vul de vragenlijst in over je woon/leefsituatie"
+* description = "Beantwoord deze vragen over je woon/leefsituatie"
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
   * start = "2025-12-22"
