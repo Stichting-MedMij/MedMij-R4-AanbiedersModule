@@ -69,7 +69,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/ActivityDefinition"
+              "http://medmij.nl/fhir/StructureDefinition/pt-lm-Activity"
             ]
           }
         ],
@@ -95,7 +95,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+              "http://medmij.nl/fhir/StructureDefinition/pt-lm-ServiceRequest"
             ]
           }
         ],
@@ -213,7 +213,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+              "http://medmij.nl/fhir/StructureDefinition/medmij-core-lm-HealthProfessional"
             ]
           }
         ],

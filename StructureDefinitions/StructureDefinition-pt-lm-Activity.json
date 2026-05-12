@@ -5,6 +5,12 @@
     "status": "empty",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-be-target"
+    }
+  ],
   "url": "http://medmij.nl/fhir/StructureDefinition/pt-lm-Activity",
   "name": "LmActivity",
   "title": "Digital Activity",
