@@ -7,7 +7,7 @@ Title: "Task"
 Description: "Patient-specific task that tells a patient what to do as part of a digital care activity. A Task is shown in the patient’s task list and supports tracking progress and completion over time."
 * insert DefaultNarrative
 * ^status = #active
-* insert PublisherAndContactMedMij
+* insert PublisherAndContact
 * ^purpose = "To represent a patient-facing task for a digital activity, so the patient can see what is expected, when it should be done, and whether it is open or completed. A Task can represent either a main task or a subtask within the same activity."
 * insert Copyright
 * ^abstract = true
@@ -48,7 +48,7 @@ Title: "Digital Activity"
 Description: "Reusable definition of a digital activity (module) that can be selected by a healthcare professional and presented to a patient as part of the care process. The activity describes what the patient will do (e.g., read information, complete a questionnaire, perform a home measurement) and provides the information needed to start or access the activity when applicable."
 * insert DefaultNarrative
 * ^status = #active
-* insert PublisherAndContactMedMij
+* insert PublisherAndContact
 * ^purpose = "To describe a reusable digital activity that can be selected and assigned by a healthcare professional to support the care process for a patient. The activity provides patient-facing content or actions (e.g., information, questionnaires, or home measurements)."
 * insert Copyright
 * ^abstract = true
@@ -82,7 +82,7 @@ Title: "ServiceRequest"
 Description: "Patient-specific clinical order for a digital activity, created by a healthcare professional for a patient."
 * insert DefaultNarrative
 * ^status = #active
-* insert PublisherAndContactMedMij
+* insert PublisherAndContact
 * ^purpose = "To represent a healthcare professional’s clinical order to start or perform a specific digital activity for a patient. The ServiceRequest captures the intended schedule and patient-specific instructions and can serve as the basis for one or more patient-facing Tasks that track execution and completion."
 * insert Copyright
 * ^abstract = true
