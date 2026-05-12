@@ -28,13 +28,13 @@
   "identifier": [
     {
       "system": "http://medrie.nl/taskIdentifier",
-      "value": "SUBTASK-Informatie-Bloeddruk-1"
+      "value": "TASK-Informatie-Bloeddruk-1"
     }
   ],
   "status": "requested",
   "intent": "order",
   "priority": "routine",
-  "description": "Lees deze informatie over hoe je thuis je bloeddruk goed meet.",
+  "description": "Lees deze informatie over hoe je thuis je bloeddruk kan meten.",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-De-Groot",
     "display": "Koos de Groot"

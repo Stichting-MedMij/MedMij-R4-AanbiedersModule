@@ -28,7 +28,7 @@
   "identifier": [
     {
       "system": "http://medrie.nl/taskIdentifier",
-      "value": "SUBTASK-Informatie-Cholesterol-1"
+      "value": "TASK-Informatie-Cholesterol-1"
     }
   ],
   "status": "received",

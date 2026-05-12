@@ -34,7 +34,7 @@
   "status": "requested",
   "intent": "order",
   "priority": "routine",
-  "description": "Lees tips voor gezonder leven (voeding, bewegen en volhouden)",
+  "description": "Lees tips voor een gezonder leven: voeding, bewegen en volhouden",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-Van-Duinen",
     "display": "Tom van Duinen"

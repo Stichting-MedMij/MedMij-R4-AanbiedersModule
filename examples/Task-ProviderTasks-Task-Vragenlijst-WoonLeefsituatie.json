@@ -34,7 +34,7 @@
   "status": "requested",
   "intent": "order",
   "priority": "routine",
-  "description": "Vul de vragenlijst in over je woon/leefsituatie",
+  "description": "Beantwoord deze vragen over je woon/leefsituatie",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-Van-Duinen",
     "display": "Tom van Duinen"

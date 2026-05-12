@@ -28,13 +28,13 @@
   "identifier": [
     {
       "system": "https://hing.zno.com/taskIdentifier",
-      "value": "SUBTASK-Saturatie-1"
+      "value": "TASK-Saturatie-1"
     }
   ],
   "status": "received",
   "intent": "order",
   "priority": "routine",
-  "description": "Meet je zuurstofsaturatie (SpO2) met de saturatiemeter",
+  "description": "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren.",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
     "display": "Sanne van Dijk"

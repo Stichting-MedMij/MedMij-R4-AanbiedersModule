@@ -22,7 +22,7 @@
   "identifier": [
     {
       "system": "http://medrie.nl/taskIdentifier",
-      "value": "SUBTASK-Glucose-13"
+      "value": "TASK-Glucose-13"
     }
   ],
   "basedOn": [
@@ -34,7 +34,7 @@
   "status": "received",
   "intent": "order",
   "priority": "routine",
-  "description": "Meet je bloedglucose (in de ochtend nuchter en in de avond voor het eten) en noteer de waarde in de app",
+  "description": "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel.",
   "focus": {
     "reference": "ServiceRequest/ProviderTasks-ServiceRequestExecution-Glucosemeting"
   },

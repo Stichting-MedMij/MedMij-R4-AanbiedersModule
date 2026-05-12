@@ -28,13 +28,13 @@
   "identifier": [
     {
       "system": "http://medrie.nl/taskIdentifier",
-      "value": "SUBTASK-Bloeddruk-9"
+      "value": "TASK-Bloeddruk-9"
     }
   ],
   "status": "received",
   "intent": "order",
   "priority": "routine",
-  "description": "Meet je bloeddruk in de ochtend nuchter (voor het ontbijt) en in de avond voor het avondeten en noteer de waarde in de app.",
+  "description": "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken.",
   "focus": {
     "reference": "ServiceRequest/ProviderTasks-ServiceRequestExecution-Bloeddrukmeting"
   },

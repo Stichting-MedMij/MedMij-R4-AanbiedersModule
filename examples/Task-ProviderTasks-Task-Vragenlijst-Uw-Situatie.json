@@ -28,13 +28,13 @@
   "identifier": [
     {
       "system": "http://medrie.nl/taskIdentifier",
-      "value": "SUBTASK-Informatie-Situatie-1"
+      "value": "TASK-Informatie-Situatie-1"
     }
   ],
   "status": "failed",
   "intent": "order",
   "priority": "routine",
-  "description": "Beantwoord deze vragen over jouw situatie rond hart- en vaatziekten.",
+  "description": "Beantwoord deze vragen over jouw situatie rondom hart- en vaatziekten.",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-De-Groot",
     "display": "Koos de Groot"
