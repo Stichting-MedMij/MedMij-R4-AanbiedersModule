@@ -96,6 +96,22 @@
     "endLine": 574
   },
   {
+    "outputFile": "CapabilityStatement-pt-Task-Retrieve.json",
+    "fshName": "pt-Task-Retrieve",
+    "fshType": "Instance",
+    "fshFile": "CapabilityStatements.fsh",
+    "startLine": 3,
+    "endLine": 81
+  },
+  {
+    "outputFile": "CapabilityStatement-pt-Task-Serve.json",
+    "fshName": "pt-Task-Serve",
+    "fshType": "Instance",
+    "fshFile": "CapabilityStatements.fsh",
+    "startLine": 83,
+    "endLine": 161
+  },
+  {
     "outputFile": "Endpoint-ProviderTasks-Endpoint-HINQ.json",
     "fshName": "ProviderTasks-Endpoint-HINQ",
     "fshType": "Instance",
