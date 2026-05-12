@@ -93,12 +93,12 @@ Usage: #definition
     * interaction
       * code = #search-type
   * resource[+]
-      * type = #ActivityDefinition
-      * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition"
-      * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
-      * interaction
-        * code = #read
-        * documentation = "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
+    * type = #ActivityDefinition
+    * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+    * interaction
+      * code = #read
+      * documentation = "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
   * resource[+]
     * type = #ServiceRequest
     * supportedProfile[0] = "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan"
