@@ -7,7 +7,7 @@ Usage: #definition
 * name = "Pt Task Retrieve"
 * status = #draft
 * date = "2026-05-11"
-* insert PublisherAndContactMedMij
+* insert PublisherAndContactInstance
 * description = "This CapabilityStatement describes the minimal requirements for a client to fulfill the 'Retrieve Task(s)' transaction within Provider Task."
 * purpose = "This CapabilityStatement is informative in nature and does not represent the minimum or maximum set of capabilities the client or server should support. The aim is to design the CapabilityStatement as complete as possible, however for the exact set of capabilities the implementation guide should be consulted."
 * insert CopyrightInstance
