@@ -34,7 +34,7 @@
   "status": "completed",
   "intent": "order",
   "priority": "routine",
-  "description": "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken.",
+  "description": "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel.",
   "focus": {
     "reference": "ServiceRequest/ProviderTasks-ServiceRequestExecution-Glucosemeting"
   },
