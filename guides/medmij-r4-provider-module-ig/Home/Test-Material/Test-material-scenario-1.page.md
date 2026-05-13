@@ -4,7 +4,7 @@ This scenario describes the digital care module *Digitale zorgmodule Diabetes* t
 
 This scenario covers the full range of task statuses (`completed`, `cancelled`, `received`, `requested`) so that PGO behaviour for both open and finished tasks can be tested.
 
-The corresponding FHIR test resources are available in the [examples folder](https://github.com/Stichting-MedMij/MedMij-R4-AanbiedersModule/tree/main/examples) and have IDs starting with `ProviderTasks-`.
+The corresponding FHIR test resources are available in the [examples folder](https://simplifier.net/medmij-r4-provider-module).
 
 ## Patient data
 
@@ -114,8 +114,6 @@ The endpoint is used to launch the external module (HinqZNO) for executing the d
 ## Task data
 
 The Diabetes module results in **17 patient-facing tasks**, all assigned to *Tom van Duinen* and grouped under the digital group plan *Digitale zorgmodule Diabetes*. All tasks have priority `routine`, intent `order` and requester *A. de Haard, Huisarts*. The measurement tasks were authored on 22-12-2025; the other tasks have their own authoring dates (see below).
-
-The three task types (information, questionnaire and measurement) cover the three categories of digital activities described in the {{pagelink: FO, text: functional design}}.
 
 ### Information tasks
 

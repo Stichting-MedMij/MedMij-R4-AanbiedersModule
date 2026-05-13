@@ -83,7 +83,7 @@ Usage: #example
 * status = #completed
 * intent = #order
 * priority = #routine
-* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -111,7 +111,7 @@ Usage: #example
 * status = #completed
 * intent = #order
 * priority = #routine
-* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -139,7 +139,7 @@ Usage: #example
 * status = #completed
 * intent = #order
 * priority = #routine
-* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -167,7 +167,7 @@ Usage: #example
 * status = #cancelled
 * intent = #order
 * priority = #routine
-* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod
@@ -195,7 +195,7 @@ Usage: #example
 * status = #received
 * intent = #order
 * priority = #routine
-* description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
+* description = "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel."
 * focus = Reference(ProviderTasks-ServiceRequestExecution-Glucosemeting)
 * for = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 * executionPeriod

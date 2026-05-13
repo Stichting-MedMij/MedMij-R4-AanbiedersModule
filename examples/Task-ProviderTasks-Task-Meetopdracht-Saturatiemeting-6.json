@@ -39,6 +39,9 @@
     "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
     "display": "Sanne van Dijk"
   },
+  "focus": {
+    "reference": "ServiceRequest/ProviderTasks-ServiceRequestExecution-Saturatiemeting"
+  },
   "executionPeriod": {
     "start": "2026-01-10",
     "end": "2026-01-10"

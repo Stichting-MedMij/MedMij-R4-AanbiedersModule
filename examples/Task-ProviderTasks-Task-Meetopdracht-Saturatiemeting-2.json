@@ -35,6 +35,9 @@
   "intent": "order",
   "priority": "routine",
   "description": "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren.",
+  "focus": {
+    "reference": "ServiceRequest/ProviderTasks-ServiceRequestExecution-Saturatiemeting"
+  },
   "for": {
     "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
     "display": "Sanne van Dijk"
