@@ -2,8 +2,6 @@
 
 This scenario describes the digital care module *Digitale zorgmodule COPD* that *Huisartsenpraktijk de Haard* assigns to patient *Sanne van Dijk*. The module consists of four reusable digital activities (two information items, one questionnaire and home oxygen-saturation measurements) which together result in 10 patient-facing tasks. The patient performs the activities via an external module (HinqZNO), launched from the PGO.
 
-In contrast to scenarios 1 and 2, this scenario does **not** include a separate execution order. The home oxygen-saturation measurements are modelled as one task per measurement, scheduled directly via each task's `executionPeriod`. This represents the modelling alternative where there are no additional patient-specific instructions beyond what is captured per task.
-
 The corresponding FHIR test resources are available in the [examples folder](https://github.com/Stichting-MedMij/MedMij-R4-AanbiedersModule/tree/main/examples) and have IDs starting with `ProviderTasks-`.
 
 ## Patient data
@@ -44,7 +42,7 @@ The corresponding FHIR test resources are available in the [examples folder](htt
 
 ## Healthcare professional data
 
-One healthcare professional is involved in this scenario. *M. van Rijn* initiates the digital care module (digital group plan) and is the requester of all individual tasks.
+One healthcare professional is involved in this scenario. *M. van Rijn* initiates the digital care module (digital group plan), creates the patient-specific execution order and is the requester of all individual tasks.
 
 | | |
 | --- | --- |
@@ -72,7 +70,18 @@ The digital group plan groups all tasks belonging to the same digital care modul
 
 ## Service request data – Execution order
 
-This scenario does **not** include a separate execution order. Each individual measurement task carries its own `executionPeriod` (one date per task), and there are no additional patient-specific instructions beyond what is captured per task. Consequently, none of the tasks reference an execution order through `focus`.
+The execution order describes the patient-specific instruction and the (repeating) schedule for the home oxygen-saturation measurements. The PGO uses this order as the single source for the schedule shown to the patient. There is only one execution order in this scenario; the information items and the questionnaire are scheduled at task level and do not have a separate execution order.
+
+| | |
+| --- | --- |
+| Identifier | 2025-11344555 (in identifier system 'http://hing.zno.com/servicerequest/id') |
+| Status | active |
+| Intent | order |
+| Subject | Sanne van Dijk |
+| PatientInstruction | Meet 7 dagen, 1 keer per dag, uw saturatie. |
+| Occurrence.Period | 05-01-2026 t/m 11-01-2026 |
+| Occurrence.Frequency | 1 keer per dag |
+| Requester | M. van Rijn, Huisarts |
 
 ## Activity definition data
 
@@ -84,6 +93,8 @@ The COPD module references four reusable digital activities. All four activities
 | Instructiemodule inhalatiemedicatie | active | HinqZNO | Instructiemodule inhalatiemedicatie: juiste inhalatietechniek, therapietrouw en praktische adviezen (inclusief controlepunten en veelgemaakte fouten). | – |
 | Informatie over leven met COPD | active | HinqZNO | Informatieve module voor patiënt: leven met COPD, inclusief inhalatiegebruik, energieverdeling, beweging en omgaan met benauwdheid. | – |
 | Vragenlijst: Wat wilt u bereiken? | active | HinqZNO | Vragenlijst Wat wilt u bereiken? om patiëntdoelen en prioriteiten in kaart te brengen als basis voor gezamenlijke besluitvorming en het behandel-/zelfmanagementplan. | – |
+
+> Note: the patient-specific schedule for *Saturatiemeting* is taken from the execution order, not from the activity definition. The activity-level timing is informative for the healthcare professional only.
 
 ## Endpoint data
 
@@ -106,20 +117,20 @@ The three task types (information, questionnaire and measurement) cover the thre
 
 ### Information tasks
 
-Two information tasks. The patient is not required to launch the module on a specific date; the entire execution period is available.
+Two information tasks. The patient is not required to launch the module on a specific date; the entire execution period (05-01-2026 t/m 11-01-2026) is available.
 
-| Identifier | ActivityDefinition | Description | Status | ExecutionPeriod | LastModified |
-| --- | --- | --- | --- | --- | --- |
-| TASK-1673834 | Informatie over leven met COPD | Lees de praktische tips om met COPD te leven. | received | 05-01-2025 t/m 11-01-2025 | 23-12-2025 07:00 |
-| TASK-983823471 | Instructiemodule inhalatiemedicatie | Lees hoe je inhalatiemedicatie thuis goed gebruikt. | requested | 05-01-2025 t/m 11-01-2025 | 24-12-2025 07:00 |
+| Identifier | ActivityDefinition | Description | Status | LastModified |
+| --- | --- | --- | --- | --- |
+| TASK-1673834 | Informatie over leven met COPD | Lees de praktische tips om met COPD te leven. | received | 05-01-2025 07:00 |
+| TASK-983823471 | Instructiemodule inhalatiemedicatie | Lees hoe je inhalatiemedicatie thuis goed gebruikt. | requested | 05-01-2025 07:00 |
 
 ### Questionnaire task
 
-One questionnaire task on the patient's treatment goals. The task is open (status `requested`) and available during the entire execution period.
+One questionnaire task on the patient's treatment goals. The task is open (status `requested`) and available during the entire execution period (05-01-2026 t/m 11-01-2026).
 
-| Identifier | ActivityDefinition | Description | Status | ExecutionPeriod | LastModified |
-| --- | --- | --- | --- | --- | --- |
-| TASK-74745858 | Vragenlijst: Wat wilt u bereiken? | Beantwoord deze vragen over wat je belangrijk vindt en wat je wilt bereiken met je behandeling of begeleiding. | requested | 05-01-2025 t/m 11-01-2025 | 23-12-2025 18:00 |
+| Identifier | ActivityDefinition | Description | Status | LastModified |
+| --- | --- | --- | --- | --- |
+| TASK-74745858 | Vragenlijst: Wat wilt u bereiken? | Beantwoord deze vragen over wat je belangrijk vindt en wat je wilt bereiken met je behandeling of begeleiding. | requested | 05-01-2025 18:00 |
 
 ### Measurement tasks (Saturatiemeting)
 
@@ -129,7 +140,7 @@ Seven oxygen-saturation measurement tasks, 1 per day during 7 consecutive days (
 | --- | --- |
 | ActivityDefinition | Saturatiemeting |
 | BasedOn (digital group plan) | Digitale zorgmodule COPD |
-| Focus (execution order) | – (this scenario has no execution order) |
+| Focus (execution order) | Uitvoeringsopdracht Saturatiemeting |
 | Description | Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren. |
 | Status | received |
 | AuthoredOn / LastModified | 05-01-2026 08:00 |
@@ -146,6 +157,4 @@ The execution date per task is:
 | TASK-Saturatie-6 | 10-01-2026 |
 | TASK-Saturatie-7 | 11-01-2026 |
 
-> Notes:
-> - None of the 10 tasks in this scenario carry a `focus` reference, because there is no execution order. PGOs must therefore derive the schedule shown to the patient directly from each task's `executionPeriod`.
-> - The two information tasks and the questionnaire task have an `executionPeriod` in **January 2025** while they were authored in **December 2025** (and the related measurement tasks are scheduled for January 2026). This makes the information/questionnaire tasks appear retroactively-dated relative to the measurement tasks. PGOs should still display the tasks exactly as supplied; tooling that depends on a temporal sort should remain stable in the presence of inconsistent date ranges.
+> Note: the two information tasks and the questionnaire task have an `executionPeriod` in **January 2026** that matches the measurement period, while their `authoredOn` / `lastModified` are dated **05-01-2025** (one year earlier). This represents content that was prepared well in advance of the measurement window.

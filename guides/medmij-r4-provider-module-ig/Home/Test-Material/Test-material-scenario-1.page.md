@@ -147,11 +147,11 @@ The execution date, status and description per task are:
 
 | Identifier | ExecutionPeriod | Status | Description |
 | --- | --- | --- | --- |
-| TASK-Glucose-1 | 22-12-2025 (1st measurement) | completed | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. |
-| TASK-Glucose-2 | 22-12-2025 (2nd measurement) | completed | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. |
-| TASK-Glucose-3 | 23-12-2025 (1st measurement) | completed | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. |
-| TASK-Glucose-4 | 23-12-2025 (2nd measurement) | cancelled | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. |
-| TASK-Glucose-5 | 24-12-2025 (1st measurement) | received | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. |
+| TASK-Glucose-1 | 22-12-2025 (1st measurement) | completed | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
+| TASK-Glucose-2 | 22-12-2025 (2nd measurement) | completed | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
+| TASK-Glucose-3 | 23-12-2025 (1st measurement) | completed | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
+| TASK-Glucose-4 | 23-12-2025 (2nd measurement) | cancelled | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
+| TASK-Glucose-5 | 24-12-2025 (1st measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
 | TASK-Glucose-6 | 24-12-2025 (2nd measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
 | TASK-Glucose-7 | 25-12-2025 (1st measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
 | TASK-Glucose-8 | 25-12-2025 (2nd measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |

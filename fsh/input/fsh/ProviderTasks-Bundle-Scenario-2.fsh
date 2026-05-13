@@ -18,7 +18,7 @@ Usage: #example
   * periodUnit = #d
   * frequency = 2
   * frequencyMax = 2
-* requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * patientInstruction = "Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten."
 
 Instance: ProviderTasks-ServiceRequestDigitalGroup-CVRM
