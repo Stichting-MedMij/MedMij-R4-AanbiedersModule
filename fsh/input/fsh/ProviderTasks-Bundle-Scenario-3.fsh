@@ -10,15 +10,15 @@ Usage: #example
   * value = "2025-11344555"
 * status = #active
 * intent = #order
-* subject = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
+* subject = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * occurrenceTiming.repeat
   * boundsPeriod.start = "2026-01-05"
-  * boundsPeriod.end = "2025-12-28"
+  * boundsPeriod.end = "2025-01-11"
   * period = 1
   * periodUnit = #d
   * frequency = 1
   * frequencyMax = 1
-* requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
+* requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * patientInstruction = "Meet 7 dagen, 1 keer per dag, uw saturatie."
 
 Instance: ProviderTasks-ServiceRequestDigitalGroup-COPD
@@ -82,6 +82,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Saturatiemeting)
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
   * start = "2026-01-05"
@@ -109,6 +110,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Saturatiemeting)
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
   * start = "2026-01-06"
@@ -136,6 +138,7 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Saturatiemeting)
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
   * start = "2026-01-07"
@@ -164,6 +167,7 @@ Usage: #example
 * priority = #routine
 * description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Saturatiemeting)
 * executionPeriod
   * start = "2026-01-08"
   * end = "2026-01-08"
@@ -191,6 +195,7 @@ Usage: #example
 * priority = #routine
 * description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Saturatiemeting)
 * executionPeriod
   * start = "2026-01-09"
   * end = "2026-01-09"
@@ -218,6 +223,7 @@ Usage: #example
 * priority = #routine
 * description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Saturatiemeting)
 * executionPeriod
   * start = "2026-01-10"
   * end = "2026-01-10"
@@ -245,6 +251,7 @@ Usage: #example
 * priority = #routine
 * description = "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
+* focus = Reference(ProviderTasks-ServiceRequestExecution-Saturatiemeting)
 * executionPeriod
   * start = "2026-01-11"
   * end = "2026-01-11"
