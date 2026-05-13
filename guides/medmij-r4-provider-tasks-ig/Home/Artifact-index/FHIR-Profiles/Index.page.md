@@ -9,7 +9,7 @@ The following FHIR profiles have been introduced for the Provider Task standard:
 | CIM (concept) | FHIR resource | FHIR profile |
 | --- | --- | --- |
 | {{pagelink: LogicalModelsIndex, text: Task, anchor: ptlmTask}} | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} |
-| {{pagelink: LogicalModelsIndex, text: ActivityDefinition, anchor: ptlmActivityDefinition}} | ActivityDefinition | {{pagelink: FHIRProfilesIndex, text: pt-ActivityDefinition, anchor: ptActivityDefinition}} |
+| {{pagelink: LogicalModelsIndex, text: Activity, anchor: ptlmActivity}} | ActivityDefinition | {{pagelink: FHIRProfilesIndex, text: pt-ActivityDefinition, anchor: ptActivityDefinition}} |
 | {{pagelink: LogicalModelsIndex, text: ServiceRequest, anchor: ptlmServiceRequest}} | ServiceRequestExecutionOrder | {{pagelink: FHIRProfilesIndex, text: pt-ServiceRequestExecutionOrder, anchor: ptServiceRequestExecutionOrder}} |
 |  | ServiceRequestDigitalGroupPlan | {{pagelink: FHIRProfilesIndex, text: pt-ServiceRequestDigitalGroupPlan, anchor: ptServiceRequestDigitalGroupPlan}} |
 |  | Endpoint | {{pagelink: FHIRProfilesIndex, text: pt-Endpoint, anchor: ptEndpoint}} |
