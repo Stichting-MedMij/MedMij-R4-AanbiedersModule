@@ -35,8 +35,8 @@
     }
   },
   "requester": {
-    "reference": "PractitionerRole/ProviderTasks-PractitionerRole-De-Haard",
-    "display": "A. de Haard, Huisarts"
+    "reference": "PractitionerRole/ProviderTasks-PractitionerRole-De-Jong",
+    "display": "L. de Jong, Huisarts"
   },
   "patientInstruction": "Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten."
 }

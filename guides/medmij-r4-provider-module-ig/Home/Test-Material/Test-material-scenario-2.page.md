@@ -45,14 +45,14 @@ Two healthcare professionals are involved in this scenario. Both work for *Huisa
 
 | | A. de Haard | L. de Jong |
 | --- | --- | --- |
-| Name.Initials | A. (qualifier 'IN') | L. (qualifier 'IN') |
-| Name.FamilyName.Prefix | de | de |
-| Name.FamilyName.LastName | Haard | Jong |
-| HealthProfessionalIdentificationNumber (BIG) | 12070100 (in identifier system 'http://fhir.nl/fhir/NamingSystem/big') | 28910456 (in identifier system 'http://fhir.nl/fhir/NamingSystem/big') |
-| Specialty | Huisarts, apotheekhoudend (code '0110' from code system 'urn:oid:2.16.840.1.113883.2.4.6.7') | Huisarts, apotheekhoudend (code '0110' from code system 'urn:oid:2.16.840.1.113883.2.4.6.7') |
-| Organization | Huisartsenpraktijk de Haard | Huisartsenpraktijk de Haard |
-| ContactInformation.TelephoneNumber | +31612345600 (work) | +31655504321 (work) |
-| ContactInformation.EmailAddress | dehaard@huisarts.nl (work) | l.dejong@huisartspraktijk-example.nl (work) |
+| Name.Initials | L. (qualifier 'IN') |
+| Name.FamilyName.Prefix | de |
+| Name.FamilyName.LastName | Jong |
+| HealthProfessionalIdentificationNumber (BIG) | 28910456 (in identifier system 'http://fhir.nl/fhir/NamingSystem/big') |
+| Specialty | Huisarts, apotheekhoudend (code '0110' from code system 'urn:oid:2.16.840.1.113883.2.4.6.7') |
+| Organization | Huisartsenpraktijk de Haard | 
+| ContactInformation.TelephoneNumber | +31655504321 (work) |
+| ContactInformation.EmailAddress | l.dejong@huisartspraktijk-example.nl (work) |
 
 ## Service request data – Digital group plan
 
