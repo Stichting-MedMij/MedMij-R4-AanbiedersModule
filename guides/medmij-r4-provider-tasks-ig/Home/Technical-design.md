@@ -215,42 +215,42 @@ The returned data to the PHR should conform to the profiles listed in the table 
             <td>Retrieve task list</td>
             <td>Taak</td>
             <td>Task</td>
-            <td><a href="" target="_blank">pt-Task</a></td>
+            <td><a target="_blank">pt-Task</a></td>
             <td class="monospace">GET [base]/Task?owner=Patient/[patient-id]</td>
         </tr>
         <tr>
             <td>Retrieve digital activity</td>
             <td>Digitale activiteit</td>
             <td>ActivityDefinition</td>
-            <td><a href="" target="_blank">pt-ActivityDefinition</a></td>
+            <td><a target="_blank">pt-ActivityDefinition</a></td>
             <td class="monospace">See Task (resolved via the <code>instantiates</code> extension)</td>
         </tr>
         <tr>
             <td>Retrieve digital group plan</td>
             <td>Zorgopdracht (digitaal groepsplan)</td>
             <td>ServiceRequest (digital group plan)</td>
-            <td><a href="" target="_blank">pt-ServiceRequest-DigitalGroupPlan</a></td>
+            <td><a target="_blank">pt-ServiceRequest-DigitalGroupPlan</a></td>
             <td class="monospace">See Task (resolved via Task.basedOn)</td>
         </tr>
         <tr>
             <td>Retrieve patient-specific execution details</td>
             <td>Zorgopdracht (uitvoeringsopdracht)</td>
             <td>ServiceRequest (execution order)</td>
-            <td><a href="" target="_blank">pt-ServiceRequest-ExecutionOrder</a></td>
+            <td><a target="_blank">pt-ServiceRequest-ExecutionOrder</a></td>
             <td class="monospace">See Task (resolved via Task.focus)</td>
         </tr>
         <tr>
             <td>Retrieve launch endpoint</td>
             <td>Endpoint</td>
             <td>Endpoint</td>
-            <td><a href="" target="_blank">pt-Endpoint</a></td>
+            <td><a target="_blank">pt-Endpoint</a></td>
             <td class="monospace">See ActivityDefinition (resolved via ActivityDefinition.endpoint)</td>
         </tr>
         <tr>
             <td>Update task status</td>
             <td>Taak</td>
             <td>Task</td>
-            <td><a href="" target="_blank">pt-Task</a></td>
+            <td><a target="_blank">pt-Task</a></td>
             <td class="monospace">PATCH [base]/Task/[id]</td>
         </tr>
         <tr>
