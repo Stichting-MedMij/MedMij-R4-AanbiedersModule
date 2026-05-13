@@ -2,7 +2,7 @@
   filename: Index.page.md
 - name: Task
   filename: Task.page.md
-- name: ActivityDefinition (Module)
-  filename: ActivityDefinition.page.md
+- name: Activity
+  filename: Activity.page.md
 - name: ServiceRequest
   filename: ServiceRequest.page.md
