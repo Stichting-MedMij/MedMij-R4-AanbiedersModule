@@ -19,33 +19,32 @@
       }
     }
   ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-COPD",
+      "display": "Digitale zorgmodule COPD"
+    }
+  ],
   "identifier": [
     {
-      "system": "http://hinq.nl/taskIdentifier",
+      "system": "https://hing.zno.com/taskIdentifier",
       "value": "TASK-1673834"
     }
   ],
-  "groupIdentifier": {
-    "system": "https://hinq.nl/fhir/identifiers/task-group",
-    "value": "module-COPD-2026",
-    "type": {
-      "text": "Digitale zorgmodule COPD"
-    }
-  },
   "status": "received",
   "intent": "order",
   "priority": "routine",
-  "description": "Lees praktische tips om met COPD te leven: omgaan met benauwdheid, bewegen, energie verdelen en herkennen van verslechtering.",
+  "description": "Lees de praktische tips om met COPD te leven.",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
     "display": "Sanne van Dijk"
   },
   "executionPeriod": {
-    "start": "2025-01-05",
-    "end": "2025-01-11"
+    "start": "2026-01-05",
+    "end": "2026-01-11"
   },
-  "authoredOn": "2025-12-23T07:00:00+01:00",
-  "lastModified": "2025-12-23T07:00:00+01:00",
+  "authoredOn": "2026-01-05T07:00:00+01:00",
+  "lastModified": "2026-01-05T07:00:00+01:00",
   "requester": {
     "reference": "PractitionerRole/ProviderTasks-PractitionerRole-Van-Rijn",
     "display": "M. van Rijn, huisarts"

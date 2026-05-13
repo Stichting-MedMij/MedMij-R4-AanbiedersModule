@@ -19,33 +19,32 @@
       }
     }
   ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-COPD",
+      "display": "Digitale zorgmodule COPD"
+    }
+  ],
   "identifier": [
     {
-      "system": "http://hinq.nl/taskIdentifier",
+      "system": "https://hing.zno.com/taskIdentifier",
       "value": "TASK-983823471"
     }
   ],
-  "groupIdentifier": {
-    "system": "https://hinq.nl/fhir/identifiers/task-group",
-    "value": "module-COPD-2026",
-    "type": {
-      "text": "Digitale zorgmodule COPD"
-    }
-  },
   "status": "requested",
   "intent": "order",
   "priority": "routine",
-  "description": "In deze module leer je hoe je je inhalatiemedicatie goed gebruikt. Je krijgt stap-voor-stap uitleg voor jouw inhalator, tips om veelgemaakte fouten te voorkomen en een handig geheugensteuntje voor vaste innamemomenten. Zo komt de medicatie beter in je longen en heb je meer kans op minder klachten. Je leest ook wanneer je contact opneemt met je zorgverlener, bijvoorbeeld bij toenemende benauwdheid of bijwerkingen.",
+  "description": "Lees hoe je inhalatiemedicatie thuis goed gebruikt.",
   "for": {
     "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
     "display": "Sanne van Dijk"
   },
   "executionPeriod": {
-    "start": "2025-01-05",
-    "end": "2025-01-11"
+    "start": "2026-01-05",
+    "end": "2026-01-11"
   },
-  "authoredOn": "2025-12-24T07:00:00+01:00",
-  "lastModified": "2025-12-24T07:00:00+01:00",
+  "authoredOn": "2026-01-05T07:00:00+01:00",
+  "lastModified": "2026-01-05T07:00:00+01:00",
   "requester": {
     "reference": "PractitionerRole/ProviderTasks-PractitionerRole-Van-Rijn",
     "display": "M. van Rijn, huisarts"

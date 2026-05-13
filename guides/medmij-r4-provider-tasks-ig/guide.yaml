@@ -1,0 +1,6 @@
+title: MedMij R4 Provider Tasks IG 1.0.0-alpha.1
+description: 'FHIR IG for MedMij Provider Tasks (Dutch: Aanbiedertaken).'
+version: 1.0.0-alpha.1
+style-root: project
+style-name: MedMij
+numbered-headings: true

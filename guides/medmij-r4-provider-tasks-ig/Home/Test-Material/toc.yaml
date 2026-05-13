@@ -1,0 +1,8 @@
+- name: Introduction
+  filename: Test-material-introduction.page.md
+- name: Scenario 1
+  filename: Test-material-scenario-1.page.md
+- name: Scenario 2
+  filename: Test-material-scenario-2.page.md
+- name: Scenario 3
+  filename: Test-material-scenario-3.page.md
