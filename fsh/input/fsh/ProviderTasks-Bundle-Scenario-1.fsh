@@ -632,7 +632,7 @@ Usage: #example
   * family = "van Duinen"
     * extension[http://hl7.org/fhir/StructureDefinition/humanname-own-prefix].valueString = "van"
     * extension[http://hl7.org/fhir/StructureDefinition/humanname-own-name].valueString = "Duinen"
-  * given = "Erik"
+  * given = "Tom"
     * extension[http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier].valueCode = #BR
 * name[1]
   * use = #usual

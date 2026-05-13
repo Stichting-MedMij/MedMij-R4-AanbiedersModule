@@ -276,8 +276,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-01-05"
   * end = "2025-01-11"
-* authoredOn = "2025-12-23T07:00:00+01:00"
-* lastModified = "2025-12-23T07:00:00+01:00"
+* authoredOn = "2025-01-05T07:00:00+01:00"
+* lastModified = "2025-01-05T07:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
@@ -324,8 +324,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-01-05"
   * end = "2025-01-11"
-* authoredOn = "2025-12-24T07:00:00+01:00"
-* lastModified = "2025-12-24T07:00:00+01:00"
+* authoredOn = "2025-01-05T07:00:00+01:00"
+* lastModified = "2025-01-05T07:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
@@ -373,8 +373,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-01-05"
   * end = "2025-01-11"
-* authoredOn = "2025-12-23T18:00:00+01:00"
-* lastModified = "2025-12-23T18:00:00+01:00"
+* authoredOn = "2025-01-05T18:00:00+01:00"
+* lastModified = "2025-01-05T18:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
