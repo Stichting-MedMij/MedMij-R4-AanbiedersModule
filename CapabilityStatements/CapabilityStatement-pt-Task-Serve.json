@@ -34,7 +34,7 @@
   "rest": [
     {
       "mode": "server",
-      "documentation": "Minimal requirements for a server to fulfill the 'Serve Task' transaction (system role: PT-1.0.0-alpha.1-TGB-FHIR).",
+      "documentation": "Minimal requirements for a server to fulfill the 'Serve Task' transaction (system role: PT-TGB-1.0.0-alpha.1).",
       "resource": [
         {
           "type": "Task",

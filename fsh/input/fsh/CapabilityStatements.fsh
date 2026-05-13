@@ -17,7 +17,7 @@ Usage: #definition
 * format[1] = #json
 * rest
   * mode = #client
-  * documentation = "Minimal requirements for a client to fulfill the 'Retrieve task' transaction (system role: PT-1.0.0-alpha.1-TGR-FHIR)"
+  * documentation = "Minimal requirements for a client to fulfill the 'Retrieve task' transaction (system role: PT-TGR-1.0.0-alpha.1)"
   * resource[+]
     * type = #Task
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
@@ -86,7 +86,7 @@ Usage: #definition
 * format[1] = #json
 * rest
   * mode = #server
-  * documentation = "Minimal requirements for a server to fulfill the 'Serve Task' transaction (system role: PT-1.0.0-alpha.1-TGB-FHIR)."
+  * documentation = "Minimal requirements for a server to fulfill the 'Serve Task' transaction (system role: PT-TGB-1.0.0-alpha.1)."
   * resource[+]
     * type = #Task
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"

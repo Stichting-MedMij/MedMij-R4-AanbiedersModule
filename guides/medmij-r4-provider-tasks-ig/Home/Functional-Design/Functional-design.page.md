@@ -135,12 +135,10 @@ Er is geen hoofd-/subtaak hiërarchie tussen taken: elke taak vertegenwoordigt �
 6. Statusupdates:
 - De status van de individuele taak wordt door het modulesysteem bijgewerkt in het bronsysteem (bijv. naar 'in uitvoering' of 'afgerond'), zodat voortgang en afronding zichtbaar zijn in de takenlijst voor de zorgaanbieder en patiënt. Statusupdates worden per taak toegepast; er is geen hoofd-/subtaak hiërarchie. De patiënt kan op elk moment de takenlijst opnieuw ophalen.
 
-
 #### Postconditie
 - De patiënt heeft één of meerdere taken uitgevoerd en/of afgerond.
 - De externe applicatie heeft de status bijgewerkt.
 - De zorgaanbieder kan (op hoofdlijnen) de voortgang volgen via de (bijgewerkte) status van taken.
-
 
 ### Bedrijfsrollen
 Deze usecase onderscheidt twee bedrijfsrollen, namelijk de Persoon en de (Zorg)Aanbieder zoals te zien in onderstaande tabel.
@@ -150,14 +148,13 @@ Deze usecase onderscheidt twee bedrijfsrollen, namelijk de Persoon en de (Zorg)A
 | Patiënt | Gebruiker van de PGO |
 | Zorgaanbieder | Gebruiker van het bronsysteem |
 
-**Tabel 1 Bedrijfsrollen**
+**Tabel 1: Bedrijfsrollen**
 
 ### Informatieoverdracht
 Zowel de persoon als de (zorg)aanbieder maken ieder gebruik van een informatiesysteem:
 - PGO (persoon)
 - Bronsysteem ((zorg)aanbieder)
 - Modulesysteem (persoon)
-
 
 #### Systemen en systeemrollen
 Deze systemen kennen ieder verschillende systeemrollen.
@@ -168,7 +165,7 @@ Deze systemen kennen ieder verschillende systeemrollen.
 | XIS | TaakGegevensBeschikbaarstellend | PT-TGB-1.0.0-alpha.1 | Beschikbaar stellen taken aan de patiënt en verwerken van statusupdates van taken |
 | Modulesysteem | DigitaleActiviteitUitvoerder | PA-DAU-1.0.0-alpha.1 | Levert de digitale activiteit, ondersteunt de uitvoering/afronding ervan, en koppelt de taakstatus terug naar het bronsysteem |
 
-**Tabel 2 Systeemrollen**
+**Tabel 2: Systeemrollen**
 
 ### Ontwerp uitwisselen taken
 Functioneel ontwerpprincipes
@@ -198,7 +195,6 @@ Elke digitale activiteit voor de patiënt wordt gemodelleerd als één taak. Er 
 **Groepering voor overzicht en filtering**
 Taken die bij elkaar horen (bijv. binnen één digitale zorgmodule zoals CVRM of Diabetes) verwijzen allemaal naar dezelfde zorgopdracht (digitaal groepsplan). PGO’s gebruiken deze gedeelde verwijzing om bij elkaar horende taken overzichtelijk onder dezelfde groep te presenteren en te filteren. De groepsnaam in de PGO is gelijk aan de naam van het digitaal groepsplan zoals vastgelegd in de bijbehorende zorgopdracht.
 
-
 ### Dataset
 De dataset wordt beschreven in de bijbehorende Logical Models:
 - LogicalModel [Taak](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/Logical-Models/Task.page.md?version=current)
@@ -220,15 +216,4 @@ Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op ba
 | Bijwerken Taakstatus (UPDATE) | Bijwerken Taakstatus | PA-DAU-1.0.0-alpha.1 | Modulesysteem | Patiënt |
 | Bijwerken Taakstatus (UPDATE) | Verwerken Taakstatus | PT-TGB-1.0.0-alpha.1 | XIS | Zorgaanbieder |
 
-**Tabel 3 Transactiegroep**
-
-De onderstaande tabel geeft een overzicht van alle gegevensdiensten die van toepassing zijn voor Aanbiedertaken. 
-
-| Id | Gegevensdienstnaam zonder versie | Versie |
-| --- | --- | --- |
-| 900000600 | [Verzamelen - Taken](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/FHIR-Profiles?version=current#ptTask) | 1.0.0-alpha.1 |
-
-**Tabel 4 Gegevensdiensten relevant voor Aanbiedertaken**
-
-### Weergaverichtlijn
-De volledige weergaverichtlijn (inclusief mock-ups van het overzichts) en detailscherm, acceptatiecriteria en de tabellen met specificaties (per logical model, met MoSCoW-prioritering en weergaveteksten) is opgenomen in een aparte pagina: {{pagelink: Weergaverichtlijn, text: Weergaverichtlijn Aanbiedertaken}}.
+**Tabel 3: Transactiegroep**
