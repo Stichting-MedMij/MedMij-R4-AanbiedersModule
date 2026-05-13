@@ -121,8 +121,8 @@ Two information tasks. The patient is not required to launch the module on a spe
 
 | Identifier | ActivityDefinition | Description | Status | LastModified |
 | --- | --- | --- | --- | --- |
-| TASK-1673834 | Informatie over leven met COPD | Lees de praktische tips om met COPD te leven. | received | 05-01-2025 07:00 |
-| TASK-983823471 | Instructiemodule inhalatiemedicatie | Lees hoe je inhalatiemedicatie thuis goed gebruikt. | requested | 05-01-2025 07:00 |
+| TASK-1673834 | Informatie over leven met COPD | Lees de praktische tips om met COPD te leven. | received | 05-01-2026 07:00 |
+| TASK-983823471 | Instructiemodule inhalatiemedicatie | Lees hoe je inhalatiemedicatie thuis goed gebruikt. | requested | 05-01-2026 07:00 |
 
 ### Questionnaire task
 
@@ -130,7 +130,7 @@ One questionnaire task on the patient's treatment goals. The task is open (statu
 
 | Identifier | ActivityDefinition | Description | Status | LastModified |
 | --- | --- | --- | --- | --- |
-| TASK-74745858 | Vragenlijst: Wat wilt u bereiken? | Beantwoord deze vragen over wat je belangrijk vindt en wat je wilt bereiken met je behandeling of begeleiding. | requested | 05-01-2025 18:00 |
+| TASK-74745858 | Vragenlijst: Wat wilt u bereiken? | Beantwoord deze vragen over wat je belangrijk vindt en wat je wilt bereiken met je behandeling of begeleiding. | requested | 05-01-2026 18:00 |
 
 ### Measurement tasks (Saturatiemeting)
 
