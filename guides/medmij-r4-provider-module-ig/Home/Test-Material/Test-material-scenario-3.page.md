@@ -2,7 +2,7 @@
 
 This scenario describes the digital care module *Digitale zorgmodule COPD* that *Huisartsenpraktijk de Haard* assigns to patient *Sanne van Dijk*. The module consists of four reusable digital activities (two information items, one questionnaire and home oxygen-saturation measurements) which together result in 10 patient-facing tasks. The patient performs the activities via an external module (HinqZNO), launched from the PGO.
 
-The corresponding FHIR test resources are available in the [examples folder](https://github.com/Stichting-MedMij/MedMij-R4-AanbiedersModule/tree/main/examples) and have IDs starting with `ProviderTasks-`.
+The corresponding FHIR test resources are available in the [examples folder](https://simplifier.net/medmij-r4-provider-module).
 
 ## Patient data
 

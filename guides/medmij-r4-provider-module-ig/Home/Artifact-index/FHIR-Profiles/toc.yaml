@@ -6,5 +6,7 @@
   filename: ActivityDefinition.page.md
 - name: Endpoint
   filename: Endpoint.page.md
-- name: ServiceRequest
-  filename: ServiceRequest.page.md
+- name: ServiceRequestExecutionOrder
+  filename: ServiceRequestExecutionOrder.page.md
+- name: ServiceRequestDigitalGroupPlan
+  filename: ServiceRequestDigitalGroupPlan.page.md

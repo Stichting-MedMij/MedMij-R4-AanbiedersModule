@@ -4,7 +4,5 @@
   filename: Task.page.md
 - name: ActivityDefinition (Module)
   filename: ActivityDefinition.page.md
-- name: Endpoint
-  filename: Endpoint.page.md
 - name: ServiceRequest
   filename: ServiceRequest.page.md
