@@ -24,6 +24,7 @@
       "value": "7e5633b6-2cf2-49bf-8f1c-e105c8b82b22"
     }
   ],
+  "url": "https://ns.minddistrict.com/fhir/ActivityDefinition/708f713b-8f32-43e3-b7dc-749462cc4d49",
   "version": "1.0.0",
   "name": "InformatieBloeddrukmeten",
   "title": "Informatie over thuis bloeddruk meten",

@@ -25,13 +25,12 @@
       "value": "TASK-Informatie-diabetes-12345"
     }
   ],
-  "groupIdentifier": {
-    "system": "https://medrie.nl/fhir/identifiers/task-group",
-    "value": "module-diabetes-2025",
-    "type": {
-      "text": "Digitale zorgmodule Diabetes"
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequestDigitalGroup-Diabetes",
+      "display": "Digitale zorgmodule Diabetes"
     }
-  },
+  ],
   "status": "received",
   "intent": "order",
   "priority": "routine",

@@ -24,6 +24,7 @@
       "value": "669734ff-2c72-4758-b6ac-786a4c8474b4"
     }
   ],
+  "url": "https://hing.zno.com/fhir/ActivityDefinition/4df11d7e-3439-4ec7-b912-871f048a3f47",
   "version": "1.0.0",
   "name": "VragenlijstWatWiltUBereiken?",
   "title": "Vragenlijst: Wat wilt u bereiken?",

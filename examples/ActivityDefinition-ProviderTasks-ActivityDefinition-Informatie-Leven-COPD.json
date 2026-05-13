@@ -24,6 +24,7 @@
       "value": "ba7471c5-6b5c-4ac6-83c4-512d195cc9d8"
     }
   ],
+  "url": "https://hing.zno.com/fhir/ActivityDefinition/3b13c173-d788-4ca6-8264-973abb4b95ce",
   "version": "1.0.0",
   "name": "InformatieLevenMetCOPD",
   "title": "Informatie over leven met COPD",

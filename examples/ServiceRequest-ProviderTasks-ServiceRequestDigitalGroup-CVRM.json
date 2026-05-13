@@ -1,0 +1,32 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "ProviderTasks-ServiceRequestDigitalGroup-CVRM",
+  "meta": {
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan"
+    ]
+  },
+  "intent": "plan",
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "identifier": [
+    {
+      "system": "http://medrie/servicerequest/id",
+      "value": "2025-1111999"
+    }
+  ],
+  "status": "active",
+  "code": {
+    "text": "Digitale zorgmodule CVRM"
+  },
+  "subject": {
+    "reference": "Patient/ProviderTasks-Patient-De-Groot",
+    "display": "Koos de Groot"
+  },
+  "requester": {
+    "reference": "PractitionerRole/ProviderTasks-PractitionerRole-De-Haard",
+    "display": "A. de Haard, Huisarts"
+  }
+}
