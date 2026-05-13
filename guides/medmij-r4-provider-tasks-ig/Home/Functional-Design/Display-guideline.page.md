@@ -200,7 +200,7 @@ Naam data-item | Type data-item | Id | Voorbeeld | Waar tonen in PGO (a) in over
 Breedteverdeling: 13% | 9% | 9% | 11% | 10% | 10% | 11% | 21% | 6% (totaal 100%) -->
 
 ### Taak (Task)
-Verwijzing: [LogicalModel Task](https://simplifier.net/medmij-r4-provider-module/lmtask)
+Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Task, anchor: ptlmTask}}
 
 <!-- TAAK -->
 <table class="pgo-table">
@@ -259,7 +259,7 @@ Verwijzing: [LogicalModel Task](https://simplifier.net/medmij-r4-provider-module
 </table>
 
 ### Digitale activiteit (ActivityDefinition)
-Verwijzing: [LogicalModel ActivityDefinition](https://simplifier.net/medmij-r4-provider-module/lmactivitydefinition)
+Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Activity, anchor: ptlmActivity}}
 
 <!-- DIGITALE ACTIVITEIT -->
 <table class="pgo-table">
@@ -287,7 +287,7 @@ Verwijzing: [LogicalModel ActivityDefinition](https://simplifier.net/medmij-r4-p
 </table>
 
 ### Uitvoeringsopdracht (ServiceRequest)
-Verwijzing: [LogicalModel ServiceRequest](https://simplifier.net/medmij-r4-provider-module/lmservicerequest)
+Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model ServiceRequest, anchor: ptlmServiceRequest}}
 
 Wordt alleen gebruikt als er voor een taak in de module een patiënt-specifieke instructie of een tijdschema moet worden vastgelegd.
 

@@ -86,10 +86,9 @@ The healthcare provider initiates a digital activity for the patient. The patien
 
 ### Dataset
 The dataset is specified in the Logical Models:
-- LogicalModel [Task](https://simplifier.net/medmij-r4-provider-module/lmtask)
-- LogicalModel [ActivityDefinition](https://simplifier.net/medmij-r4-provider-module/lmactivitydefinition)
-- LogicalModel [ServiceRequest-ExecutionOrder](https://simplifier.net/medmij-r4-provider-module/lmservicerequest)
-- LogicalModel [Endpoint](https://simplifier.net/medmij-r4-provider-module/lmendpoint)
+- LogicalModel {{pagelink: LogicalModelsIndex, text: Task, anchor: ptlmTask}}
+- LogicalModel {{pagelink: LogicalModelsIndex, text: Activity, anchor: ptlmActivity}}
+- LogicalModel {{pagelink: LogicalModelsIndex, text: ServiceRequest, anchor: ptlmServiceRequest}}
 
 ## Retrieve task list (PHR → Source System)
 The PHR system requests task data using individual [search](https://hl7.org/fhir/R4/search.html) interactions. The task data exchange consists of multiple FHIR resources with specific constraints. These interactions are performed using an HTTP GET as shown below:
@@ -122,7 +121,7 @@ Optionally, the PHR/PGO can also provide an upper bound to restrict the period:
 ## Update Task status (module system → Source System)
 This IG uses PATCH for partial updates of Task resources.
 
-PATCH [base]/Task/[id]
+`PATCH [base]/Task/[id]`
 
 Goal: write back progress/completion after the patient interacted with the activity (including after returning from the external module/application). Status updates apply to each individual Task; there is no main/subtask hierarchy.
 
@@ -259,8 +258,8 @@ The returned data to the PHR should conform to the profiles listed in the table 
             <td>Zorgaanbieder</td>
             <td>HealthcareProvider</td>
             <td>
-                <a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885775" target="_blank">nl-core-HealthcareProvider</a>,
-                <a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885776" target="_blank">nl-core-HealthcareProvider-Organization</a>
+                <a href="https://simplifier.net/resolve?canonical=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider&scope=nictiz.fhir.nl.r4.nl-core@0.12.0-beta.4" target="_blank">nl-core-HealthcareProvider</a>,
+                <a href="https://simplifier.net/resolve?canonical=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization&scope=nictiz.fhir.nl.r4.nl-core@0.12.0-beta.4" target="_blank">nl-core-HealthcareProvider-Organization</a>
             </td>
             <td class="monospace">See Task and ServiceRequest (resolved via Task.requester / ServiceRequest.requester &rarr; PractitionerRole.organization)</td>
         </tr>
@@ -269,8 +268,8 @@ The returned data to the PHR should conform to the profiles listed in the table 
             <td>Zorgverlener</td>
             <td>HealthProfessional</td>
             <td>
-                <a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885777" target="_blank">nl-core-HealthProfessional-Practitioner</a>,
-                <a href="https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.1/files/2885778" target="_blank">nl-core-HealthProfessional-PractitionerRole</a>
+                <a href="https://simplifier.net/resolve?canonical=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner&scope=nictiz.fhir.nl.r4.nl-core@0.12.0-beta.4" target="_blank">nl-core-HealthProfessional-Practitioner</a>,
+                <a href="https://simplifier.net/resolve?canonical=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole&scope=nictiz.fhir.nl.r4.nl-core@0.12.0-beta.4" target="_blank">nl-core-HealthProfessional-PractitionerRole</a>
             </td>
             <td class="monospace">See Task and ServiceRequest (resolved via Task.requester / ServiceRequest.requester)</td>
         </tr>

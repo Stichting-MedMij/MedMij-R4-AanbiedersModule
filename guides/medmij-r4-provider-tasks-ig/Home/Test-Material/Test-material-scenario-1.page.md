@@ -4,8 +4,6 @@ This scenario describes the digital care module *Digitale zorgmodule Diabetes* t
 
 This scenario covers the full range of task statuses (`completed`, `cancelled`, `received`, `requested`) so that PGO behaviour for both open and finished tasks can be tested.
 
-The corresponding FHIR test resources are available in the [examples folder](https://simplifier.net/medmij-r4-provider-module).
-
 ## Patient data
 
 | | |

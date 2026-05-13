@@ -2,8 +2,6 @@
 
 This scenario describes the digital care module *Digitale zorgmodule CVRM* (cardiovasculair risicomanagement) that *Huisartsenpraktijk de Haard* assigns to patient *Koos de Groot*. The module consists of four reusable digital activities (two information items, one questionnaire and home blood-pressure measurements) which together result in 17 patient-facing tasks. The patient performs the activities via an external module (Minddistrict), launched from the PGO.
 
-The corresponding FHIR test resources are available in the [examples folder](https://simplifier.net/medmij-r4-provider-module).
-
 ## Patient data
 
 | | |

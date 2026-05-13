@@ -16,7 +16,7 @@ In de kern beogen beide projecten echter hetzelfde: het ondersteunen van digital
 
 Omdat beide projecten FHIR gebruiken om vergelijkbare workflowconcepten (zoals taken en digitale activiteiten) uit te wisselen, is een belangrijk onderdeel van zowel ProviderTasks als Koppeltaal het harmoniseren van de FHIR-profielen. Het doel hiervan is dat dezelfde (of zoveel mogelijk overlappende) profielen herbruikbaar zijn en consistent toegepast kunnen worden in beide projecten.
 
-Deze Implementation Guide is specifiek voor Aanbiedertaken. Voor Koppeltaal is een aparte Implementation Guide beschikbaar via Simplifier: https://simplifier.net/Koppeltaalv2.0/~guides.
+Deze Implementation Guide is specifiek voor Aanbiedertaken. Voor Koppeltaal is een aparte Implementation Guide beschikbaar via [Simplifier](https://simplifier.net/Koppeltaalv2.0/~guides).
 
 ### Doelgroep
 De doelgroep voor deze pagina wijkt niet af van de [algemene doelgroep](https://informatiestandaarden.nictiz.nl/wiki/MedMij:FO:V1/FunctioneelOntwerp#Doelgroep) van de functionele ontwerpen binnen MedMij.
@@ -48,7 +48,7 @@ Geen nadere specificatie, anders dan genoemd in [de algemene inleiding](https://
 
 
 ### Geografische reikwijdte
-Geen nadere specificatie, anders dan genoemd in [de algemene inleiding](https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.02/Ontwerpen#Geografische_reikwijdte) van de MedMij functionele ontwerpen.
+Geen nadere specificatie, anders dan genoemd in [de algemene inleiding](https://informatiestandaarden.nictiz.nl/wiki/MedMij:FO:V1/FunctioneelOntwerp#Geografische_reikwijdte) van de MedMij functionele ontwerpen.
 
 
 ### Kwalificatie en testen
@@ -197,15 +197,15 @@ Taken die bij elkaar horen (bijv. binnen één digitale zorgmodule zoals CVRM of
 
 ### Dataset
 De dataset wordt beschreven in de bijbehorende Logical Models:
-- LogicalModel [Taak](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/Logical-Models/Task.page.md?version=current)
-- LogicalModel [Digitale activiteit](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/Logical-Models/ActivityDefinition.page.md?version=current)
-- LogicalModel [Zorgopdracht – uitvoeringsopdracht](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/Logical-Models/ServiceRequest.page.md?version=current)
+- LogicalModel {{pagelink: LogicalModelsIndex, text: Taak, anchor: ptlmTask}}
+- LogicalModel {{pagelink: LogicalModelsIndex, text: Digitale activiteit, anchor: ptlmActivity}}
+- LogicalModel {{pagelink: LogicalModelsIndex, text: Zorgopdracht – uitvoeringsopdracht, anchor: ptlmServiceRequest}}
 
-De zorgopdracht in de rol van *digitaal groepsplan* wordt gemodelleerd op basis van dezelfde resource (ServiceRequest) en wordt in dit ontwerp functioneel beschreven via de groepering van taken; voor de technische uitwerking zie het [technisch ontwerp](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Technical-design.md?version=current).
+De zorgopdracht in de rol van *digitaal groepsplan* wordt gemodelleerd op basis van dezelfde resource (ServiceRequest) en wordt in dit ontwerp functioneel beschreven via de groepering van taken; voor de technische uitwerking zie het {{pagelink: TO, text: technisch ontwerp}}.
 
 
 ### Transacties en transactiegroepen
-Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op basis van transacties; een verzameling van transacties (bijvoorbeeld een vraag- en antwoordbericht) vormt een zogeheten transactiegroep. Voor de transacties die tussen de systeemrollen plaatsvinden, beschrijven de bijbehorende CIM's (impliciet) welke gegevenselementen uitgewisseld worden binnen Aanbiedertaken. Voor de technische specificaties, zie het [technisch ontwerp](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Technical-design.md?version=current).
+Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op basis van transacties; een verzameling van transacties (bijvoorbeeld een vraag- en antwoordbericht) vormt een zogeheten transactiegroep. Voor de transacties die tussen de systeemrollen plaatsvinden, beschrijven de bijbehorende CIM's (impliciet) welke gegevenselementen uitgewisseld worden binnen Aanbiedertaken. Voor de technische specificaties, zie het {{pagelink: TO, text: technisch ontwerp}}.
 
 
 | Transactiegroep | Transactie | Systeemrolcode | Systeem | Bedrijfsrol |
