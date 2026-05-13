@@ -13,7 +13,7 @@ Usage: #example
 * subject = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * occurrenceTiming.repeat
   * boundsPeriod.start = "2026-01-05"
-  * boundsPeriod.end = "2025-01-11"
+  * boundsPeriod.end = "2026-01-11"
   * period = 1
   * periodUnit = #d
   * frequency = 1
@@ -302,8 +302,8 @@ Usage: #example
 * description = "Lees de praktische tips om met COPD te leven."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
-  * start = "2025-01-05"
-  * end = "2025-01-11"
+  * start = "2026-01-05"
+  * end = "2026-01-11"
 * authoredOn = "2025-01-05T07:00:00+01:00"
 * lastModified = "2025-01-05T07:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
