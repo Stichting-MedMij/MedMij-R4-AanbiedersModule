@@ -201,9 +201,9 @@ Taken die bij elkaar horen (bijv. binnen één digitale zorgmodule zoals CVRM of
 
 ### Dataset
 De dataset wordt beschreven in de bijbehorende Logical Models:
-- LogicalModel [Taak](https://simplifier.net/medmij-r4-provider-module/lmtask)
-- LogicalModel [Digitale activiteit](https://simplifier.net/medmij-r4-provider-module/lmactivitydefinition)
-- LogicalModel [Zorgopdracht – uitvoeringsopdracht](https://simplifier.net/medmij-r4-provider-module/lmservicerequest)
+- LogicalModel [Taak](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/Logical-Models/Task.page.md?version=current)
+- LogicalModel [Digitale activiteit](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/Logical-Models/ActivityDefinition.page.md?version=current)
+- LogicalModel [Zorgopdracht – uitvoeringsopdracht](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/Logical-Models/ServiceRequest.page.md?version=current)
 
 De zorgopdracht in de rol van *digitaal groepsplan* wordt gemodelleerd op basis van dezelfde resource (ServiceRequest) en wordt in dit ontwerp functioneel beschreven via de groepering van taken; voor de technische uitwerking zie het [technisch ontwerp](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Technical-design.md?version=current).
 
