@@ -1,4 +1,25 @@
 // Bundle with FHIR test instances in FSH format for ProviderTasks test scenario 3
+Instance: ProviderTasks-ServiceRequestExecution-Saturatiemeting
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder
+Usage: #example
+* text
+  * status = #empty
+  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* identifier
+  * system = "http://hing.zno.com/servicerequest/id"
+  * value = "2025-11344555"
+* status = #active
+* intent = #order
+* subject = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
+* occurrenceTiming.repeat
+  * boundsPeriod.start = "2026-01-05"
+  * boundsPeriod.end = "2025-12-28"
+  * period = 1
+  * periodUnit = #d
+  * frequency = 1
+  * frequencyMax = 1
+* requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
+* patientInstruction = "Meet 7 dagen, 1 keer per dag, uw saturatie."
 
 Instance: ProviderTasks-ServiceRequestDigitalGroup-COPD
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan
@@ -322,8 +343,8 @@ Usage: #example
 * description = "Lees hoe je inhalatiemedicatie thuis goed gebruikt."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
-  * start = "2025-01-05"
-  * end = "2025-01-11"
+  * start = "2026-01-05"
+  * end = "2026-01-11"
 * authoredOn = "2025-01-05T07:00:00+01:00"
 * lastModified = "2025-01-05T07:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
@@ -371,8 +392,8 @@ Usage: #example
 * description = "Beantwoord deze vragen over wat je belangrijk vindt en wat je wilt bereiken met je behandeling of begeleiding."
 * for = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 * executionPeriod
-  * start = "2025-01-05"
-  * end = "2025-01-11"
+  * start = "2026-01-05"
+  * end = "2026-01-11"
 * authoredOn = "2025-01-05T18:00:00+01:00"
 * lastModified = "2025-01-05T18:00:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, Huisarts"

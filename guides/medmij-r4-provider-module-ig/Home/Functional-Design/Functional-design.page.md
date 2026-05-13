@@ -164,9 +164,9 @@ Deze systemen kennen ieder verschillende systeemrollen.
 
 | Systeem | Naam systeemrol | Systeemrolcode | Omschrijving |
 | --- | --- | --- | --- |
-| PGO | TaakGegevensRaadplegend | PT-1.0.0-alpha.1-TGR-FHIR | Raadplegen taken bij de zorgaanbieder |
-| XIS | TaakGegevensBeschikbaarstellend | PT-1.0.0-alpha.1-TGB-FHIR | Beschikbaar stellen taken aan de patiënt en verwerken van statusupdates van taken |
-| Modulesysteem | DigitaleActiviteitUitvoerder | PA-1.0.0-alpha.1-DAU-FHIR | Levert de digitale activiteit, ondersteunt de uitvoering/afronding ervan, en koppelt de taakstatus terug naar het bronsysteem |
+| PGO | TaakGegevensRaadplegend | PT-TGR-1.0.0-alpha.1 | Raadplegen taken bij de zorgaanbieder |
+| XIS | TaakGegevensBeschikbaarstellend | PT-TGB-1.0.0-alpha.1 | Beschikbaar stellen taken aan de patiënt en verwerken van statusupdates van taken |
+| Modulesysteem | DigitaleActiviteitUitvoerder | PA-DAU-1.0.0-alpha.1 | Levert de digitale activiteit, ondersteunt de uitvoering/afronding ervan, en koppelt de taakstatus terug naar het bronsysteem |
 
 **Tabel 2 Systeemrollen**
 
@@ -214,11 +214,11 @@ Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op ba
 
 | Transactiegroep | Transactie | Systeemrolcode | Systeem | Bedrijfsrol |
 | --- | --- | --- | --- | --- |
-| Verzamelen Taakgegevens (PULL) | Beschikbaar stellen Taken | PT-1.0.0-alpha.1-TGB-FHIR | XIS | Zorgaanbieder |
-| Verzamelen Taakgegevens (PULL) | Raadplegen Taken | PT-1.0.0-alpha.1-TGR-FHIR | PGO | Patiënt |
-| Digitale activiteit uitvoeren (LAUNCH) | Launch naar digitale activiteit | PA-1.0.0-alpha.1-DAU-FHIR | Modulesysteem | Patiënt |
-| Bijwerken Taakstatus (UPDATE) | Bijwerken Taakstatus | PA-1.0.0-alpha.1-DAU-FHIR | Modulesysteem | Patiënt |
-| Bijwerken Taakstatus (UPDATE) | Verwerken Taakstatus | PT-1.0.0-alpha.1-TGB-FHIR | XIS | Zorgaanbieder |
+| Verzamelen Taakgegevens (PULL) | Beschikbaar stellen Taken | PT-TGB-1.0.0-alpha.1 | XIS | Zorgaanbieder |
+| Verzamelen Taakgegevens (PULL) | Raadplegen Taken | PT-TGR-1.0.0-alpha.1 | PGO | Patiënt |
+| Digitale activiteit uitvoeren (LAUNCH) | Launch naar digitale activiteit | PA-DAU-1.0.0-alpha.1 | Modulesysteem | Patiënt |
+| Bijwerken Taakstatus (UPDATE) | Bijwerken Taakstatus | PA-DAU-1.0.0-alpha.1 | Modulesysteem | Patiënt |
+| Bijwerken Taakstatus (UPDATE) | Verwerken Taakstatus | PT-TGB-1.0.0-alpha.1 | XIS | Zorgaanbieder |
 
 **Tabel 3 Transactiegroep**
 
@@ -226,18 +226,9 @@ De onderstaande tabel geeft een overzicht van alle gegevensdiensten die van toep
 
 | Id | Gegevensdienstnaam zonder versie | Versie |
 | --- | --- | --- |
-| 301 | [Verzamelen - Taken](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/FHIR-Profiles?version=current#ptTask) | 1.0.0-alpha.1 |
+| 900000600 | [Verzamelen - Taken](https://simplifier.net/guide/medmij-r4-provider-module-ig/Home/Artifact-index/FHIR-Profiles?version=current#ptTask) | 1.0.0-alpha.1 |
 
 **Tabel 4 Gegevensdiensten relevant voor Aanbiedertaken**
 
 ### Weergaverichtlijn
-
-#### Scope weergaverichtlijn 
-De richtlijn geeft handvatten voor:
-- het gebruik van patiëntvriendelijke termen en toelichting;
-- de inhoud van het overzicht van taken in de PGO.
-
-De richtlijn geeft géén handvatten voor de vormgeving (kleur, vorm, lettertype, etc.) van taken. 
-
-#### Inhoud weergaverichtlijn
 De volledige weergaverichtlijn (inclusief mock-ups van het overzichts) en detailscherm, acceptatiecriteria en de tabellen met specificaties (per logical model, met MoSCoW-prioritering en weergaveteksten) is opgenomen in een aparte pagina: {{pagelink: Weergaverichtlijn, text: Weergaverichtlijn Aanbiedertaken}}.
