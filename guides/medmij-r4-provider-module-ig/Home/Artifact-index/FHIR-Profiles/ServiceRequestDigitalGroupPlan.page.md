@@ -2,7 +2,7 @@
 topic: ptServiceRequestDigitalGroupPlan
 ---
 
-# ServiceRequestExecutionOrder
+# ServiceRequestDigitalGroupPlan
 
 <tabs>
     <tab title="Tree view" active="true">
