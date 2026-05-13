@@ -46,7 +46,7 @@ Het overzichtsscherm bestaat uit twee onderdelen (deze mogen ook als tabs worden
 
 <u>Overzicht taken per zorgaanbieder</u>
 
-{{render: guides/medmij-r4-provider-module-ig/images/figuur 2.png}}
+{{render: guides/medmij-r4-provider-tasks-ig/images/figuur 2.png}}
 
 **Figuur 2: Voorbeeld Overzicht taken per zorgaanbieder**
 
@@ -89,13 +89,13 @@ Dit detailscherm krijgt een PGO-gebruiker te zien na het selecteren van een spec
 
 #### Mock-ups detailscherm aanbiedertaken
 
-{{render: guides/medmij-r4-provider-module-ig/images/detailscherm1.png}}
+{{render: guides/medmij-r4-provider-tasks-ig/images/detailscherm1.png}}
 
-{{render: guides/medmij-r4-provider-module-ig/images/detailscherm2.png}}
+{{render: guides/medmij-r4-provider-tasks-ig/images/detailscherm2.png}}
 
-{{render: guides/medmij-r4-provider-module-ig/images/detailscherm3.png}}
+{{render: guides/medmij-r4-provider-tasks-ig/images/detailscherm3.png}}
 
-{{render: guides/medmij-r4-provider-module-ig/images/detailscherm4.png}}
+{{render: guides/medmij-r4-provider-tasks-ig/images/detailscherm4.png}}
 
 **Figuur 3: Voorbeeld detailschermen**
 
