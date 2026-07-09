@@ -1,10 +1,5 @@
 // All RuleSets used in ProviderTasks
 
-RuleSet: Origin
-* extension contains
-    KT2_ResourceOrigin named resource-origin 0..1
-* extension[resource-origin] ^isModifier = false
-
 RuleSet: PublisherAndContact
 * ^publisher = "MedMij"
 * ^contact.name = "MedMij"

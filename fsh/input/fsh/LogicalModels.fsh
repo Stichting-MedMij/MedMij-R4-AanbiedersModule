@@ -174,3 +174,45 @@ Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * ExecutionPeriod -> "pt-dataelement-7" "ExecutionPeriod"
 * Requester -> "pt-dataelement-8" "Requester"
 * Owner -> "pt-dataelement-24" "Owner"
+
+Logical: PtLmEndpoint
+Parent: http://hl7.org/fhir/StructureDefinition/Element
+Id: pt-lm-Endpoint
+Title: "Endpoint"
+Description: "Technical FHIR REST endpoint of a source system (XIS), used by a Task to retrieve and update task data and the required context for the Provider Tasks use case."
+Characteristics: #can-be-target
+* insert DefaultNarrative
+* ^status = #draft
+* insert PublisherAndContact
+* ^purpose = "This LogicalModel represents the Endpoint building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* insert Copyright
+* ^abstract = false
+* .
+  * ^short = "Endpoint"
+  * ^alias = "Endpoint"
+* ClientID 0..* string "The client ID used as the audience input parameter in the token exchange request between PHR and the DVA authorisation server."
+  * ^short = "Client ID"
+  * ^alias = "ClientID"
+* Status 1..1 code "The operational status of the endpoint (e.g., active, suspended, error, off, entered-in-error)."
+  * ^short = "Status"
+  * ^alias = "Status"
+  * ^binding.strength = #required
+  * ^binding.valueSet = "http://hl7.org/fhir/ValueSet/endpoint-status"
+* ConnectionType 1..1 Coding "Protocol/profile used to communicate with the endpoint."
+  * ^short = "Connection type"
+  * ^alias = "Verbindingstype"
+  * ^binding.strength = #extensible
+  * ^binding.valueSet = "http://vzvz.nl/fhir/ValueSet/endpoint-connection-type"
+* ManagingOrganization 0..1 Reference(http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization) "Organization that manages this endpoint (and not necessarily the technical infrastructure hosting it)."
+  * ^short = "Managing organization"
+  * ^alias = "BeherendeOrganisatie"
+
+Mapping: PtLmEndpointMedMij-100-alpha1
+Source: PtLmEndpoint
+Id: pt-dataset-100-alpha1-20260511
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+* . -> "pt-dataelement-25" "Endpoint"
+* ClientID -> "pt-dataelement-26" "ClientID"
+* Status -> "pt-dataelement-27" "Status"
+* ConnectionType -> "pt-dataelement-28" "ConnectionType"
+* ManagingOrganization -> "pt-dataelement-29" "ManagingOrganization"
