@@ -1,26 +1,29 @@
-Profile: PtServiceRequestExecutionOrder
+Profile: PtExecutionOrder
 Parent: ServiceRequest
-Id: pt-ServiceRequest-ExecutionOrder
-Description: "Patient-specific execution plan for a digital activity. This ServiceRequest captures patient-specific scheduling and instructions that deviate from or complement the generic ActivityDefinition. It is referenced from the patient-facing Task via `Task.focus`."
+Id: pt-ExecutionOrder
+Title: "pt ExecutionOrder"
+Description: "Patient-specific execution order for a digital activity, created by a healthcare professional for a patient."
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "To represent the healthcare professional’s order to start a specific digital activity for a patient."
+* ^purpose = "This ServiceRequest resource represents the ExecutionOrder building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * .
-  * ^short = "Patient instruction"
+  * ^short = "Execution order"
   * ^alias = "Uitvoeringsopdracht"
-* insert Origin
 * .
-^definition = "Patient-specific execution plan for a digital activity, containing scheduling (occurrence) and patient instruction. It is referenced from Task via `Task.focus`."
+^definition = "Patient-specific clinical order for a digital activity, created by a healthcare professional for a patient."
 * intent = #order
+* status 1..1
+  * ^short = "Status"
+  * ^definition = "Current state of the execution order (e.g., draft, active, on-hold, revoked, completed)."
 * subject only Reference(Patient or Group or Location or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient)
   * ^definition = "The patient for whom the digital activity applies."
 * occurrence[x]
   * ^short = "Occurrence"
   * ^definition = "Requested schedule for performing the activity (e.g., duration, frequency, time of day)."
   * ^alias = "Tijdschema"
-* requester only Reference(Practitioner or PractitionerRole or Organization or Patient or RelatedPerson or Device or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)
+* requester only Reference(Practitioner or PractitionerRole or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)
   * ^comment = """
     Each occurrence of the zib HealthProfessional is normally represented by _two_ FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.
 
@@ -29,16 +32,16 @@ Description: "Patient-specific execution plan for a digital activity. This Servi
   * ^short = "Requester"
   * ^definition = "Healthcare professional that requests this activity for the patient."
   * ^alias = "Aanvrager"
-* patientInstruction 1..1
+* patientInstruction 0..1
   * ^short = "Patient-specific instructions"
-  * ^definition = "Patient-oriented instructions that may differ from or add to the generic activity information (e.g., fasting measurements, preferred timing, preparation steps). These instructions should be shown alongside the Task(s) created from this order."
+  * ^definition = "Patient-oriented instructions that may differ from or add to the generic activity information (e.g., fasting measurements, preferred timing, preparation steps). These instructions should be shown alongside the task(s) created from this order."
   * ^alias = "PatiëntenInstructie"
 
-Mapping: ProviderTasksServiceRequestExecutionOrderMedMij-100-alpha1
-Source: PtServiceRequestExecutionOrder
+Mapping: ProviderTasksExecutionOrderMedMij-100-alpha1
+Source: PtExecutionOrder
 Id: pt-dataset-100-alpha1-20260511
 Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
-* -> "pt-dataelement-15" "ServiceRequest"
+* -> "pt-dataelement-15" "ExecutionOrder"
 * patientInstruction -> "pt-dataelement-16" "PatientInstruction"
-* occurrence[x] -> "pt-dataelement-17" "Occurrence"
+* occurrence[x] -> "pt-dataelement-17" "Schedule"
 * requester -> "pt-dataelement-18" "Requester"

@@ -1,20 +1,19 @@
-Profile: PtActivityDefinition
+Profile: PtDigitalActivity
 Parent: ActivityDefinition
-Id: pt-ActivityDefinition
-Description: "This (FHIR) ActivityDefinition profile describes a reusable definition of a launchable digital (eHealth) activity that can be requested for a patient in MedMij and/or Koppeltaal workflows. It captures the clinical intent and the technical launch information (e.g., endpoint)."
+Id: pt-DigitalActivity
+Title: "pt DigitalActivity"
+Description: "Reusable definition of a digital activity (module) that can be selected by a healthcare professional and presented to a patient as part of the care process. The activity describes what the patient will do (e.g., read information, complete a questionnaire, perform a home measurement) and provides the information needed to start or access the activity when applicable."
 * ^status = #draft
 * insert PublisherAndContact
-* insert Origin
+* ^purpose = "This ActivityDefinition resource represents the DigitalActivity building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
 * insert Copyright
-* . 
+* .
   * ^short = "Digital Activity"
-  * ^definition = "Definition of a launchable digital (eHealth) activity that can be used as a template for patient-specific workflow requests. The definition may describe different activity types (e.g., launching a third-party module, presenting information, completing a questionnaire, or performing a measurement) and includes the technical launch details needed to invoke the activity in the correct context."
+  * ^definition = "Reusable definition of a digital activity (module) that can be selected by a healthcare professional and presented to a patient as part of the care process. The activity describes what the patient will do (e.g., read information, complete a questionnaire, perform a home measurement) and provides the information needed to start or access the activity when applicable."
   * ^alias = "Digitale Activiteit"
-* extension contains
-    $koppeltaal-endpoint named endpoint 1..* and
-    $koppeltaal-publisher-id named publisherId 0..1
+* extension contains ExtEndpointReference named endpoint 1..*
 * extension[endpoint] ^short = "Endpoint for launching the activity"
-  * ^definition = "Mandatory reference to the service application (endpoint) that provides the launchable eHealth activity. Can be more than one endpoint."
+  * ^definition = "Mandatory reference to the service application (endpoint) that provides the launchable digital activity. Can be more than one endpoint."
 * url 1..
 * title 1..
   * ^short = "Title"
@@ -31,9 +30,6 @@ Description: "This (FHIR) ActivityDefinition profile describes a reusable defini
   * ^short = "Description"
   * ^definition = "Guidance on how this digital activity should be used in clinical workflows."
   * ^alias = "Omschrijving"
-* useContext
-  * ^definition = "The context for the content of the eHealth activity."
-  * ^comment = "E.g. the activity is targeted to a certain age group."
 * usage
   * ^definition = "A detailed description of how the activity definition is used from a clinical perspective. In the MedMij use case, this text is intended for the healthcare professional who is selecting and assigning the activity to the patient."
 * topic from http://vzvz.nl/fhir/ValueSet/koppeltaal-definition-topic (extensible)
@@ -43,16 +39,16 @@ Description: "This (FHIR) ActivityDefinition profile describes a reusable defini
 * timing[x] only Timing
 * timingTiming
   * ^short = "Timing"
-  * ^definition = "Generic recommendation for how often/when the activity is typically performed. Patient-specific scheduling belongs in the clinical order (e.g., ServiceRequestExecutionOrder)."
+  * ^definition = "Generic recommendation for how often/when the activity is typically performed. Patient-specific scheduling belongs in the execution order (ServiceRequest)."
   * ^alias = "Tijdschema"
 
-Mapping: ProviderTasksActivityDefinitionMedMij-100-alpha1
-Source: PtActivityDefinition
+Mapping: ProviderTasksDigitalActivityMedMij-100-alpha1
+Source: PtDigitalActivity
 Id: pt-dataset-100-alpha1-20260511
 Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
-* -> "pt-dataelement-9" "Activity"
+* -> "pt-dataelement-9" "DigitalActivity"
 * title -> "pt-dataelement-10" "Title"
 * status -> "pt-dataelement-11" "Status"
 * publisher -> "pt-dataelement-12" "Publisher"
 * description -> "pt-dataelement-13" "Description"
-* timingTiming -> "pt-dataelement-14" "Timing"
+* timingTiming -> "pt-dataelement-14" "Schedule"

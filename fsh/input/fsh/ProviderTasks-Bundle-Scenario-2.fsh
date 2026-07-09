@@ -1,6 +1,6 @@
 // Bundle with FHIR test instances in FSH format for ProviderTasks test scenario 2
 Instance: ProviderTasks-ServiceRequestExecution-Bloeddrukmeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder
 Usage: #example
 * text
   * status = #empty
@@ -22,7 +22,7 @@ Usage: #example
 * patientInstruction = "Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten."
 
 Instance: ProviderTasks-ServiceRequestDigitalGroup-CVRM
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan
 Usage: #example
 * text
   * status = #empty
@@ -37,13 +37,13 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 
 Instance: ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
@@ -67,11 +67,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-1
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -95,11 +98,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -123,11 +129,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -151,11 +160,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -179,11 +191,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-5
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -207,11 +222,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-6
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -235,11 +253,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-7
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -263,11 +284,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-8
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -291,11 +315,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-9
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -319,11 +346,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-10
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -347,11 +377,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-11
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -375,11 +408,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-12
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -403,11 +439,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-13
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -431,11 +470,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Bloeddrukmeting-14
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Bloeddrukmeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -457,13 +499,13 @@ Usage: #example
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
 Instance: ProviderTasks-ActivityDefinition-Informatie-Cholesterol
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
@@ -479,11 +521,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Informatie-Cholesterol
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Cholesterol)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -505,13 +550,13 @@ Usage: #example
 
 
 Instance: ProviderTasks-ActivityDefinition-Informatie-Thuismeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
@@ -527,11 +572,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Informatie-Thuis-Bloeddrukmeten
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Thuismeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"
@@ -553,13 +601,13 @@ Usage: #example
 
 
 Instance: ProviderTasks-ActivityDefinition-Vragenlijst-Uw-Situatie
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension[0]
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
@@ -575,11 +623,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Vragenlijst-Uw-Situatie
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Vragenlijst-Uw-Situatie)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-CVRM) "Digitale zorgmodule CVRM"

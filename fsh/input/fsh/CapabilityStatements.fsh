@@ -25,15 +25,15 @@ Usage: #definition
       * code = #search-type
   * resource[+]
     * type = #ActivityDefinition
-    * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition"
+    * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
     * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
     * interaction
       * code = #read
       * documentation = "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
   * resource[+]
     * type = #ServiceRequest
-    * supportedProfile[0] = "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan"
-    * supportedProfile[1] = "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder"
+    * supportedProfile[0] = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan"
+    * supportedProfile[1] = "http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder"
     * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
     * interaction
       * code = #read
@@ -94,15 +94,15 @@ Usage: #definition
       * code = #search-type
   * resource[+]
     * type = #ActivityDefinition
-    * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition"
+    * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
     * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
     * interaction
       * code = #read
       * documentation = "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
   * resource[+]
     * type = #ServiceRequest
-    * supportedProfile[0] = "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan"
-    * supportedProfile[1] = "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder"
+    * supportedProfile[0] = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan"
+    * supportedProfile[1] = "http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder"
     * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
     * interaction
       * code = #read

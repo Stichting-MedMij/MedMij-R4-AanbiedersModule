@@ -3,18 +3,18 @@ topic: FHIRProfilesIndex
 ---
 
 # FHIR profiles
-## Provider task-specific profiles
-The following FHIR profiles have been introduced for the Provider Task standard:
+## Provider tasks-specific profiles
+The following FHIR profiles have been introduced for the Provider Tasks standard:
 
 | CIM (concept) | FHIR resource | FHIR profile |
 | --- | --- | --- |
 | {{pagelink: LogicalModelsIndex, text: Task, anchor: ptlmTask}} | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} |
-| {{pagelink: LogicalModelsIndex, text: Activity, anchor: ptlmActivity}} | ActivityDefinition | {{pagelink: FHIRProfilesIndex, text: pt-ActivityDefinition, anchor: ptActivityDefinition}} |
-| {{pagelink: LogicalModelsIndex, text: ServiceRequest, anchor: ptlmServiceRequest}} | ServiceRequestExecutionOrder | {{pagelink: FHIRProfilesIndex, text: pt-ServiceRequestExecutionOrder, anchor: ptServiceRequestExecutionOrder}} |
-|  | ServiceRequestDigitalGroupPlan | {{pagelink: FHIRProfilesIndex, text: pt-ServiceRequestDigitalGroupPlan, anchor: ptServiceRequestDigitalGroupPlan}} |
+| {{pagelink: LogicalModelsIndex, text: Digital activity, anchor: ptlmDigitalActivity}} | ActivityDefinition | {{pagelink: FHIRProfilesIndex, text: pt-DigitalActivity, anchor: ptDigitalActivity}} |
+| {{pagelink: LogicalModelsIndex, text: Execution order, anchor: ptlmExecutionOrder}} | ServiceRequest | {{pagelink: FHIRProfilesIndex, text: pt-ExecutionOrder, anchor: ptExecutionOrder}} |
+| {{pagelink: LogicalModelsIndex, text: Digital group plan, anchor: ptlmDigitalGroupPlan}} | ServiceRequest | {{pagelink: FHIRProfilesIndex, text: pt-DigitalGroupPlan, anchor: ptDigitalGroupPlan}} |
 |  | Endpoint | {{pagelink: FHIRProfilesIndex, text: pt-Endpoint, anchor: ptEndpoint}} |
 
-**Table 1: Relevant Provider task-specific profiles**
+**Table 1: Relevant Provider tasks-specific profiles**
 
 Note the following:
 - The [Nictiz Profiling Guidelines for FHIR R4](https://informatiestandaarden.nictiz.nl/wiki/FHIR:V1.0_FHIR_Profiling_Guidelines_R4) have been used as guidelines for creating the profiles.

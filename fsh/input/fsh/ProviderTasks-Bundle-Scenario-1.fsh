@@ -1,6 +1,6 @@
 // Bundle with FHIR test instances in FSH format for ProviderTasks test scenario 1
 Instance: ProviderTasks-ServiceRequestExecution-Glucosemeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder
 Usage: #example
 * text
   * status = #empty
@@ -22,7 +22,7 @@ Usage: #example
 * patientInstruction = "Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten."
 
 Instance: ProviderTasks-ServiceRequestDigitalGroup-Diabetes
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan
 Usage: #example
 * text
   * status = #empty
@@ -37,13 +37,13 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 
 Instance: ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * url = "https://hing.zno.com/fhir/ActivityDefinition/b15d4634-4678-46bd-a55a-e46ef3dfb517"
 * identifier
@@ -69,11 +69,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-1
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -97,11 +100,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -125,11 +131,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -153,11 +162,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -181,11 +193,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-5
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -209,11 +224,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-6
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -237,11 +255,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-7
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -265,11 +286,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-8
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -293,11 +317,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-9
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -321,11 +348,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-10
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -349,11 +379,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-11
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -377,11 +410,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-12
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -405,11 +441,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-13
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -433,11 +472,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Glucosemeting-14
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Glucosemeting)
     * type = "ActivityDefinition"
 * identifier
@@ -458,13 +500,13 @@ Usage: #example
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
 Instance: ProviderTasks-ActivityDefinition-Informatie-Diabetes
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
   * system = "https://hing.zno.com/content/id"
@@ -481,11 +523,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Informatie-Diabetes
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Diabetes)
     * type = "ActivityDefinition"
 * identifier
@@ -506,13 +551,13 @@ Usage: #example
 * owner = Reference(ProviderTasks-Patient-Van-Duinen) "Tom van Duinen"
 
 Instance: ProviderTasks-ActivityDefinition-Informatie-Gezonder-Leven
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
   * system = "https://hing.zno.com/content/id"
@@ -528,11 +573,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Informatie-Gezonder-Leven
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Gezonder-Leven)
     * type = "ActivityDefinition"
 * identifier
@@ -554,13 +602,13 @@ Usage: #example
 
 
 Instance: ProviderTasks-ActivityDefinition-Vragenlijst-WoonLeefsituatie
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
   * system = "https://hinq.zno.com/content/id"
@@ -577,11 +625,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Vragenlijst-WoonLeefsituatie
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Vragenlijst-WoonLeefsituatie)
     * type = "ActivityDefinition"
 * identifier

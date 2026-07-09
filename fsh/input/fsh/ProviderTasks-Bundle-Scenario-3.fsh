@@ -1,6 +1,6 @@
 // Bundle with FHIR test instances in FSH format for ProviderTasks test scenario 3
 Instance: ProviderTasks-ServiceRequestExecution-Saturatiemeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder
 Usage: #example
 * text
   * status = #empty
@@ -22,7 +22,7 @@ Usage: #example
 * patientInstruction = "Meet 7 dagen, 1 keer per dag, uw saturatie."
 
 Instance: ProviderTasks-ServiceRequestDigitalGroup-COPD
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan
 Usage: #example
 * text
   * status = #empty
@@ -37,13 +37,13 @@ Usage: #example
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 
 Instance: ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
   * system = "https://hing.zno.com/content/id"
@@ -67,11 +67,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-1
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
@@ -95,11 +98,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-2
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
@@ -123,11 +129,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-3
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
@@ -151,11 +160,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-4
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
@@ -179,11 +191,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-5
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
@@ -207,11 +222,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-6
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
@@ -235,11 +253,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Meetopdracht-Saturatiemeting-7
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Meetopdracht-Saturatiemeting)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
@@ -262,13 +283,13 @@ Usage: #example
 
 
 Instance: ProviderTasks-ActivityDefinition-Informatie-Leven-COPD
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
   * system = "https://hing.zno.com/content/id"
@@ -285,11 +306,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Informatie-leven-COPD
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Leven-COPD)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
@@ -311,13 +335,13 @@ Usage: #example
 
 
 Instance: ProviderTasks-ActivityDefinition-Informatie-Inhalatiemedicatie
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
   * system = "https://hing.zno.com/content/id"
@@ -333,11 +357,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Informatie-Informatie-Inhalatiemedicatie
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Inhalatiemedicatie)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"
@@ -359,13 +386,13 @@ Usage: #example
 
 
 Instance: ProviderTasks-ActivityDefinition-Vragenlijst-Wat-Bereiken
-InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition
+InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
   * system = "https://hing.zno.com/content/id"
@@ -382,11 +409,14 @@ Usage: #example
 Instance: ProviderTasks-Task-Vragenlijst-Wat-Bereiken
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
+* meta.tag
+  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
+  * code = #providertasks
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
-  * url = $koppeltaal-instantiates
+  * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Vragenlijst-Wat-Bereiken)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequestDigitalGroup-COPD) "Digitale zorgmodule COPD"

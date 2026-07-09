@@ -14,7 +14,7 @@
     "hl7.fhir.r4.core": "4.0.1",
     "medmij.fhir.nl.r4.core": "1.0.1",
     "nictiz.fhir.nl.r4.nl-core": "0.12.0-beta.4",
-    "koppeltaalv2.00": "0.15.0"
+    "Koppeltaalv2.00": "0.16.2"
   },
   "fhirVersions": [
     "4.0.1"
