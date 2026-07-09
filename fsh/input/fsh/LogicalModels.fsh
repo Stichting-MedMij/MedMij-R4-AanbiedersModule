@@ -32,6 +32,10 @@ Characteristics: #can-be-target
 * Schedule[x] 0..1 dateTime or Period or Timing "Generic recommendation for how often/when the activity is typically performed. Patient-specific scheduling belongs in the execution order."
   * ^short = "Schedule"
   * ^alias = "Tijdschema"
+* Usage 0..1 string "A detailed description of how the digital activity is used from a clinical perspective. In the MedMij use case, this text is intended for the healthcare professional who is selecting and assigning the activity to the patient."
+  * ^short = "Usage"
+  * ^alias = "Gebruik"
+
 
 Mapping: PtLmDigitalActivityMedMij-100-alpha1
 Source: PtLmDigitalActivity
@@ -43,6 +47,7 @@ Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * Publisher -> "pt-dataelement-12" "Publisher"
 * Description -> "pt-dataelement-13" "Description"
 * Schedule[x] -> "pt-dataelement-14" "Schedule"
+* Usage -> "pt-dataelement-30" "Usage"
 
 Logical: PtLmDigitalGroupPlan
 Parent: http://hl7.org/fhir/StructureDefinition/Element
