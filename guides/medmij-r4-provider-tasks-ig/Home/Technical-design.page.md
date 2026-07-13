@@ -112,10 +112,10 @@ GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard|provi
 **Included references.** To retrieve referenced resources together with the Task search results, the PHR SHOULD use `_include` for references with core search parameters:
 
 ```
-GET [base]/Task??_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks&_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks&_include=Task:based-on&_include=Task:focus
+GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks&_include=Task:based-on&_include=Task:focus&_include=Task:digitalActivity
 ```
 
-For the digital activity reference carried in the `ext-DigitalActivity` extension, a custom SearchParameter would be required to support `_include`. Until such a SearchParameter is defined, the source system SHOULD include the referenced `pt-DigitalActivity` (and, when applicable, `pt-Endpoint`) resources in the search response Bundle.
+The digital activity reference is carried in the `ext-DigitalActivity` extension, which core FHIR search parameters cannot target. For this reason, a custom SearchParameter [`digitalActivity`](http://medmij.nl/fhir/SearchParameter/Task-digitalActivity) is defined so that `_include=Task:digitalActivity` can be used to retrieve the referenced `pt-DigitalActivity` together with the Task. Because `pt-Endpoint` is referenced from `pt-DigitalActivity` (and not directly from Task), it cannot be retrieved with a single-level `_include`; the source system SHOULD include the referenced `pt-Endpoint` resource(s) in the search response Bundle, or the PHR resolves them via a read interaction.
 
 **Supported search parameters**
 
@@ -125,6 +125,7 @@ For the digital activity reference carried in the `ext-DigitalActivity` extensio
 | Retrieve only Tasks updated since a given point in time | `_lastUpdated` | `GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00` |
 | Include the digital group plan on which the Task is based | `_include=Task:based-on` | `GET [base]/Task?_include=Task:based-on` |
 | Include the execution order referenced from the Task | `_include=Task:focus` | `GET [base]/Task?_include=Task:focus` |
+| Include the digital activity referenced from the Task | `_include=Task:digitalActivity` | `GET [base]/Task?_include=Task:digitalActivity` |
 
 **Table 5: Supported search parameters**
 
@@ -216,7 +217,7 @@ The returned data to the PHR and the data exchanged with the module system SHALL
 | Description | CIM NL | HCIM EN | FHIR profile | Search URL |
 | --- | --- | --- | --- | --- |
 | Retrieve task list | Taak | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} | `GET [base]/Task?_tag=…` |
-| Retrieve digital activity | Digitale activiteit | Digital Activity | pt-DigitalActivity | Resolved via `ext-DigitalActivity` on Task |
+| Retrieve digital activity | Digitale activiteit | Digital Activity | pt-DigitalActivity | Resolved via `ext-DigitalActivity` on Task (`_include=Task:digitalActivity`) |
 | Retrieve digital group plan | Digitaal groepsplan | Digital Group Plan | pt-DigitalGroupPlan | Resolved via `Task.basedOn` |
 | Retrieve execution order | Uitvoeringsopdracht | Execution Order | pt-ExecutionOrder | Resolved via `Task.focus` |
 | Retrieve launch endpoint | Endpoint | Endpoint | {{pagelink: FHIRProfilesIndex, text: pt-Endpoint, anchor: ptEndpoint}} | Resolved via endpoint reference on pt-DigitalActivity |
