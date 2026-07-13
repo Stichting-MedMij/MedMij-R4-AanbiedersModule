@@ -51,7 +51,7 @@ The functional model of Palga is represented by {{pagelink: LogicalModelsIndex, 
 
 ### Resource relationships
 
-Each `pt-Task` is one digital activity for one patient. A Task ties the other resources together through three references:
+A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference the same `pt-DigitalGroupPlan` and the same `pt-DigitalActivity`. There is no parent–child hierarchy between tasks. A task ties the other resources together through three references:
 
 | Reference on Task | Target | Purpose |
 | --- | --- | --- |
@@ -61,15 +61,15 @@ Each `pt-Task` is one digital activity for one patient. A Task ties the other re
 
 **Table 3: References from `pt-Task`**
 
-Tasks of the same module share one `pt-DigitalGroupPlan`; there is no parent–child hierarchy between Tasks.
+Tasks of the same digital care module share one `pt-DigitalGroupPlan`.
 
 #### Implementation guidance
 
 **source system** creates the resources when a healthcare professional assigns a digital care module to a patient:
 
 - Create one `pt-DigitalGroupPlan` per module and set `ServiceRequest.code.text` to its display name.
-- Create one `pt-Task` per digital activity, with `Task.basedOn` to the group plan and `ext-DigitalActivity` to the matching `pt-DigitalActivity`.
-- Create a `pt-ExecutionOrder` (referenced via `Task.focus`) only when the activity needs patient-specific scheduling or instructions. Use `occurrenceTiming` for a recurring schedule, `occurrenceDateTime` or `occurrencePeriod` for a single occurrence. A recurring schedule SHALL use a `pt-ExecutionOrder`.
+- Create a `pt-Task` for each unit of work the patient must perform, with `Task.basedOn` to the group plan and `ext-DigitalActivity` to the matching `pt-DigitalActivity`. Multiple Tasks may point to the same group plan and the same digital activity.
+- Create a `pt-ExecutionOrder` only when the activity needs patient-specific scheduling or instructions. Use `occurrenceTiming` for a recurring schedule, `occurrenceDateTime` or `occurrencePeriod` for a single occurrence. A recurring schedule SHALL use a `pt-ExecutionOrder`.
 
 **PHR** reads and displays the task list:
 
@@ -84,13 +84,13 @@ Tasks of the same module share one `pt-DigitalGroupPlan`; there is no parent–c
 
 ## Use case: Provider Tasks
 
-The healthcare provider initiates digital activities for the patient. The patient retrieves open and (optionally) completed tasks in the PHR, along with the related context required to display the task list, group related tasks, and support launching the associated digital activity. The patient starts (launches) the digital activity, performs it in an external module system, and then sees task status updates in the PHR after the module system writes back task progress/completion to the source system.
+The healthcare provider initiates digital activities for the patient. The patient retrieves open and (optionally) completed tasks in the PHR. The patient starts (launches) the digital activity, performs it in an external module system, and then sees task status updates in the PHR after the module system writes back task progress/completion to the source system.
 
 | Transaction group | Transaction | Actor | Role |
 | --- | --- | --- | --- |
-| Retrieve task list (PULL) | Search/read task data | Patient (using a PHR) | Retrieves tasks and related context from the source system |
+| Retrieve task list (PULL) | Retreive task data | Patient (using a PHR) | Retrieves tasks and related context from the source system |
 | Retrieve task list (PULL) | Serve task data | Healthcare provider (using a source system) | Returns tasks and related context to the PHR |
-| Update task status | PATCH task | module system | Updates `Task.status` after activity interaction |
+| Update task | Update task | module system | Updates `Task.status` after activity interaction |
 | Launch | Start external module | Patient (using a PHR) | Launches the digital activity in a module system |
 
 **Table 4: Transactions within the Provider Tasks use case**
@@ -100,15 +100,19 @@ The healthcare provider initiates digital activities for the patient. The patien
 The PHR executes an HTTP search conform the FHIR specification against the Task endpoint of the source system using the following URL:
 
 ```
-GET [base]/Task
+GET [base]/Task{?[parameters]}
 ```
 
-**Provider Tasks identification.** Tasks in scope for this information standard SHALL be distinguishable from Tasks used in other contexts. The recommended approach (pending confirmation on Zulip) is to tag Provider Tasks resources using `meta.tag` with system `http://medmij.nl/fhir/CodeSystem/information-standard` and code `providertasks`, and to include a corresponding `_tag` search parameter in the request above.
+Here, `[parameters]` represents a series of encoded name-value pairs representing the filter for the query. Tasks in scope for this information standard are represented by Task resources where `.meta.tag` contains code *providertasks* from system *http://medmij.nl/fhir/CodeSystem/information-standard*, which distinguishes them from Tasks used in other contexts. Hence, the PHR SHALL always include the search parameter `_tag` with the appropriate value in their request, resulting in:
+
+```
+GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks{&[additional parameters]}
+```
 
 **Included references.** To retrieve referenced resources together with the Task search results, the PHR SHOULD use `_include` for references with core search parameters:
 
 ```
-GET [base]/Task?owner=Patient/[patient-id]&_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks&_include=Task:based-on&_include=Task:focus
+GET [base]/Task??_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks&_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks&_include=Task:based-on&_include=Task:focus
 ```
 
 For the digital activity reference carried in the `ext-DigitalActivity` extension, a custom SearchParameter would be required to support `_include`. Until such a SearchParameter is defined, the source system SHOULD include the referenced `pt-DigitalActivity` (and, when applicable, `pt-Endpoint`) resources in the search response Bundle.
@@ -148,15 +152,9 @@ The PHR MAY add an upper bound on `_lastUpdated` to restrict the period, for exa
 GET [base]/Task?_lastUpdated=ge2026-01-01T00:00:00+01:00&_lastUpdated=le2026-01-31T23:59:59+01:00
 ```
 
-For the digital activity reference in the `ext-DigitalActivity` extension, a custom SearchParameter would be required to support `_include`. Until such a SearchParameter is defined, the XIS SHOULD include the referenced `pt-DigitalActivity` (and, when applicable, `pt-Endpoint`) resources in the search response Bundle.
-
-Per the [MedMij FHIR IG pattern for including referenced resources](https://informatiestandaarden.nictiz.nl/wiki/MedMij:IG:V1/FHIR_IG#Including_referenced_resources), the XIS MAY include referenced resources directly in the search response Bundle. When they are not included, the PHR SHALL retrieve them using the FHIR read interaction (`GET [base]/[type]/[id]`) for ActivityDefinition (`pt-DigitalActivity`), ServiceRequest (`pt-DigitalGroupPlan`, `pt-ExecutionOrder`), and Endpoint (`pt-Endpoint`). The PHR SHALL support read on these resource types. The XIS SHALL support read on these resource types when it does not always include the referenced resources in the response Bundle.
-
-Referenced nl-core resources used for requester resolution (Practitioner, PractitionerRole, Organization) SHALL be resolvable per the MedMij FHIR IG by Nictiz.
-
 ##### XIS: response message
 
-The XIS returns an HTTP Status code appropriate to the processing outcome and a Bundle with `Bundle.type` equal to _searchset_, including Task resources conforming to the `pt-Task` profile. The Bundle SHOULD also contain referenced `pt-DigitalGroupPlan`, `pt-ExecutionOrder`, and `pt-DigitalActivity` resources needed to display and group the tasks.
+The XIS returns an HTTP Status code appropriate to the processing outcome as well as a Bundle, with `Bundle.type` equal to *searchset*, including the resources matching the search query. The resources included in the Bundle SHALL conform to the profiles listed {{pagelink: FHIRProfilesIndex, text: here}}.
 
 ##### Module system: update task status
 
