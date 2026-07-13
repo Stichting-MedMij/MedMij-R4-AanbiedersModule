@@ -9,9 +9,9 @@ Usage: #definition
 * date = "2026-07-13"
 * insert PublisherAndContact
 * description = "Search Tasks based on the referenced digital activity (ActivityDefinition) they instantiate."
-* purpose = "Enables clients and servers to find the Task(s) that are associated with a particular DigitalActivity (ActivityDefinition), which is referenced from the Task via the ext-DigitalActivity extension."
+* purpose = "Enables clients and servers to find the Task(s) that are associated with a particular digital activity (ActivityDefinition), which is referenced from the Task via the ext-DigitalActivity extension."
 * code = #digitalActivity
 * base = #Task
 * type = #reference
 * target = #ActivityDefinition
-* expression = "Task.extension('http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity').value"
+* expression = "Task.extension('http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity')"
