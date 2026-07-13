@@ -1,13 +1,13 @@
 Instance: pt-Task-digitalActivity
 InstanceOf: SearchParameter
 Usage: #definition
-* insert DefaultNarrative
+* insert DefaultNarrativeInstance
 * url = "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity"
 * name = "PtTaskDigitalActivity"
 * status = #draft
 * experimental = false
 * date = "2026-07-13"
-* insert PublisherAndContact
+* insert PublisherAndContactInstance
 * description = "Search Tasks based on the referenced digital activity (ActivityDefinition) they instantiate."
 * purpose = "Enables clients and servers to find the Task(s) that are associated with a particular digital activity (ActivityDefinition), which is referenced from the Task via the ext-DigitalActivity extension."
 * code = #digitalActivity
