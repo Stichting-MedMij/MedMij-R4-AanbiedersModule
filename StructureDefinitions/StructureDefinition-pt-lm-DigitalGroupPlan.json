@@ -1,0 +1,142 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pt-lm-DigitalGroupPlan",
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-be-target"
+    }
+  ],
+  "url": "http://medmij.nl/fhir/StructureDefinition/pt-lm-DigitalGroupPlan",
+  "name": "PtLmDigitalGroupPlan",
+  "title": "Digital Group Plan",
+  "status": "draft",
+  "publisher": "MedMij",
+  "contact": [
+    {
+      "name": "MedMij",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@medmij.nl",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "Patient-specific digital group plan that groups related tasks belonging to the same digital care module. The digital group plan provides the display label used to present grouped tasks in the patient's task list.",
+  "purpose": "This LogicalModel represents the DigitalGroupPlan building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
+  "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "pt-dataset-100-alpha1-20260511",
+      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://medmij.nl/fhir/StructureDefinition/pt-lm-DigitalGroupPlan",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "pt-lm-DigitalGroupPlan",
+        "path": "pt-lm-DigitalGroupPlan",
+        "short": "Digital group plan",
+        "definition": "Patient-specific digital group plan that groups related tasks belonging to the same digital care module. The digital group plan provides the display label used to present grouped tasks in the patient's task list.",
+        "alias": [
+          "DigitaalGroepsplan"
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-20",
+            "comment": "DigitalGroupPlan"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-DigitalGroupPlan.Name",
+        "path": "pt-lm-DigitalGroupPlan.Name",
+        "short": "Name",
+        "definition": "Human-readable name of the digital group plan, used as the display label for grouped tasks.",
+        "alias": [
+          "Naam"
+        ],
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-21",
+            "comment": "Name"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-DigitalGroupPlan.Status",
+        "path": "pt-lm-DigitalGroupPlan.Status",
+        "short": "Status",
+        "definition": "Current state of the digital group plan request.",
+        "alias": [
+          "Status"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-status"
+        },
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-22",
+            "comment": "Status"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-DigitalGroupPlan.Requester",
+        "path": "pt-lm-DigitalGroupPlan.Requester",
+        "short": "Requester",
+        "definition": "Healthcare professional that requested this digital group plan for the patient.",
+        "alias": [
+          "Aanvrager"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://medmij.nl/fhir/StructureDefinition/medmij-core-lm-HealthProfessional"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-23",
+            "comment": "Requester"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -3,7 +3,7 @@
   "id": "ProviderTasks-ServiceRequestExecution-Glucosemeting",
   "meta": {
     "profile": [
-      "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder"
+      "http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder"
     ]
   },
   "intent": "order",

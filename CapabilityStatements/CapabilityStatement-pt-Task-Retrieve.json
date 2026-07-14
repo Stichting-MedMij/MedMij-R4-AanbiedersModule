@@ -50,7 +50,7 @@
         {
           "type": "ActivityDefinition",
           "supportedProfile": [
-            "http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition"
+            "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
           ],
           "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
           "interaction": [
@@ -63,8 +63,8 @@
         {
           "type": "ServiceRequest",
           "supportedProfile": [
-            "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan",
-            "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder"
+            "http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan",
+            "http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder"
           ],
           "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
           "interaction": [

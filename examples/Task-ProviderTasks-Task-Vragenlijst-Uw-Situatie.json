@@ -2,6 +2,12 @@
   "resourceType": "Task",
   "id": "ProviderTasks-Task-Vragenlijst-Uw-Situatie",
   "meta": {
+    "tag": [
+      {
+        "system": "http://medmij.nl/fhir/CodeSystem/information-standard",
+        "code": "providertasks"
+      }
+    ],
     "profile": [
       "http://medmij.nl/fhir/StructureDefinition/pt-Task"
     ]
@@ -12,7 +18,7 @@
   },
   "extension": [
     {
-      "url": "http://vzvz.nl/fhir/StructureDefinition/instantiates",
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity",
       "valueReference": {
         "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Vragenlijst-Uw-Situatie",
         "type": "ActivityDefinition"

@@ -3,7 +3,7 @@
   "id": "ProviderTasks-ActivityDefinition-Informatie-Cholesterol",
   "meta": {
     "profile": [
-      "http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition"
+      "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
     ]
   },
   "text": {
@@ -12,7 +12,7 @@
   },
   "extension": [
     {
-      "url": "http://koppeltaal.nl/fhir/StructureDefinition/KT2EndpointExtension",
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint",
       "valueReference": {
         "reference": "Endpoint/ProviderTasks-Endpoint-Minddistrict"
       }

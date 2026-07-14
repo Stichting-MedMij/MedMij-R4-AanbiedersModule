@@ -3,7 +3,7 @@
   "id": "ProviderTasks-ServiceRequestDigitalGroup-CVRM",
   "meta": {
     "profile": [
-      "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan"
+      "http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan"
     ]
   },
   "intent": "plan",

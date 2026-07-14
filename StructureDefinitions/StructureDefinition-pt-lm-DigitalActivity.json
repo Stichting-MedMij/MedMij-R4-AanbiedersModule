@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "pt-lm-Activity",
+  "id": "pt-lm-DigitalActivity",
   "text": {
     "status": "empty",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
@@ -11,10 +11,10 @@
       "valueCode": "can-be-target"
     }
   ],
-  "url": "http://medmij.nl/fhir/StructureDefinition/pt-lm-Activity",
-  "name": "LmActivity",
+  "url": "http://medmij.nl/fhir/StructureDefinition/pt-lm-DigitalActivity",
+  "name": "PtLmDigitalActivity",
   "title": "Digital Activity",
-  "status": "active",
+  "status": "draft",
   "publisher": "MedMij",
   "contact": [
     {
@@ -29,7 +29,7 @@
     }
   ],
   "description": "Reusable definition of a digital activity (module) that can be selected by a healthcare professional and presented to a patient as part of the care process. The activity describes what the patient will do (e.g., read information, complete a questionnaire, perform a home measurement) and provides the information needed to start or access the activity when applicable.",
-  "purpose": "To describe a reusable digital activity that can be selected and assigned by a healthcare professional to support the care process for a patient. The activity provides patient-facing content or actions (e.g., information, questionnaires, or home measurements).",
+  "purpose": "This LogicalModel represents the DigitalActivity building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -39,37 +39,37 @@
     }
   ],
   "kind": "logical",
-  "abstract": true,
-  "type": "http://medmij.nl/fhir/StructureDefinition/pt-lm-Activity",
+  "abstract": false,
+  "type": "http://medmij.nl/fhir/StructureDefinition/pt-lm-DigitalActivity",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
   "derivation": "specialization",
   "differential": {
     "element": [
       {
-        "id": "pt-lm-Activity",
-        "path": "pt-lm-Activity",
-        "short": "Digital Activity",
+        "id": "pt-lm-DigitalActivity",
+        "path": "pt-lm-DigitalActivity",
+        "short": "Digital activity",
         "definition": "Reusable definition of a digital activity (module) that can be selected by a healthcare professional and presented to a patient as part of the care process. The activity describes what the patient will do (e.g., read information, complete a questionnaire, perform a home measurement) and provides the information needed to start or access the activity when applicable.",
         "alias": [
-          "Digitale Activiteit"
+          "DigitaleActiviteit"
         ],
         "mapping": [
           {
             "identity": "pt-dataset-100-alpha1-20260511",
             "map": "pt-dataelement-9",
-            "comment": "Activity"
+            "comment": "DigitalActivity"
           }
         ]
       },
       {
-        "id": "pt-lm-Activity.Title",
-        "path": "pt-lm-Activity.Title",
-        "short": "Short, human-friendly title for the digital activity.",
+        "id": "pt-lm-DigitalActivity.Title",
+        "path": "pt-lm-DigitalActivity.Title",
+        "short": "Title",
         "definition": "Short, human-friendly title for the digital activity.",
         "alias": [
           "Titel"
         ],
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {
@@ -85,10 +85,10 @@
         ]
       },
       {
-        "id": "pt-lm-Activity.Status",
-        "path": "pt-lm-Activity.Status",
-        "short": "Lifecycle status of the digital activity (e.g., draft, active, retired). A retired activity can no longer be selected or assigned.",
-        "definition": "Lifecycle status of the digital activity (e.g., draft, active, retired). A retired activity can no longer be selected or assigned.",
+        "id": "pt-lm-DigitalActivity.Status",
+        "path": "pt-lm-DigitalActivity.Status",
+        "short": "Status",
+        "definition": "Lifecycle status of the digital activity.",
         "alias": [
           "Status"
         ],
@@ -99,6 +99,10 @@
             "code": "code"
           }
         ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status"
+        },
         "mapping": [
           {
             "identity": "pt-dataset-100-alpha1-20260511",
@@ -108,10 +112,13 @@
         ]
       },
       {
-        "id": "pt-lm-Activity.Publisher",
-        "path": "pt-lm-Activity.Publisher",
-        "short": "Organization responsible for the content/functionality of this digital activity and its maintenance.",
+        "id": "pt-lm-DigitalActivity.Publisher",
+        "path": "pt-lm-DigitalActivity.Publisher",
+        "short": "Publisher",
         "definition": "Organization responsible for the content/functionality of this digital activity and its maintenance.",
+        "alias": [
+          "Uitgever"
+        ],
         "min": 0,
         "max": "1",
         "type": [
@@ -128,9 +135,9 @@
         ]
       },
       {
-        "id": "pt-lm-Activity.Description",
-        "path": "pt-lm-Activity.Description",
-        "short": "Guidance on how this digital activity should be used in clinical workflows.",
+        "id": "pt-lm-DigitalActivity.Description",
+        "path": "pt-lm-DigitalActivity.Description",
+        "short": "Description",
         "definition": "Guidance on how this digital activity should be used in clinical workflows.",
         "alias": [
           "Omschrijving"
@@ -151,16 +158,22 @@
         ]
       },
       {
-        "id": "pt-lm-Activity.Timing",
-        "path": "pt-lm-Activity.Timing",
-        "short": "Generic recommendation for how often/when the activity is typically performed. Patient-specific scheduling belongs in the clinical order (e.g., ServiceRequest).",
-        "definition": "Generic recommendation for how often/when the activity is typically performed. Patient-specific scheduling belongs in the clinical order (e.g., ServiceRequest).",
+        "id": "pt-lm-DigitalActivity.Schedule[x]",
+        "path": "pt-lm-DigitalActivity.Schedule[x]",
+        "short": "Schedule",
+        "definition": "Generic recommendation for how often/when the activity is typically performed. Patient-specific scheduling belongs in the execution order.",
         "alias": [
           "Tijdschema"
         ],
         "min": 0,
         "max": "1",
         "type": [
+          {
+            "code": "dateTime"
+          },
+          {
+            "code": "Period"
+          },
           {
             "code": "Timing"
           }
@@ -169,7 +182,30 @@
           {
             "identity": "pt-dataset-100-alpha1-20260511",
             "map": "pt-dataelement-14",
-            "comment": "Timing"
+            "comment": "Schedule"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-DigitalActivity.Usage",
+        "path": "pt-lm-DigitalActivity.Usage",
+        "short": "Usage",
+        "definition": "A detailed description of how the digital activity is used from a clinical perspective. In the MedMij use case, this text is intended for the healthcare professional who is selecting and assigning the activity to the patient.",
+        "alias": [
+          "Gebruik"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-30",
+            "comment": "Usage"
           }
         ]
       }

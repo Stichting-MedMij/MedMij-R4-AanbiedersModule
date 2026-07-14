@@ -7,6 +7,7 @@
   },
   "url": "http://medmij.nl/fhir/StructureDefinition/pt-Task",
   "name": "PtTask",
+  "title": "pt Task",
   "status": "draft",
   "publisher": "MedMij",
   "contact": [
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "description": "This (FHIR) Task profile describes a patient-specific actionable item, intended to be presented to the patient in a client application (e.g., a PGO) and/or processed within the Koppeltaal workflow. It may optionally reference an ActivityDefinition that defines what should be launched or performed (module, questionnaire, information, measurement).",
-  "purpose": "This profile represents a patient-specific actionable item, intended to be presented to the patient in a client application (e.g., a PGO) and/or processed in the Koppeltaal workflow, optionally instantiating an ActivityDefinition that can be launched or performed (module, questionnaire, information, measurement).",
+  "description": "Patient-specific task that tells a patient what to do as part of a digital care activity. A Task is shown in the patient's task list and supports tracking progress and completion over time.",
+  "purpose": "This Task resource represents the Task building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -42,7 +43,7 @@
         "id": "Task",
         "path": "Task",
         "short": "Task",
-        "definition": "A patient-specific actionable item, assigned to the patient and optionally linked to an ActivityDefinition describing what to launch or perform.",
+        "definition": "Patient-specific task that tells a patient what to do as part of a digital care activity. A Task is shown in the patient's task list and supports tracking progress and completion over time.",
         "alias": [
           "Taak"
         ],
@@ -68,11 +69,12 @@
           "rules": "open"
         },
         "short": "Reference to ActivityDefinition",
-        "definition": "A link to the ActivityDefinition that defines the launchable eHealth activity (i.e., what module/content should be launched or performed) associated with this Task. In both MedMij and Koppeltaal implementations, this link is carried using the Koppeltaal instantiates extension.",
+        "definition": "A link to the ActivityDefinition that defines the launchable eHealth activity (i.e., what module/content should be launched or performed) associated with this Task.",
         "alias": [
           "DigitaleActiviteit",
           "user content"
-        ]
+        ],
+        "min": 1
       },
       {
         "id": "Task.extension.extension",
@@ -103,37 +105,22 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://medmij.nl/fhir/StructureDefinition/pt-ActivityDefinition"
+              "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
             ]
           }
         ]
       },
       {
-        "id": "Task.extension:resource-origin",
+        "id": "Task.extension:digitalActivity",
         "path": "Task.extension",
-        "sliceName": "resource-origin",
-        "min": 0,
+        "sliceName": "digitalActivity",
+        "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "http://koppeltaal.nl/fhir/StructureDefinition/resource-origin"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Task.extension:instantiates",
-        "path": "Task.extension",
-        "sliceName": "instantiates",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://vzvz.nl/fhir/StructureDefinition/instantiates"
+              "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity"
             ]
           }
         ],
@@ -141,13 +128,14 @@
           {
             "identity": "pt-dataset-100-alpha1-20260511",
             "map": "pt-dataelement-2",
-            "comment": "ActivityDefinition"
+            "comment": "DigitalActivity"
           }
         ]
       },
       {
         "id": "Task.identifier",
         "path": "Task.identifier",
+        "comment": "Mapping to the functional model is pending: a corresponding identifier concept is to be added to the Task Logical Model.",
         "min": 1
       },
       {
@@ -156,13 +144,15 @@
         "short": "Digital group plan",
         "definition": "Reference to the ServiceRequest that initiates the digital group plan for the patient. This is the module-level order and links the Task to the requested digital group plan.",
         "alias": [
-          "GebaseerdOp"
+          "DigitaalGroepsplan"
         ],
+        "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan"
+              "http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan"
             ]
           }
         ],
@@ -170,19 +160,7 @@
           {
             "identity": "pt-dataset-100-alpha1-20260511",
             "map": "pt-dataelement-3",
-            "comment": "BasedOn"
-          }
-        ]
-      },
-      {
-        "id": "Task.partOf",
-        "path": "Task.partOf",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://medmij.nl/fhir/StructureDefinition/pt-Task"
-            ]
+            "comment": "GroupPlan"
           }
         ]
       },
@@ -238,12 +216,22 @@
         "path": "Task.focus",
         "short": "Patient-specific execution details",
         "definition": "Reference to the ServiceRequest that contains patient-specific scheduling and/or instructions that deviate from or complement the generic ActivityDefinition guidance.",
+        "alias": [
+          "Uitvoeringsopdracht"
+        ],
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-ExecutionOrder"
+              "http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder"
             ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-19",
+            "comment": "ExecutionOrder"
           }
         ]
       },
@@ -251,7 +239,6 @@
         "id": "Task.for",
         "path": "Task.for",
         "definition": "The patient who benefits from the performance of the service specified in the task.",
-        "comment": "In this profile, this element always refers to the patient for whom the task is intended.",
         "requirements": "Used to track tasks outstanding for a beneficiary. Do not use to track the task owner or creator (see owner and creator respectively). This can also affect access control.",
         "min": 1,
         "type": [
@@ -282,7 +269,8 @@
       {
         "id": "Task.requester",
         "path": "Task.requester",
-        "definition": "In Koppeltaal this element contains a reference to the person requesting the eHealth Task",
+        "short": "Requester",
+        "definition": "The healthcare professional who requested or initiated this Task.",
         "comment": "Each occurrence of the zib HealthProfessional is normally represented by _two_ FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.\n\nIn rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.",
         "alias": [
           "Aanvrager"
@@ -291,11 +279,8 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Device",
-              "http://hl7.org/fhir/StructureDefinition/Organization",
               "http://hl7.org/fhir/StructureDefinition/Practitioner",
               "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
-              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
             ]
           }
@@ -311,8 +296,13 @@
       {
         "id": "Task.owner",
         "path": "Task.owner",
-        "definition": "Practitioner, CareTeam, RelatedPerson or Patient currently responsible for task execution.",
-        "comment": "For Koppeltaal: In Koppeltaal the patient is usually the person who executes the task. Note, this element is not intended to be used for access restriction. That is left to the relevant applications.\r\n\r\nEach occurrence of the zib HealthProfessional is normally represented by two FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.\r\n\r\nIn rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.\r\n\r\n In ProviderTasks, the owner is typically the performer of the task (usually the patient), but execution may also be delegated to another responsible party such as a caregiver/contact person or a care team.",
+        "short": "Owner",
+        "definition": "The party currently responsible for executing the task.",
+        "comment": "In Provider Tasks, the owner is typically the performer of the task (usually the patient), but execution may also be delegated to another responsible party such as a caregiver/contact person or a care team.\n\nEach occurrence of the zib HealthProfessional is normally represented by two FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.\n\nIn rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.",
+        "alias": [
+          "Uitvoerder",
+          "Executer"
+        ],
         "min": 1,
         "type": [
           {
@@ -331,6 +321,13 @@
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-ContactPerson"
             ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-24",
+            "comment": "Owner"
           }
         ]
       }

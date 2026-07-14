@@ -1,12 +1,13 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "pt-ServiceRequest-DigitalGroupPlan",
+  "id": "pt-ExecutionOrder",
   "text": {
     "status": "empty",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
-  "url": "http://medmij.nl/fhir/StructureDefinition/pt-ServiceRequest-DigitalGroupPlan",
-  "name": "PtServiceRequestDigitalGroupPlan",
+  "url": "http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder",
+  "name": "PtExecutionOrder",
+  "title": "pt ExecutionOrder",
   "status": "draft",
   "publisher": "MedMij",
   "contact": [
@@ -21,10 +22,16 @@
       ]
     }
   ],
-  "description": "Clinical request representing the selected digital group plan for a specific patient. This ServiceRequest identifies which digital group plan is requested. Patient-specific scheduling and instructions are provided in a separate ServiceRequest",
-  "purpose": "To represent the healthcare professional’s order to start a specific digital group plan for a patient.",
+  "description": "Patient-specific execution order for a digital activity, created by a healthcare professional for a patient.",
+  "purpose": "This ServiceRequest resource represents the ExecutionOrder building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "pt-dataset-100-alpha1-20260511",
+      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+    }
+  ],
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
@@ -35,73 +42,37 @@
       {
         "id": "ServiceRequest",
         "path": "ServiceRequest",
-        "short": "ServiceRequest digital group plan",
-        "definition": "Patient-specific clinical order to initiate a digital group plan. It is referenced from the patient-facing Task via Task.basedOn.",
+        "short": "Execution order",
+        "definition": "Patient-specific clinical order for a digital activity, created by a healthcare professional for a patient.",
         "alias": [
-          "Module-opdracht",
+          "Uitvoeringsopdracht",
           "referral",
           "referral request",
           "transfer of care request"
-        ]
-      },
-      {
-        "id": "ServiceRequest.extension",
-        "path": "ServiceRequest.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "ServiceRequest.extension:resource-origin",
-        "path": "ServiceRequest.extension",
-        "sliceName": "resource-origin",
-        "min": 0,
-        "max": "1",
-        "type": [
+        ],
+        "mapping": [
           {
-            "code": "Extension",
-            "profile": [
-              "http://koppeltaal.nl/fhir/StructureDefinition/resource-origin"
-            ]
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-15",
+            "comment": "ExecutionOrder"
           }
         ]
       },
       {
+        "id": "ServiceRequest.status",
+        "path": "ServiceRequest.status",
+        "short": "Status",
+        "definition": "Current state of the execution order (e.g., draft, active, on-hold, revoked, completed)."
+      },
+      {
         "id": "ServiceRequest.intent",
         "path": "ServiceRequest.intent",
-        "patternCode": "plan"
-      },
-      {
-        "id": "ServiceRequest.code",
-        "path": "ServiceRequest.code",
-        "short": "Digital group plan identifier",
-        "definition": "Identifies which digital group plan is requested for the patient. The human-readable (display) name of the digital group plan is carried in `code.text` and is used as the group label in the PHR.",
-        "alias": [
-          "Identificatie digitaal groepsplan"
-        ],
-        "min": 1
-      },
-      {
-        "id": "ServiceRequest.code.text",
-        "path": "ServiceRequest.code.text",
-        "short": "Display name of the digital group plan",
-        "definition": "Human-readable name of the digital group plan. This name is used as the display label of the Task group in the PHR and MUST match the name used to identify the group in the `Task.basedOn` reference. The source system fills this element with the (display) name of the digital group plan when a healthcare professional starts a digital group plan/module for a patient.",
-        "alias": [
-          "Naam digitaal groepsplan"
-        ],
-        "min": 1
+        "patternCode": "order"
       },
       {
         "id": "ServiceRequest.subject",
         "path": "ServiceRequest.subject",
-        "definition": "The patient for whom the activity is requested.",
+        "definition": "The patient for whom the digital activity applies.",
         "type": [
           {
             "code": "Reference",
@@ -116,21 +87,62 @@
         ]
       },
       {
+        "id": "ServiceRequest.occurrence[x]",
+        "path": "ServiceRequest.occurrence[x]",
+        "short": "Occurrence",
+        "definition": "Requested schedule for performing the activity (e.g., duration, frequency, time of day).",
+        "alias": [
+          "Tijdschema"
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-17",
+            "comment": "Schedule"
+          }
+        ]
+      },
+      {
         "id": "ServiceRequest.requester",
         "path": "ServiceRequest.requester",
+        "short": "Requester",
+        "definition": "Healthcare professional that requests this activity for the patient.",
         "comment": "Each occurrence of the zib HealthProfessional is normally represented by _two_ FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.\n\nIn rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.",
+        "alias": [
+          "Aanvrager",
+          "orderer"
+        ],
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/Practitioner",
               "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
-              "http://hl7.org/fhir/StructureDefinition/Organization",
-              "http://hl7.org/fhir/StructureDefinition/Patient",
-              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
-              "http://hl7.org/fhir/StructureDefinition/Device",
               "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
             ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-18",
+            "comment": "Requester"
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.patientInstruction",
+        "path": "ServiceRequest.patientInstruction",
+        "short": "Patient-specific instructions",
+        "definition": "Patient-oriented instructions that may differ from or add to the generic activity information (e.g., fasting measurements, preferred timing, preparation steps). These instructions should be shown alongside the task(s) created from this order.",
+        "alias": [
+          "PatiëntenInstructie"
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-16",
+            "comment": "PatientInstruction"
           }
         ]
       }

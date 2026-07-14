@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "pt-lm-ServiceRequest",
+  "id": "pt-lm-ExecutionOrder",
   "text": {
     "status": "empty",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
@@ -11,10 +11,10 @@
       "valueCode": "can-be-target"
     }
   ],
-  "url": "http://medmij.nl/fhir/StructureDefinition/pt-lm-ServiceRequest",
-  "name": "LmServiceRequest",
-  "title": "ServiceRequest",
-  "status": "active",
+  "url": "http://medmij.nl/fhir/StructureDefinition/pt-lm-ExecutionOrder",
+  "name": "PtLmExecutionOrder",
+  "title": "Execution Order",
+  "status": "draft",
   "publisher": "MedMij",
   "contact": [
     {
@@ -28,8 +28,8 @@
       ]
     }
   ],
-  "description": "Patient-specific clinical order for a digital activity, created by a healthcare professional for a patient.",
-  "purpose": "To represent a healthcare professional’s clinical order to start or perform a specific digital activity for a patient. The ServiceRequest captures the intended schedule and patient-specific instructions and can serve as the basis for one or more patient-facing Tasks that track execution and completion.",
+  "description": "Patient-specific execution order for a digital activity, created by a healthcare professional for a patient.",
+  "purpose": "This LogicalModel represents the ExecutionOrder building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -39,37 +39,37 @@
     }
   ],
   "kind": "logical",
-  "abstract": true,
-  "type": "http://medmij.nl/fhir/StructureDefinition/pt-lm-ServiceRequest",
+  "abstract": false,
+  "type": "http://medmij.nl/fhir/StructureDefinition/pt-lm-ExecutionOrder",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
   "derivation": "specialization",
   "differential": {
     "element": [
       {
-        "id": "pt-lm-ServiceRequest",
-        "path": "pt-lm-ServiceRequest",
-        "short": "ServiceRequest",
-        "definition": "Patient-specific clinical order for a digital activity, created by a healthcare professional for a patient.",
+        "id": "pt-lm-ExecutionOrder",
+        "path": "pt-lm-ExecutionOrder",
+        "short": "Execution order",
+        "definition": "Patient-specific execution order for a digital activity, created by a healthcare professional for a patient.",
         "alias": [
-          "Zorgopdracht"
+          "Uitvoeringsopdracht"
         ],
         "mapping": [
           {
             "identity": "pt-dataset-100-alpha1-20260511",
             "map": "pt-dataelement-15",
-            "comment": "ServiceRequest"
+            "comment": "ExecutionOrder"
           }
         ]
       },
       {
-        "id": "pt-lm-ServiceRequest.PatientInstruction",
-        "path": "pt-lm-ServiceRequest.PatientInstruction",
-        "short": "Patient-oriented instructions that may differ from or add to the generic activity information (e.g., fasting measurements, preferred timing, preparation steps). These instructions should be shown alongside the Task(s) created from this order.",
-        "definition": "Patient-oriented instructions that may differ from or add to the generic activity information (e.g., fasting measurements, preferred timing, preparation steps). These instructions should be shown alongside the Task(s) created from this order.",
+        "id": "pt-lm-ExecutionOrder.PatientInstruction",
+        "path": "pt-lm-ExecutionOrder.PatientInstruction",
+        "short": "Patient instruction",
+        "definition": "Patient-oriented instructions that may differ from or add to the generic activity information. These instructions should be shown alongside the task(s) created from this order.",
         "alias": [
           "PatiëntenInstructie"
         ],
-        "min": 1,
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -85,10 +85,10 @@
         ]
       },
       {
-        "id": "pt-lm-ServiceRequest.Occurrence[x]",
-        "path": "pt-lm-ServiceRequest.Occurrence[x]",
-        "short": "Requested schedule for performing the activity (e.g., duration, frequency, time of day).",
-        "definition": "Requested schedule for performing the activity (e.g., duration, frequency, time of day).",
+        "id": "pt-lm-ExecutionOrder.Schedule[x]",
+        "path": "pt-lm-ExecutionOrder.Schedule[x]",
+        "short": "Schedule",
+        "definition": "Requested schedule for performing the activity.",
         "alias": [
           "Tijdschema"
         ],
@@ -109,14 +109,14 @@
           {
             "identity": "pt-dataset-100-alpha1-20260511",
             "map": "pt-dataelement-17",
-            "comment": "Occurrence"
+            "comment": "Schedule"
           }
         ]
       },
       {
-        "id": "pt-lm-ServiceRequest.Requester",
-        "path": "pt-lm-ServiceRequest.Requester",
-        "short": "Healthcare professional that requests this activity for the patient.",
+        "id": "pt-lm-ExecutionOrder.Requester",
+        "path": "pt-lm-ExecutionOrder.Requester",
+        "short": "Requester",
         "definition": "Healthcare professional that requests this activity for the patient.",
         "alias": [
           "Aanvrager"
