@@ -14,7 +14,7 @@ Note that in addition to this design, the (technical) guidelines as specified in
 
 ## Workflow model
 
-For this use case, the [HL7 Clinical Order Workflows IG](https://build.fhir.org/ig/HL7/fhir-cow-ig/en/index.html) has been used as the guiding framework (see the {{pagelink: Dependencies, text: Dependencies}} page for the package version). Clinical Order Worklflows provides shared data models and coordination rules for request-fulfillment workflows. Provider Tasks uses the FHIR R4 workflow resources `Task`, `ServiceRequest`, and `ActivityDefinition`. Their roles and relationships within this information standard are described below and follow the [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html).
+For this use case, the [HL7 Clinical Order Workflows IG](https://build.fhir.org/ig/HL7/fhir-cow-ig/en/index.html) has been used as the guiding framework (see the {{pagelink: Dependencies, text: Dependencies}} page for the package version). Clinical Order Workflows provides shared data models and coordination rules for request-fulfillment workflows. Provider Tasks uses the FHIR R4 workflow resources `Task`, `ServiceRequest`, and `ActivityDefinition`. Their roles and relationships within this information standard are described below and follow the [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html).
 
 ## Actors involved
 
@@ -31,7 +31,7 @@ For this use case, the [HL7 Clinical Order Workflows IG](https://build.fhir.org/
 
 This technical design includes use cases for exchanging task data between healthcare providers and patients via a PHR.
 
-This technical design assumes that a PHR s able to make a connection to the right XIS that contains the patient's information. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/medmij-service-requests/actueel/v0-8-aanbiedermodules). Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters for patient identification SHALL NOT be included.
+This technical design assumes that a PHR is able to make a connection to the right XIS that contains the patient's information. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/medmij-service-requests/actueel/v0-8-aanbiedermodules). Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters for patient identification SHALL NOT be included.
 
 Out of scope for this technical design:
 - Exchange of clinical results produced by executing the activity (Event resources such as Observation or QuestionnaireResponse).
@@ -88,7 +88,7 @@ The healthcare provider initiates digital activities for the patient. The patien
 
 | Transaction group | Transaction | Actor | Role |
 | --- | --- | --- | --- |
-| Retrieve task list (PULL) | Retreive task data | Patient (using a PHR) | Retrieves tasks and related context from the source system |
+| Retrieve task list (PULL) | Retrieve task data | Patient (using a PHR) | Retrieves tasks and related context from the source system |
 | Retrieve task list (PULL) | Serve task data | Healthcare provider (using a source system) | Returns tasks and related context to the PHR |
 | Launch | Start external module | Patient (using a PHR) | Launches the digital activity in a module system |
 | Update task | Update task | Module system | Updates `Task.status` after activity interaction |
@@ -121,7 +121,7 @@ The digital activity reference is carried in the `ext-DigitalActivity` extension
 
 | Description | FHIR search parameter | Examples |
 | --- | --- | --- |
-| Filter Tasks belonging to the Provider Tasks information standard | `_tag` | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`|
+| Filter Tasks belonging to the Provider Tasks information standard | `_tag` | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard\|providertasks` |
 | Include the digital activity referenced from the Task | `_include=Task:digitalActivity` | `GET [base]/Task?_include=Task:digitalActivity` |
 | Include the digital group plan on which the Task is based | `_include=Task:based-on` | `GET [base]/Task?_include=Task:based-on` |
 | Include the execution order referenced from the Task | `_include=Task:focus` | `GET [base]/Task?_include=Task:focus` |

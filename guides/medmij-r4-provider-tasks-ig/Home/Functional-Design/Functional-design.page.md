@@ -114,7 +114,6 @@ Na afloop keert Koos terug naar de PGO. In de takenlijst ziet Koos dat de taak o
 
 #### Bedrijfsrollen
 
-### Bedrijfsrollen
 Deze usecase onderscheidt twee bedrijfsrollen, namelijk de Patiënt en de Zorgaanbieder, zoals te zien in onderstaande tabel.
 
 | Bedrijfsrol (actor) | Beschrijving |
