@@ -179,5 +179,6 @@ De dataset is uitgewerkt aan de hand van Logical Models:
 
 - LogicalModel {{pagelink: LogicalModelsIndex, text: Digitale activiteit, anchor: ptlmDigitalActivity}}
 - LogicalModel {{pagelink: LogicalModelsIndex, text: Digitaal groepsplan, anchor: ptlmDigitalGroupPlan}}
-- LogicalModel {{pagelink: LogicalModelsIndex, text: Uitvoeringsopdracht, anchor: ptlmExecutionOrder}}
 - LogicalModel {{pagelink: LogicalModelsIndex, text: Endpoint, anchor: ptlmEndpoint}}
+- LogicalModel {{pagelink: LogicalModelsIndex, text: Uitvoeringsopdracht, anchor: ptlmExecutionOrder}}
+- LogicalModel {{pagelink: LogicalModelsIndex, text: Endpoint, anchor: ptlmTask}}
