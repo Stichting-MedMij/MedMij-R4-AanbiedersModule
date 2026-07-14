@@ -44,11 +44,11 @@ The functional model of Provider Tasks is represented by {{pagelink: LogicalMode
 
 | Logical Model | FHIR resource | FHIR profile |
 | --- | --- | --- |
-| {{pagelink: LogicalModelsIndex, text: Task, anchor: ptlmTask}} | Task | pt-Task |
-| {{pagelink: LogicalModelsIndex, text: Digital activity, anchor: ptlmDigitalActivity}} | ActivityDefinition | pt-DigitalActivity |
-| {{pagelink: LogicalModelsIndex, text: Digital group plan, anchor: ptlmDigitalGroupPlan}} | ServiceRequest | pt-DigitalGroupPlan |
-| {{pagelink: LogicalModelsIndex, text: Execution order, anchor: ptlmExecutionOrder}} | ServiceRequest | pt-ExecutionOrder |
-| {{pagelink: LogicalModelsIndex, text: Endpoint, anchor: ptlmEndpoint}} | Endpoint | pt-Endpoint |
+| {{pagelink: LogicalModelsIndex, text: Task, anchor: ptlmTask}} | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} |
+| {{pagelink: LogicalModelsIndex, text: Digital activity, anchor: ptlmDigitalActivity}} | ActivityDefinition | {{pagelink: FHIRProfilesIndex, text: pt-DigitalActivity, anchor: ptDigitalActivity}} |
+| {{pagelink: LogicalModelsIndex, text: Digital group plan, anchor: ptlmDigitalGroupPlan}} | ServiceRequest | {{pagelink: FHIRProfilesIndex, text: pt-DigitalGroupPlan, anchor: ptDigitalGroupPlan}} |
+| {{pagelink: LogicalModelsIndex, text: Execution order, anchor: ptlmExecutionOrder}} | ServiceRequest | {{pagelink: FHIRProfilesIndex, text: pt-ExecutionOrder, anchor: ptExecutionOrder}} |
+| {{pagelink: LogicalModelsIndex, text: Endpoint, anchor: ptlmEndpoint}} | Endpoint | {{pagelink: FHIRProfilesIndex, text: pt-Endpoint, anchor: ptEndpoint}} |
 
 **Table 2: Mapping between Logical Models and FHIR profiles**
 
@@ -207,13 +207,13 @@ The XIS returns an HTTP Status code appropriate to the processing outcome as wel
 
 | Description | CIM NL | HCIM EN | FHIR profile | Search URL |
 | --- | --- | --- | --- | --- |
-| Retrieve task list | Taak | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} | `GET [base]/Task?_tag=…` |
-| Retrieve digital activity | Digitale activiteit | Digital Activity | pt-DigitalActivity | Resolved via `ext-DigitalActivity` on Task (`_include=Task:digitalActivity`) |
-| Retrieve digital group plan | Digitaal groepsplan | Digital Group Plan | pt-DigitalGroupPlan | Resolved via `Task.basedOn` |
-| Retrieve execution order | Uitvoeringsopdracht | Execution Order | pt-ExecutionOrder | Resolved via `Task.focus` |
+| Retrieve task list | Taak | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard\|providertasks&_include=Task:based-on&_include=Task:focus&_include=Task:digitalActivity` |
+| Retrieve digital activity | Digitale activiteit | Digital Activity |  {{pagelink: FHIRProfilesIndex, text: pt-DigitalActivity, anchor: ptDigitalActivity}} | `GET [base]/Task?_include=Task:digitalActivity` |
+| Retrieve digital group plan | Digitaal groepsplan | Digital Group Plan | {{pagelink: FHIRProfilesIndex, text: pt-DigitalGroupPlan, anchor: ptDigitalGroupPlan}} | `GET [base]/Task?_include=Task:based-on` |
+| Retrieve execution order | Uitvoeringsopdracht | Execution Order | {{pagelink: FHIRProfilesIndex, text: pt-ExecutionOrder, anchor: ptExecutionOrder}} | `GET [base]/Task?_include=Task:focus` |
 | Retrieve launch endpoint | Endpoint | Endpoint | {{pagelink: FHIRProfilesIndex, text: pt-Endpoint, anchor: ptEndpoint}} | Resolved via endpoint reference on pt-DigitalActivity |
 | Update task status | Taak | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} | `PATCH [base]/Task/[id]` |
-| Retrieve healthcare provider | Zorgaanbieder | HealthcareProvider | [nl-core-HealthcareProvider](https://simplifier.net/resolve?canonical=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider&scope=nictiz.fhir.nl.r4.nl-core@0.12.0-beta.4), [nl-core-HealthcareProvider-Organization](https://simplifier.net/resolve?canonical=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization&scope=nictiz.fhir.nl.r4.nl-core@0.12.0-beta.4) | Resolved via `Task.requester` / `ServiceRequest.requester` → PractitionerRole.organization |
+| Retrieve healthcare provider | Zorgaanbieder | HealthcareProvider | [nl-core-HealthcareProvider](https://simplifier.net/resolve?canonical=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider&scope=nictiz.fhir.nl.r4.nl-core@0.12.0-beta.4) | Resolved via `Task.requester` / `ServiceRequest.requester` |
 | Retrieve health professional | Zorgverlener | HealthProfessional | [nl-core-HealthProfessional-Practitioner](https://simplifier.net/resolve?canonical=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner&scope=nictiz.fhir.nl.r4.nl-core@0.12.0-beta.4), [nl-core-HealthProfessional-PractitionerRole](https://simplifier.net/resolve?canonical=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole&scope=nictiz.fhir.nl.r4.nl-core@0.12.0-beta.4) | Resolved via `Task.requester` / `ServiceRequest.requester` |
 
 **Table 6: Overview of in-scope requests**
