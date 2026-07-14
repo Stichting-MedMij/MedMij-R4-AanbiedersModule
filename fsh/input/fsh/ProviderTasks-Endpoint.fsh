@@ -1,6 +1,7 @@
 Profile: PtEndpoint
 Parent: Endpoint
 Id: pt-Endpoint
+Title: "pt Endpoint"
 Description: "Technical FHIR REST endpoint of a source system (XIS), used by a Task to retrieve and update task data and the required context for the Provider Tasks use case."
 * ^status = #draft
 * insert PublisherAndContact

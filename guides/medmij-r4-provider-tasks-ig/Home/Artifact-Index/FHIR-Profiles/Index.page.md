@@ -8,11 +8,11 @@ The following FHIR profiles have been introduced for the Provider Tasks standard
 
 | CIM (concept) | FHIR resource | FHIR profile |
 | --- | --- | --- |
-| {{pagelink: LogicalModelsIndex, text: Task, anchor: ptlmTask}} | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} |
 | {{pagelink: LogicalModelsIndex, text: Digital activity, anchor: ptlmDigitalActivity}} | ActivityDefinition | {{pagelink: FHIRProfilesIndex, text: pt-DigitalActivity, anchor: ptDigitalActivity}} |
-| {{pagelink: LogicalModelsIndex, text: Execution order, anchor: ptlmExecutionOrder}} | ServiceRequest | {{pagelink: FHIRProfilesIndex, text: pt-ExecutionOrder, anchor: ptExecutionOrder}} |
 | {{pagelink: LogicalModelsIndex, text: Digital group plan, anchor: ptlmDigitalGroupPlan}} | ServiceRequest | {{pagelink: FHIRProfilesIndex, text: pt-DigitalGroupPlan, anchor: ptDigitalGroupPlan}} |
-|  | Endpoint | {{pagelink: FHIRProfilesIndex, text: pt-Endpoint, anchor: ptEndpoint}} |
+| {{pagelink: LogicalModelsIndex, text: Endpoint, anchor: ptlmEndpoint}} | Endpoint | {{pagelink: FHIRProfilesIndex, text: pt-Endpoint, anchor: ptEndpoint}} |
+| {{pagelink: LogicalModelsIndex, text: Execution order, anchor: ptlmExecutionOrder}} | ServiceRequest | {{pagelink: FHIRProfilesIndex, text: pt-ExecutionOrder, anchor: ptExecutionOrder}} |
+| {{pagelink: LogicalModelsIndex, text: Task, anchor: ptlmTask}} | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} |
 
 **Table 1: Relevant Provider tasks-specific profiles**
 

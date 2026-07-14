@@ -36,7 +36,7 @@ This technical design assumes that a PHR is able to make a connection to the rig
 Out of scope for this technical design:
 - Exchange of clinical results produced by executing the activity (Event resources such as Observation or QuestionnaireResponse).
 
-## Relating FHIR (profiles) to its functional counterpart
+## <a name="relatingFHIR"></a> Relating FHIR (profiles) to its functional counterpart
 
 The functional model of Provider Tasks is represented by {{pagelink: LogicalModelsIndex, text: Logical Models}}.
 - For each concept in these Logical Models, an id is assigned by MedMij. These ids are also added as mappings in the FHIR profiles on the corresponding elements, i.e. by specifying `.mapping.map` on each element accordingly. Therefore, these ids form the linking pin between the Logical Models and FHIR profiles. If no such mapping is possible for a certain element in a FHIR profile, guidance is provided to indicate how that element should be handled.
@@ -45,7 +45,7 @@ The functional model of Provider Tasks is represented by {{pagelink: LogicalMode
 | Logical Model | FHIR resource | FHIR profile |
 | --- | --- | --- |
 | {{pagelink: LogicalModelsIndex, text: Task, anchor: ptlmTask}} | Task | pt-Task |
-| {{pagelink: LogicalModelsIndex, text: Activity, anchor: ptlmActivity}} | ActivityDefinition | pt-DigitalActivity |
+| {{pagelink: LogicalModelsIndex, text: Digital activity, anchor: ptlmDigitalActivity}} | ActivityDefinition | pt-DigitalActivity |
 | {{pagelink: LogicalModelsIndex, text: Digital group plan, anchor: ptlmDigitalGroupPlan}} | ServiceRequest | pt-DigitalGroupPlan |
 | {{pagelink: LogicalModelsIndex, text: Execution order, anchor: ptlmExecutionOrder}} | ServiceRequest | pt-ExecutionOrder |
 | {{pagelink: LogicalModelsIndex, text: Endpoint, anchor: ptlmEndpoint}} | Endpoint | pt-Endpoint |
@@ -97,7 +97,7 @@ The healthcare provider initiates digital activities for the patient. The patien
 
 ### PHR: request message
 
-The PHR executes an HTTP search conform the FHIR specification against the Task endpoint of the source system using the following URL:
+The PHR executes an HTTP search conform the [FHIR specification](https://hl7.org/fhir/R4/search.html) against the Task endpoint of the source system using the following URL:
 
 ```
 GET [base]/Task{?[parameters]}
@@ -150,7 +150,7 @@ Both the module system (client) and the XIS (server) SHALL support the FHIR PATC
 
 **FHIRPath Patch**
 
-The client sends a `Parameters` resource with one or more `operation` entries. Each operation specifies the patch type (e.g., `replace`), the FHIRPath path, and the new value. Example replacing `Task.status` with `completed`:
+The client sends a `Parameters` resource with one or more `operation` entries, conform the [FHIRPath Patch specification](http://hl7.org/fhir/R4/fhirpatch.html). Each operation specifies the patch type (e.g., `replace`), the FHIRPath path, and the new value. Example replacing `Task.status` with `completed`:
 
 ```json
 {

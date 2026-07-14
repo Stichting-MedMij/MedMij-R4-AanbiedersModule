@@ -5,7 +5,7 @@ topic: Weergaverichtlijn
 # Weergaverichtlijn
 
 ## Inleiding
-Dit is de weergaverichtlijn voor de gegevensdienst Aanbiedertaken (ProviderTasks).
+Dit is de weergaverichtlijn voor de gegevensdienst Aanbiedertaken.
 
 De richtlijn bevat een aantal verplichte acceptatiecriteria. De getoonde mock-ups zijn bedoeld ter inspiratie. Persoonlijke gezondheidsomgevingen (PGO's) kunnen deze voorbeelden naar eigen inzicht visueel vormgeven, zolang de gebruiksvriendelijkheid behouden blijft, en aan de acceptatiecriteria is voldaan.
 
@@ -144,7 +144,7 @@ Hieronder wordt een voorbeeld in tabelvorm gegeven van het overzichts- en detail
 <br/>
 
 ## <a name="TabelSpecificaties"></a> Tabel met specificaties
-De tabellen met specificaties tonen de gegevens uit de gegevensdienst Aanbiedertaken (ProviderTasks) die relevant zijn voor deze weergaverichtlijn.
+De tabellen met specificaties tonen de gegevens uit de gegevensdienst Aanbiedertaken die relevant zijn voor deze weergaverichtlijn.
 De prioriteit van de te tonen datavelden is vastgesteld volgens de MoSCoW-methodiek. Datavelden die niet in de specificatietabel voorkomen, worden beschouwd als datavelden met prioriteit W.
 
 <br/>
@@ -158,11 +158,11 @@ De prioriteit van de te tonen datavelden is vastgesteld volgens de MoSCoW-method
 
 <br/>
 
-De gegevensdienst Aanbiedertaken (ProviderTasks) bestaat uit drie samenhangende Logical Models. Onderstaande tabellen beschrijven per model welke datavelden in de PGO worden weergegeven:
+De gegevensdienst Aanbiedertaken bestaat uit drie samenhangende Logical Models. Onderstaande tabellen beschrijven per model welke datavelden in de PGO worden weergegeven:
 
 - **Taak (Task):** de hoofdresource. Beschrijft de uit te voeren taak en de bijbehorende status, periode, aanvrager en zorgorganisatie.
-- **Digitale activiteit (ActivityDefinition):** de herbruikbare definitie van de digitale activiteit waar de taak naar verwijst (via `Task.instantiates`). Levert onder andere de titel die in het overzichtsscherm wordt getoond.
-- **Uitvoeringsopdracht (ServiceRequest):** wordt alleen gebruikt wanneer er een patiënt-specifieke instructie of tijdschema bij de taak hoort (via `Task.focus`). Optioneel.
+- **Digitale activiteit (ActivityDefinition):** de herbruikbare definitie van de digitale activiteit waar de taak naar verwijst (via de digitale-activiteitreferentie op de taak). Levert onder andere de titel die in het overzichtsscherm wordt getoond.
+- **Uitvoeringsopdracht (ServiceRequest):** wordt alleen gebruikt wanneer er een patiëntspecifieke instructie of tijdschema bij de taak hoort (via `Task.focus`). Optioneel.
 
 Voor elk dataveld is in de kolom **"Waar tonen in PGO"** met een letter aangegeven waar het veld weergegeven wordt:
 
@@ -221,11 +221,11 @@ Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Task, anchor: pt
       <td></td><td>Taak</td><td></td><td></td>
     </tr>
     <tr>
-      <td>Instantiates::ActivityDefinition</td><td>Reference</td><td>pt-dataelement-2</td><td>Bloedglucose meting volgens NHG protocol</td><td>a</td>
+      <td>DigitalActivity</td><td>Reference</td><td>pt-dataelement-2</td><td>Bloedglucose meting volgens NHG protocol</td><td>a</td>
       <td>Titel van de digitale activiteit.</td><td></td><td></td><td>M</td>
     </tr>
     <tr>
-      <td>BasedOn::ServiceRequestDigitalGroupPlan</td><td>Reference</td><td>pt-dataelement-3</td><td>Digitale zorgmodule Diabetes</td><td>b</td>
+      <td>GroupPlan::DigitalGroupPlan</td><td>Reference</td><td>pt-dataelement-3</td><td>Digitale zorgmodule Diabetes</td><td>b</td>
       <td>Toon hier alleen de waarde van `code.text` uit het ServiceRequest.</td><td></td><td></td><td>C</td>
     </tr>
     <tr>
@@ -252,14 +252,14 @@ Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Task, anchor: pt
       <td>Voluit weergeven; bij voorkeur geen afkortingen gebruiken.</td><td>Zorgorganisatie</td><td></td><td>M</td>
     </tr>
     <tr>
-      <td>Focus::ServiceRequestExecutionOrder</td><td>Reference</td><td></td><td></td><td>b</td>
-      <td>Uitvoeringsopdracht voor onder andere patiënt-specifieke instructies en het tijdschema.</td><td></td><td></td><td>C</td>
+      <td>ExecutionOrder</td><td>Reference</td><td>pt-dataelement-19</td><td></td><td>b</td>
+      <td>Uitvoeringsopdracht voor onder andere patiëntspecifieke instructies en het tijdschema.</td><td></td><td></td><td>C</td>
     </tr>
   </tbody>
 </table>
 
 ### Digitale activiteit (ActivityDefinition)
-Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Activity, anchor: ptlmActivity}}
+Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Digital activity, anchor: ptlmDigitalActivity}}
 
 <!-- DIGITALE ACTIVITEIT -->
 <table class="pgo-table">
@@ -287,9 +287,9 @@ Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Activity, anchor
 </table>
 
 ### Uitvoeringsopdracht (ServiceRequest)
-Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model ServiceRequest, anchor: ptlmServiceRequest}}
+Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Execution order, anchor: ptlmExecutionOrder}}
 
-Wordt alleen gebruikt als er voor een taak in de module een patiënt-specifieke instructie of een tijdschema moet worden vastgelegd.
+Wordt alleen gebruikt als er voor een taak in de module een patiëntspecifieke instructie of een tijdschema moet worden vastgelegd.
 
 <!-- SERVICEREQUEST (PATIËNTSPECIFIEK) -->
 <table class="pgo-table">
@@ -306,15 +306,15 @@ Wordt alleen gebruikt als er voor een taak in de module een patiënt-specifieke 
   </thead>
   <tbody>
     <tr>
-      <td><strong>ServiceRequest uitvoeringsopdracht</strong></td><td><strong>Rootconcept</strong></td><td>pt-dataelement-15</td><td></td><td></td>
+      <td><strong>Uitvoeringsopdracht</strong></td><td><strong>Rootconcept</strong></td><td>pt-dataelement-15</td><td></td><td></td>
       <td></td><td></td><td></td><td></td>
     </tr>
     <tr>
-      <td>patientInstruction</td><td>Item</td><td>pt-dataelement-16</td><td>Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten.</td><td>b</td>
-      <td>Patiënt-specifieke uitvoeringsopdracht voor een digitale activiteit.</td><td>Patiëntinstructie</td><td></td><td>M</td>
+      <td>PatientInstruction</td><td>Item</td><td>pt-dataelement-16</td><td>Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten.</td><td>b</td>
+      <td>Patiëntspecifieke uitvoeringsopdracht voor een digitale activiteit.</td><td>Patiëntinstructie</td><td></td><td>M</td>
     </tr>
     <tr>
-      <td>Occurrence</td><td>Item</td><td>pt-dataelement-17</td><td>start: 22-12-2025, eind: 28-12-2025, schema: 7d, 2x per dag</td><td>c</td>
+      <td>Schedule</td><td>Item</td><td>pt-dataelement-17</td><td>start: 22-12-2025, eind: 28-12-2025, schema: 7d, 2x per dag</td><td>c</td>
       <td>Optioneel. Patiëntspecifiek tijdschema.</td><td>Tijdschema</td><td></td><td>C</td>
     </tr>
     <tr>
