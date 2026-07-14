@@ -110,46 +110,36 @@ The three task types (information, questionnaire and measurement) cover the thre
 
 Two information tasks. The patient is not required to launch the module on a specific date; the entire execution period (22-12-2025 t/m 28-12-2025) is available.
 
-| Digital activity | Description | Status | Last modified |
-| --- | --- | --- | --- |
-| Wat is cholesterol en wat zijn de risico's? | Lees wat cholesterol is, welke risico's erbij horen en wat je kunt doen met leefstijl en/of medicijnen. | received | 23-12-2025 07:00 |
-| Informatie over thuis bloeddruk meten | Lees deze informatie over hoe je thuis je bloeddruk kan meten. | requested | 24-12-2025 07:00 |
+| Digital activity | Description | Status | Execution period | Execution order | BasedOn | Requester |
+| --- | --- | --- | --- | --- | --- | --- |
+| Wat is cholesterol en wat zijn de risico's? | Lees wat cholesterol is, welke risico’s erbij horen en wat je kunt doen met leefstijl en/of medicijnen. | received | 22-12-2025 t/m 28-12-2025 | – | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Informatie over thuis bloeddruk meten | Lees deze informatie over hoe je thuis je bloeddruk kan meten. | requested | 22-12-2025 t/m 28-12-2025 | – | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
 
 ### Questionnaire task
 
 One questionnaire task. In this scenario the task has status failed to illustrate how the PGO should present a task that could not be completed by the module system.
 
-| Digital activity | Description | Status | Last modified |
-| --- | --- | --- | --- |
-| Vragenlijst over uw situatie op gebied van hart- en vaatziekten | Beantwoord deze vragen over jouw situatie rondom hart- en vaatziekten. | failed | 23-12-2025 18:00 |
+| Digital activity | Description | Status | Execution period | Execution order | BasedOn | Requester |
+| --- | --- | --- | --- | --- | --- | --- |
+| Vragenlijst over uw situatie op gebied van hart- en vaatziekten | Beantwoord deze vragen over jouw situatie rondom hart- en vaatziekten. | failed | 22-12-2025 t/m 28-12-2025 | – | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
 
 ### Measurement tasks (Bloeddrukmeting)
 
-Fourteen blood-pressure measurement tasks, 2 per day during 7 consecutive days (22-12-2025 t/m 28-12-2025). All 14 tasks share the following properties:
+Fourteen blood-pressure measurement tasks, 2 per day during 7 consecutive days (22-12-2025 t/m 28-12-2025).
 
-| | |
-| --- | --- |
-| Digital activity | Bloeddrukmeting |
-| Digital group plan | Digitale zorgmodule CVRM |
-| Execution order | Uitvoeringsopdracht Bloeddrukmeting |
-| Description | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. |
-| Status | received |
-
-The execution dates per task are:
-
-| Execution period |
-| --- |
-| 22-12-2025 (1st measurement) |
-| 22-12-2025 (2nd measurement) |
-| 23-12-2025 (1st measurement) |
-| 23-12-2025 (2nd measurement) |
-| 24-12-2025 (1st measurement) |
-| 24-12-2025 (2nd measurement) |
-| 25-12-2025 (1st measurement) |
-| 25-12-2025 (2nd measurement) |
-| 26-12-2025 (1st measurement) |
-| 26-12-2025 (2nd measurement) |
-| 27-12-2025 (1st measurement) |
-| 27-12-2025 (2nd measurement) |
-| 28-12-2025 (1st measurement) |
-| 28-12-2025 (2nd measurement) |
+| Digital activity | Description | Status | Execution period | Execution order | BasedOn | Requester |
+| --- | --- | --- | --- | --- | --- | --- |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 22-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 22-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 23-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 23-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 24-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 24-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 25-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 25-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 26-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 26-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 27-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 27-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 28-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |
+| Bloeddrukmeting | Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken. | received | 28-12-2025 | Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule CVRM | L. de Jong, Huisarts |

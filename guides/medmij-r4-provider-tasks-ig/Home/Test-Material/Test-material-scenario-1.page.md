@@ -111,49 +111,40 @@ The Diabetes module results in **17 patient-facing tasks**, all assigned to *Tom
 
 Two information tasks. The patient is not required to launch the module on a specific date; the entire execution period (22-12-2025 t/m 28-12-2025) is available.
 
-| Digital activity | Description | Status | Last modified |
-| --- | --- | --- | --- |
-| Wat is diabetes type 2? | Lees wat diabetes type 2 is en wat je zelf kunt doen | received | 23-12-2025 07:00 |
-| Gezonder gaan leven | Lees tips voor een gezonder leven: voeding, bewegen en volhouden | requested | 24-12-2025 07:00 |
+| Digital activity | Description | Status | Execution period | Execution order | BasedOn | Requester |
+| --- | --- | --- | --- | --- | --- | --- |
+| Wat is diabetes type 2? | Lees wat diabetes type 2 is en wat je zelf kunt doen | received | 22-12-2025 t/m 28-12-2025 | – | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Gezonder gaan leven | Lees tips voor een gezonder leven: voeding, bewegen en volhouden | requested | 22-12-2025 t/m 28-12-2025 | – | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
 
 ### Questionnaire task
 
 One questionnaire task on the patient's living situation. The task is open (status requested) and available during the entire execution period (22-12-2025 t/m 28-12-2025).
 
-| Digital activity | Description | Status | Last modified |
-| --- | --- | --- | --- |
-| Vragenlijst over de woon- leefsituatie | Beantwoord deze vragen over je woon/leefsituatie | requested | 23-12-2025 18:00 |
+| Digital activity | Description | Status | Execution period | Execution order | BasedOn | Requester |
+| --- | --- | --- | --- | --- | --- | --- |
+| Vragenlijst over de woon- leefsituatie | Beantwoord deze vragen over je woon/leefsituatie | requested | 22-12-2025 t/m 28-12-2025 | – | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
 
 ### Measurement tasks (Bloedglucosemeting)
 
-Fourteen blood-glucose measurement tasks, 2 per day during 7 consecutive days (22-12-2025 t/m 28-12-2025). All 14 tasks share the following properties:
+Fourteen blood-glucose measurement tasks, 2 per day during 7 consecutive days (22-12-2025 t/m 28-12-2025).
 
-| | |
-| --- | --- |
-| Digital activity | Bloedglucose meting volgens NHG protocol |
-| Digital group plan | Digitale zorgmodule Diabetes |
-| Execution order | Uitvoeringsopdracht Bloedglucosemeting |
-
-The execution date, status and description per task are:
-
-| Execution period | Status | Description |
-| --- | --- | --- |
-| 22-12-2025 (1st measurement) | completed | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 22-12-2025 (2nd measurement) | completed | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 23-12-2025 (1st measurement) | completed | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 23-12-2025 (2nd measurement) | cancelled | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 24-12-2025 (1st measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 24-12-2025 (2nd measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 25-12-2025 (1st measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 25-12-2025 (2nd measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 26-12-2025 (1st measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 26-12-2025 (2nd measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 27-12-2025 (1st measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 27-12-2025 (2nd measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 28-12-2025 (1st measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
-| 28-12-2025 (2nd measurement) | received | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. |
+| Digital activity | Description | Status | Execution period | Execution order | BasedOn | Requester |
+| --- | --- | --- | --- | --- | --- | --- |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | completed | 22-12-2025 08:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | completed | 22-12-2025 08:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | completed | 23-12-2025 08:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | cancelled | 23-12-2025 18:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | received | 24-12-2025 08:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | received | 24-12-2025 18:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | received | 25-12-2025 08:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | received | 25-12-2025 18:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | received | 26-12-2025 08:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | received | 26-12-2025 18:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | received | 27-12-2025 08:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | received | 27-12-2025 18:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | received | 28-12-2025 08:00–23:59 | Meet 7 dagen, 2 keer per dag, uw bloedglucose: nuchter vóór het ontbijt en vóór het avondeten. | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
+| Bloedglucose meting volgens NHG protocol | Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel. | received | 28-12-2025 18:00–23:59 | – | Digitale zorgmodule Diabetes | A. de Haard, Huisarts |
 
 > Notes:
-> - Tasks 1–5 reuse a description from the blood-pressure activity ("Je meet de bloeddruk …"). This is an intentional inconsistency in the test data to verify that PGOs render the task description exactly as it is supplied, without substituting their own text.
 > - Tasks 1–3 illustrate completed tasks, task 4 illustrates a cancelled task, and tasks 5–14 illustrate still-open (received) tasks. PGOs must be able to render the full mix in a single overview.
-> - Task 14 has no link to the execution order, to verify that PGOs degrade gracefully when an individual task is missing its execution order reference. All other measurement tasks reference the execution order.
+> - Task 14 (28-12-2025, 2nd measurement) has no link to the execution order (empty *Execution order* / `task.focus`), to verify that PGOs degrade gracefully when an individual task is missing its execution order reference. All other measurement tasks reference the execution order.

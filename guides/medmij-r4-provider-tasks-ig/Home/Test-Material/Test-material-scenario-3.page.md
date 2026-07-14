@@ -111,41 +111,31 @@ The three task types (information, questionnaire and measurement) cover the thre
 
 Two information tasks. The patient is not required to launch the module on a specific date; the entire execution period (05-01-2026 t/m 11-01-2026) is available.
 
-| Digital activity | Description | Status | Last modified |
-| --- | --- | --- | --- |
-| Informatie over leven met COPD | Lees de praktische tips om met COPD te leven. | received | 05-01-2026 07:00 |
-| Instructiemodule inhalatiemedicatie | Lees hoe je inhalatiemedicatie thuis goed gebruikt. | requested | 05-01-2026 07:00 |
+| Digital activity | Description | Status | Execution period | Execution order | BasedOn | Requester |
+| --- | --- | --- | --- | --- | --- | --- |
+| Informatie over leven met COPD | Lees de praktische tips om met COPD te leven. | received | 05-01-2026 t/m 11-01-2026 | – | Digitale zorgmodule COPD | M. van Rijn, huisarts |
+| Instructiemodule inhalatiemedicatie | Lees hoe je inhalatiemedicatie thuis goed gebruikt. | requested | 05-01-2026 t/m 11-01-2026 | – | Digitale zorgmodule COPD | M. van Rijn, huisarts |
 
 ### Questionnaire task
 
 One questionnaire task on the patient's treatment goals. The task is open (status requested) and available during the entire execution period (05-01-2026 t/m 11-01-2026).
 
-| Digital activity | Description | Status | Last modified |
-| --- | --- | --- | --- |
-| Vragenlijst: Wat wilt u bereiken? | Beantwoord deze vragen over wat je belangrijk vindt en wat je wilt bereiken met je behandeling of begeleiding. | requested | 05-01-2026 18:00 |
+| Digital activity | Description | Status | Execution period | Execution order | BasedOn | Requester |
+| --- | --- | --- | --- | --- | --- | --- |
+| Vragenlijst: Wat wilt u bereiken? | Beantwoord deze vragen over wat je belangrijk vindt en wat je wilt bereiken met je behandeling of begeleiding. | requested | 05-01-2026 t/m 11-01-2026 | – | Digitale zorgmodule COPD | M. van Rijn, Huisarts |
 
 ### Measurement tasks (Saturatiemeting)
 
-Seven oxygen-saturation measurement tasks, 1 per day during 7 consecutive days (05-01-2026 t/m 11-01-2026). All 7 tasks share the following properties:
+Seven oxygen-saturation measurement tasks, 1 per day during 7 consecutive days (05-01-2026 t/m 11-01-2026).
 
-| | |
-| --- | --- |
-| Digital activity | Saturatiemeting |
-| Digital group plan | Digitale zorgmodule COPD |
-| Execution order | Uitvoeringsopdracht Saturatiemeting |
-| Description | Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren. |
-| Status | received |
-
-The execution date per task is:
-
-| Execution period |
-| --- |
-| 05-01-2026 |
-| 06-01-2026 |
-| 07-01-2026 |
-| 08-01-2026 |
-| 09-01-2026 |
-| 10-01-2026 |
-| 11-01-2026 |
+| Digital activity | Description | Status | Execution period | Execution order | BasedOn | Requester |
+| --- | --- | --- | --- | --- | --- | --- |
+| Saturatiemeting | Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren. | received | 05-01-2026 | Meet 7 dagen, 1 keer per dag, uw saturatie. | Digitale zorgmodule COPD | M. van Rijn, huisarts |
+| Saturatiemeting | Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren. | received | 06-01-2026 | Meet 7 dagen, 1 keer per dag, uw saturatie. | Digitale zorgmodule COPD | M. van Rijn, huisarts |
+| Saturatiemeting | Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren. | received | 07-01-2026 | Meet 7 dagen, 1 keer per dag, uw saturatie. | Digitale zorgmodule COPD | M. van Rijn, huisarts |
+| Saturatiemeting | Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren. | received | 08-01-2026 | Meet 7 dagen, 1 keer per dag, uw saturatie. | Digitale zorgmodule COPD | M. van Rijn, huisarts |
+| Saturatiemeting | Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren. | received | 09-01-2026 | Meet 7 dagen, 1 keer per dag, uw saturatie. | Digitale zorgmodule COPD | M. van Rijn, huisarts |
+| Saturatiemeting | Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren. | received | 10-01-2026 | Meet 7 dagen, 1 keer per dag, uw saturatie. | Digitale zorgmodule COPD | M. van Rijn, huisarts |
+| Saturatiemeting | Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren. | received | 11-01-2026 | Meet 7 dagen, 1 keer per dag, uw saturatie. | Digitale zorgmodule COPD | M. van Rijn, huisarts |
 
 > Note: the two information tasks and the questionnaire task have an execution period in January 2026 that matches the measurement period, while their last-modified timestamps are dated 05-01-2025 (one year earlier). This represents content that was prepared well in advance of the measurement window.
