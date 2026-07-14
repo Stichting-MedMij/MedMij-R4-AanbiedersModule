@@ -31,7 +31,7 @@ For this use case, the [HL7 Clinical Order Workflows IG](https://build.fhir.org/
 
 This technical design includes use cases for exchanging task data between healthcare providers and patients via a PHR.
 
-This technical design assumes that a PHR is able to make a connection to the right XIS that contains the patient's information. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/medmij-service-requests/actueel/v0-8-aanbiedermodules). Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters for patient identification SHALL NOT be included.
+This technical design assumes that a PHR is able to make a connection to the right XIS that contains the patient's information. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/alpha-of-beta/v14/sd-aanbiedermodules). Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters for patient identification SHALL NOT be included.
 
 Out of scope for this technical design:
 - Exchange of clinical results produced by executing the activity (Event resources such as Observation or QuestionnaireResponse).
@@ -222,4 +222,4 @@ The XIS returns an HTTP Status code appropriate to the processing outcome as wel
 
 The launch is based on information in `pt-DigitalActivity` and `pt-Endpoint` (e.g., `Endpoint.address`). In Provider Tasks this is the step where the PHR starts an external module system.
 
-The launch is an interaction outside the core REST data exchange and is based on SMART App Launch. The specifications can be found in the [Solution Design Aanbiedermodules v0.8](https://changemanagement.medmij.nl/medmij-service-requests/actueel/v0-8-aanbiedermodules) (see also the {{pagelink: Dependencies, text: Dependencies}} page).
+The launch is an interaction outside the core REST data exchange and is based on SMART App Launch. The specifications can be found in the [Solution Design Aanbiedermodules v0.8](https://changemanagement.medmij.nl/alpha-of-beta/v14/sd-aanbiedermodules) (see also the {{pagelink: Dependencies, text: Dependencies}} page).
