@@ -3,6 +3,7 @@
   "id": "pt-Endpoint",
   "url": "http://medmij.nl/fhir/StructureDefinition/pt-Endpoint",
   "name": "PtEndpoint",
+  "title": "pt Endpoint",
   "status": "draft",
   "publisher": "MedMij",
   "contact": [

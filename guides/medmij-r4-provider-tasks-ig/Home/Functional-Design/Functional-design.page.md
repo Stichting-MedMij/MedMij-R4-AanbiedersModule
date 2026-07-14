@@ -67,11 +67,11 @@ Een usecase beschrijft een praktijksituatie waarin informatie-uitwisseling plaat
 
 Het doel is dat patiënten in de PGO taken zien die de zorgaanbieder heeft aangevraagd, en dat zorgaanbieders digitale activiteiten kunnen uitzetten en de voortgang kunnen volgen via statusinformatie.
 
-Voor de patiënt:
+Voor de patiënt is het doel om in de PGO inzicht te hebben in:
 
-- inzicht in welke digitale activiteiten de zorgaanbieder heeft aangevraagd;
-- inzicht in de bijbehorende taken, inclusief planning en actuele status;
-- duidelijkheid over wat er van de patiënt wordt verwacht (omschrijving en eventuele instructies).
+- welke digitale activiteiten de zorgaanbieder heeft aangevraagd;
+- de bijbehorende taken, inclusief planning en actuele status;
+- wat er van de patiënt wordt verwacht (omschrijving en eventuele instructies).
 
 Voor de zorgaanbieder:
 
@@ -82,7 +82,7 @@ Voor de zorgaanbieder:
 
 Koos (54) heeft diabetes type 2. Zijn huisarts wil dat hij thuis zijn bloeddruk meet: 2× per dag gedurende 7 dagen. Koos ontvangt een e-mail dat er een nieuwe taak klaarstaat in zijn PGO.
 
-Hij opent de PGO en raadpleegt de takenlijst. Onder het groepslabel 'Diabetes' ziet hij de taak 'Meet je bloeddruk', met de status 'open' en het tijdschema voor uitvoering. Hij start de activiteit en de externe applicatie opent met de juiste context en Koos voert de metingen uit.
+Hij opent de PGO en raadpleegt de takenlijst. Onder het groepslabel 'Diabetes' ziet hij de taak 'Meet je bloeddruk' met de taakomschrijving, de status en het tijdschema voor uitvoering. Hij start de activiteit en de externe applicatie opent met de juiste context en Koos voert de metingen uit.
 
 Na afloop keert Koos terug naar de PGO. In de takenlijst ziet Koos dat de taak op 'in uitvoering' of 'afgerond' staat.
 
@@ -165,10 +165,10 @@ De dataset voor Aanbiedertaken bestaat uit de volgende bouwstenen:
 Herbruikbare definitie van een digitale activiteit (bijv. 'Thuismetingen bloeddruk'). De digitale activiteit beschrijft wat de activiteit inhoudt en hoe deze in algemene zin wordt gebruikt. Wanneer de activiteit launchbaar is, verwijst de digitale activiteit naar één of meerdere endpoints met technische toegangs- en launchdetails.
 
 **Digitaal groepsplan**  
-Patiëntspecifieke aanvraag waarmee een digitaal groepsplan of zorgmodule voor de patiënt wordt geïnitieerd. Alle taken binnen hetzelfde groepsplan verwijzen naar hetzelfde digitaal groepsplan. De naam van het groepsplan wordt gebruikt als groepslabel in de takenlijst van de PGO.
+Patiëntspecifieke aanvraag waarmee een digitaal groepsplan of zorgmodule voor de patiënt wordt geïnitieerd. Alle taken die binnen hetzelfde groepsplan horen, verwijzen naar hetzelfde digitaal groepsplan. De naam van het groepsplan wordt gebruikt als groepslabel in de takenlijst van de PGO.
 
 **Uitvoeringsopdracht**  
-Patiëntspecifieke uitvoeringsopdracht voor één digitale activiteit, met patiëntspecifieke instructies en het tijdschema voor uitvoering. De uitvoeringsopdracht is optioneel, maar verplicht wanneer er een (herhalend) tijdschema geldt. PGO's lezen het tijdschema dat aan de patiënt wordt getoond uitsluitend uit de uitvoeringsopdracht.
+Patiëntspecifieke uitvoeringsopdracht voor één digitale activiteit, met patiëntspecifieke instructies en het tijdschema voor uitvoering. De uitvoeringsopdracht is optioneel, maar verplicht wanneer er een (herhalend) tijdschema geldt. PGO's lezen het tijdschema dat aan de patiënt wordt getoond uitsluitend uit de uitvoeringsopdracht. Hiermee is er één eenduidige bron voor het tijdschema en wordt duplicatie of inconsistentie voorkomen.
 
 **Taak**  
 Het item dat de patiënt in de PGO ziet en waarop voortgang wordt bijgehouden (openstaand, in uitvoering, afgerond). Elke taak staat voor één digitale activiteit. Er is geen hiërarchische onderverdeling in hoofd- en subtaken; taken die bij elkaar horen worden gegroepeerd via het gedeelde digitaal groepsplan. Statusupdates worden per individuele taak toegepast.
