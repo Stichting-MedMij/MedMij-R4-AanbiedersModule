@@ -1,5 +1,5 @@
 // Bundle with FHIR test instances in FSH format for ProviderTasks test scenario 2
-Instance: ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot
+Instance: ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder
 Usage: #example
 * text
@@ -10,7 +10,7 @@ Usage: #example
   * value = "2025-999999"
 * status = #active
 * intent = #order
-* subject = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* subject = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * occurrenceTiming.repeat
   * boundsPeriod.start = "2025-12-22"
   * boundsPeriod.end = "2025-12-28"
@@ -18,10 +18,10 @@ Usage: #example
   * periodUnit = #d
   * frequency = 2
   * frequencyMax = 2
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * patientInstruction = "Meet 7 dagen, 2 keer per dag, uw bloeddruk: nuchter vóór het ontbijt en vóór het avondeten."
 
-Instance: ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot
+Instance: ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan
 Usage: #example
 * text
@@ -33,10 +33,10 @@ Usage: #example
 * status = #active
 * intent = #plan
 * code.text = "Digitale zorgmodule CVRM"
-* subject = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Haard) "A. de Haard, Huisarts"
+* subject = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Haard) "A. de Haard, Huisarts"
 
-Instance: ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot
+Instance: ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
@@ -44,7 +44,7 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
-  * valueReference = Reference(Endpoint-ProviderTasks-Minddistrict)
+  * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
   * value = "481365c2-a85c-49cc-bb74-d6d8a6a53b46"
@@ -64,7 +64,7 @@ Usage: #example
   * period = 1
   * periodUnit = #d
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-1-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-1-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -75,9 +75,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-1"
@@ -85,17 +85,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-22"
   * end = "2025-12-22"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-2-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-2-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -106,9 +106,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-2"
@@ -116,17 +116,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-22"
   * end = "2025-12-22"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-3-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-3-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -137,9 +137,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-3"
@@ -147,17 +147,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-23"
   * end = "2025-12-23"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-4-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-4-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -168,9 +168,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-4"
@@ -178,17 +178,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-23"
   * end = "2025-12-23"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-5-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-5-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -199,9 +199,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-5"
@@ -209,17 +209,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-24"
   * end = "2025-12-24"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-6-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-6-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -230,9 +230,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-6"
@@ -240,17 +240,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-24"
   * end = "2025-12-24"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-7-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-7-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -261,9 +261,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-7"
@@ -271,17 +271,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-25"
   * end = "2025-12-25"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-8-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-8-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -292,9 +292,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-8"
@@ -302,17 +302,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-25"
   * end = "2025-12-25"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-9-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-9-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -323,9 +323,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-9"
@@ -333,17 +333,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-26"
   * end = "2025-12-26"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-10-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-10-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -354,9 +354,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-10"
@@ -364,17 +364,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-26"
   * end = "2025-12-26"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-11-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-11-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -385,9 +385,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-11"
@@ -395,17 +395,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-27"
   * end = "2025-12-27"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-12-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-12-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -416,9 +416,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-12"
@@ -426,17 +426,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-27"
   * end = "2025-12-27"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-13-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-13-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -447,9 +447,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-13"
@@ -457,17 +457,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-28"
   * end = "2025-12-28"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Task-ProviderTasks-Bloeddrukmeting-14-De-Groot
+Instance: ProviderTasks-Task-Bloeddrukmeting-14-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -478,9 +478,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Bloeddrukmeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Bloeddruk-14"
@@ -488,17 +488,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken."
-* focus = Reference(ServiceRequest-ProviderTasks-Execution-Bloeddrukmeting-De-Groot)
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* focus = Reference(ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot)
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-28"
   * end = "2025-12-28"
 * authoredOn = "2025-12-22T08:00:00+01:00"
 * lastModified = "2025-12-22T08:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: ActivityDefinition-ProviderTasks-Informatie-Cholesterol-De-Groot
+Instance: ProviderTasks-ActivityDefinition-Informatie-Cholesterol-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
@@ -506,7 +506,7 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
-  * valueReference = Reference(Endpoint-ProviderTasks-Minddistrict)
+  * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
   * value = "c45485ee-8a42-466b-97ba-ac6537b0bf89"
@@ -518,7 +518,7 @@ Usage: #example
 * publisher = "Minddistrict"
 * description = "Voorlichtingsmodule cholesterol: uitlegmateriaal over wat cholesterol is, cardiovasculaire risico’s en leefstijl-/behandelopties ter ondersteuning van CVRM en gezamenlijke besluitvorming."
 
-Instance: Task-ProviderTasks-Informatie-Cholesterol-De-Groot
+Instance: ProviderTasks-Task-Informatie-Cholesterol-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -529,9 +529,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Informatie-Cholesterol-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Cholesterol-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Informatie-Cholesterol-1"
@@ -539,17 +539,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Lees wat cholesterol is, welke risico’s erbij horen en wat je kunt doen met leefstijl en/of medicijnen."
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-22"
   * end = "2025-12-28"
 * authoredOn = "2025-12-23T07:00:00+01:00"
 * lastModified = "2025-12-23T07:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
 
-Instance: ActivityDefinition-ProviderTasks-Informatie-Thuismeting-De-Groot
+Instance: ProviderTasks-ActivityDefinition-Informatie-Thuismeting-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
@@ -557,7 +557,7 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
-  * valueReference = Reference(Endpoint-ProviderTasks-Minddistrict)
+  * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
   * value = "7e5633b6-2cf2-49bf-8f1c-e105c8b82b22"
@@ -569,7 +569,7 @@ Usage: #example
 * publisher = "Minddistrict"
 * description = "Instructiemodule thuismetingen bloeddruk: patiëntinstructie voor correcte meetmethode (rust, houding, manchet, meetmomenten) en registratie, ter verbetering van betrouwbaarheid van thuismetingen"
 
-Instance: Task-ProviderTasks-Informatie-Thuis-Bloeddrukmeten-De-Groot
+Instance: ProviderTasks-Task-Informatie-Thuis-Bloeddrukmeten-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -580,9 +580,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Informatie-Thuismeting-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Thuismeting-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Informatie-Bloeddruk-1"
@@ -590,17 +590,17 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Lees deze informatie over hoe je thuis je bloeddruk kan meten."
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-22"
   * end = "2025-12-28"
 * authoredOn = "2025-12-24T07:00:00+01:00"
 * lastModified = "2025-12-24T07:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
 
-Instance: ActivityDefinition-ProviderTasks-Uw-Situatie-De-Groot
+Instance: ProviderTasks-ActivityDefinition-Uw-Situatie-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
@@ -608,7 +608,7 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension[0]
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
-  * valueReference = Reference(Endpoint-ProviderTasks-Minddistrict)
+  * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
   * value = "c4bd168d-963c-4360-86fa-39d4b6e08d83"
@@ -620,7 +620,7 @@ Usage: #example
 * publisher = "Minddistrict"
 * description = "Vragenlijst ‘Uw situatie’ om relevante klachten, leefstijl en risicofactoren rond hart- en vaatziekten te inventariseren als basis voor behandelafspraken."
 
-Instance: Task-ProviderTasks-Vragenlijst-Uw-Situatie-De-Groot
+Instance: ProviderTasks-Task-Vragenlijst-Uw-Situatie-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag
@@ -631,9 +631,9 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Uw-Situatie-De-Groot)
+  * valueReference = Reference(ProviderTasks-ActivityDefinition-Uw-Situatie-De-Groot)
     * type = "ActivityDefinition"
-* basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
+* basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
   * value = "TASK-Informatie-Situatie-1"
@@ -641,16 +641,16 @@ Usage: #example
 * intent = #order
 * priority = #routine
 * description = "Beantwoord deze vragen over jouw situatie rondom hart- en vaatziekten."
-* for = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* for = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 * executionPeriod
   * start = "2025-12-22"
   * end = "2025-12-28"
 * authoredOn = "2025-12-23T18:00:00+01:00"
 * lastModified = "2025-12-23T18:00:00+01:00"
-* requester = Reference(PractitionerRole-ProviderTasks-De-Jong) "L. de Jong, Huisarts"
-* owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
+* requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
+* owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
-Instance: Endpoint-ProviderTasks-Minddistrict
+Instance: ProviderTasks-Endpoint-Minddistrict
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Endpoint
 Usage: #example
 * text
@@ -661,11 +661,11 @@ Usage: #example
   * valueString = "dvaAanbiedertaken"
 * status = #active
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#hl7-fhir-rest
-* managingOrganization = Reference(Organization-ProviderTasks-Huisartsenpraktijk-De-Haard)
+* managingOrganization = Reference(ProviderTasks-Organization-Huisartsenpraktijk-De-Haard)
 * payloadType = $endpoint-payload-type#any
 * address = "https://aanbiedermodule.example.org/web/api/smartonfhir/launch?iss=resourceserver.example.dva.nl"
 
-Instance: Patient-ProviderTasks-De-Groot
+Instance: ProviderTasks-Patient-De-Groot
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 Usage: #example
 * text
@@ -710,18 +710,18 @@ Usage: #example
   * country = "Nederland"
     * extension[http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification].valueCodeableConcept = urn:iso:std:iso:3166#NL "Netherlands"
 
-Instance: PractitionerRole-ProviderTasks-De-Jong
+Instance: ProviderTasks-PractitionerRole-De-Jong
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
 * text
   * status = #empty
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
-* practitioner = Reference(Practitioner-ProviderTasks-De-Jong) "L. de Jong"
-* organization = Reference(Organization-ProviderTasks-Huisartsenpraktijk-De-Haard) "Huisartstenpraktijk de Haard"
+* practitioner = Reference(ProviderTasks-Practitioner-De-Jong) "L. de Jong"
+* organization = Reference(ProviderTasks-Organization-Huisartsenpraktijk-De-Haard) "Huisartstenpraktijk de Haard"
 * specialty
   * coding = urn:oid:2.16.840.1.113883.2.4.6.7#0110 "Huisarts, apotheekhoudend"
 
-Instance: Practitioner-ProviderTasks-De-Jong
+Instance: ProviderTasks-Practitioner-De-Jong
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner
 Usage: #example
 * text
