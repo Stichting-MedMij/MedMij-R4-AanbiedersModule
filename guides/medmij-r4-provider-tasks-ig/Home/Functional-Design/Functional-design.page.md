@@ -177,7 +177,7 @@ Het item dat de patiënt in de PGO ziet en waarop voortgang wordt bijgehouden (o
 
 De dataset is uitgewerkt aan de hand van Logical Models:
 
-- LogicalModel {{pagelink: LogicalModelsIndex, text: Taak, anchor: ptlmTask}}
 - LogicalModel {{pagelink: LogicalModelsIndex, text: Digitale activiteit, anchor: ptlmDigitalActivity}}
 - LogicalModel {{pagelink: LogicalModelsIndex, text: Digitaal groepsplan, anchor: ptlmDigitalGroupPlan}}
 - LogicalModel {{pagelink: LogicalModelsIndex, text: Uitvoeringsopdracht, anchor: ptlmExecutionOrder}}
+- LogicalModel {{pagelink: LogicalModelsIndex, text: Endpoint, anchor: ptlmEndpoint}}
