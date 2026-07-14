@@ -7,12 +7,14 @@ topic: TO
 ## Introduction
 
 This technical design provides the technical specification of the Provider Tasks (Dutch: Aanbiedertaken) standard.
+
 This technical design is the technical counterpart of the {{pagelink: FO, text: functional design}}. The FHIR version used for this IG is R4 (4.0.1).
+
 Note that in addition to this design, the (technical) guidelines as specified in the [MedMij R4 Core IG](https://simplifier.net/guide/medmij-r4-core-ig?version=1.0.1) and the [MedMij FHIR IG for R4](https://informatiestandaarden.nictiz.nl/wiki/MedMij:IG:V1/FHIR_IG) apply, the latter of which is published by Nictiz.
 
 ## Workflow model
 
-For this use case, the [HL7 Clinical Order Workflows IG](https://build.fhir.org/ig/HL7/fhir-cow-ig/en/index.html) has been used as the guiding framework (see the {{pagelink: Dependencies, text: Dependencies}} page for the package version). Clinical Order Worklflows provides shared data models and coordination rules for request-fulfillment workflows. The resource relationships below are aligned with the [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html).
+For this use case, the [HL7 Clinical Order Workflows IG](https://build.fhir.org/ig/HL7/fhir-cow-ig/en/index.html) has been used as the guiding framework (see the {{pagelink: Dependencies, text: Dependencies}} page for the package version). Clinical Order Worklflows provides shared data models and coordination rules for request-fulfillment workflows. Provider Tasks uses the FHIR R4 workflow resources `Task`, `ServiceRequest`, and `ActivityDefinition`. Their roles and relationships within this information standard are described below and follow the [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html).
 
 ## Actors involved
 
@@ -21,7 +23,7 @@ For this use case, the [HL7 Clinical Order Workflows IG](https://build.fhir.org/
 | **Name** | **Description** | **Name** | **Description** | **Name** | **Description** |
 | Patient | The user of a personal healthcare environment | PHR | Personal health record | [pt-Task-Retrieve](http://medmij.nl/fhir/CapabilityStatement/pt-Task-Retrieve) | FHIR client requirements |
 | Healthcare provider | The user of a XIS | XIS | Healthcare information system | [pt-Task-Serve](http://medmij.nl/fhir/CapabilityStatement/pt-Task-Serve) | FHIR server requirements |
-| Digital activity provider | Delivers the digital activity | module system | Executes the digital activity after launch | — | — |
+| Digital activity provider | Delivers the digital activity | module system | Executes the digital activity after launch | [pt-Task-Update](http://medmij.nl/fhir/CapabilityStatement/pt-Task-Update) | FHIR client requirements |
 
 **Table 1: Actors, systems and FHIR CapabilityStatements**
 
@@ -34,8 +36,9 @@ This technical design assumes that a PHR s able to make a connection to the righ
 Out of scope for this technical design:
 - Exchange of clinical results produced by executing the activity (Event resources such as Observation or QuestionnaireResponse).
 
-## <a name="RelatingFHIRToFunctionalCounterpart"></a> Relating FHIR (profiles) to its functional counterpart
-The functional model of Palga is represented by {{pagelink: LogicalModelsIndex, text: Logical Models}}.
+## Relating FHIR (profiles) to its functional counterpart
+
+The functional model of Provider Tasks is represented by {{pagelink: LogicalModelsIndex, text: Logical Models}}.
 - For each concept in these Logical Models, an id is assigned by MedMij. These ids are also added as mappings in the FHIR profiles on the corresponding elements, i.e. by specifying `.mapping.map` on each element accordingly. Therefore, these ids form the linking pin between the Logical Models and FHIR profiles. If no such mapping is possible for a certain element in a FHIR profile, guidance is provided to indicate how that element should be handled.
 - nl-core profiles from the [nictiz.fhir.nl.r4.nl-core](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.12.0-beta.4) package are used where applicable (for example, to resolve requester information).
 
@@ -43,15 +46,15 @@ The functional model of Palga is represented by {{pagelink: LogicalModelsIndex, 
 | --- | --- | --- |
 | {{pagelink: LogicalModelsIndex, text: Task, anchor: ptlmTask}} | Task | pt-Task |
 | {{pagelink: LogicalModelsIndex, text: Activity, anchor: ptlmActivity}} | ActivityDefinition | pt-DigitalActivity |
-| Digital group plan | ServiceRequest | pt-DigitalGroupPlan |
-| Execution order | ServiceRequest | pt-ExecutionOrder |
+| {{pagelink: LogicalModelsIndex, text: Digital group plan, anchor: ptlmDigitalGroupPlan}} | ServiceRequest | pt-DigitalGroupPlan |
+| {{pagelink: LogicalModelsIndex, text: Execution order, anchor: ptlmExecutionOrder}} | ServiceRequest | pt-ExecutionOrder |
 | {{pagelink: LogicalModelsIndex, text: Endpoint, anchor: ptlmEndpoint}} | Endpoint | pt-Endpoint |
 
 **Table 2: Mapping between Logical Models and FHIR profiles**
 
 ### Resource relationships
 
-A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference the same `pt-DigitalGroupPlan` and the same `pt-DigitalActivity`. There is no parent–child hierarchy between tasks. A task ties the other resources together through three references:
+A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference the same `pt-DigitalGroupPlan` and the same `pt-DigitalActivity`. There is no parent–child hierarchy between tasks. A task ties the other resources together through references:
 
 | Reference on Task | Target | Purpose |
 | --- | --- | --- |
@@ -61,26 +64,23 @@ A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference th
 
 **Table 3: References from `pt-Task`**
 
-Tasks of the same digital care module share one `pt-DigitalGroupPlan`.
-
 #### Implementation guidance
 
-**source system** creates the resources when a healthcare professional assigns a digital care module to a patient:
-
+**Source system** 
+Creates the resources when a healthcare professional assigns a digital care module to a patient:
 - Create one `pt-DigitalGroupPlan` per module and set `ServiceRequest.code.text` to its display name.
 - Create a `pt-Task` for each unit of work the patient must perform, with `Task.basedOn` to the group plan and `ext-DigitalActivity` to the matching `pt-DigitalActivity`. Multiple Tasks may point to the same group plan and the same digital activity.
 - Create a `pt-ExecutionOrder` only when the activity needs patient-specific scheduling or instructions. Use `occurrenceTiming` for a recurring schedule, `occurrenceDateTime` or `occurrencePeriod` for a single occurrence. A recurring schedule SHALL use a `pt-ExecutionOrder`.
 
-**PHR** reads and displays the task list:
-
+**Personal healthcare environment** 
+Reads and displays the task list:
 - Search Tasks and resolve `Task.basedOn`, `Task.focus`, and `ext-DigitalActivity` from the response Bundle or via a read interaction.
 - Group Tasks by `Task.basedOn`, using `ServiceRequest.code.text` as the group label.
 - Show `pt-DigitalActivity` for generic activity content and, when present, `pt-ExecutionOrder` for scheduling and instructions.
 
-**module system** reports progress after the patient performs the activity:
-
+**Module system** 
+Reports progress after the patient performs the activity:
 - Update `Task.status` on the source system to reflect progress or completion.
-
 
 ## Use case: Provider Tasks
 
@@ -90,8 +90,8 @@ The healthcare provider initiates digital activities for the patient. The patien
 | --- | --- | --- | --- |
 | Retrieve task list (PULL) | Retreive task data | Patient (using a PHR) | Retrieves tasks and related context from the source system |
 | Retrieve task list (PULL) | Serve task data | Healthcare provider (using a source system) | Returns tasks and related context to the PHR |
-| Update task | Update task | module system | Updates `Task.status` after activity interaction |
 | Launch | Start external module | Patient (using a PHR) | Launches the digital activity in a module system |
+| Update task | Update task | Module system | Updates `Task.status` after activity interaction |
 
 **Table 4: Transactions within the Provider Tasks use case**
 
@@ -121,11 +121,10 @@ The digital activity reference is carried in the `ext-DigitalActivity` extension
 
 | Description | FHIR search parameter | Examples |
 | --- | --- | --- |
-| Filter Tasks belonging to the Provider Tasks information standard | `_tag` | `GET [base]/Task?_tag=…` (see example below) |
-| Retrieve only Tasks updated since a given point in time | `_lastUpdated` | `GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00` |
+| Filter Tasks belonging to the Provider Tasks information standard | `_tag` | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`|
+| Include the digital activity referenced from the Task | `_include=Task:digitalActivity` | `GET [base]/Task?_include=Task:digitalActivity` |
 | Include the digital group plan on which the Task is based | `_include=Task:based-on` | `GET [base]/Task?_include=Task:based-on` |
 | Include the execution order referenced from the Task | `_include=Task:focus` | `GET [base]/Task?_include=Task:focus` |
-| Include the digital activity referenced from the Task | `_include=Task:digitalActivity` | `GET [base]/Task?_include=Task:digitalActivity` |
 
 **Table 5: Supported search parameters**
 
@@ -138,24 +137,6 @@ Per the [MedMij FHIR IG pattern for including referenced resources](https://info
 - Endpoint (`pt-Endpoint`)
 
 The PHR SHALL support read on these resource types. The source system SHALL support read on these resource types when it does not always include the referenced resources in the response Bundle.
-
-##### Request last-updated
-
-The PHR SHALL be able to retrieve only those Task resources that have been updated since a given point in time, to support efficient incremental refresh of the task list. This is done using the standard FHIR `_lastUpdated` search parameter ([specification](https://hl7.org/fhir/R4/search.html#lastUpdated)). The PHR determines the time window itself (e.g., since last sync) and includes the desired date/time range in the search query, for example:
-
-```
-GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00
-```
-
-The PHR MAY add an upper bound on `_lastUpdated` to restrict the period, for example:
-
-```
-GET [base]/Task?_lastUpdated=ge2026-01-01T00:00:00+01:00&_lastUpdated=le2026-01-31T23:59:59+01:00
-```
-
-##### XIS: response message
-
-The XIS returns an HTTP Status code appropriate to the processing outcome as well as a Bundle, with `Bundle.type` equal to *searchset*, including the resources matching the search query. The resources included in the Bundle SHALL conform to the profiles listed {{pagelink: FHIRProfilesIndex, text: here}}.
 
 ##### Module system: update task status
 
@@ -206,13 +187,23 @@ Content-Type: application/json-patch+json
 ]
 ```
 
-#### PHR: launch activity
+##### Request last-updated
 
-The launch is based on information in `pt-DigitalActivity` and `pt-Endpoint` (e.g., `Endpoint.address`). In Provider Tasks this is the step where the PHR starts an external module system.
+The PHR SHALL be able to retrieve only those Task resources that have been updated since a given point in time, to support efficient incremental refresh of the task list. This is done using the standard FHIR `_lastUpdated` search parameter ([specification](https://hl7.org/fhir/R4/search.html#lastUpdated)). The PHR determines the time window itself (e.g., since last sync) and includes the desired date/time range in the search query, for example:
 
-The launch is an interaction outside the core REST data exchange and is based on SMART App Launch. The specifications can be found in the [Solution Design Aanbiedermodules v0.8](https://changemanagement.medmij.nl/medmij-service-requests/actueel/v0-8-aanbiedermodules) (see also the {{pagelink: Dependencies, text: Dependencies}} page).
+```
+GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00
+```
 
-The returned data to the PHR and the data exchanged with the module system SHALL conform to the profiles listed below. These requests are based on the profiles derived from the {{pagelink: LogicalModelsIndex, text: Logical Models}}.
+The PHR MAY add an upper bound on `_lastUpdated` to restrict the period, for example:
+
+```
+GET [base]/Task?_lastUpdated=ge2026-01-01T00:00:00+01:00&_lastUpdated=le2026-01-31T23:59:59+01:00
+```
+
+##### XIS: response message
+
+The XIS returns an HTTP Status code appropriate to the processing outcome as well as a Bundle, with `Bundle.type` equal to *searchset*, including the resources matching the search query. The returned data to the PHR and the data exchanged with the module system SHALL conform to the profiles listed below.
 
 | Description | CIM NL | HCIM EN | FHIR profile | Search URL |
 | --- | --- | --- | --- | --- |
@@ -226,3 +217,9 @@ The returned data to the PHR and the data exchanged with the module system SHALL
 | Retrieve health professional | Zorgverlener | HealthProfessional | [nl-core-HealthProfessional-Practitioner](https://simplifier.net/resolve?canonical=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner&scope=nictiz.fhir.nl.r4.nl-core@0.12.0-beta.4), [nl-core-HealthProfessional-PractitionerRole](https://simplifier.net/resolve?canonical=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole&scope=nictiz.fhir.nl.r4.nl-core@0.12.0-beta.4) | Resolved via `Task.requester` / `ServiceRequest.requester` |
 
 **Table 6: Overview of in-scope requests**
+
+#### PHR: launch activity
+
+The launch is based on information in `pt-DigitalActivity` and `pt-Endpoint` (e.g., `Endpoint.address`). In Provider Tasks this is the step where the PHR starts an external module system.
+
+The launch is an interaction outside the core REST data exchange and is based on SMART App Launch. The specifications can be found in the [Solution Design Aanbiedermodules v0.8](https://changemanagement.medmij.nl/medmij-service-requests/actueel/v0-8-aanbiedermodules) (see also the {{pagelink: Dependencies, text: Dependencies}} page).
