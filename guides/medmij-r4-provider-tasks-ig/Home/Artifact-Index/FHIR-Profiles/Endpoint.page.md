@@ -18,4 +18,7 @@ canonical: http://medmij.nl/fhir/StructureDefinition/pt-Endpoint
     <tab title="Json">
       {{json:http://medmij.nl/fhir/StructureDefinition/pt-Endpoint}}
     </tab>
+    <tab title="Examples">
+      {{page:fql-get-examples}}
+    </tab>
 </tabs>
