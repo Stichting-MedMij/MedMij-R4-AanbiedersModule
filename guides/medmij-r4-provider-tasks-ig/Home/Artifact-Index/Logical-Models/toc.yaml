@@ -4,6 +4,8 @@
   filename: Task.page.md
 - name: Digital activity
   filename: DigitalActivity.page.md
+- name: Endpoint
+  filename: Endpoint.page.md
 - name: Digital group plan
   filename: DigitalGroupPlan.page.md
 - name: Execution order
