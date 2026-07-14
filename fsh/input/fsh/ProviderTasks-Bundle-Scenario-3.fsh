@@ -334,7 +334,7 @@ Usage: #example
 * owner = Reference(Patient-ProviderTasks-Van-Dijk) "Sanne van Dijk"
 
 
-Instance: ActivityDefinition-ProviderTasks-Informatie-Inhalatiemedicatie-Van-Dijk
+Instance: ActivityDefinition-ProviderTasks-Inhalatiemedicatie-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
@@ -365,7 +365,7 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Informatie-Inhalatiemedicatie-Van-Dijk)
+  * valueReference = Reference(ActivityDefinition-ProviderTasks-Inhalatiemedicatie-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier
@@ -385,7 +385,7 @@ Usage: #example
 * owner = Reference(Patient-ProviderTasks-Van-Dijk) "Sanne van Dijk"
 
 
-Instance: ActivityDefinition-ProviderTasks-Vragenlijst-Wat-Bereiken-Van-Dijk
+Instance: ActivityDefinition-ProviderTasks-Wat-Bereiken-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
@@ -417,7 +417,7 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Vragenlijst-Wat-Bereiken-Van-Dijk)
+  * valueReference = Reference(ActivityDefinition-ProviderTasks-Wat-Bereiken-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier

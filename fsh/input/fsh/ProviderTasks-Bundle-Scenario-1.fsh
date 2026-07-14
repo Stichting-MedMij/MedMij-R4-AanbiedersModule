@@ -550,7 +550,7 @@ Usage: #example
 * requester = Reference(PractitionerRole-ProviderTasks-De-Haard) "A. de Haard, Huisarts"
 * owner = Reference(Patient-ProviderTasks-Van-Duinen) "Tom van Duinen"
 
-Instance: ActivityDefinition-ProviderTasks-Informatie-Gezonder-Leven-Van-Duinen
+Instance: ActivityDefinition-ProviderTasks-Gezonder-Leven-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
@@ -581,7 +581,7 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Informatie-Gezonder-Leven-Van-Duinen)
+  * valueReference = Reference(ActivityDefinition-ProviderTasks-Gezonder-Leven-Van-Duinen)
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"
@@ -601,7 +601,7 @@ Usage: #example
 * owner = Reference(Patient-ProviderTasks-Van-Duinen) "Tom van Duinen"
 
 
-Instance: ActivityDefinition-ProviderTasks-Vragenlijst-WoonLeefsituatie-Van-Duinen
+Instance: ActivityDefinition-ProviderTasks-Woonleefsituatie-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
@@ -633,7 +633,7 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Vragenlijst-WoonLeefsituatie-Van-Duinen)
+  * valueReference = Reference(ActivityDefinition-ProviderTasks-Woonleefsituatie-Van-Duinen)
     * type = "ActivityDefinition"
 * identifier
   * system = "http://medrie.nl/taskIdentifier"

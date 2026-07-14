@@ -600,7 +600,7 @@ Usage: #example
 * owner = Reference(Patient-ProviderTasks-De-Groot) "Koos de Groot"
 
 
-Instance: ActivityDefinition-ProviderTasks-Vragenlijst-Uw-Situatie-De-Groot
+Instance: ActivityDefinition-ProviderTasks-Uw-Situatie-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * text
@@ -631,7 +631,7 @@ Usage: #example
   * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
 * extension
   * url = $pt-digital-activity
-  * valueReference = Reference(ActivityDefinition-ProviderTasks-Vragenlijst-Uw-Situatie-De-Groot)
+  * valueReference = Reference(ActivityDefinition-ProviderTasks-Uw-Situatie-De-Groot)
     * type = "ActivityDefinition"
 * basedOn = Reference(ServiceRequest-ProviderTasks-DigitalGroup-CVRM-De-Groot) "Digitale zorgmodule CVRM"
 * identifier
