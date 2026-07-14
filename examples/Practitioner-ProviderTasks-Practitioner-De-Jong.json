@@ -1,0 +1,63 @@
+{
+  "resourceType": "Practitioner",
+  "id": "ProviderTasks-Practitioner-De-Jong",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner"
+    ]
+  },
+  "name": [
+    {
+      "given": [
+        "L."
+      ],
+      "_given": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+              "valueCode": "IN"
+            }
+          ]
+        }
+      ],
+      "use": "official",
+      "text": "L. de Jong",
+      "family": "de Jong",
+      "_family": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix",
+            "valueString": "de"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+            "valueString": "Jong"
+          }
+        ]
+      }
+    }
+  ],
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.nl/fhir/NamingSystem/big",
+      "value": "28910456"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+31655504321",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "l.dejong@huisartspraktijk-example.nl",
+      "use": "work"
+    }
+  ]
+}

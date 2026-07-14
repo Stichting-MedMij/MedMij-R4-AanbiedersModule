@@ -1,0 +1,47 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot",
+  "meta": {
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint",
+      "valueReference": {
+        "reference": "Endpoint/ProviderTasks-Endpoint-Minddistrict"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://ns.minddistrict.com/content/id",
+      "value": "481365c2-a85c-49cc-bb74-d6d8a6a53b46"
+    }
+  ],
+  "url": "https://ns.minddistrict.com/fhir/ActivityDefinition/ed5ea36a-ef8e-417e-827e-8a130287d44d",
+  "version": "1.0.0",
+  "name": "MeetopdachtBloeddrukmeting",
+  "title": "Bloeddrukmeting",
+  "status": "active",
+  "publisher": "Minddistrict",
+  "description": "Bloeddrukmeting volgens NHG protocol. 1 week, 2x per dag, 's ochtends en 's avonds",
+  "timingTiming": {
+    "repeat": {
+      "boundsDuration": {
+        "value": 7,
+        "system": "http://unitsofmeasure.org",
+        "code": "d",
+        "unit": "day"
+      },
+      "frequency": 1,
+      "period": 1,
+      "periodUnit": "d"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "resourceType": "Task",
+  "id": "ProviderTasks-Task-Bloeddrukmeting-6-De-Groot",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://medmij.nl/fhir/CodeSystem/information-standard",
+        "code": "providertasks"
+      }
+    ],
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-Task"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity",
+      "valueReference": {
+        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot",
+        "type": "ActivityDefinition"
+      }
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot",
+      "display": "Digitale zorgmodule CVRM"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://medrie.nl/taskIdentifier",
+      "value": "TASK-Bloeddruk-6"
+    }
+  ],
+  "status": "received",
+  "intent": "order",
+  "priority": "routine",
+  "description": "Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken.",
+  "focus": {
+    "reference": "ServiceRequest/ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot"
+  },
+  "for": {
+    "reference": "Patient/ProviderTasks-Patient-De-Groot",
+    "display": "Koos de Groot"
+  },
+  "executionPeriod": {
+    "start": "2025-12-24",
+    "end": "2025-12-24"
+  },
+  "authoredOn": "2025-12-22T08:00:00+01:00",
+  "lastModified": "2025-12-22T08:00:00+01:00",
+  "requester": {
+    "reference": "PractitionerRole/ProviderTasks-PractitionerRole-De-Jong",
+    "display": "L. de Jong, Huisarts"
+  },
+  "owner": {
+    "reference": "Patient/ProviderTasks-Patient-De-Groot",
+    "display": "Koos de Groot"
+  }
+}

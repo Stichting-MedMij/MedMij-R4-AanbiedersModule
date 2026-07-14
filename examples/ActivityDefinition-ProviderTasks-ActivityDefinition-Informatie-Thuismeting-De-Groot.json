@@ -1,0 +1,34 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "ProviderTasks-ActivityDefinition-Informatie-Thuismeting-De-Groot",
+  "meta": {
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint",
+      "valueReference": {
+        "reference": "Endpoint/ProviderTasks-Endpoint-Minddistrict"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://ns.minddistrict.com/content/id",
+      "value": "7e5633b6-2cf2-49bf-8f1c-e105c8b82b22"
+    }
+  ],
+  "url": "https://ns.minddistrict.com/fhir/ActivityDefinition/708f713b-8f32-43e3-b7dc-749462cc4d49",
+  "version": "1.0.0",
+  "name": "InformatieBloeddrukmeten",
+  "title": "Informatie over thuis bloeddruk meten",
+  "status": "active",
+  "publisher": "Minddistrict",
+  "description": "Instructiemodule thuismetingen bloeddruk: patiëntinstructie voor correcte meetmethode (rust, houding, manchet, meetmomenten) en registratie, ter verbetering van betrouwbaarheid van thuismetingen"
+}

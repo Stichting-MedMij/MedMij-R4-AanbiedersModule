@@ -1,0 +1,32 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "ProviderTasks-PractitionerRole-De-Jong",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "practitioner": {
+    "reference": "Practitioner/ProviderTasks-Practitioner-De-Jong",
+    "display": "L. de Jong"
+  },
+  "organization": {
+    "reference": "Organization/ProviderTasks-Organization-Huisartsenpraktijk-De-Haard",
+    "display": "Huisartstenpraktijk de Haard"
+  },
+  "specialty": [
+    {
+      "coding": [
+        {
+          "code": "0110",
+          "system": "urn:oid:2.16.840.1.113883.2.4.6.7",
+          "display": "Huisarts, apotheekhoudend"
+        }
+      ]
+    }
+  ]
+}

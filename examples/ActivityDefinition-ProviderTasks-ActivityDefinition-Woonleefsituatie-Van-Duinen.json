@@ -1,0 +1,34 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "ProviderTasks-ActivityDefinition-Woonleefsituatie-Van-Duinen",
+  "meta": {
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint",
+      "valueReference": {
+        "reference": "Endpoint/ProviderTasks-Endpoint-HINQ"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://hinq.zno.com/content/id",
+      "value": "d11eb00f-8659-4af2-97bf-1a0b656e0b4d"
+    }
+  ],
+  "url": "https://hing.zno.com/fhir/ActivityDefinition/1bd9c3ed-1862-4e7e-a057-ac75278a8a5a",
+  "version": "1.0.0",
+  "name": "VragenlijstWoonLeefsituatie",
+  "title": "Vragenlijst over de woon- leefsituatie",
+  "status": "active",
+  "publisher": "HinqZNO",
+  "description": "Vragenlijst woon-/leefsituatie binnen de digitale zorgmodule Diabetes om contextfactoren (wonen, dagelijks functioneren, ondersteuning, leefstijl en mogelijkheden/belemmeringen) in kaart te brengen als basis voor persoonsgerichte begeleiding en haalbare leefstijlafspraken."
+}

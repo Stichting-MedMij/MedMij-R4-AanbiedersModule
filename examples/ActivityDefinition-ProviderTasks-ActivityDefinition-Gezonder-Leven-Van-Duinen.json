@@ -1,0 +1,34 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "ProviderTasks-ActivityDefinition-Gezonder-Leven-Van-Duinen",
+  "meta": {
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint",
+      "valueReference": {
+        "reference": "Endpoint/ProviderTasks-Endpoint-HINQ"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://hing.zno.com/content/id",
+      "value": "801e6797-cb52-4020-847a-7440a15b5998"
+    }
+  ],
+  "url": "https://hing.zno.com/fhir/ActivityDefinition/39318a5e-889d-48a5-8812-e59247743a0c",
+  "version": "1.0.0",
+  "name": "InformatieGezonderLeven",
+  "title": "Gezonder gaan leven",
+  "status": "active",
+  "publisher": "HinqZNO",
+  "description": "Leestips voor een gezondere leefstijl."
+}

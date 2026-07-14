@@ -1,0 +1,34 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "ProviderTasks-ActivityDefinition-Informatie-Cholesterol-De-Groot",
+  "meta": {
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint",
+      "valueReference": {
+        "reference": "Endpoint/ProviderTasks-Endpoint-Minddistrict"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://ns.minddistrict.com/content/id",
+      "value": "c45485ee-8a42-466b-97ba-ac6537b0bf89"
+    }
+  ],
+  "url": "https://ns.minddistrict.com/fhir/ActivityDefinition/f0d9b485-f282-4870-a5f6-a5ea41465239",
+  "version": "1.0.0",
+  "name": "InformatieCholesterol",
+  "title": "Wat is cholesterol en wat zijn de risico's?",
+  "status": "active",
+  "publisher": "Minddistrict",
+  "description": "Voorlichtingsmodule cholesterol: uitlegmateriaal over wat cholesterol is, cardiovasculaire risico’s en leefstijl-/behandelopties ter ondersteuning van CVRM en gezamenlijke besluitvorming."
+}

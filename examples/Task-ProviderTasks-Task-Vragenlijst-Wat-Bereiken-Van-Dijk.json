@@ -1,0 +1,62 @@
+{
+  "resourceType": "Task",
+  "id": "ProviderTasks-Task-Vragenlijst-Wat-Bereiken-Van-Dijk",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://medmij.nl/fhir/CodeSystem/information-standard",
+        "code": "providertasks"
+      }
+    ],
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-Task"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity",
+      "valueReference": {
+        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Wat-Bereiken-Van-Dijk",
+        "type": "ActivityDefinition"
+      }
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk",
+      "display": "Digitale zorgmodule COPD"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://hing.zno.com/taskIdentifier",
+      "value": "TASK-74745858"
+    }
+  ],
+  "status": "requested",
+  "intent": "order",
+  "priority": "routine",
+  "description": "Beantwoord deze vragen over wat je belangrijk vindt en wat je wilt bereiken met je behandeling of begeleiding.",
+  "for": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
+    "display": "Sanne van Dijk"
+  },
+  "executionPeriod": {
+    "start": "2026-01-05",
+    "end": "2026-01-11"
+  },
+  "authoredOn": "2026-01-05T18:00:00+01:00",
+  "lastModified": "2026-01-05T18:00:00+01:00",
+  "requester": {
+    "reference": "PractitionerRole/ProviderTasks-PractitionerRole-Van-Rijn",
+    "display": "M. van Rijn, Huisarts"
+  },
+  "owner": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
+    "display": "Sanne van Dijk"
+  }
+}

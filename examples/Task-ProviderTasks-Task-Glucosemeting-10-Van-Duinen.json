@@ -1,0 +1,65 @@
+{
+  "resourceType": "Task",
+  "id": "ProviderTasks-Task-Glucosemeting-10-Van-Duinen",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://medmij.nl/fhir/CodeSystem/information-standard",
+        "code": "providertasks"
+      }
+    ],
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-Task"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity",
+      "valueReference": {
+        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Glucosemeting-Van-Duinen",
+        "type": "ActivityDefinition"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://medrie.nl/taskIdentifier",
+      "value": "TASK-Glucose-10"
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequest-DigitalGroup-Diabetes-Van-Duinen",
+      "display": "Digitale zorgmodule Diabetes"
+    }
+  ],
+  "status": "received",
+  "intent": "order",
+  "priority": "routine",
+  "description": "Deze meting helpt om inzicht te krijgen in de bloedsuikerspiegel.",
+  "focus": {
+    "reference": "ServiceRequest/ProviderTasks-ServiceRequest-Execution-Glucosemeting-Van-Duinen"
+  },
+  "for": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Duinen",
+    "display": "Tom van Duinen"
+  },
+  "executionPeriod": {
+    "start": "2025-12-26T18:00:00+01:00",
+    "end": "2025-12-26T23:59:00+01:00"
+  },
+  "authoredOn": "2025-12-22T08:00:00+01:00",
+  "lastModified": "2025-12-22T08:00:00+01:00",
+  "requester": {
+    "reference": "PractitionerRole/ProviderTasks-PractitionerRole-De-Haard",
+    "display": "A. de Haard, Huisarts"
+  },
+  "owner": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Duinen",
+    "display": "Tom van Duinen"
+  }
+}
