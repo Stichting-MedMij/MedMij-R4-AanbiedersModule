@@ -15,6 +15,9 @@ Characteristics: #can-be-target
 * .
   * ^short = "Digital activity"
   * ^alias = "DigitaleActiviteit"
+* Identifier 0..* Identifier "Business identifier for this digital activity definition."
+  * ^short = "Identifier"
+  * ^alias = "Identificatie"
 * Title 1..1 string "Short, human-friendly title for the digital activity."
   * ^short = "Title"
   * ^alias = "Titel"
@@ -42,6 +45,7 @@ Source: PtLmDigitalActivity
 Id: pt-dataset-100-alpha1-20260511
 Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * . -> "pt-dataelement-9" "DigitalActivity"
+* Identifier -> "pt-dataelement-31" "Identifier"
 * Title -> "pt-dataelement-10" "Title"
 * Status -> "pt-dataelement-11" "Status"
 * Publisher -> "pt-dataelement-12" "Publisher"
@@ -100,6 +104,9 @@ Characteristics: #can-be-target
 * .
   * ^short = "Execution order"
   * ^alias = "Uitvoeringsopdracht"
+* Identifier 0..* Identifier "Business identifier for this execution order."
+  * ^short = "Identifier"
+  * ^alias = "Identificatie"
 * PatientInstruction 0..1 string "Patient-oriented instructions that may differ from or add to the generic activity information. These instructions should be shown alongside the task(s) created from this order."
   * ^short = "Patient instruction"
   * ^alias = "PatiëntenInstructie"
@@ -115,6 +122,7 @@ Source: PtLmExecutionOrder
 Id: pt-dataset-100-alpha1-20260511
 Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * . -> "pt-dataelement-15" "ExecutionOrder"
+* Identifier -> "pt-dataelement-32" "Identifier"
 * PatientInstruction -> "pt-dataelement-16" "PatientInstruction"
 * Schedule[x] -> "pt-dataelement-17" "Schedule"
 * Requester -> "pt-dataelement-18" "Requester"
@@ -133,6 +141,9 @@ Description: "Patient-specific task that tells a patient what to do as part of a
 * .
   * ^short = "Task"
   * ^alias = "Taak"
+* Identifier 0..* Identifier "Business identifier for this patient task."
+  * ^short = "Identifier"
+  * ^alias = "Identificatie"
 * DigitalActivity 1..1 Reference(PtLmDigitalActivity) "Reference to the digital activity definition associated with this task."
   * ^short = "Digital activity"
   * ^alias = "DigitaleActiviteit"
@@ -170,6 +181,7 @@ Source: PtLmTask
 Id: pt-dataset-100-alpha1-20260511
 Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * . -> "pt-dataelement-1" "Task"
+* Identifier -> "pt-dataelement-33" "Identifier"
 * DigitalActivity -> "pt-dataelement-2" "DigitalActivity"
 * GroupPlan -> "pt-dataelement-3" "GroupPlan"
 * ExecutionOrder -> "pt-dataelement-19" "ExecutionOrder"

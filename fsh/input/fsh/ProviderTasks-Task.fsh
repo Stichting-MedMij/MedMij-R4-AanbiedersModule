@@ -19,7 +19,9 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^alias = "DigitaleActiviteit"
   * valueReference only Reference(PtDigitalActivity)
 * identifier 1..
-  * ^comment = "Mapping to the functional model is pending: a corresponding identifier concept is to be added to the Task Logical Model."
+  * ^short = "Identifier"
+  * ^definition = "Business identifier for this patient task."
+  * ^alias = "Identificatie"
 * basedOn 1..1
 * basedOn only Reference(PtDigitalGroupPlan)
   * ^short = "Digital group plan"
@@ -76,6 +78,7 @@ Source: PtTask
 Id: pt-dataset-100-alpha1-20260511
 Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * -> "pt-dataelement-1" "Task"
+* identifier -> "pt-dataelement-33" "Identifier"
 * extension[$pt-digital-activity] -> "pt-dataelement-2" "DigitalActivity"
 * basedOn -> "pt-dataelement-3" "GroupPlan"
 * focus -> "pt-dataelement-19" "ExecutionOrder"

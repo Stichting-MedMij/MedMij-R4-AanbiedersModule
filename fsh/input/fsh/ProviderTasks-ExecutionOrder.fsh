@@ -14,6 +14,10 @@ Description: "Patient-specific execution order for a digital activity, created b
 * .
 ^definition = "Patient-specific clinical order for a digital activity, created by a healthcare professional for a patient."
 * intent = #order
+* identifier
+  * ^short = "Identifier"
+  * ^definition = "Business identifier for this execution order."
+  * ^alias = "Identificatie"
 * status 1..1
   * ^short = "Status"
   * ^definition = "Current state of the execution order (e.g., draft, active, on-hold, revoked, completed)."
@@ -42,6 +46,7 @@ Source: PtExecutionOrder
 Id: pt-dataset-100-alpha1-20260511
 Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * -> "pt-dataelement-15" "ExecutionOrder"
+* identifier -> "pt-dataelement-32" "Identifier"
 * patientInstruction -> "pt-dataelement-16" "PatientInstruction"
 * occurrence[x] -> "pt-dataelement-17" "Schedule"
 * requester -> "pt-dataelement-18" "Requester"

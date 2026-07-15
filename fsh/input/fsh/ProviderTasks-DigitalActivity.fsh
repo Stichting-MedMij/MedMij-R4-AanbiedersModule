@@ -14,6 +14,10 @@ Description: "Reusable definition of a digital activity (module) that can be sel
 * extension contains ExtEndpointReference named endpoint 1..*
 * extension[endpoint] ^short = "Endpoint for launching the activity"
   * ^definition = "Mandatory reference to the service application (endpoint) that provides the launchable digital activity. Can be more than one endpoint."
+* identifier
+  * ^short = "Identifier"
+  * ^definition = "Business identifier for this digital activity definition."
+  * ^alias = "Identificatie"
 * url 1..
 * title 1..
   * ^short = "Title"
@@ -47,6 +51,7 @@ Source: PtDigitalActivity
 Id: pt-dataset-100-alpha1-20260511
 Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * -> "pt-dataelement-9" "DigitalActivity"
+* identifier -> "pt-dataelement-31" "Identifier"
 * title -> "pt-dataelement-10" "Title"
 * status -> "pt-dataelement-11" "Status"
 * publisher -> "pt-dataelement-12" "Publisher"
