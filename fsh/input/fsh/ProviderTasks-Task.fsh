@@ -42,6 +42,14 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^short = "ExecutionPeriod"
   * ^definition = "Time window in which the task should be performed (start/end), if applicable."
   * ^alias = "Periode"
+* authoredOn
+  * ^short = "AuthoredOn"
+  * ^definition = "The date and time this task was created."
+  * ^alias = "CreatieDatum"
+* lastModified
+  * ^short = "LastModified"
+  * ^definition = "The date and time of last modification to this task."
+  * ^alias = "MutatieDatum"
 * focus 0..1
 * focus only Reference(PtExecutionOrder)
   * ^short = "Patient-specific execution details"
@@ -86,5 +94,7 @@ Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * priority -> "pt-dataelement-5" "Priority"
 * description -> "pt-dataelement-6" "Description"
 * executionPeriod -> "pt-dataelement-7" "ExecutionPeriod"
+* authoredOn -> "pt-dataelement-34" "AuthoredOn"
+* lastModified -> "pt-dataelement-35" "LastModified"
 * requester -> "pt-dataelement-8" "Requester"
 * owner -> "pt-dataelement-24" "Owner"
