@@ -45,11 +45,11 @@ Description: "Patient-specific task that tells a patient what to do as part of a
 * authoredOn
   * ^short = "AuthoredOn"
   * ^definition = "The date and time this task was created."
-  * ^alias = "CreatieDatum"
+  * ^alias = "CreatieDatumTijd"
 * lastModified
   * ^short = "LastModified"
   * ^definition = "The date and time of last modification to this task."
-  * ^alias = "MutatieDatum"
+  * ^alias = "MutatieDatumTijd"
 * focus 0..1
 * focus only Reference(PtExecutionOrder)
   * ^short = "Patient-specific execution details"
