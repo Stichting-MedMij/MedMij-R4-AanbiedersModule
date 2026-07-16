@@ -1,0 +1,237 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pt-lm-DigitalActivity",
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-be-target"
+    }
+  ],
+  "url": "http://medmij.nl/fhir/StructureDefinition/pt-lm-DigitalActivity",
+  "name": "PtLmDigitalActivity",
+  "title": "Digital Activity",
+  "status": "draft",
+  "publisher": "MedMij",
+  "contact": [
+    {
+      "name": "MedMij",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@medmij.nl",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "Reusable definition of a digital activity (module) that can be selected by a healthcare professional and presented to a patient as part of the care process. The activity describes what the patient will do (e.g., read information, complete a questionnaire, perform a home measurement) and provides the information needed to start or access the activity when applicable.",
+  "purpose": "This LogicalModel represents the DigitalActivity building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
+  "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "pt-dataset-100-alpha1-20260511",
+      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://medmij.nl/fhir/StructureDefinition/pt-lm-DigitalActivity",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "pt-lm-DigitalActivity",
+        "path": "pt-lm-DigitalActivity",
+        "short": "Digital activity",
+        "definition": "Reusable definition of a digital activity (module) that can be selected by a healthcare professional and presented to a patient as part of the care process. The activity describes what the patient will do (e.g., read information, complete a questionnaire, perform a home measurement) and provides the information needed to start or access the activity when applicable.",
+        "alias": [
+          "DigitaleActiviteit"
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-9",
+            "comment": "DigitalActivity"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-DigitalActivity.Identifier",
+        "path": "pt-lm-DigitalActivity.Identifier",
+        "short": "Identifier",
+        "definition": "Business identifier for this digital activity definition.",
+        "alias": [
+          "Identificatie"
+        ],
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-31",
+            "comment": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-DigitalActivity.Title",
+        "path": "pt-lm-DigitalActivity.Title",
+        "short": "Title",
+        "definition": "Short, human-friendly title for the digital activity.",
+        "alias": [
+          "Titel"
+        ],
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-10",
+            "comment": "Title"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-DigitalActivity.Status",
+        "path": "pt-lm-DigitalActivity.Status",
+        "short": "Status",
+        "definition": "Lifecycle status of the digital activity.",
+        "alias": [
+          "Status"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status"
+        },
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-11",
+            "comment": "Status"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-DigitalActivity.Publisher",
+        "path": "pt-lm-DigitalActivity.Publisher",
+        "short": "Publisher",
+        "definition": "Organization responsible for the content/functionality of this digital activity and its maintenance.",
+        "alias": [
+          "Uitgever"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-12",
+            "comment": "Publisher"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-DigitalActivity.Description",
+        "path": "pt-lm-DigitalActivity.Description",
+        "short": "Description",
+        "definition": "Guidance on how this digital activity should be used in clinical workflows.",
+        "alias": [
+          "Omschrijving"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "markdown"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-13",
+            "comment": "Description"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-DigitalActivity.Schedule[x]",
+        "path": "pt-lm-DigitalActivity.Schedule[x]",
+        "short": "Schedule",
+        "definition": "Generic recommendation for how often/when the activity is typically performed. Patient-specific scheduling belongs in the execution order.",
+        "alias": [
+          "Tijdschema"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          },
+          {
+            "code": "Period"
+          },
+          {
+            "code": "Timing"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-14",
+            "comment": "Schedule"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-DigitalActivity.Usage",
+        "path": "pt-lm-DigitalActivity.Usage",
+        "short": "Usage",
+        "definition": "A detailed description of how the digital activity is used from a clinical perspective. In the MedMij use case, this text is intended for the healthcare professional who is selecting and assigning the activity to the patient.",
+        "alias": [
+          "Gebruik"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-30",
+            "comment": "Usage"
+          }
+        ]
+      }
+    ]
+  }
+}
