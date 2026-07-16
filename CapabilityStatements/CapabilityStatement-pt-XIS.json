@@ -1,14 +1,14 @@
 {
   "resourceType": "CapabilityStatement",
-  "id": "pt-Task-Retrieve",
-  "url": "http://medmij.nl/fhir/CapabilityStatement/pt-Task-Retrieve",
+  "id": "pt-XIS",
+  "url": "http://medmij.nl/fhir/CapabilityStatement/pt-XIS",
   "text": {
     "status": "empty",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
-  "name": "Pt Task Retrieve",
+  "name": "Pt XIS",
   "status": "draft",
-  "date": "2026-05-13",
+  "date": "2026-07-16",
   "publisher": "MedMij",
   "contact": [
     {
@@ -22,7 +22,7 @@
       ]
     }
   ],
-  "description": "This CapabilityStatement describes the minimal requirements for a client to fulfill the 'Retrieve Task(s)' transaction within Provider Task.",
+  "description": "This CapabilityStatement describes the minimal requirements for a server (XIS) to fulfill the 'Serve Task' transaction and to process task status updates within Provider Task.",
   "purpose": "This CapabilityStatement is informative in nature and does not represent the minimum or maximum set of capabilities the client or server should support. The aim is to design the CapabilityStatement as complete as possible, however for the exact set of capabilities the implementation guide should be consulted.",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "kind": "requirements",
@@ -33,8 +33,8 @@
   ],
   "rest": [
     {
-      "mode": "client",
-      "documentation": "Minimal requirements for a client to fulfill the 'Retrieve task' transaction (system role: PT-TGR-1.0.0-alpha.1)",
+      "mode": "server",
+      "documentation": "Minimal requirements for a server (XIS) to fulfill the 'Serve task' transaction and to process task status updates (system role: PT-TGB-1.0.0-alpha.1).",
       "resource": [
         {
           "type": "Task",
@@ -44,8 +44,19 @@
           "interaction": [
             {
               "code": "search-type"
+            },
+            {
+              "code": "read"
+            },
+            {
+              "code": "patch",
+              "documentation": "The server processes task status updates submitted by the module system via a FHIRPath Patch or JSON Patch, e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
             }
-          ]
+          ],
+          "versioning": "versioned",
+          "conditionalRead": "not-supported",
+          "readHistory": false,
+          "updateCreate": false
         },
         {
           "type": "ActivityDefinition",
@@ -56,7 +67,7 @@
           "interaction": [
             {
               "code": "read",
-              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
             }
           ]
         },
@@ -70,7 +81,7 @@
           "interaction": [
             {
               "code": "read",
-              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
             }
           ]
         },
@@ -83,7 +94,7 @@
           "interaction": [
             {
               "code": "read",
-              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
             }
           ]
         },
@@ -96,7 +107,7 @@
           "interaction": [
             {
               "code": "read",
-              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
             }
           ]
         },
@@ -109,7 +120,7 @@
           "interaction": [
             {
               "code": "read",
-              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
             }
           ]
         },
@@ -122,7 +133,20 @@
           "interaction": [
             {
               "code": "read",
-              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
+            }
+          ]
+        },
+        {
+          "type": "Location",
+          "supportedProfile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider"
+          ],
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
             }
           ]
         }

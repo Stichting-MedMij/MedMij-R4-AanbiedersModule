@@ -1,14 +1,15 @@
 // CapabilityStatements used in ProviderTasks (Aanbiedertaken)
+// Organized per system (actor): PHR (client), Module system (client) and XIS (server).
 
-Instance: pt-Task-Retrieve
+Instance: pt-PHR
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert DefaultNarrativeInstance
-* name = "Pt Task Retrieve"
+* name = "Pt PHR"
 * status = #draft
-* date = "2026-05-13"
+* date = "2026-07-16"
 * insert PublisherAndContactInstance
-* description = "This CapabilityStatement describes the minimal requirements for a client to fulfill the 'Retrieve Task(s)' transaction within Provider Task."
+* description = "This CapabilityStatement describes the minimal requirements for a PHR to fulfill the 'Retrieve Task(s)' transaction within Provider Task, in which the PHR retrieves the patient's tasks and resolves the referenced (secondary) resources."
 * purpose = "This CapabilityStatement is informative in nature and does not represent the minimum or maximum set of capabilities the client or server should support. The aim is to design the CapabilityStatement as complete as possible, however for the exact set of capabilities the implementation guide should be consulted."
 * insert CopyrightInstance
 * kind = #requirements
@@ -17,7 +18,7 @@ Usage: #definition
 * format[1] = #json
 * rest
   * mode = #client
-  * documentation = "Minimal requirements for a client to fulfill the 'Retrieve task' transaction (system role: PT-TGR-1.0.0-alpha.1)"
+  * documentation = "Minimal requirements for a PHR (client) to fulfill the 'Retrieve task' transaction (system role: PT-TGR-1.0.0-alpha.1)."
   * resource[+]
     * type = #Task
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
@@ -66,18 +67,57 @@ Usage: #definition
     * interaction
       * code = #read
       * documentation = "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+  * resource[+]
+    * type = #Location
+    * supportedProfile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider"
+    * documentation = "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle."
+    * interaction
+      * code = #read
+      * documentation = "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
   * interaction
     * code = #search-system
 
-Instance: pt-Task-Serve
+Instance: pt-ModuleSystem
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert DefaultNarrativeInstance
-* name = "Pt Task Serve"
+* name = "Pt Module System"
 * status = #draft
-* date = "2026-04-13"
+* date = "2026-07-16"
 * insert PublisherAndContactInstance
-* description = "This CapabilityStatement describes the minimal requirements for a server to fulfill the 'Serve Task' transaction within Provider Task."
+* description = "This CapabilityStatement describes the minimal requirements for a module system to fulfill the 'Retrieve Task' and 'Update Task' transactions within Provider Task. The module system retrieves the Task from the launch context and reports task progress by changing the Task status after the patient has interacted with the digital activity."
+* purpose = "This CapabilityStatement is informative in nature and does not represent the minimum or maximum set of capabilities the client or server should support. The aim is to design the CapabilityStatement as complete as possible, however for the exact set of capabilities the implementation guide should be consulted."
+* insert CopyrightInstance
+* kind = #requirements
+* fhirVersion = #4.0.1
+* format[0] = #xml
+* format[1] = #json
+* rest
+  * mode = #client
+  * documentation = "Minimal requirements for a module system (client) to fulfill the 'Retrieve task' and 'Update task' transactions (system role: PA-DAU-1.0.0-alpha.1). The module system obtains the Task id from the launch context (SMART App Launch `resource` token response field), retrieves the Task and updates `Task.status` to reflect progress or completion of the digital activity."
+  * resource[+]
+    * type = #Task
+    * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
+    * interaction[+]
+      * code = #read
+      * documentation = "The module system retrieves the Task using the Task id from the launch context, e.g. `GET [base]/Task/[id]`."
+    * interaction[+]
+      * code = #patch
+      * documentation = "The module system updates specific elements of the Task (typically `Task.status`) using a FHIRPath Patch or JSON Patch, e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
+    * versioning = #versioned
+    * conditionalRead = #not-supported
+    * readHistory = false
+    * updateCreate = false
+
+Instance: pt-XIS
+InstanceOf: CapabilityStatement
+Usage: #definition
+* insert DefaultNarrativeInstance
+* name = "Pt XIS"
+* status = #draft
+* date = "2026-07-16"
+* insert PublisherAndContactInstance
+* description = "This CapabilityStatement describes the minimal requirements for a server (XIS) to fulfill the 'Serve Task' transaction and to process task status updates within Provider Task."
 * purpose = "This CapabilityStatement is informative in nature and does not represent the minimum or maximum set of capabilities the client or server should support. The aim is to design the CapabilityStatement as complete as possible, however for the exact set of capabilities the implementation guide should be consulted."
 * insert CopyrightInstance
 * kind = #requirements
@@ -86,12 +126,21 @@ Usage: #definition
 * format[1] = #json
 * rest
   * mode = #server
-  * documentation = "Minimal requirements for a server to fulfill the 'Serve Task' transaction (system role: PT-TGB-1.0.0-alpha.1)."
+  * documentation = "Minimal requirements for a server (XIS) to fulfill the 'Serve task' transaction and to process task status updates (system role: PT-TGB-1.0.0-alpha.1)."
   * resource[+]
     * type = #Task
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
-    * interaction
+    * interaction[+]
       * code = #search-type
+    * interaction[+]
+      * code = #read
+    * interaction[+]
+      * code = #patch
+      * documentation = "The server processes task status updates submitted by the module system via a FHIRPath Patch or JSON Patch, e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
+    * versioning = #versioned
+    * conditionalRead = #not-supported
+    * readHistory = false
+    * updateCreate = false
   * resource[+]
     * type = #ActivityDefinition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
@@ -144,35 +193,3 @@ Usage: #definition
       * documentation = "If the server always includes this (secondary) resource in the Bundle, support of the `read` interaction is optional."
   * interaction
     * code = #search-system
-
-Instance: pt-Task-Update
-InstanceOf: CapabilityStatement
-Usage: #definition
-* insert DefaultNarrativeInstance
-* name = "Pt Task Update"
-* status = #draft
-* date = "2026-07-14"
-* insert PublisherAndContactInstance
-* description = "This CapabilityStatement describes the minimal requirements for a module system to fulfill the 'Update Task' transaction within Provider Task, in which the module system reports task progress by changing the Task status after the patient has interacted with the digital activity."
-* purpose = "This CapabilityStatement is informative in nature and does not represent the minimum or maximum set of capabilities the client or server should support. The aim is to design the CapabilityStatement as complete as possible, however for the exact set of capabilities the implementation guide should be consulted."
-* insert CopyrightInstance
-* kind = #requirements
-* fhirVersion = #4.0.1
-* format[0] = #xml
-* format[1] = #json
-* rest
-  * mode = #client
-  * documentation = "Minimal requirements for a module system (client) to fulfill the 'Update task' transaction. The module system obtains the Task id from the launch context (SMART App Launch `resource` token response field), retrieves the Task and updates `Task.status` to reflect progress or completion of the digital activity."
-  * resource[+]
-    * type = #Task
-    * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
-    * interaction[+]
-      * code = #read
-      * documentation = "The module system retrieves the Task using the Task id from the launch context, e.g. `GET [base]/Task/[id]`."
-    * interaction[+]
-      * code = #patch
-      * documentation = "The module system updates specific elements of the Task (typically `Task.status`) using a FHIRPath Patch or JSON Patch, e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
-    * versioning = #versioned
-    * conditionalRead = #not-supported
-    * readHistory = false
-    * updateCreate = false

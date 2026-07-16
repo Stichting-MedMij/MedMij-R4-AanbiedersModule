@@ -21,9 +21,9 @@ For this use case, the [HL7 Clinical Order Workflows IG](https://build.fhir.org/
 | Actor | | System | | FHIR CapabilityStatement | |
 | --- | --- | --- | --- | --- | --- |
 | **Name** | **Description** | **Name** | **Description** | **Name** | **Description** |
-| Patient | The user of a personal healthcare environment | PHR | Personal health record | [pt-Task-Retrieve](https://simplifier.net/medmij-r4-provider-tasks-develop/pt-task-retrieve) | FHIR client requirements |
-| Healthcare provider | The user of a XIS | XIS | Healthcare information system | [pt-Task-Serve](https://simplifier.net/medmij-r4-provider-tasks-develop/pt-task-serve) | FHIR server requirements |
-| Patient | Delivers the digital activity | Provider module | Executes the digital activity after launch | [pt-Task-Update](https://simplifier.net/medmij-r4-provider-tasks-develop/pt-task-update) | FHIR client requirements |
+| Patient | The user of a personal healthcare environment | PHR | Personal health record | [pt-PHR](https://simplifier.net/medmij-r4-provider-tasks-develop/pt-phr) | FHIR client requirements |
+| Healthcare provider | The user of a XIS | XIS | Healthcare information system | [pt-XIS](https://simplifier.net/medmij-r4-provider-tasks-develop/pt-xis) | FHIR server requirements |
+| Patient | Delivers the digital activity | Provider module | Executes the digital activity after launch | [pt-ModuleSystem](https://simplifier.net/medmij-r4-provider-tasks-develop/pt-modulesystem) | FHIR client requirements |
 
 **Table 1: Actors, systems and FHIR CapabilityStatements**
 
