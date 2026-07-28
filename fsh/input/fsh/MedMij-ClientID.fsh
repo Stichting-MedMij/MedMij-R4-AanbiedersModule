@@ -16,4 +16,4 @@ The module application that receives the SMART on FHIR launch URL requests a new
  """
 * value[x] only string
 * ^context[0].type = #element
-* ^context[0].expression = "Endpoint.extension"
+* ^context[0].expression = "Endpoint"

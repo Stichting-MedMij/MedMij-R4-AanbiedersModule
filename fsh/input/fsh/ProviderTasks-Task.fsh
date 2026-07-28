@@ -13,6 +13,16 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^alias = "Taak"
 * .
 ^definition = "Patient-specific task that tells a patient what to do as part of a digital care activity. A Task is shown in the patient's task list and supports tracking progress and completion over time."
+// Tasks in scope for this information standard carry a fixed tag, which is also the
+// search parameter (`_tag`) the PHR filters on. Slicing is open: other tags are allowed.
+* meta.tag ^slicing.discriminator[0].type = #pattern
+* meta.tag ^slicing.discriminator[0].path = "$this"
+* meta.tag ^slicing.rules = #open
+* meta.tag contains informationStandard 1..1
+* meta.tag[informationStandard] = $information-standard#providertasks
+  * ^short = "Information standard tag"
+  * ^definition = "Marks this Task as being in scope for the Provider Tasks (Aanbiedertaken) information standard, so it can be distinguished from Tasks used in other contexts. Clients filter on this tag with `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`."
+  * ^comment = "A tag is used because R4 offers no better place to categorise a Task. `Task.code` is not suitable: it states what kind of work is to be performed (e.g. a blood pressure measurement or a saturation measurement), not which information standard the Task belongs to. Unlike most other resources, Task has no `category` element; this gap has been raised with HL7 in [FHIR-57849](https://jira.hl7.org/browse/FHIR-57849). Should a `Task.category` become available in a future FHIR version, it is the preferred alternative for this tag."
 * extension contains ExtDigitalActivity named digitalActivity 1..1
   * ^short = "Reference to ActivityDefinition"
   * ^definition = "A link to the ActivityDefinition that defines the launchable eHealth activity (i.e., what module/content should be launched or performed) associated with this Task."

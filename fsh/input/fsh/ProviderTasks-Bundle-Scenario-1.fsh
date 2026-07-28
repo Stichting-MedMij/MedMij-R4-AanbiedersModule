@@ -63,9 +63,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-1-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -92,9 +90,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-2-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -121,9 +117,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-3-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -150,9 +144,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-4-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -179,9 +171,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-5-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -208,9 +198,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-6-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -237,9 +225,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-7-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -266,9 +252,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-8-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -295,9 +279,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-9-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -324,9 +306,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-10-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -353,9 +333,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-11-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -382,9 +360,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-12-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -411,9 +387,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-13-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -440,9 +414,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Glucosemeting-14-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -487,9 +459,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Informatie-Diabetes-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -533,9 +503,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Informatie-Gezonder-Leven-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -581,9 +549,7 @@ Usage: #example
 Instance: ProviderTasks-Task-Vragenlijst-WoonLeefsituatie-Van-Duinen
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
-* meta.tag
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+* meta.tag[informationStandard] = $information-standard#providertasks
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity

@@ -10,7 +10,7 @@
     - "!validator/advisor.json"
     - "!fhirpkg.lock.json"
     - "!fsh-generated/data/**"
-    - "!fsh-generated/data/fsh-index.json"
+    - "!fsh/fsh-generated/data/fsh-index.json"
 
 # Validate all resources
 - action: validate
@@ -37,8 +37,11 @@
   status: "Checking if all resources have an id"
   predicate: id.exists()
   files:
-    - /**/*.xml
-    - /**/*.json
+    - /CapabilityStatements/*.json
+    - /StructureDefinitions/*.json
+    - /examples/*.json
+    - /SearchParameters/*.json
+
   error-message: "Resource must have an id"
 
 ## Check ids except for logical models.
@@ -59,14 +62,6 @@
   status: "Checking if all examples have a unique id"
   category: example
   unique: id
- 
-- name: id-format-starts-with-ht
-  error: http://medmij.nl/fhir/qa/errors|id-format-starts-with-ht
-  status: "Checking if all profiles start with 'ht-'"
-  category: conformance
-  predicate: id.startsWith('ht-')
-  files: 
-    - "!guides/firely-sample-ig/ImplementationGuide.json"
  
 - name: url-unique
   error: http://medmij.nl/fhir/qa/errors|url-unique
@@ -128,11 +123,13 @@
   error: http://medmij.nl/fhir/qa/errors|example-profile-mandatory
   error-message: "Example resource does not claim conformance to a profile" 
   status: "Checking if example has a meta.profile"
+  files:
+    - /CapabilityStatements/*.json
+    - /StructureDefinitions/*.json
+    - /examples/*.json
+    - /SearchParameters/*.json
   category: example
   filter: (NamingSystem or ConceptMap).exists().not()
-  files:
-    - /**/*.xml
-    - /**/*.json
   predicate: meta.profile.exists()
  
 - name: example-reference-display

@@ -7,4 +7,4 @@ Description: "Reference to the Endpoint that provides the launchable digital act
 * insert PublisherAndContact
 * value[x] only Reference(PtEndpoint)
 * ^context[0].type = #element
-* ^context[0].expression = "ActivityDefinition.extension"
+* ^context[0].expression = "ActivityDefinition"
