@@ -17,7 +17,6 @@ topic: TO
   <li><a href="#boundaries-and-relationships">Boundaries and relationships</a></li>
   <li><a href="#relatingFHIR">Relating FHIR (profiles) to its functional counterpart</a></li>
   <li class="toc-sub"><a href="#resource-relationships">Resource relationships</a></li>
-  <li class="toc-sub"><a href="#implementation-guidance">Implementation guidance</a></li>
   <li><a href="#use-case-provider-tasks">Use case: Provider Tasks</a></li>
   <li class="toc-sub"><a href="#phr-request-message">PHR: request message</a></li>
   <li class="toc-sub"><a href="#module-system-update-task-status">Module system: update task status</a></li>
@@ -91,17 +90,17 @@ A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference th
 
 **Table 3: References from `pt-Task`**
 
-### Implementation guidance {#implementation-guidance}
+#### Resource implementation guidance {#implementation-guidance}
 
-**XIS source system** 
+**Healthcare Information System (XIS)**
 Creates the resources when a healthcare professional assigns a digital care module to a patient:
 - Create a `pt-DigitalActivity` for each activity that can be assigned. This resource is generic and patient-independent: it is defined once, reused by every Task that instantiates it, and only replaced or retired (`ActivityDefinition.status`) when the activity itself changes. Set `url` and `title`, and reference the `pt-Endpoint`(s) at which the activity is launched through the `ext-Endpoint` extension. Use `timingTiming` for a generic recommended schedule; patient-specific scheduling belongs in the `pt-ExecutionOrder`.
 - Create one `pt-DigitalGroupPlan` per module and set `ServiceRequest.code.text` to its display name.
 - Create a `pt-Task` for each unit of work the patient must perform, with `Task.basedOn` to the group plan and `ext-DigitalActivity` to the matching `pt-DigitalActivity`. Multiple Tasks may point to the same group plan and the same digital activity.
 - Create a `pt-ExecutionOrder` only when the activity needs patient-specific scheduling or instructions. Use `occurrenceTiming` for a recurring schedule, `occurrenceDateTime` or `occurrencePeriod` for a single occurrence. A recurring schedule SHALL use a `pt-ExecutionOrder`.
 
-**Personal healthcare environment** 
-Reads and displays the task list:
+**Personal healthcare environment (PHR)**
+The PHR read and dislay process for Task lists is as follows:
 - Search Tasks and resolve `Task.basedOn`, `Task.focus`, and `ext-DigitalActivity` from the response Bundle or via a read interaction.
 - Group Tasks by `Task.basedOn`, using `ServiceRequest.code.text` as the group label.
 - Show `pt-DigitalActivity` for generic activity content and, when present, `pt-ExecutionOrder` for scheduling and instructions.
