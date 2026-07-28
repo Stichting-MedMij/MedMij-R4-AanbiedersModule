@@ -54,7 +54,7 @@ Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * Description -> "pt-dataelement-13" "Description"
 * Schedule[x] -> "pt-dataelement-14" "Schedule"
 * Usage -> "pt-dataelement-30" "Usage"
-* Endpoint -> "pt-dataelement-25" "Endpoint"
+* Endpoint -> "pt-dataelement-36" "Endpoint"
 
 Logical: PtLmDigitalGroupPlan
 Parent: http://hl7.org/fhir/StructureDefinition/Element

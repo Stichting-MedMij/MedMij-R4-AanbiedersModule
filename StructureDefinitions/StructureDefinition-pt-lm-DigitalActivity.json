@@ -253,7 +253,7 @@
         "mapping": [
           {
             "identity": "pt-dataset-100-alpha1-20260511",
-            "map": "pt-dataelement-25",
+            "map": "pt-dataelement-36",
             "comment": "Endpoint"
           }
         ]
