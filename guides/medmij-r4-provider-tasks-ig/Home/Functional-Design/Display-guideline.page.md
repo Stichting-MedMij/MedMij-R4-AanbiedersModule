@@ -195,45 +195,20 @@ Voor elk dataveld is in de kolom **"Waar tonen in PGO"** met een letter aangegev
 
 <br/>
 
-<!-- VASTE KOLOMBREEDTES + PRESERVE WHITESPACE -->
-<style>
-  .pgo-table {
-    width: 100%;
-    table-layout: fixed;  /* respecteert <colgroup> widths */
-    border-collapse: collapse;
-    margin: 0 0 24px 0;
-  }
-  .pgo-table th, .pgo-table td {
-    border: 1px solid #cccccc;
-    padding: 6px 8px;
-    vertical-align: top;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    white-space: pre-wrap; /* behoudt regeleinden en meerdere spaties */
-  }
-  .pgo-table th {
-    background: #f7f7f7;
-    text-align: left;
-  }
-</style>
-
-<!-- 9 KOLOMMEN:
-Naam data-item | Type data-item | Id | Voorbeeld | Waar tonen in PGO (a) in overzicht en als detailgegeven (b) als detailgegeven (c) niet tonen (d) niet tonen, wel noodzakelijk voor de launch | Opmerkingen | Weergavetekst in de PGO | Gebruikersvriendelijke toelichting | Prioriteit (MoSCoW)
-Breedteverdeling: 13% | 9% | 9% | 11% | 10% | 10% | 11% | 21% | 6% (totaal 100%) -->
+<!-- De tabellen hieronder hebben 9 kolommen: Naam data-item | Type data-item | Id |
+Voorbeeld | Waar tonen in PGO | Opmerkingen | Weergavetekst in de PGO |
+Gebruikersvriendelijke toelichting | Prioriteit (MoSCoW).
+Opmaak en kolombreedtes: .pgo-table in styles/MedMij/style.css -->
 
 ### Taak (Task) {#taak-task}
 Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Task, anchor: ptlmTask}}
 
 <!-- TAAK -->
 <table class="pgo-table">
-  <colgroup>
-    <col style="width:13%"><col style="width:9%"><col style="width:9%"><col style="width:11%">
-    <col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:21%"><col style="width:6%">
-  </colgroup>
   <thead>
     <tr>
       <th>Naam data-item</th><th>Type data-item</th><th>Id</th><th>Voorbeeld</th>
-      <th>Waar tonen in PGO (a) in overzicht en als detailgegeven (b) als detailgegeven</th>
+      <th>Waar tonen in PGO</th>
       <th>Opmerkingen</th><th>Weergavetekst in de PGO</th><th>Gebruikersvriendelijke toelichting</th><th>Prioriteit (MoSCoW)</th>
     </tr>
   </thead>
@@ -248,7 +223,7 @@ Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Task, anchor: pt
     </tr>
     <tr>
       <td>GroupPlan::DigitalGroupPlan</td><td>Reference</td><td>pt-dataelement-3</td><td>Digitale zorgmodule Diabetes</td><td>b</td>
-      <td>Toon hier alleen de waarde van `code.text` uit het ServiceRequest.</td><td></td><td></td><td>C</td>
+      <td>Toon hier alleen de waarde van <code>code.text</code> uit het ServiceRequest.</td><td></td><td></td><td>C</td>
     </tr>
     <tr>
       <td>Status</td><td>Item</td><td>pt-dataelement-4</td><td>Requested</td><td>a</td>
@@ -259,7 +234,8 @@ Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Task, anchor: pt
       <td></td><td></td><td></td><td>C</td>
     </tr>
     <tr>
-      <td>Description</td><td>Item</td><td>pt-dataelement-6</td><td>Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken</td><td>Omschrijving</td><td></td><td>M</td>
+      <td>Description</td><td>Item</td><td>pt-dataelement-6</td><td>Je meet de bloeddruk om te controleren hoe goed het hart en de bloedvaten werken</td><td>a</td>
+      <td></td><td>Omschrijving</td><td></td><td>M</td>
     </tr>
     <tr>
       <td>ExecutionPeriod</td><td>Item</td><td>pt-dataelement-7</td><td>2025-12-22 tot en met 2025-12-28</td><td>a</td>
@@ -285,10 +261,6 @@ Verwijzing: {{pagelink: LogicalModelsIndex, text: Logical Model Digital activity
 
 <!-- DIGITALE ACTIVITEIT -->
 <table class="pgo-table">
-  <colgroup>
-    <col style="width:13%"><col style="width:9%"><col style="width:9%"><col style="width:11%">
-    <col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:21%"><col style="width:6%">
-  </colgroup>
   <thead>
     <tr>
       <th>Naam data-item</th><th>Type data-item</th><th>Id</th><th>Voorbeeld</th>
@@ -315,14 +287,10 @@ Wordt alleen gebruikt als er voor een taak in de module een patiëntspecifieke i
 
 <!-- SERVICEREQUEST (PATIËNTSPECIFIEK) -->
 <table class="pgo-table">
-  <colgroup>
-    <col style="width:13%"><col style="width:9%"><col style="width:9%"><col style="width:11%">
-    <col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:21%"><col style="width:6%">
-  </colgroup>
   <thead>
     <tr>
       <th>Naam data-item</th><th>Type data-item</th><th>Id</th><th>Voorbeeld</th>
-      <th>Waar tonen in PGO (a) in overzicht en als detailgegeven (b) als detailgegeven</th>
+      <th>Waar tonen in PGO</th>
       <th>Opmerkingen</th><th>Weergavetekst in de PGO</th><th>Gebruikersvriendelijke toelichting</th><th>Prioriteit (MoSCoW)</th>
     </tr>
   </thead>

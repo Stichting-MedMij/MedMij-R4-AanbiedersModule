@@ -97,6 +97,47 @@ body {
         color: #fff;
     }
 
+/* Wide specification tables (9 columns) in Functional-Design/Display-guideline.
+   table-layout: fixed keeps the columns from collapsing around the widest cell;
+   the widths live here so the three tables cannot drift apart. */
+.pgo-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 0 0 24px;
+  font-size: .82em;
+  line-height: 1.4; }
+  .pgo-table th, .pgo-table td {
+    border: 1px solid #ddd;
+    padding: 6px 8px;
+    vertical-align: top;
+    overflow-wrap: anywhere; }
+  .pgo-table thead th {
+    background: #eef1f4;
+    border-bottom: 2px solid #c3ccd5;
+    text-align: left;
+    font-weight: 600; }
+  .pgo-table tbody tr:nth-child(even) {
+    background: #fafafa; }
+  .pgo-table tbody tr:hover {
+    background: #f0f6fb; }
+  .pgo-table code {
+    padding: 0 3px;
+    background: #f2f2f2;
+    border-radius: 3px;
+    font-size: .95em; }
+  /* Column widths, 100% total. Set on the header cells because table-layout:
+     fixed takes its widths from the first row - saves a <colgroup> per table. */
+  .pgo-table th:nth-child(1) { width: 14%; }
+  .pgo-table th:nth-child(2) { width: 8%; }
+  .pgo-table th:nth-child(3) { width: 10%; }
+  .pgo-table th:nth-child(4) { width: 14%; }
+  .pgo-table th:nth-child(5) { width: 8%; }
+  .pgo-table th:nth-child(6) { width: 14%; }
+  .pgo-table th:nth-child(7) { width: 11%; }
+  .pgo-table th:nth-child(8) { width: 15%; }
+  .pgo-table th:nth-child(9) { width: 6%; }
+
 /* Long request URLs in code blocks wrap instead of overflowing horizontally.
    word-break: normal keeps Bootstrap's break-all from snapping mid-word;
    overflow-wrap: anywhere is the fallback for tokens with no break point. */
