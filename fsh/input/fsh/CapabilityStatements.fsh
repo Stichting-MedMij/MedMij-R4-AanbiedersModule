@@ -112,6 +112,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #xml
 * format[1] = #json
+* patchFormat = #application/json-patch+json
 * rest
   * mode = #client
   * documentation = "Minimal requirements for a module system (client) to fulfill the 'Retrieve task' and 'Update task' transactions (system role: PA-DAU-1.0.0-alpha.1). The module system obtains the Task id from the launch context (SMART App Launch `resource` token response field), retrieves the Task and updates `Task.status` to reflect progress or completion of the digital activity."
@@ -123,7 +124,7 @@ Usage: #definition
       * documentation = "The module system retrieves the Task using the Task id from the launch context, e.g. `GET [base]/Task/[id]`."
     * interaction[+]
       * code = #patch
-      * documentation = "The module system updates specific elements of the Task (typically `Task.status`) using a FHIRPath Patch or JSON Patch, e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
+      * documentation = "The module system updates specific elements of the Task (typically `Task.status`) using a JSON Patch (`application/json-patch+json`), e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
     * versioning = #versioned
     * conditionalRead = #not-supported
     * readHistory = false
@@ -145,6 +146,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #xml
 * format[1] = #json
+* patchFormat = #application/json-patch+json
 * rest
   * mode = #server
   * documentation = "Minimal requirements for a server (XIS) to fulfill the 'Serve task' transaction and to process task status updates (system role: PT-TGB-1.0.0-alpha.1)."
@@ -157,7 +159,7 @@ Usage: #definition
       * code = #read
     * interaction[+]
       * code = #patch
-      * documentation = "The server processes task status updates submitted by the module system via a FHIRPath Patch or JSON Patch, e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
+      * documentation = "The server processes task status updates submitted by the module system as a JSON Patch (`application/json-patch+json`), e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
     * versioning = #versioned
     * conditionalRead = #not-supported
     * readHistory = false

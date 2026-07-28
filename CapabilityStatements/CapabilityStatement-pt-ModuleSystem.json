@@ -32,6 +32,9 @@
     "xml",
     "json"
   ],
+  "patchFormat": [
+    "application/json-patch+json"
+  ],
   "rest": [
     {
       "mode": "client",
@@ -49,7 +52,7 @@
             },
             {
               "code": "patch",
-              "documentation": "The module system updates specific elements of the Task (typically `Task.status`) using a FHIRPath Patch or JSON Patch, e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
+              "documentation": "The module system updates specific elements of the Task (typically `Task.status`) using a JSON Patch (`application/json-patch+json`), e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
             }
           ],
           "versioning": "versioned",

@@ -20,6 +20,9 @@ topic: TO
   <li class="toc-sub"><a href="#implementation-guidance">Implementation guidance</a></li>
   <li><a href="#use-case-provider-tasks">Use case: Provider Tasks</a></li>
   <li class="toc-sub"><a href="#phr-request-message">PHR: request message</a></li>
+  <li class="toc-sub"><a href="#module-system-update-task-status">Module system: update task status</a></li>
+  <li class="toc-sub"><a href="#xis-response-message">XIS: response message</a></li>
+  <li class="toc-sub"><a href="#phr-launch-activity">PHR: launch activity</a></li>
 </ul>
 </div>
 <!-- AUTO-TOC:END -->
@@ -41,9 +44,9 @@ This use case follows the [FHIR R4 Workflow specification](https://hl7.org/fhir/
 | Actor | | System | | FHIR CapabilityStatement | |
 | --- | --- | --- | --- | --- | --- |
 | **Name** | **Description** | **Name** | **Description** | **Name** | **Description** |
-| Patient | The user of a personal healthcare environment | PHR | Personal health record | [pt-PHR](https://simplifier.net/medmij-r4-provider-tasks-develop/pt-phr) | FHIR client requirements |
-| Healthcare provider | The user of a XIS | XIS | Healthcare information system | [pt-XIS](https://simplifier.net/medmij-r4-provider-tasks-develop/pt-xis) | FHIR server requirements |
-| Patient | Delivers the digital activity | Provider module | Executes the digital activity after launch | [pt-ModuleSystem](https://simplifier.net/medmij-r4-provider-tasks-develop/pt-modulesystem) | FHIR client requirements |
+| Patient | The user of a personal healthcare environment | PHR | Personal health record | {{pagelink:pt-phr, text: pt-PHR}} | FHIR client requirements |
+| Healthcare provider | The user of a XIS | XIS | Healthcare information system | {{pagelink:pt-xis, text: pt-XIS}} | FHIR server requirements |
+| Patient | Delivers the digital activity | Provider module | Executes the digital activity after launch | {{pagelink:pt-modulesystem, text: pt-ModuleSystem}} | FHIR client requirements |
 
 **Table 1: Actors, systems and FHIR CapabilityStatements**
 
@@ -92,6 +95,7 @@ A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference th
 
 **XIS source system** 
 Creates the resources when a healthcare professional assigns a digital care module to a patient:
+- Create a `pt-DigitalActivity` for each activity that can be assigned. This resource is generic and patient-independent: it is defined once, reused by every Task that instantiates it, and only replaced or retired (`ActivityDefinition.status`) when the activity itself changes. Set `url` and `title`, and reference the `pt-Endpoint`(s) at which the activity is launched through the `ext-Endpoint` extension. Use `timingTiming` for a generic recommended schedule; patient-specific scheduling belongs in the `pt-ExecutionOrder`.
 - Create one `pt-DigitalGroupPlan` per module and set `ServiceRequest.code.text` to its display name.
 - Create a `pt-Task` for each unit of work the patient must perform, with `Task.basedOn` to the group plan and `ext-DigitalActivity` to the matching `pt-DigitalActivity`. Multiple Tasks may point to the same group plan and the same digital activity.
 - Create a `pt-ExecutionOrder` only when the activity needs patient-specific scheduling or instructions. Use `occurrenceTiming` for a recurring schedule, `occurrenceDateTime` or `occurrencePeriod` for a single occurrence. A recurring schedule SHALL use a `pt-ExecutionOrder`.
@@ -119,6 +123,11 @@ The healthcare provider initiates digital activities for the patient. The patien
 
 **Table 4: Transactions within the Provider Tasks use case**
 
+The diagram below shows one illustrative end-to-end flow through these transactions: how the actors and systems interact, and in which order. It is an example, not a normative sequence. The individual transactions are specified in the sections that follow.
+
+{{page:ProviderTasksSequence}}
+
+**Diagram 3: Example sequence of interactions in the Provider Tasks use case**
 
 ### PHR: request message {#phr-request-message}
 
@@ -172,7 +181,23 @@ Per the [MedMij FHIR IG pattern for including referenced resources](https://info
 
 The PHR SHALL support read on these resource types. The source system SHALL support read on these resource types when it does not always include the referenced resources in the response Bundle.
 
-##### Module system: update task status {#module-system-update-task-status}
+#### Request last-updated {#request-last-updated}
+
+The PHR SHALL be able to retrieve only those Task resources that have been updated since a given point in time, to support efficient incremental refresh of the task list. This is done using the standard FHIR `_lastUpdated` search parameter ([specification](https://hl7.org/fhir/R4/search.html#lastUpdated)). The PHR determines the time window itself (e.g., since last sync) and includes the desired date/time range in the search query, for example:
+
+```
+GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00
+```
+
+The PHR MAY add an upper bound on `_lastUpdated` to restrict the period, for example:
+
+```
+GET [base]/Task
+  ?_lastUpdated=ge2026-01-01T00:00:00+01:00
+  &_lastUpdated=le2026-01-31T23:59:59+01:00
+```
+
+### Module system: update task status {#module-system-update-task-status}
 
 After the patient interacted with the activity, the module system updates task progress or completion on the XIS. Status updates apply to each individual Task.
 
@@ -182,29 +207,9 @@ PATCH [base]/Task/[id]
 
 Both the module system (client) and the XIS (server) SHALL support the FHIR PATCH interaction to update specific elements of an existing Task (for example, `Task.status`). The XIS SHALL also support full updates (PUT). PATCH is defined in the [FHIR RESTful API specification](https://hl7.org/fhir/R4/http.html#patch).
 
-**FHIRPath Patch**
-
-The client sends a `Parameters` resource with one or more `operation` entries, conform the [FHIRPath Patch specification](http://hl7.org/fhir/R4/fhirpatch.html). Each operation specifies the patch type (e.g., `replace`), the FHIRPath path, and the new value. Example replacing `Task.status` with `completed`:
-
-```json
-{
-  "resourceType": "Parameters",
-  "parameter": [
-    {
-      "name": "operation",
-      "part": [
-        { "name": "type", "valueCode": "replace" },
-        { "name": "path", "valueString": "Task.status" },
-        { "name": "value", "valueCode": "completed" }
-      ]
-    }
-  ]
-}
-```
-
 **JSON Patch**
 
-The client sends a JSON array of operation objects per [JSON Patch (RFC 6902)](https://datatracker.ietf.org/doc/html/rfc6902). Example:
+JSON Patch is used in this information standard. The client sends a JSON array of operation objects per [JSON Patch (RFC 6902)](https://datatracker.ietf.org/doc/html/rfc6902), with content type `application/json-patch+json`. Example replacing `Task.status` with `completed`:
 
 ```
 PATCH [base]/Task/[id]
@@ -221,23 +226,9 @@ Content-Type: application/json-patch+json
 ]
 ```
 
-##### Request last-updated {#request-last-updated}
 
-The PHR SHALL be able to retrieve only those Task resources that have been updated since a given point in time, to support efficient incremental refresh of the task list. This is done using the standard FHIR `_lastUpdated` search parameter ([specification](https://hl7.org/fhir/R4/search.html#lastUpdated)). The PHR determines the time window itself (e.g., since last sync) and includes the desired date/time range in the search query, for example:
 
-```
-GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00
-```
-
-The PHR MAY add an upper bound on `_lastUpdated` to restrict the period, for example:
-
-```
-GET [base]/Task
-  ?_lastUpdated=ge2026-01-01T00:00:00+01:00
-  &_lastUpdated=le2026-01-31T23:59:59+01:00
-```
-
-##### XIS: response message {#xis-response-message}
+### XIS: response message {#xis-response-message}
 
 The XIS returns an HTTP Status code appropriate to the processing outcome as well as a Bundle, with `Bundle.type` equal to *searchset*, including the resources matching the search query. The returned data to the PHR and the data exchanged with the module system SHALL conform to the profiles listed below.
 
@@ -254,11 +245,8 @@ The XIS returns an HTTP Status code appropriate to the processing outcome as wel
 
 **Table 6: Overview of in-scope requests**
 
-#### PHR: launch activity {#phr-launch-activity}
+### PHR: launch activity {#phr-launch-activity}
 
 The launch is based on information in `pt-DigitalActivity` and `pt-Endpoint` (e.g., `Endpoint.address`). In Provider Tasks this is the step where the PHR starts an external module system.
 
 The launch is an interaction outside the core REST data exchange and is based on SMART App Launch. The specifications can be found in the [Solution Design Aanbiedermodules v0.8](https://changemanagement.medmij.nl/alpha-of-beta/v14/sd-aanbiedermodules) (see also the {{pagelink: Dependencies, text: Dependencies}} page).
-
-#### Sequence Diagram {#sequence-diagram}
-{{page:ProviderTasksSequence}}
