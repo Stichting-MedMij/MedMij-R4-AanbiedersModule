@@ -187,7 +187,7 @@ De dataset voor Aanbiedertaken bestaat uit de volgende bouwstenen:
 Herbruikbare definitie van een digitale activiteit (bijv. 'Thuismetingen bloeddruk'). De digitale activiteit beschrijft wat de activiteit inhoudt en hoe deze in algemene zin wordt gebruikt. Wanneer de activiteit launchbaar is, verwijst de digitale activiteit naar één of meerdere endpoints met technische toegangs- en launchdetails.
 
 **Digitaal groepsplan**  
-Patiëntspecifieke aanvraag waarmee een digitaal groepsplan of zorgmodule voor de patiënt wordt geïnitieerd. Alle taken die binnen hetzelfde groepsplan horen, verwijzen naar hetzelfde digitaal groepsplan. De naam van het groepsplan wordt gebruikt als groepslabel in de takenlijst van de PGO.
+Patiëntspecifieke aanvraag waarmee een digitaal groepsplan of zorgmodule voor de patiënt wordt geïnitieerd. Alle taken die binnen hetzelfde groepsplan vallen, verwijzen naar hetzelfde digitaal groepsplan. De naam van het groepsplan wordt gebruikt als groepslabel in de takenlijst van de PGO.
 
 **Uitvoeringsopdracht**  
 Patiëntspecifieke uitvoeringsopdracht voor één digitale activiteit, met patiëntspecifieke instructies en het tijdschema voor uitvoering. De uitvoeringsopdracht is optioneel, maar verplicht wanneer er een (herhalend) tijdschema geldt. PGO's lezen het tijdschema dat aan de patiënt wordt getoond uitsluitend uit de uitvoeringsopdracht. Hiermee is er één eenduidige bron voor het tijdschema en wordt duplicatie of inconsistentie voorkomen.

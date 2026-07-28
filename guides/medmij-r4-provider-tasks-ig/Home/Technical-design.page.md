@@ -46,7 +46,7 @@ This use case follows the [FHIR R4 Workflow specification](https://hl7.org/fhir/
 | **Name** | **Description** | **Name** | **Description** | **Name** | **Description** |
 | Patient | The user of a personal healthcare environment | PHR | Personal health record | {{pagelink:pt-phr, text: pt-PHR}} | FHIR client requirements |
 | Healthcare provider | The user of a XIS | XIS | Healthcare information system | {{pagelink:pt-xis, text: pt-XIS}} | FHIR server requirements |
-| Patient | Delivers the digital activity | Provider module | Executes the digital activity after launch | {{pagelink:pt-modulesystem, text: pt-ModuleSystem}} | FHIR client requirements |
+| Patient | Fulfiller of a digital activity | Provider module | Executes the digital activity after launch | {{pagelink:pt-modulesystem, text: pt-ModuleSystem}} | FHIR client requirements |
 
 **Table 1: Actors, systems and FHIR CapabilityStatements**
 
