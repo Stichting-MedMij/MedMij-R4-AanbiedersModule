@@ -38,7 +38,9 @@ Characteristics: #can-be-target
 * Usage 0..1 string "A detailed description of how the digital activity is used from a clinical perspective. In the MedMij use case, this text is intended for the healthcare professional who is selecting and assigning the activity to the patient."
   * ^short = "Usage"
   * ^alias = "Gebruik"
-
+* Endpoint 1..* Reference(PtLmEndpoint) "Mandatory reference to the service application (endpoint) that provides the launchable digital activity. Can be more than one endpoint."
+  * ^short = "Endpoint"
+  * ^alias = "Endpoint"
 
 Mapping: PtLmDigitalActivityMedMij-100-alpha1
 Source: PtLmDigitalActivity
@@ -52,6 +54,7 @@ Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
 * Description -> "pt-dataelement-13" "Description"
 * Schedule[x] -> "pt-dataelement-14" "Schedule"
 * Usage -> "pt-dataelement-30" "Usage"
+* Endpoint -> "pt-dataelement-25" "Endpoint"
 
 Logical: PtLmDigitalGroupPlan
 Parent: http://hl7.org/fhir/StructureDefinition/Element

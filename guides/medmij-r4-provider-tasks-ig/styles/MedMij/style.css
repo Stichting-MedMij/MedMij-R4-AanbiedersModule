@@ -35,6 +35,49 @@ body {
     position: relative;
     padding-top: 40px; }
 
+/* Auto-generated page TOC (scripts/add_page_toc.py). Do not float it: tables may
+   not sit beside a float, so a floated box pushes them down and leaves a white gap.
+   On wide screens it is lifted out of the flow into a right rail instead, so the
+   page text starts at the top. Narrow screens get a plain box above the content. */
+.page-toc {
+  margin: 0 0 1.5em;
+  padding: .7em 1.1em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f9f9f9;
+  font-size: .9em;
+  line-height: 1.35; }
+  .page-toc strong {
+    display: block;
+    margin-bottom: .4em; }
+  .page-toc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .page-toc li {
+    margin: .35em 0;
+    font-weight: 600; }
+  .page-toc li.toc-sub {
+    margin-left: 14px;
+    font-size: .95em;
+    font-weight: normal; }
+
+/* .has-page-toc and the direct-child TOC are both set up by the script in
+   master.html, which guarantees .content is the positioning ancestor and that
+   the gutter is only reserved on pages that actually have a TOC. */
+@media (min-width: 992px) {
+  body .content.has-page-toc {
+    padding-right: 285px; }
+  body .content.has-page-toc > .page-toc {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 255px;
+    margin: 0;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto; }
+}
+
 .dynamic {
     display: none;
     background-color: transparent;

@@ -2,11 +2,9 @@
 Instance: ProviderTasks-ServiceRequest-Execution-Saturatiemeting-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * identifier
-  * system = "http://hing.zno.com/servicerequest/id"
+  * system = "http://hinq.zno.com/servicerequest/id"
   * value = "2025-11344555"
 * status = #active
 * intent = #order
@@ -24,11 +22,9 @@ Usage: #example
 Instance: ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * identifier
-  * system = "http://hing.zno.com/servicerequest/id"
+  * system = "http://hinq.zno.com/servicerequest/id"
   * value = "2025-33344555"
 * status = #active
 * intent = #plan
@@ -39,16 +35,14 @@ Usage: #example
 Instance: ProviderTasks-ActivityDefinition-Saturatiemeting-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstanceDefinitional
 * extension
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
-  * system = "https://hing.zno.com/content/id"
+  * system = "https://hinq.zno.com/content/id"
   * value = "a1b1eaa4-ba6b-41dc-b98c-7b1d72c335b5"
-* url = "https://hing.zno.com/fhir/ActivityDefinition/bf5569bf-22b8-449d-90a2-be35503da37d"
+* url = "https://hinq.zno.com/fhir/ActivityDefinition/bf5569bf-22b8-449d-90a2-be35503da37d"
 * version = "1.0.0"
 * name = "MeetopdachtSaturatiemeting"
 * title = "Saturatiemeting"
@@ -70,16 +64,14 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Saturatiemeting-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier
-  * system = "https://hing.zno.com/taskIdentifier"
+  * system = "https://hinq.zno.com/taskIdentifier"
   * value = "TASK-Saturatie-1"
 * status = #received
 * intent = #order
@@ -90,8 +82,8 @@ Usage: #example
 * executionPeriod
   * start = "2026-01-05"
   * end = "2026-01-05"
-* authoredOn = "2026-01-05T08:00:00+01:00"
-* lastModified = "2026-01-05T08:00:00+01:00"
+* authoredOn = "2026-01-02T14:15:00+01:00"
+* lastModified = "2026-01-05T07:20:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
@@ -101,16 +93,14 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Saturatiemeting-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier
-  * system = "https://hing.zno.com/taskIdentifier"
+  * system = "https://hinq.zno.com/taskIdentifier"
   * value = "TASK-Saturatie-2"
 * status = #received
 * intent = #order
@@ -121,8 +111,8 @@ Usage: #example
 * executionPeriod
   * start = "2026-01-06"
   * end = "2026-01-06"
-* authoredOn = "2026-01-05T08:00:00+01:00"
-* lastModified = "2026-01-05T08:00:00+01:00"
+* authoredOn = "2026-01-02T14:15:00+01:00"
+* lastModified = "2026-01-05T07:20:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
@@ -132,16 +122,14 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Saturatiemeting-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier
-  * system = "https://hing.zno.com/taskIdentifier"
+  * system = "https://hinq.zno.com/taskIdentifier"
   * value = "TASK-Saturatie-3"
 * status = #received
 * intent = #order
@@ -152,8 +140,8 @@ Usage: #example
 * executionPeriod
   * start = "2026-01-07"
   * end = "2026-01-07"
-* authoredOn = "2026-01-05T08:00:00+01:00"
-* lastModified = "2026-01-05T08:00:00+01:00"
+* authoredOn = "2026-01-02T14:15:00+01:00"
+* lastModified = "2026-01-05T07:20:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
@@ -163,16 +151,14 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Saturatiemeting-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier
-  * system = "https://hing.zno.com/taskIdentifier"
+  * system = "https://hinq.zno.com/taskIdentifier"
   * value = "TASK-Saturatie-4"
 * status = #received
 * intent = #order
@@ -183,8 +169,8 @@ Usage: #example
 * executionPeriod
   * start = "2026-01-08"
   * end = "2026-01-08"
-* authoredOn = "2026-01-05T08:00:00+01:00"
-* lastModified = "2026-01-05T08:00:00+01:00"
+* authoredOn = "2026-01-02T14:15:00+01:00"
+* lastModified = "2026-01-05T07:20:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
@@ -194,16 +180,14 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Saturatiemeting-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier
-  * system = "https://hing.zno.com/taskIdentifier"
+  * system = "https://hinq.zno.com/taskIdentifier"
   * value = "TASK-Saturatie-5"
 * status = #received
 * intent = #order
@@ -214,8 +198,8 @@ Usage: #example
 * executionPeriod
   * start = "2026-01-09"
   * end = "2026-01-09"
-* authoredOn = "2026-01-05T08:00:00+01:00"
-* lastModified = "2026-01-05T08:00:00+01:00"
+* authoredOn = "2026-01-02T14:15:00+01:00"
+* lastModified = "2026-01-05T07:20:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
@@ -225,16 +209,14 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Saturatiemeting-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier
-  * system = "https://hing.zno.com/taskIdentifier"
+  * system = "https://hinq.zno.com/taskIdentifier"
   * value = "TASK-Saturatie-6"
 * status = #received
 * intent = #order
@@ -245,8 +227,8 @@ Usage: #example
 * executionPeriod
   * start = "2026-01-10"
   * end = "2026-01-10"
-* authoredOn = "2026-01-05T08:00:00+01:00"
-* lastModified = "2026-01-05T08:00:00+01:00"
+* authoredOn = "2026-01-02T14:15:00+01:00"
+* lastModified = "2026-01-05T07:20:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
@@ -256,16 +238,14 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Saturatiemeting-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier
-  * system = "https://hing.zno.com/taskIdentifier"
+  * system = "https://hinq.zno.com/taskIdentifier"
   * value = "TASK-Saturatie-7"
 * status = #received
 * intent = #order
@@ -276,8 +256,8 @@ Usage: #example
 * executionPeriod
   * start = "2026-01-11"
   * end = "2026-01-11"
-* authoredOn = "2026-01-05T08:00:00+01:00"
-* lastModified = "2026-01-05T08:00:00+01:00"
+* authoredOn = "2026-01-02T14:15:00+01:00"
+* lastModified = "2026-01-05T07:20:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
@@ -285,16 +265,14 @@ Usage: #example
 Instance: ProviderTasks-ActivityDefinition-Informatie-Leven-COPD-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstanceDefinitional
 * extension
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
-  * system = "https://hing.zno.com/content/id"
+  * system = "https://hinq.zno.com/content/id"
   * value = "ba7471c5-6b5c-4ac6-83c4-512d195cc9d8"
-* url = "https://hing.zno.com/fhir/ActivityDefinition/3b13c173-d788-4ca6-8264-973abb4b95ce"
+* url = "https://hinq.zno.com/fhir/ActivityDefinition/3b13c173-d788-4ca6-8264-973abb4b95ce"
 * version = "1.0.0"
 * name = "InformatieLevenMetCOPD"
 * title = "Informatie over leven met COPD"
@@ -309,16 +287,14 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Leven-COPD-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier
-  * system = "https://hing.zno.com/taskIdentifier"
+  * system = "https://hinq.zno.com/taskIdentifier"
   * value = "TASK-1673834"
 * status = #received
 * intent = #order
@@ -328,8 +304,8 @@ Usage: #example
 * executionPeriod
   * start = "2026-01-05"
   * end = "2026-01-11"
-* authoredOn = "2026-01-05T07:00:00+01:00"
-* lastModified = "2026-01-05T07:00:00+01:00"
+* authoredOn = "2026-01-02T14:20:00+01:00"
+* lastModified = "2026-01-05T09:05:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
@@ -337,16 +313,14 @@ Usage: #example
 Instance: ProviderTasks-ActivityDefinition-Inhalatiemedicatie-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstanceDefinitional
 * extension
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
-  * system = "https://hing.zno.com/content/id"
+  * system = "https://hinq.zno.com/content/id"
   * value = "3a8ab931-6106-4df8-ba62-28882f6bfe5f"
-* url = "https://hing.zno.com/fhir/ActivityDefinition/d98a2329-4e69-4334-9c01-01230e3d444e"
+* url = "https://hinq.zno.com/fhir/ActivityDefinition/d98a2329-4e69-4334-9c01-01230e3d444e"
 * version = "1.0.0"
 * name = "InstructieInhalatiemedicatie"
 * title = "Instructiemodule inhalatiemedicatie"
@@ -360,16 +334,14 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Inhalatiemedicatie-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier
-  * system = "https://hing.zno.com/taskIdentifier"
+  * system = "https://hinq.zno.com/taskIdentifier"
   * value = "TASK-983823471"
 * status = #requested
 * intent = #order
@@ -379,8 +351,8 @@ Usage: #example
 * executionPeriod
   * start = "2026-01-05"
   * end = "2026-01-11"
-* authoredOn = "2026-01-05T07:00:00+01:00"
-* lastModified = "2026-01-05T07:00:00+01:00"
+* authoredOn = "2026-01-02T14:22:00+01:00"
+* lastModified = "2026-01-05T07:25:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
@@ -388,16 +360,14 @@ Usage: #example
 Instance: ProviderTasks-ActivityDefinition-Wat-Bereiken-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstanceDefinitional
 * extension
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
-  * system = "https://hing.zno.com/content/id"
+  * system = "https://hinq.zno.com/content/id"
   * value = "669734ff-2c72-4758-b6ac-786a4c8474b4"
-* url = "https://hing.zno.com/fhir/ActivityDefinition/4df11d7e-3439-4ec7-b912-871f048a3f47"
+* url = "https://hinq.zno.com/fhir/ActivityDefinition/4df11d7e-3439-4ec7-b912-871f048a3f47"
 * version = "1.0.0"
 * name = "VragenlijstWatWiltUBereiken?"
 * title = "Vragenlijst: Wat wilt u bereiken?"
@@ -412,16 +382,14 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Wat-Bereiken-Van-Dijk)
     * type = "ActivityDefinition"
 * basedOn = Reference(ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk) "Digitale zorgmodule COPD"
 * identifier
-  * system = "https://hing.zno.com/taskIdentifier"
+  * system = "https://hinq.zno.com/taskIdentifier"
   * value = "TASK-74745858"
 * status = #requested
 * intent = #order
@@ -431,17 +399,15 @@ Usage: #example
 * executionPeriod
   * start = "2026-01-05"
   * end = "2026-01-11"
-* authoredOn = "2026-01-05T18:00:00+01:00"
-* lastModified = "2026-01-05T18:00:00+01:00"
+* authoredOn = "2026-01-03T09:10:00+01:00"
+* lastModified = "2026-01-05T18:30:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-Van-Rijn) "M. van Rijn, Huisarts"
 * owner = Reference(ProviderTasks-Patient-Van-Dijk) "Sanne van Dijk"
 
 Instance: ProviderTasks-Patient-Van-Dijk
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension[http://hl7.org/fhir/StructureDefinition/patient-nationality].extension[code].valueCodeableConcept = urn:oid:2.16.840.1.113883.2.4.4.16.32#0001 "Nederlandse"
 * identifier
   * system = "http://fhir.nl/fhir/NamingSystem/bsn"
@@ -484,9 +450,7 @@ Usage: #example
 Instance: ProviderTasks-PractitionerRole-Van-Rijn
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * practitioner = Reference(ProviderTasks-Practitioner-Van-Rijn) "M. van Rijn"
 * organization = Reference(ProviderTasks-Organization-Huisartsenpraktijk-De-Haard) "Huisartstenpraktijk de Haard"
 * specialty
@@ -495,12 +459,10 @@ Usage: #example
 Instance: ProviderTasks-Practitioner-Van-Rijn
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * identifier
   * system = "http://fhir.nl/fhir/NamingSystem/big"
-  * value = "19078234"
+  * value = "19078234684"
 * name
   * use = #official
   * text = "M. van Rijn"

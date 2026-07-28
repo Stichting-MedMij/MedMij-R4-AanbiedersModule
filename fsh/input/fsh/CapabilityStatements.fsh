@@ -4,7 +4,7 @@
 Instance: pt-PHR
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert DefaultNarrativeInstance
+* insert DefaultNarrativeInstanceDefinitional
 * name = "Pt PHR"
 * status = #draft
 * date = "2026-07-16"
@@ -80,7 +80,7 @@ Usage: #definition
 Instance: pt-ModuleSystem
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert DefaultNarrativeInstance
+* insert DefaultNarrativeInstanceDefinitional
 * name = "Pt Module System"
 * status = #draft
 * date = "2026-07-16"
@@ -112,7 +112,7 @@ Usage: #definition
 Instance: pt-XIS
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert DefaultNarrativeInstance
+* insert DefaultNarrativeInstanceDefinitional
 * name = "Pt XIS"
 * status = #draft
 * date = "2026-07-16"

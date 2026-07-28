@@ -2,9 +2,7 @@
 Instance: ProviderTasks-ServiceRequest-Execution-Bloeddrukmeting-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * identifier
   * system = "http://medrie/servicerequest/id"
   * value = "2025-999999"
@@ -24,9 +22,7 @@ Usage: #example
 Instance: ProviderTasks-ServiceRequest-DigitalGroup-CVRM-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * identifier
   * system = "http://medrie/servicerequest/id"
   * value = "2025-1111999"
@@ -39,9 +35,7 @@ Usage: #example
 Instance: ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstanceDefinitional
 * extension
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
@@ -70,9 +64,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -90,8 +82,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-22"
   * end = "2025-12-22"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -101,9 +93,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -121,8 +111,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-22"
   * end = "2025-12-22"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -132,9 +122,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -152,8 +140,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-23"
   * end = "2025-12-23"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -163,9 +151,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -183,8 +169,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-23"
   * end = "2025-12-23"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -194,9 +180,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -214,8 +198,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-24"
   * end = "2025-12-24"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -225,9 +209,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -245,8 +227,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-24"
   * end = "2025-12-24"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -256,9 +238,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -276,8 +256,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-25"
   * end = "2025-12-25"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -287,9 +267,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -307,8 +285,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-25"
   * end = "2025-12-25"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -318,9 +296,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -338,8 +314,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-26"
   * end = "2025-12-26"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -349,9 +325,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -369,8 +343,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-26"
   * end = "2025-12-26"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -380,9 +354,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -400,8 +372,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-27"
   * end = "2025-12-27"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -411,9 +383,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -431,8 +401,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-27"
   * end = "2025-12-27"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -442,9 +412,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -462,8 +430,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-28"
   * end = "2025-12-28"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -473,9 +441,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Bloeddrukmeting-De-Groot)
@@ -493,17 +459,15 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-28"
   * end = "2025-12-28"
-* authoredOn = "2025-12-22T08:00:00+01:00"
-* lastModified = "2025-12-22T08:00:00+01:00"
+* authoredOn = "2025-12-19T09:45:00+01:00"
+* lastModified = "2025-12-22T07:10:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
 Instance: ProviderTasks-ActivityDefinition-Informatie-Cholesterol-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstanceDefinitional
 * extension
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
@@ -524,9 +488,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Cholesterol-De-Groot)
@@ -543,8 +505,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-22"
   * end = "2025-12-28"
-* authoredOn = "2025-12-23T07:00:00+01:00"
-* lastModified = "2025-12-23T07:00:00+01:00"
+* authoredOn = "2025-12-19T09:50:00+01:00"
+* lastModified = "2025-12-23T08:20:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -552,9 +514,7 @@ Usage: #example
 Instance: ProviderTasks-ActivityDefinition-Informatie-Thuismeting-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstanceDefinitional
 * extension
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
@@ -575,9 +535,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Informatie-Thuismeting-De-Groot)
@@ -594,8 +552,8 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-22"
   * end = "2025-12-28"
-* authoredOn = "2025-12-24T07:00:00+01:00"
-* lastModified = "2025-12-24T07:00:00+01:00"
+* authoredOn = "2025-12-20T10:05:00+01:00"
+* lastModified = "2025-12-24T07:35:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
@@ -603,9 +561,7 @@ Usage: #example
 Instance: ProviderTasks-ActivityDefinition-Uw-Situatie-De-Groot
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstanceDefinitional
 * extension[0]
   * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
@@ -626,9 +582,7 @@ Usage: #example
 * meta.tag
   * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
   * code = #providertasks
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
   * valueReference = Reference(ProviderTasks-ActivityDefinition-Uw-Situatie-De-Groot)
@@ -645,17 +599,15 @@ Usage: #example
 * executionPeriod
   * start = "2025-12-22"
   * end = "2025-12-28"
-* authoredOn = "2025-12-23T18:00:00+01:00"
-* lastModified = "2025-12-23T18:00:00+01:00"
+* authoredOn = "2025-12-19T09:55:00+01:00"
+* lastModified = "2025-12-24T20:15:00+01:00"
 * requester = Reference(ProviderTasks-PractitionerRole-De-Jong) "L. de Jong, Huisarts"
 * owner = Reference(ProviderTasks-Patient-De-Groot) "Koos de Groot"
 
 Instance: ProviderTasks-Endpoint-Minddistrict
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Endpoint
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension
   * url = $client-id
   * valueString = "dvaAanbiedertaken"
@@ -668,9 +620,7 @@ Usage: #example
 Instance: ProviderTasks-Patient-De-Groot
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * extension[http://hl7.org/fhir/StructureDefinition/patient-nationality].extension[code].valueCodeableConcept = urn:oid:2.16.840.1.113883.2.4.4.16.32#0001 "Nederlandse"
 * identifier
   * system = "http://fhir.nl/fhir/NamingSystem/bsn"
@@ -692,7 +642,7 @@ Usage: #example
   * value = "+31612345611"
 * telecom[1]
   * system = #email
-  * value = "koosdegrootn@koos.com"
+  * value = "koosdegroot@koos.com"
   * use = #home
 * gender = #male
   * extension[http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification].valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender#M "Male"
@@ -713,9 +663,7 @@ Usage: #example
 Instance: ProviderTasks-PractitionerRole-De-Jong
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * practitioner = Reference(ProviderTasks-Practitioner-De-Jong) "L. de Jong"
 * organization = Reference(ProviderTasks-Organization-Huisartsenpraktijk-De-Haard) "Huisartstenpraktijk de Haard"
 * specialty
@@ -724,12 +672,10 @@ Usage: #example
 Instance: ProviderTasks-Practitioner-De-Jong
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner
 Usage: #example
-* text
-  * status = #empty
-  * div = "<div xmlns='http://www.w3.org/1999/xhtml'>No human-readable text provided in this case.</div>"
+* insert DefaultNarrativeInstance
 * identifier
   * system = "http://fhir.nl/fhir/NamingSystem/big"
-  * value = "28910456"
+  * value = "28910456983"
 * name
   * use = #official
   * text = "L. de Jong"

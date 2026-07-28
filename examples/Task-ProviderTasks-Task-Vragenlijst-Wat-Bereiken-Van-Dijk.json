@@ -33,7 +33,7 @@
   ],
   "identifier": [
     {
-      "system": "https://hing.zno.com/taskIdentifier",
+      "system": "https://hinq.zno.com/taskIdentifier",
       "value": "TASK-74745858"
     }
   ],
@@ -49,8 +49,8 @@
     "start": "2026-01-05",
     "end": "2026-01-11"
   },
-  "authoredOn": "2026-01-05T18:00:00+01:00",
-  "lastModified": "2026-01-05T18:00:00+01:00",
+  "authoredOn": "2026-01-03T09:10:00+01:00",
+  "lastModified": "2026-01-05T18:30:00+01:00",
   "requester": {
     "reference": "PractitionerRole/ProviderTasks-PractitionerRole-Van-Rijn",
     "display": "M. van Rijn, Huisarts"

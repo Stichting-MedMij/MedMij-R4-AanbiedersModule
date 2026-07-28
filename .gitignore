@@ -1,2 +1,7 @@
 fsh/fsh-generated
 work-documents/
+
+# Simplifier/Forge/FirelyTerminal related files
+fhirpkg.lock.json
+.simplifier/
+project.yaml

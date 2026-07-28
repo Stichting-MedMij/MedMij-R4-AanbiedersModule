@@ -8,7 +8,7 @@
   },
   "text": {
     "status": "empty",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
   "extension": [
     {
@@ -18,10 +18,10 @@
       }
     }
   ],
-  "url": "https://hing.zno.com/fhir/ActivityDefinition/b15d4634-4678-46bd-a55a-e46ef3dfb517",
+  "url": "https://hinq.zno.com/fhir/ActivityDefinition/b15d4634-4678-46bd-a55a-e46ef3dfb517",
   "identifier": [
     {
-      "system": "https://hing.zno.com/content/id",
+      "system": "https://hinq.zno.com/content/id",
       "value": "60756972-0a15-47e1-8497-2e7d2919ebd7"
     }
   ],

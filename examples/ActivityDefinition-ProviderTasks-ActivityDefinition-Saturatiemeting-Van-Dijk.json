@@ -8,7 +8,7 @@
   },
   "text": {
     "status": "empty",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
   "extension": [
     {
@@ -20,11 +20,11 @@
   ],
   "identifier": [
     {
-      "system": "https://hing.zno.com/content/id",
+      "system": "https://hinq.zno.com/content/id",
       "value": "a1b1eaa4-ba6b-41dc-b98c-7b1d72c335b5"
     }
   ],
-  "url": "https://hing.zno.com/fhir/ActivityDefinition/bf5569bf-22b8-449d-90a2-be35503da37d",
+  "url": "https://hinq.zno.com/fhir/ActivityDefinition/bf5569bf-22b8-449d-90a2-be35503da37d",
   "version": "1.0.0",
   "name": "MeetopdachtSaturatiemeting",
   "title": "Saturatiemeting",

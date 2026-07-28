@@ -2,7 +2,7 @@
 topic: LogicalModelsIndex
 ---
 
-# Logical models
+# Logical Models
 Logical Models represent data structures, and contain data elements and their constraints and relationships. They allow data requirements to be described from a functional perspective. In this IG, the functional dataset and the underlying use cases are represented by [FHIR Logical Models](http://hl7.org/fhir/R5/logical.html) (note that this link redirects to the R5 specification, as there is no dedicated page for Logical Models in the R4 specification). These use FHIR to capture the data structures (namely by specifying a [StructureDefinition](https://hl7.org/fhir/R4/structuredefinition.html) and underlying [ElementDefinitions](https://hl7.org/fhir/R4/elementdefinition.html), for each data structure), but they are not (directly) attached to FHIR resources.
 
 The Logical Models contain all functional concepts, including corresponding data type, terminology binding (if applicable) and an id.
@@ -11,3 +11,8 @@ The Logical Models contain all functional concepts, including corresponding data
 - The [FHIR data types](https://hl7.org/fhir/R4/datatypes.html) are used in the Logical Models, even though these might bring 'physical' constraints, formats, etc. into the abstract logical data models which are not intended or applicable on the logical level. For instance, elements of the Attachment data type need to satisfy the *att-1* constraint, which states that the element SHALL have a `contentType`, provided the element has non-empty `data`. Even though this constraint makes sense on a technical level, the aforementioned attributes `contentType` and `data` are not present in a logical data model. Therefore, such constraints may be 'ignored' in the Logical Models; instead, these constraints are taken into account in the corresponding FHIR profiles.
 - Since the Logical Models defined in this IG are meant to represent the use case, `.abstract` is set to *false*.
 - For all Logical Models the scope is implicitly set to a single patient. This relation is not explicitly modeled, similar to the approach of the [zibs](https://zibs.nl/wiki/HCIM_Release_2020(EN)).
+
+
+## Overview of Logical Models
+
+{{page:LogicalModelOverview}}

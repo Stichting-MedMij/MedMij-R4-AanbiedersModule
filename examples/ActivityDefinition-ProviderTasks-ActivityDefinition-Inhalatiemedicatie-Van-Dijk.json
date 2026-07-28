@@ -8,7 +8,7 @@
   },
   "text": {
     "status": "empty",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
   "extension": [
     {
@@ -20,11 +20,11 @@
   ],
   "identifier": [
     {
-      "system": "https://hing.zno.com/content/id",
+      "system": "https://hinq.zno.com/content/id",
       "value": "3a8ab931-6106-4df8-ba62-28882f6bfe5f"
     }
   ],
-  "url": "https://hing.zno.com/fhir/ActivityDefinition/d98a2329-4e69-4334-9c01-01230e3d444e",
+  "url": "https://hinq.zno.com/fhir/ActivityDefinition/d98a2329-4e69-4334-9c01-01230e3d444e",
   "version": "1.0.0",
   "name": "InstructieInhalatiemedicatie",
   "title": "Instructiemodule inhalatiemedicatie",
