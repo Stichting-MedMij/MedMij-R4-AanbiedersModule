@@ -96,3 +96,12 @@ body {
         background-color: #5cb85c;
         color: #fff;
     }
+
+/* Long request URLs in code blocks wrap instead of overflowing horizontally.
+   word-break: normal keeps Bootstrap's break-all from snapping mid-word;
+   overflow-wrap: anywhere is the fallback for tokens with no break point. */
+pre, pre code {
+    white-space: pre-wrap;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}

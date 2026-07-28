@@ -2,3 +2,5 @@
   filename: Logical-Models
 - name: FHIR profiles
   filename: FHIR-Profiles
+- name: CapabilityStatements
+  filename: CapabilityStatements

@@ -5,7 +5,8 @@ Instance: pt-PHR
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert DefaultNarrativeInstanceDefinitional
-* name = "Pt PHR"
+* name = "PtPHR"
+* title = "pt PHR"
 * status = #draft
 * date = "2026-07-16"
 * insert PublisherAndContactInstance
@@ -24,6 +25,24 @@ Usage: #definition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
     * interaction
       * code = #search-type
+    * searchInclude[0] = "Task:based-on"
+    * searchInclude[1] = "Task:focus"
+    * searchInclude[2] = "Task:digitalActivity"
+    * searchParam[+]
+      * name = "_tag"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
+      * type = #token
+      * documentation = "The client SHALL always scope the search to the Provider Tasks information standard, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`."
+    * searchParam[+]
+      * name = "_lastUpdated"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"
+      * type = #date
+      * documentation = "The client SHALL be able to retrieve only those Tasks changed since a given point in time, to support incremental refresh of the task list, e.g. `_lastUpdated=ge2025-11-14T14:58:33+00:00`. The prefixes `ge`, `gt`, `le` and `lt` SHALL be supported; an upper and lower bound MAY be combined to restrict the period."
+    * searchParam[+]
+      * name = "digitalActivity"
+      * definition = "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity"
+      * type = #reference
+      * documentation = "Custom search parameter targeting the `ext-DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
   * resource[+]
     * type = #ActivityDefinition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
@@ -81,7 +100,8 @@ Instance: pt-ModuleSystem
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert DefaultNarrativeInstanceDefinitional
-* name = "Pt Module System"
+* name = "PtModuleSystem"
+* title = "pt Module System"
 * status = #draft
 * date = "2026-07-16"
 * insert PublisherAndContactInstance
@@ -113,7 +133,8 @@ Instance: pt-XIS
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert DefaultNarrativeInstanceDefinitional
-* name = "Pt XIS"
+* name = "PtXIS"
+* title = "pt XIS"
 * status = #draft
 * date = "2026-07-16"
 * insert PublisherAndContactInstance
@@ -141,6 +162,24 @@ Usage: #definition
     * conditionalRead = #not-supported
     * readHistory = false
     * updateCreate = false
+    * searchInclude[0] = "Task:based-on"
+    * searchInclude[1] = "Task:focus"
+    * searchInclude[2] = "Task:digitalActivity"
+    * searchParam[+]
+      * name = "_tag"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
+      * type = #token
+      * documentation = "The server SHALL support filtering on the Provider Tasks information standard tag, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`."
+    * searchParam[+]
+      * name = "_lastUpdated"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"
+      * type = #date
+      * documentation = "The server SHALL support returning only those Tasks changed since a given point in time, to support incremental refresh of the task list, e.g. `_lastUpdated=ge2025-11-14T14:58:33+00:00`. The prefixes `ge`, `gt`, `le` and `lt` SHALL be supported, including two `_lastUpdated` parameters that together bound the period."
+    * searchParam[+]
+      * name = "digitalActivity"
+      * definition = "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity"
+      * type = #reference
+      * documentation = "Custom search parameter targeting the `ext-DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
   * resource[+]
     * type = #ActivityDefinition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"

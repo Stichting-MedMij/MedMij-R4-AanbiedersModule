@@ -19,24 +19,24 @@ skinparam entity {
 skinparam ArrowColor #4A78B5
 skinparam ArrowFontColor #4A78B5
 
-entity "DigitalActivity" as DigitalActivity <<ActivityDefinition>> {
+entity "pt-DigitalActivity" as DigitalActivity <<ActivityDefinition>> {
 }
 
-entity "DigitalGroupPlan" as DigitalGroupPlan <<ServiceRequest>> {
+entity "pt-DigitalGroupPlan" as DigitalGroupPlan <<ServiceRequest>> {
 }
 
-entity "Endpoint" as Endpoint <<Endpoint>> {
+entity "pt-Endpoint" as Endpoint <<Endpoint>> {
 }
 
-entity "ExecutionOrder" as ExecutionOrder <<ServiceRequest>> {
+entity "pt-ExecutionOrder" as ExecutionOrder <<ServiceRequest>> {
 }
 
-entity "Task" as Task <<Task>> #FFE7CC {
+entity "pt-Task" as Task <<Task>> #FFE7CC {
 }
 
-DigitalActivity --> "1..*" Endpoint : endpoint
+DigitalActivity --> "1..*" Endpoint : endpoint «extension»
 Task --> "0..1" ExecutionOrder : focus
-Task --> "1..1" DigitalActivity : digitalActivity
+Task --> "1..1" DigitalActivity : digitalActivity «extension»
 Task --> "1..1" DigitalGroupPlan : basedOn
 @enduml
 

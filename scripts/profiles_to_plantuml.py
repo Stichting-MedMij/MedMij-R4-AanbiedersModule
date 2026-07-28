@@ -15,7 +15,7 @@ import sys
 
 OUT_FILE = os.path.join(
     "guides", "medmij-r4-provider-tasks-ig", "Home",
-    "Artifact-Index", "FHIR-Profiles", "FhirProfileOverview.page.md",
+    ".plantuml", "FhirProfileOverview.page.md",
 )
 
 HEADER = """@startuml
@@ -76,17 +76,17 @@ def edges_of(sd, profile_urls, extensions):
             for pr in t.get("profile", []):  # reference made through an extension
                 target = extensions.get(pr)
                 if target in profile_urls:
-                    yield target, label, card(el)
+                    yield target, f"{label} «extension»", card(el)
 
 
 def to_plantuml(profiles, extensions):
     out, edges = [HEADER], []
     urls = set(profiles)
     for url, sd in sorted(profiles.items(), key=lambda kv: kv[1]["id"]):
-        entity = sd["id"].replace("pt-", "")
+        entity = sd["id"].replace("pt-", "")  # alias: no hyphens, PlantUML chokes on them
         base = sd["type"]  # profiled FHIR resource, e.g. ActivityDefinition
         color = " #FFE7CC" if entity == "Task" else ""
-        out.append(f'entity "{entity}" as {entity} <<{base}>>{color} {{')
+        out.append(f'entity "{sd["id"]}" as {entity} <<{base}>>{color} {{')
         out.append("}")
         out.append("")
         for tgt_url, label, crd in edges_of(sd, urls, extensions):

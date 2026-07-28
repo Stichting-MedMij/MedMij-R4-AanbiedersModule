@@ -17,6 +17,7 @@ topic: TO
   <li><a href="#boundaries-and-relationships">Boundaries and relationships</a></li>
   <li><a href="#relatingFHIR">Relating FHIR (profiles) to its functional counterpart</a></li>
   <li class="toc-sub"><a href="#resource-relationships">Resource relationships</a></li>
+  <li class="toc-sub"><a href="#implementation-guidance">Implementation guidance</a></li>
   <li><a href="#use-case-provider-tasks">Use case: Provider Tasks</a></li>
   <li class="toc-sub"><a href="#phr-request-message">PHR: request message</a></li>
 </ul>
@@ -33,7 +34,7 @@ Note that in addition to this design, the (technical) guidelines as specified in
 
 ## Workflow model {#workflow-model}
 
-For this use case, the [HL7 Clinical Order Workflows IG](https://build.fhir.org/ig/HL7/fhir-cow-ig/en/index.html) has been used as the guiding framework (see the {{pagelink: Dependencies, text: Dependencies}} page for the package version). Clinical Order Workflows provides shared data models and coordination rules for request-fulfillment workflows. Provider Tasks uses the FHIR R4 workflow resources `Task`, `ServiceRequest`, and `ActivityDefinition`. Their roles and relationships within this information standard are described below and follow the [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html).
+This use case follows the [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html) for request-fulfillment workflows, using the workflow resources `Task`, `ServiceRequest`, and `ActivityDefinition`. Their roles and relationships within this information standard are described below.
 
 ## Actors involved {#actors-involved}
 
@@ -53,7 +54,7 @@ This technical design includes use cases for exchanging task data between health
 This technical design assumes that a PHR is able to make a connection to the right XIS that contains the patient's information. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/alpha-of-beta/v14/sd-aanbiedermodules). Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters for patient identification SHALL NOT be included.
 
 Out of scope for this technical design:
-- Exchange of clinical results produced by executing the activity (Event resources such as Observation or QuestionnaireResponse).
+- Exchange of clinical results produced by executing the activity (event resources such as Observation or QuestionnaireResponse).
 
 ## Relating FHIR (profiles) to its functional counterpart {#relatingFHIR}
 
@@ -75,6 +76,10 @@ The functional model of Provider Tasks is represented by {{pagelink: LogicalMode
 
 A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference the same `pt-DigitalGroupPlan` and the same `pt-DigitalActivity`. There is no parent–child hierarchy between tasks. A task ties the other resources together through references:
 
+{{page:FhirProfileOverview}}
+
+**Diagram 2: FHIR profiles and the references between them.**
+
 | Reference on Task | Target | Purpose |
 | --- | --- | --- |
 | `Task.basedOn` | `pt-DigitalGroupPlan` (ServiceRequest) | Groups the Tasks of one digital care module; group label in `ServiceRequest.code.text` |
@@ -83,13 +88,9 @@ A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference th
 
 **Table 3: References from `pt-Task`**
 
-#### Resource overview {#resource-overview}
+### Implementation guidance {#implementation-guidance}
 
-{{page:FhirProfileOverview}}
-
-#### Implementation guidance {#implementation-guidance}
-
-**Source system** 
+**XIS source system** 
 Creates the resources when a healthcare professional assigns a digital care module to a patient:
 - Create one `pt-DigitalGroupPlan` per module and set `ServiceRequest.code.text` to its display name.
 - Create a `pt-Task` for each unit of work the patient must perform, with `Task.basedOn` to the group plan and `ext-DigitalActivity` to the matching `pt-DigitalActivity`. Multiple Tasks may point to the same group plan and the same digital activity.
@@ -130,13 +131,21 @@ GET [base]/Task{?[parameters]}
 Here, `[parameters]` represents a series of encoded name-value pairs representing the filter for the query. Tasks in scope for this information standard are represented by Task resources where `.meta.tag` contains code *providertasks* from system *http://medmij.nl/fhir/CodeSystem/information-standard*, which distinguishes them from Tasks used in other contexts. Hence, the PHR SHALL always include the search parameter `_tag` with the appropriate value in their request, resulting in:
 
 ```
-GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks{&[additional parameters]}
+GET [base]/Task
+  ?_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks
+  {&[additional parameters]}
 ```
+
+In the request examples on this page, line breaks and indentation are used for readability only; they are not part of the URL.
 
 **Included references.** To retrieve referenced resources together with the Task search results, the PHR SHOULD use `_include` for references with core search parameters:
 
 ```
-GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks&_include=Task:based-on&_include=Task:focus&_include=Task:digitalActivity
+GET [base]/Task
+  ?_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks
+  &_include=Task:based-on
+  &_include=Task:focus
+  &_include=Task:digitalActivity
 ```
 
 The digital activity reference is carried in the `ext-DigitalActivity` extension, which core FHIR search parameters cannot target. For this reason, a custom SearchParameter [`digitalActivity`](http://medmij.nl/fhir/SearchParameter/Task-digitalActivity) is defined so that `_include=Task:digitalActivity` can be used to retrieve the referenced `pt-DigitalActivity` together with the Task. Because `pt-Endpoint` is referenced from `pt-DigitalActivity` (and not directly from Task), it cannot be retrieved with a single-level `_include`; the source system SHOULD include the referenced `pt-Endpoint` resource(s) in the search response Bundle, or the PHR resolves them via a read interaction.
@@ -146,6 +155,7 @@ The digital activity reference is carried in the `ext-DigitalActivity` extension
 | Description | FHIR search parameter | Examples |
 | --- | --- | --- |
 | Filter Tasks belonging to the Provider Tasks information standard | `_tag` | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard\|providertasks` |
+| Filter Tasks changed since (or until) a point in time; prefixes `ge`, `gt`, `le` and `lt` SHALL be supported | `_lastUpdated` | `GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00` |
 | Include the digital activity referenced from the Task | `_include=Task:digitalActivity` | `GET [base]/Task?_include=Task:digitalActivity` |
 | Include the digital group plan on which the Task is based | `_include=Task:based-on` | `GET [base]/Task?_include=Task:based-on` |
 | Include the execution order referenced from the Task | `_include=Task:focus` | `GET [base]/Task?_include=Task:focus` |
@@ -222,7 +232,9 @@ GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00
 The PHR MAY add an upper bound on `_lastUpdated` to restrict the period, for example:
 
 ```
-GET [base]/Task?_lastUpdated=ge2026-01-01T00:00:00+01:00&_lastUpdated=le2026-01-31T23:59:59+01:00
+GET [base]/Task
+  ?_lastUpdated=ge2026-01-01T00:00:00+01:00
+  &_lastUpdated=le2026-01-31T23:59:59+01:00
 ```
 
 ##### XIS: response message {#xis-response-message}
