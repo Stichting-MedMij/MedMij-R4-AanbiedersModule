@@ -105,7 +105,8 @@ The PHR read and dislay process for Task lists is as follows:
 - Group Tasks by `Task.basedOn`, using `ServiceRequest.code.text` as the group label.
 - Show `pt-DigitalActivity` for generic activity content and, when present, `pt-ExecutionOrder` for scheduling and instructions.
 
-**Module system** 
+### **Provider Module** 
+
 Reports progress after the patient performs the activity:
 - Update `Task.status` on the source system to reflect progress or completion.
 
