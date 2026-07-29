@@ -6,9 +6,9 @@ topic: FO
 
 ## Algemeen
 
-Dit functioneel ontwerp beschrijft hoe een zorgaanbieder patiëntspecifieke digitale activiteiten als taken beschikbaar stelt aan een patiënt via een Persoonlijke Gezondheidsomgeving (PGO). De patiënt raadpleegt de taken in de PGO en start de bijbehorende digitale activiteit in een extern modulesysteem. In dit ontwerp gebruiken we de term 'patiënt' om de persoon aan te duiden, maar hier kan ook 'cliënt' of 'burger' gelezen worden.
+Dit functioneel ontwerp beschrijft de informatiestandaard Aanbiedertaken en legt uit hoe een zorgaanbieder patiëntspecifieke digitale activiteiten als taken beschikbaar stelt aan een patiënt via een Persoonlijke Gezondheidsomgeving (PGO). De patiënt raadpleegt de taken in de PGO en start de bijbehorende digitale activiteit in een extern modulesysteem. In dit ontwerp gebruiken we de term 'patiënt' om de persoon aan te duiden, maar hier kan ook 'cliënt' of 'burger' gelezen worden.
 
-Aanbiedertaken valt binnen het MedMij-domein: de zorgaanbieder zet digitale activiteiten uit en de patiënt raadpleegt en start deze via een PGO. Koppeltaal richt zich op gegevensuitwisseling tussen zorginformatiesystemen onderling (EPD's, behandel-/patiëntportalen, eHealth-modules) in de context van een behandeling. Beide projecten wisselen taken en digitale activiteiten uit; Aanbiedertaken doet dat tussen zorgaanbieder en patiënt, Koppeltaal tussen zorginformatiesystemen. Deze Implementation Guide is specifiek voor Aanbiedertaken. Voor Koppeltaal is een aparte Implementation Guide beschikbaar via [Simplifier](https://simplifier.net/packages/Koppeltaalv2.00/0.16.2).
+Aanbiedertaken valt binnen het MedMij-domein. Koppeltaal richt zich op gegevensuitwisseling tussen zorginformatiesystemen onderling (EPD's, behandel-/patiëntportalen, eHealth-modules) in de context van een behandeling. Beide projecten wisselen taken en digitale activiteiten uit; Aanbiedertaken doet dat tussen zorgaanbieder en patiënt, Koppeltaal tussen zorginformatiesystemen. Deze Implementation Guide is specifiek voor Aanbiedertaken. Voor Koppeltaal is een aparte Implementation Guide beschikbaar via [Simplifier](https://simplifier.net/packages/Koppeltaalv2.00/0.16.2).
 
 Merk op dat naast dit ontwerp ook de (functionele) eisen en richtlijnen beschreven in de [MedMij R4 Core IG](https://simplifier.net/guide/medmij-r4-core-ig?version=1.0.1) en het door Nictiz gepubliceerde [Functioneel ontwerp](https://informatiestandaarden.nictiz.nl/wiki/MedMij:FO:V1/FunctioneelOntwerp) van toepassing zijn.
 
@@ -18,10 +18,10 @@ De doelgroep voor deze pagina wijkt niet af van de [algemene doelgroep](https://
 
 ### Kaders en uitgangspunten
 
-- De uitwisseling vindt plaats binnen het MedMij Afsprakenstelsel (authenticatie, autorisatie, logging, enz.).
-- De zorgaanbieder initieert één of meerdere digitale activiteiten voor een patiënt.
+- De uitwisseling voldoet aan het MedMij Afsprakenstelsel en het [Solution Design Aanbiedermodules v0.8](https://changemanagement.medmij.nl/alpha-of-beta/v14/sd-aanbiedermodules) (authenticatie, autorisatie, logging, enz.).
+- De zorgaanbieder wijst één of meerdere digitale activiteiten aan een patiënt toe.
 - De patiënt ziet de taken in de PGO als takenlijst en kan vanuit de PGO een extern modulesysteem starten om een taak uit te voeren. De takenlijst bevat openstaande taken en kan daarnaast ook afgeronde taken tonen.
-- Digitale activiteiten kunnen verschillende typen hebben, zoals informatie bekijken, een vragenlijst invullen of thuismetingen uitvoeren.
+- Er zijn verschillende soorten taken, zoals informatie bekijken, een vragenlijst invullen of thuismetingen uitvoeren.
 
 ### Richtlijn en proces
 
@@ -31,13 +31,13 @@ Dit ontwerp is conform specificaties genoemd in [de algemene inleiding](https://
 
 De reikwijdte van dit ontwerp is:
 
-- de functionele beschrijving voor het beschikbaar stellen van patiëntspecifieke digitale activiteiten (taken) door de zorgaanbieder via Aanbiedertaken;
-- de functionele dataset (Logical Models) voor deze uitwisseling, inclusief de relaties tussen digitale activiteit, digitaal groepsplan, uitvoeringsopdracht en taak;
+- de functionele beschrijving voor het beschikbaar stellen van patiëntspecifieke taken door de zorgaanbieder;
+- de functionele dataset (Logical Models) voor de uitwisseling van taken;
 - het bijwerken van de status van een taak vanuit het modulesysteem naar het XIS.
 
 Buiten scope:
 
-- het uitwisselen van inhoudelijke resultaten die ontstaan bij het uitvoeren van een digitale activiteit (zoals meetwaarden of vragenlijstantwoorden).
+- het uitwisselen van inhoudelijke resultaten die ontstaan bij het uitvoeren van een taak, zoals meetwaarden of vragenlijstantwoorden.
 
 ### Infrastructuur
 
@@ -65,18 +65,7 @@ Een usecase beschrijft een praktijksituatie waarin informatie-uitwisseling plaat
 
 #### Doel en relevantie
 
-Het doel is dat patiënten in de PGO taken zien die de zorgaanbieder heeft aangevraagd, en dat zorgaanbieders digitale activiteiten kunnen uitzetten en de voortgang kunnen volgen via statusinformatie.
-
-Voor de patiënt is het doel om in de PGO inzicht te hebben in:
-
-- welke digitale activiteiten de zorgaanbieder heeft aangevraagd;
-- de bijbehorende taken, inclusief planning en actuele status;
-- wat er van de patiënt wordt verwacht (omschrijving en eventuele instructies).
-
-Voor de zorgaanbieder:
-
-- het uitzetten van digitale activiteiten voor een patiënt;
-- het volgen van voortgang via statusinformatie op taakniveau.
+Het doel is dat patiënten in de PGO taken zien die de zorgaanbieder heeft aangevraagd, en dat zorgaanbieders taken kunnen toewijzen en de voortgang kunnen volgen via statusinformatie.
 
 #### Patiëntreis
 
@@ -84,12 +73,13 @@ Koos (54) heeft diabetes type 2. Zijn huisarts wil dat hij thuis zijn bloeddruk 
 
 Hij opent de PGO en raadpleegt de takenlijst. Onder het groepslabel 'Diabetes' ziet hij de taak 'Meet je bloeddruk' met de taakomschrijving, de status en het tijdschema voor uitvoering. Hij start de activiteit en de externe applicatie opent met de juiste context en Koos voert de metingen uit.
 
-Na afloop keert Koos terug naar de PGO. In de takenlijst ziet Koos dat de taak op 'in uitvoering' of 'afgerond' staat.
+Koos slaat de metingen op en keert terug naar de PGO. In de takenlijst ziet Koos dat de taak op 'in uitvoering' of 'afgerond' staat.
 
 #### Procesbeschrijving
 
 ##### Preproces
 
+De uitgangspunten voor het tonen en uitvoeren van een taak zijn:
 - De patiënt beschikt over een PGO dat aan de MedMij-eisen voldoet.
 - De patiënt heeft toestemming gegeven voor het elektronisch uitwisselen van gegevens tussen het betreffende XIS en de eigen PGO.
 - De patiënt is bekend in het XIS en er is een behandelrelatie.
@@ -99,11 +89,10 @@ Na afloop keert Koos terug naar de PGO. In de takenlijst ziet Koos dat de taak o
 - De zorgaanbieder selecteert een digitale activiteit die past bij het zorgproces (bijv. CVRM, diabetes of COPD).
 - Het XIS maakt per digitale activiteit één taak aan en stelt deze beschikbaar aan de patiënt. Wanneer meerdere digitale activiteiten in samenhang worden aangevraagd (bijv. binnen één digitale zorgmodule), worden de bijbehorende taken gegroepeerd via een gedeeld digitaal groepsplan. Per taak worden vastgelegd:
   - een koppeling naar de digitale activiteit waarop de taak is gebaseerd;
-  - het gedeelde digitaal groepsplan waaraan de taak is gekoppeld voor groepering;
   - patiëntspecifieke uitvoeringsinstructies en/of het tijdschema voor de uitvoering, vastgelegd in een uitvoeringsopdracht die aan de taak is gekoppeld. Een uitvoeringsopdracht is optioneel, maar verplicht wanneer er een (herhalend) tijdschema geldt (bijv. '2× per dag gedurende 7 dagen').
 - De patiënt wordt geïnformeerd (bijv. per e-mail) dat er een nieuwe taak klaarstaat in de PGO.
-- De patiënt raadpleegt de takenlijst in de PGO. De patiënt kan taken filteren (bijv. per zorgmodule) op basis van contextinformatie.
-- De patiënt start de digitale activiteit vanuit de PGO (launch naar het modulesysteem) en voert de activiteit uit in de externe applicatie.
+- De patiënt raadpleegt de takenlijst in de PGO. De patiënt kan taken filteren (bijv. per zorgmodule).
+- De patiënt start de digitale activiteit vanuit de PGO (launch naar het modulesysteem) en voert de taak uit in de externe applicatie.
 - Het modulesysteem werkt de status van de individuele taak bij in het XIS (bijv. naar 'in uitvoering' of 'afgerond'). De patiënt kan op elk moment de takenlijst opnieuw ophalen.
 
 ##### Postproces
@@ -152,7 +141,7 @@ Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op ba
 | Verzamelen Taakgegevens (PULL) | Beschikbaar stellen Taken | PT-TGB-1.0.0-alpha.1 | XIS | Zorgaanbieder |
 | Verzamelen Taakgegevens (PULL) | Raadplegen Taken | PT-TGR-1.0.0-alpha.1 | PGO | Patiënt |
 | Digitale activiteit uitvoeren (LAUNCH) | Launch naar digitale activiteit | PA-DAU-1.0.0-alpha.1 | Modulesysteem | Patiënt |
-| Bijwerken Taakstatus (UPDATE) | Bijwerken Taakstatus | PA-DAU-1.0.0-alpha.1 | Modulesysteem | Modulesysteem |
+| Bijwerken Taakstatus (UPDATE) | Bijwerken Taakstatus | PA-DAU-1.0.0-alpha.1 | Modulesysteem | Patiënt |
 | Bijwerken Taakstatus (UPDATE) | Verwerken Taakstatus | PT-TGB-1.0.0-alpha.1 | XIS | Zorgaanbieder |
 
 **Tabel 3: Transactiegroepen**
