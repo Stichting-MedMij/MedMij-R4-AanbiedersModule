@@ -6,7 +6,8 @@
     "status": "empty",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
-  "name": "Pt PHR",
+  "name": "PtPHR",
+  "title": "pt PHR",
   "status": "draft",
   "date": "2026-07-16",
   "publisher": "MedMij",
@@ -44,6 +45,31 @@
           "interaction": [
             {
               "code": "search-type"
+            }
+          ],
+          "searchInclude": [
+            "Task:based-on",
+            "Task:focus",
+            "Task:digitalActivity"
+          ],
+          "searchParam": [
+            {
+              "name": "_tag",
+              "definition": "http://hl7.org/fhir/SearchParameter/Resource-tag",
+              "type": "token",
+              "documentation": "The client SHALL always scope the search to the Provider Tasks information standard, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`."
+            },
+            {
+              "name": "_lastUpdated",
+              "definition": "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+              "type": "date",
+              "documentation": "The client SHALL be able to retrieve only those Tasks changed since a given point in time, to support incremental refresh of the task list, e.g. `_lastUpdated=ge2025-11-14T14:58:33+00:00`. The prefixes `ge`, `gt`, `le` and `lt` SHALL be supported; an upper and lower bound MAY be combined to restrict the period."
+            },
+            {
+              "name": "digitalActivity",
+              "definition": "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity",
+              "type": "reference",
+              "documentation": "Custom search parameter targeting the `ext-DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
             }
           ]
         },

@@ -52,6 +52,20 @@
             {{ page-with-children }}
         </div>
 
+        <!-- Move the generated .page-toc (scripts/add_page_toc.py) up to be a direct
+             child of .content, so its right rail positions against a known element
+             instead of whatever wrapper Simplifier renders around the page body.
+             Prepended, not appended: on desktop it is positioned absolutely so the
+             DOM order does not matter, but on mobile it then sits above the page
+             content rather than trailing at the very bottom.
+             If this does not run the TOC just stays an ordinary box in the text. -->
+        <script>
+            $(function () {
+                var toc = $('.page-toc').first();
+                if (toc.length) { $('.content').addClass('has-page-toc').prepend(toc); }
+            });
+        </script>
+
         <footer>
             <div class="container">
                 <div class="row">

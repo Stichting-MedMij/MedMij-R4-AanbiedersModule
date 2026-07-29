@@ -7,4 +7,4 @@ Description: "Reference to the digital activity definition associated with this 
 * insert PublisherAndContact
 * value[x] only Reference(PtDigitalActivity)
 * ^context[0].type = #element
-* ^context[0].expression = "Task.extension"
+* ^context[0].expression = "Task"

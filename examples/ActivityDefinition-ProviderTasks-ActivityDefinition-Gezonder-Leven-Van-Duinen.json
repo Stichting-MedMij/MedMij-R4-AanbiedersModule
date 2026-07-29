@@ -8,7 +8,7 @@
   },
   "text": {
     "status": "empty",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
   "extension": [
     {
@@ -20,11 +20,11 @@
   ],
   "identifier": [
     {
-      "system": "https://hing.zno.com/content/id",
+      "system": "https://hinq.zno.com/content/id",
       "value": "801e6797-cb52-4020-847a-7440a15b5998"
     }
   ],
-  "url": "https://hing.zno.com/fhir/ActivityDefinition/39318a5e-889d-48a5-8812-e59247743a0c",
+  "url": "https://hinq.zno.com/fhir/ActivityDefinition/39318a5e-889d-48a5-8812-e59247743a0c",
   "version": "1.0.0",
   "name": "InformatieGezonderLeven",
   "title": "Gezonder gaan leven",

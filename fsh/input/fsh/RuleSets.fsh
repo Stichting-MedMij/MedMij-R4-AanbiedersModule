@@ -29,7 +29,13 @@ RuleSet: DefaultNarrative
 RuleSet: DefaultNarrativeInstance
 * text
   * status = #empty
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+
+RuleSet: DefaultNarrativeInstanceDefinitional
+* text
+  * status = #empty
   * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+
 
 RuleSet: LanguageNL
 * language = urn:ietf:bcp:47#nl-NL

@@ -231,6 +231,32 @@
             "comment": "Usage"
           }
         ]
+      },
+      {
+        "id": "pt-lm-DigitalActivity.Endpoint",
+        "path": "pt-lm-DigitalActivity.Endpoint",
+        "short": "Endpoint",
+        "definition": "Mandatory reference to the service application (endpoint) that provides the launchable digital activity. Can be more than one endpoint.",
+        "alias": [
+          "Endpoint"
+        ],
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://medmij.nl/fhir/StructureDefinition/pt-lm-Endpoint"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-36",
+            "comment": "Endpoint"
+          }
+        ]
       }
     ]
   }

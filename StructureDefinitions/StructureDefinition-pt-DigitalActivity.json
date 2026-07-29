@@ -81,6 +81,13 @@
               "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
             ]
           }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-36",
+            "comment": "Endpoint"
+          }
         ]
       },
       {

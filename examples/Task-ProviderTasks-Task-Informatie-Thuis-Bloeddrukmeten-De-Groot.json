@@ -4,8 +4,8 @@
   "meta": {
     "tag": [
       {
-        "system": "http://medmij.nl/fhir/CodeSystem/information-standard",
-        "code": "providertasks"
+        "code": "providertasks",
+        "system": "http://medmij.nl/fhir/CodeSystem/information-standard"
       }
     ],
     "profile": [
@@ -49,8 +49,8 @@
     "start": "2025-12-22",
     "end": "2025-12-28"
   },
-  "authoredOn": "2025-12-24T07:00:00+01:00",
-  "lastModified": "2025-12-24T07:00:00+01:00",
+  "authoredOn": "2025-12-20T10:05:00+01:00",
+  "lastModified": "2025-12-24T07:35:00+01:00",
   "requester": {
     "reference": "PractitionerRole/ProviderTasks-PractitionerRole-De-Jong",
     "display": "L. de Jong, Huisarts"

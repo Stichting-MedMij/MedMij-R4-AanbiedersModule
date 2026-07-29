@@ -10,6 +10,4 @@
 
 [Koppeltaalv2.00 0.16.2](https://simplifier.net/packages/Koppeltaalv2.00/0.16.2)
 
-[Clinical Order Workflows (COW) 1.0.0-ballot](https://simplifier.net/packages/hl7.fhir.uv.cow/1.0.0-ballot)
-
 [Solution Design Aanbiedermodules v0.8](https://changemanagement.medmij.nl/alpha-of-beta/v14/sd-aanbiedermodules)

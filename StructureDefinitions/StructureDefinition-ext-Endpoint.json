@@ -25,7 +25,7 @@
   "context": [
     {
       "type": "element",
-      "expression": "ActivityDefinition.extension"
+      "expression": "ActivityDefinition"
     }
   ],
   "type": "Extension",

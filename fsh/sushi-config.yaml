@@ -3,6 +3,6 @@ fhirVersion: 4.0.1
 canonical: http://medmij.nl/fhir
 dependencies:
   nictiz.fhir.nl.r4.nl-core: 0.12.0-beta.4
-  nictiz.fhir.nl.r4.zib2020: 0.12.0-beta.1
+  nictiz.fhir.nl.r4.zib2020: 0.12.0-beta.4
   Koppeltaalv2.00: 0.16.2
   medmij.fhir.nl.r4.core: 1.0.1

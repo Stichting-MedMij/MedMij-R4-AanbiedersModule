@@ -4,8 +4,9 @@
 Instance: pt-PHR
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert DefaultNarrativeInstance
-* name = "Pt PHR"
+* insert DefaultNarrativeInstanceDefinitional
+* name = "PtPHR"
+* title = "pt PHR"
 * status = #draft
 * date = "2026-07-16"
 * insert PublisherAndContactInstance
@@ -24,6 +25,24 @@ Usage: #definition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
     * interaction
       * code = #search-type
+    * searchInclude[0] = "Task:based-on"
+    * searchInclude[1] = "Task:focus"
+    * searchInclude[2] = "Task:digitalActivity"
+    * searchParam[+]
+      * name = "_tag"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
+      * type = #token
+      * documentation = "The client SHALL always scope the search to the Provider Tasks information standard, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`."
+    * searchParam[+]
+      * name = "_lastUpdated"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"
+      * type = #date
+      * documentation = "The client SHALL be able to retrieve only those Tasks changed since a given point in time, to support incremental refresh of the task list, e.g. `_lastUpdated=ge2025-11-14T14:58:33+00:00`. The prefixes `ge`, `gt`, `le` and `lt` SHALL be supported; an upper and lower bound MAY be combined to restrict the period."
+    * searchParam[+]
+      * name = "digitalActivity"
+      * definition = "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity"
+      * type = #reference
+      * documentation = "Custom search parameter targeting the `ext-DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
   * resource[+]
     * type = #ActivityDefinition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
@@ -80,8 +99,9 @@ Usage: #definition
 Instance: pt-ModuleSystem
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert DefaultNarrativeInstance
-* name = "Pt Module System"
+* insert DefaultNarrativeInstanceDefinitional
+* name = "PtModuleSystem"
+* title = "pt Module System"
 * status = #draft
 * date = "2026-07-16"
 * insert PublisherAndContactInstance
@@ -92,6 +112,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #xml
 * format[1] = #json
+* patchFormat = #application/json-patch+json
 * rest
   * mode = #client
   * documentation = "Minimal requirements for a module system (client) to fulfill the 'Retrieve task' and 'Update task' transactions (system role: PA-DAU-1.0.0-alpha.1). The module system obtains the Task id from the launch context (SMART App Launch `resource` token response field), retrieves the Task and updates `Task.status` to reflect progress or completion of the digital activity."
@@ -103,7 +124,7 @@ Usage: #definition
       * documentation = "The module system retrieves the Task using the Task id from the launch context, e.g. `GET [base]/Task/[id]`."
     * interaction[+]
       * code = #patch
-      * documentation = "The module system updates specific elements of the Task (typically `Task.status`) using a FHIRPath Patch or JSON Patch, e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
+      * documentation = "The module system updates specific elements of the Task (typically `Task.status`) using a JSON Patch (`application/json-patch+json`), e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
     * versioning = #versioned
     * conditionalRead = #not-supported
     * readHistory = false
@@ -112,8 +133,9 @@ Usage: #definition
 Instance: pt-XIS
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert DefaultNarrativeInstance
-* name = "Pt XIS"
+* insert DefaultNarrativeInstanceDefinitional
+* name = "PtXIS"
+* title = "pt XIS"
 * status = #draft
 * date = "2026-07-16"
 * insert PublisherAndContactInstance
@@ -124,6 +146,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #xml
 * format[1] = #json
+* patchFormat = #application/json-patch+json
 * rest
   * mode = #server
   * documentation = "Minimal requirements for a server (XIS) to fulfill the 'Serve task' transaction and to process task status updates (system role: PT-TGB-1.0.0-alpha.1)."
@@ -136,11 +159,29 @@ Usage: #definition
       * code = #read
     * interaction[+]
       * code = #patch
-      * documentation = "The server processes task status updates submitted by the module system via a FHIRPath Patch or JSON Patch, e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
+      * documentation = "The server processes task status updates submitted by the module system as a JSON Patch (`application/json-patch+json`), e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
     * versioning = #versioned
     * conditionalRead = #not-supported
     * readHistory = false
     * updateCreate = false
+    * searchInclude[0] = "Task:based-on"
+    * searchInclude[1] = "Task:focus"
+    * searchInclude[2] = "Task:digitalActivity"
+    * searchParam[+]
+      * name = "_tag"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
+      * type = #token
+      * documentation = "The server SHALL support filtering on the Provider Tasks information standard tag, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`."
+    * searchParam[+]
+      * name = "_lastUpdated"
+      * definition = "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"
+      * type = #date
+      * documentation = "The server SHALL support returning only those Tasks changed since a given point in time, to support incremental refresh of the task list, e.g. `_lastUpdated=ge2025-11-14T14:58:33+00:00`. The prefixes `ge`, `gt`, `le` and `lt` SHALL be supported, including two `_lastUpdated` parameters that together bound the period."
+    * searchParam[+]
+      * name = "digitalActivity"
+      * definition = "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity"
+      * type = #reference
+      * documentation = "Custom search parameter targeting the `ext-DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
   * resource[+]
     * type = #ActivityDefinition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"

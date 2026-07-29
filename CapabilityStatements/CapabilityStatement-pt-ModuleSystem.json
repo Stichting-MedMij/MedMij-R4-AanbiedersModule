@@ -6,7 +6,8 @@
     "status": "empty",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
-  "name": "Pt Module System",
+  "name": "PtModuleSystem",
+  "title": "pt Module System",
   "status": "draft",
   "date": "2026-07-16",
   "publisher": "MedMij",
@@ -31,6 +32,9 @@
     "xml",
     "json"
   ],
+  "patchFormat": [
+    "application/json-patch+json"
+  ],
   "rest": [
     {
       "mode": "client",
@@ -48,7 +52,7 @@
             },
             {
               "code": "patch",
-              "documentation": "The module system updates specific elements of the Task (typically `Task.status`) using a FHIRPath Patch or JSON Patch, e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
+              "documentation": "The module system updates specific elements of the Task (typically `Task.status`) using a JSON Patch (`application/json-patch+json`), e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
             }
           ],
           "versioning": "versioned",

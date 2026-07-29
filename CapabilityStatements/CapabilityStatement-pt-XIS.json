@@ -6,7 +6,8 @@
     "status": "empty",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
-  "name": "Pt XIS",
+  "name": "PtXIS",
+  "title": "pt XIS",
   "status": "draft",
   "date": "2026-07-16",
   "publisher": "MedMij",
@@ -31,6 +32,9 @@
     "xml",
     "json"
   ],
+  "patchFormat": [
+    "application/json-patch+json"
+  ],
   "rest": [
     {
       "mode": "server",
@@ -50,13 +54,38 @@
             },
             {
               "code": "patch",
-              "documentation": "The server processes task status updates submitted by the module system via a FHIRPath Patch or JSON Patch, e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
+              "documentation": "The server processes task status updates submitted by the module system as a JSON Patch (`application/json-patch+json`), e.g. `PATCH [base]/Task/[id]`. See [MedMij Change Management: 3.7 Wijzigen Task Status Module](https://changemanagement.medmij.nl/alpha-of-beta/v14/3-7-wijzigen-task-status-module)."
             }
           ],
           "versioning": "versioned",
           "conditionalRead": "not-supported",
           "readHistory": false,
-          "updateCreate": false
+          "updateCreate": false,
+          "searchInclude": [
+            "Task:based-on",
+            "Task:focus",
+            "Task:digitalActivity"
+          ],
+          "searchParam": [
+            {
+              "name": "_tag",
+              "definition": "http://hl7.org/fhir/SearchParameter/Resource-tag",
+              "type": "token",
+              "documentation": "The server SHALL support filtering on the Provider Tasks information standard tag, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`."
+            },
+            {
+              "name": "_lastUpdated",
+              "definition": "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+              "type": "date",
+              "documentation": "The server SHALL support returning only those Tasks changed since a given point in time, to support incremental refresh of the task list, e.g. `_lastUpdated=ge2025-11-14T14:58:33+00:00`. The prefixes `ge`, `gt`, `le` and `lt` SHALL be supported, including two `_lastUpdated` parameters that together bound the period."
+            },
+            {
+              "name": "digitalActivity",
+              "definition": "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity",
+              "type": "reference",
+              "documentation": "Custom search parameter targeting the `ext-DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
+            }
+          ]
         },
         {
           "type": "ActivityDefinition",

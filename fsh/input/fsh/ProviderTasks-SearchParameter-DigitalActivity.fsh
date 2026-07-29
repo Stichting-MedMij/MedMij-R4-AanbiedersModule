@@ -14,4 +14,4 @@ Usage: #definition
 * base = #Task
 * type = #reference
 * target = #ActivityDefinition
-* expression = "Task.extension('http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity')"
+* expression = "Task.extension('http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity').valueReference"
