@@ -50,7 +50,7 @@
           "searchInclude": [
             "Task:based-on",
             "Task:focus",
-            "Task:digitalActivity"
+            "Task:digital-activity"
           ],
           "searchParam": [
             {
@@ -69,7 +69,7 @@
               "name": "digitalActivity",
               "definition": "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity",
               "type": "reference",
-              "documentation": "Custom search parameter targeting the `ext-Task.DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
+              "documentation": "Custom search parameter targeting the `ext-Task.DigitalActivity` extension, which enables `_include=Task:digital-activity`."
             }
           ]
         },

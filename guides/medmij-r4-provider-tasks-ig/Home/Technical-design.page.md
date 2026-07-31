@@ -239,8 +239,8 @@ The XIS returns an HTTP Status code appropriate to the processing outcome as wel
 
 | Description | CIM NL | HCIM EN | FHIR profile | Search URL |
 | --- | --- | --- | --- | --- |
-| Retrieve task list | Taak | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.6&_include=Task:based-on&_include=Task:focus&_include=Task:digitalActivity` |
-| Retrieve digital activity | Digitale activiteit | Digital Activity |  {{pagelink: FHIRProfilesIndex, text: pt-DigitalActivity, anchor: ptDigitalActivity}} | `GET [base]/Task?_include=Task:digitalActivity` |
+| Retrieve task list | Taak | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.6&_include=Task:based-on&_include=Task:focus&_include=Task:digital-activity` |
+| Retrieve digital activity | Digitale activiteit | Digital Activity |  {{pagelink: FHIRProfilesIndex, text: pt-DigitalActivity, anchor: ptDigitalActivity}} | `GET [base]/Task?_include=Task:digital-activity` |
 | Retrieve digital group plan | Digitaal groepsplan | Digital Group Plan | {{pagelink: FHIRProfilesIndex, text: pt-DigitalGroupPlan, anchor: ptDigitalGroupPlan}} | `GET [base]/Task?_include=Task:based-on` |
 | Retrieve execution order | Uitvoeringsopdracht | Execution Order | {{pagelink: FHIRProfilesIndex, text: pt-ExecutionOrder, anchor: ptExecutionOrder}} | `GET [base]/Task?_include=Task:focus` |
 | Retrieve launch endpoint | Endpoint | Endpoint | {{pagelink: FHIRProfilesIndex, text: pt-Endpoint, anchor: ptEndpoint}} | Resolved via endpoint reference on pt-DigitalActivity |

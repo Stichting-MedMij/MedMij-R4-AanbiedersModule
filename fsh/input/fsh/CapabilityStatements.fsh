@@ -27,7 +27,7 @@ Usage: #definition
       * code = #search-type
     * searchInclude[0] = "Task:based-on"
     * searchInclude[1] = "Task:focus"
-    * searchInclude[2] = "Task:digitalActivity"
+    * searchInclude[2] = "Task:digital-activity"
     * searchParam[+]
       * name = "_tag"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
@@ -42,7 +42,7 @@ Usage: #definition
       * name = "digitalActivity"
       * definition = "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity"
       * type = #reference
-      * documentation = "Custom search parameter targeting the `ext-Task.DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
+      * documentation = "Custom search parameter targeting the `ext-Task.DigitalActivity` extension, which enables `_include=Task:digital-activity`."
   * resource[+]
     * type = #ActivityDefinition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
@@ -166,7 +166,7 @@ Usage: #definition
     * updateCreate = false
     * searchInclude[0] = "Task:based-on"
     * searchInclude[1] = "Task:focus"
-    * searchInclude[2] = "Task:digitalActivity"
+    * searchInclude[2] = "Task:digital-activity"
     * searchParam[+]
       * name = "_tag"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
@@ -181,7 +181,7 @@ Usage: #definition
       * name = "digitalActivity"
       * definition = "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity"
       * type = #reference
-      * documentation = "Custom search parameter targeting the `ext-Task.DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
+      * documentation = "Custom search parameter targeting the `ext-Task.DigitalActivity` extension, which enables `_include=Task:digital-activity`."
   * resource[+]
     * type = #ActivityDefinition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
