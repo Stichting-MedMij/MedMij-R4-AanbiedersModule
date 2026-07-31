@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "ext-ClientID",
-  "url": "http://medmij.nl/fhir/StructureDefinition/ext-ClientID",
-  "name": "ExtClientID",
-  "title": "ext ClientID",
+  "id": "ext-Endpoint.ClientID",
+  "url": "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint.ClientID",
+  "name": "ExtEndpointClientID",
+  "title": "ext Endpoint.ClientID",
   "status": "draft",
   "publisher": "MedMij",
   "contact": [
@@ -36,7 +36,7 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "ext ClientID",
+        "short": "ext Endpoint.ClientID",
         "definition": "The client ID is used as an input parameter named audience in the token exchange request between PHR and the DVA authorisation server.",
         "comment": "The purpose of client ID is to perform impersonation during token exchange, which results in a launch token of type: _urn:medmij:token-type:launch-code_ and a `smart_launch_context` being stored in the DVA authorisation server for that client ID.\n\nThe launch token is used again as the value for the `launch` parameter in the SMART on FHIR launch URL.\n\nThe module application that receives the SMART on FHIR launch URL requests a new access token with the same client ID, including the launch token as an additional parameter from the DVA authorisation server, which includes the `smart_launch_context` in the final token response if both the launch token and client ID match.",
         "max": "1"
@@ -49,7 +49,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "http://medmij.nl/fhir/StructureDefinition/ext-ClientID"
+        "fixedUri": "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint.ClientID"
       },
       {
         "id": "Extension.value[x]",

@@ -4,9 +4,9 @@ Alias: $endpoint-connection-type = http://terminology.hl7.org/CodeSystem/endpoin
 Alias: $endpoint-payload-type = http://terminology.hl7.org/CodeSystem/endpoint-payload-type
 Alias: $UCT = http://terminology.hl7.org/CodeSystem/usage-context-type
 Alias: $SCT = http://snomed.info/sct
-Alias: $client-id = http://medmij.nl/fhir/StructureDefinition/ext-ClientID
-Alias: $pt-digital-activity = http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity
-Alias: $pt-endpoint = http://medmij.nl/fhir/StructureDefinition/ext-Endpoint
+Alias: $client-id = http://medmij.nl/fhir/StructureDefinition/ext-Endpoint.ClientID
+Alias: $pt-digital-activity = http://medmij.nl/fhir/StructureDefinition/ext-Task.DigitalActivity
+Alias: $pt-endpoint = http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint
 Alias: $information-standard = http://medmij.nl/fhir/CodeSystem/information-standard
 
 

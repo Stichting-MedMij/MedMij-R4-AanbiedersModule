@@ -87,7 +87,7 @@ A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference th
 | --- | --- | --- |
 | `Task.basedOn` | `pt-DigitalGroupPlan` (ServiceRequest) | Groups the Tasks of one digital care module; group label in `ServiceRequest.code.text` |
 | `Task.focus` | `pt-ExecutionOrder` (ServiceRequest, optional) | Patient-specific scheduling (`occurrence[x]`) and `patientInstruction` |
-| `ext-DigitalActivity` extension | `pt-DigitalActivity` (ActivityDefinition) | Generic activity definition; references `pt-Endpoint` when the activity is launchable |
+| `ext-Task.DigitalActivity` extension | `pt-DigitalActivity` (ActivityDefinition) | Generic activity definition; references `pt-Endpoint` when the activity is launchable |
 
 **Table 3: References from `pt-Task`**
 
@@ -95,14 +95,14 @@ A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference th
 
 **Healthcare Information System (XIS)**
 Creates the resources when a healthcare professional assigns a digital care module to a patient:
-- Create a `pt-DigitalActivity` for each activity that can be assigned. This resource is generic and patient-independent: it is defined once, reused by every Task that instantiates it, and only replaced or retired (`ActivityDefinition.status`) when the activity itself changes. Set `url` and `title`, and reference the `pt-Endpoint`(s) at which the activity is launched through the `ext-Endpoint` extension. Use `timingTiming` for a generic recommended schedule; patient-specific scheduling belongs in the `pt-ExecutionOrder`.
+- Create a `pt-DigitalActivity` for each activity that can be assigned. This resource is generic and patient-independent: it is defined once, reused by every Task that instantiates it, and only replaced or retired (`ActivityDefinition.status`) when the activity itself changes. Set `url` and `title`, and reference the `pt-Endpoint`(s) at which the activity is launched through the `ext-DigitalActivity.Endpoint` extension. Use `timingTiming` for a generic recommended schedule; patient-specific scheduling belongs in the `pt-ExecutionOrder`.
 - Create one `pt-DigitalGroupPlan` per module and set `ServiceRequest.code.text` to its display name.
-- Create a `pt-Task` for each unit of work the patient must perform, with `Task.basedOn` to the group plan and `ext-DigitalActivity` to the matching `pt-DigitalActivity`. Multiple Tasks may point to the same group plan and the same digital activity.
+- Create a `pt-Task` for each unit of work the patient must perform, with `Task.basedOn` to the group plan and `ext-Task.DigitalActivity` to the matching `pt-DigitalActivity`. Multiple Tasks may point to the same group plan and the same digital activity.
 - Create a `pt-ExecutionOrder` only when the activity needs patient-specific scheduling or instructions. Use `occurrenceTiming` for a recurring schedule, `occurrenceDateTime` or `occurrencePeriod` for a single occurrence. A recurring schedule SHALL use a `pt-ExecutionOrder`.
 
 **Personal healthcare environment (PHR)**
 The PHR read and dislay process for Task lists is as follows:
-- Search Tasks and resolve `Task.basedOn`, `Task.focus`, and `ext-DigitalActivity` from the response Bundle or via a read interaction.
+- Search Tasks and resolve `Task.basedOn`, `Task.focus`, and `ext-Task.DigitalActivity` from the response Bundle or via a read interaction.
 - Group Tasks by `Task.basedOn`, using `ServiceRequest.code.text` as the group label.
 - Show `pt-DigitalActivity` for generic activity content and, when present, `pt-ExecutionOrder` for scheduling and instructions.
 
@@ -162,7 +162,7 @@ GET [base]/Task
   &_include=Task:digital-activity
 ```
 
-The digital activity reference is carried in the `ext-DigitalActivity` extension, which core FHIR search parameters cannot target. For this reason, a custom SearchParameter {{pagelink:pt-Task-digitalActivity, text:`digital-activity`}} is defined so that `_include=Task:digital-activity` can be used to retrieve the referenced `pt-DigitalActivity` together with the Task. Because `pt-Endpoint` is referenced from `pt-DigitalActivity` (and not directly from Task), it cannot be retrieved with a single-level `_include`; the source system SHOULD include the referenced `pt-Endpoint` resource(s) in the search response Bundle, or the PHR resolves them via a read interaction.
+The digital activity reference is carried in the `ext-Task.DigitalActivity` extension, which core FHIR search parameters cannot target. For this reason, a custom SearchParameter {{pagelink:pt-Task-digitalActivity, text:`digital-activity`}} is defined so that `_include=Task:digital-activity` can be used to retrieve the referenced `pt-DigitalActivity` together with the Task. Because `pt-Endpoint` is referenced from `pt-DigitalActivity` (and not directly from Task), it cannot be retrieved with a single-level `_include`; the source system SHOULD include the referenced `pt-Endpoint` resource(s) in the search response Bundle, or the PHR resolves them via a read interaction.
 
 **Supported search parameters**
 

@@ -37,7 +37,7 @@ InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * insert DefaultNarrativeInstanceDefinitional
 * extension
-  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
@@ -441,7 +441,7 @@ InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * insert DefaultNarrativeInstanceDefinitional
 * extension
-  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
@@ -486,7 +486,7 @@ InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * insert DefaultNarrativeInstanceDefinitional
 * extension
-  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"
@@ -531,7 +531,7 @@ InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * insert DefaultNarrativeInstanceDefinitional
 * extension[0]
-  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-Minddistrict)
 * identifier
   * system = "https://ns.minddistrict.com/content/id"

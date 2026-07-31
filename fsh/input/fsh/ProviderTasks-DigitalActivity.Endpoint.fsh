@@ -1,8 +1,8 @@
-Extension: ExtEndpointReference
-Id: ext-Endpoint
-Title: "ext Endpoint"
+Extension: ExtDigitalActivityEndpoint
+Id: ext-DigitalActivity.Endpoint
+Title: "ext DigitalActivity.Endpoint"
 Description: "Reference to the Endpoint that provides the launchable digital activity."
-* ^url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
+* ^url = "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint"
 * ^status = #draft
 * insert PublisherAndContact
 * value[x] only Reference(PtEndpoint)

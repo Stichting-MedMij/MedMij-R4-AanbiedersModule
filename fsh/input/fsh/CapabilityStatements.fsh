@@ -42,7 +42,7 @@ Usage: #definition
       * name = "digitalActivity"
       * definition = "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity"
       * type = #reference
-      * documentation = "Custom search parameter targeting the `ext-DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
+      * documentation = "Custom search parameter targeting the `ext-Task.DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
   * resource[+]
     * type = #ActivityDefinition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
@@ -181,7 +181,7 @@ Usage: #definition
       * name = "digitalActivity"
       * definition = "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity"
       * type = #reference
-      * documentation = "Custom search parameter targeting the `ext-DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
+      * documentation = "Custom search parameter targeting the `ext-Task.DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
   * resource[+]
     * type = #ActivityDefinition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"

@@ -22,7 +22,7 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^short = "Task"
   * ^alias = "Taak"
   * ^definition = "Patient-specific task that tells a patient what to do as part of a digital care activity. A Task is shown in the patient's task list and supports tracking progress and completion over time."
-* extension contains ExtDigitalActivity named digitalActivity 1..1
+* extension contains ExtTaskDigitalActivity named digitalActivity 1..1
   * ^short = "Reference to ActivityDefinition"
   * ^definition = "A link to the ActivityDefinition that defines the launchable eHealth activity (i.e., what module/content should be launched or performed) associated with this Task."
   * ^alias = "DigitaleActiviteit"

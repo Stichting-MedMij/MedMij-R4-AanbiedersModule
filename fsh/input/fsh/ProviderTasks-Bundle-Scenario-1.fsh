@@ -37,7 +37,7 @@ InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * insert DefaultNarrativeInstanceDefinitional
 * extension
-  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * url = "https://hinq.zno.com/fhir/ActivityDefinition/b15d4634-4678-46bd-a55a-e46ef3dfb517"
 * identifier
@@ -442,7 +442,7 @@ InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * insert DefaultNarrativeInstanceDefinitional
 * extension
-  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
   * system = "https://hinq.zno.com/content/id"
@@ -487,7 +487,7 @@ InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * insert DefaultNarrativeInstanceDefinitional
 * extension
-  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
   * system = "https://hinq.zno.com/content/id"
@@ -532,7 +532,7 @@ InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity
 Usage: #example
 * insert DefaultNarrativeInstanceDefinitional
 * extension
-  * url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
+  * url = "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint"
   * valueReference = Reference(ProviderTasks-Endpoint-HINQ)
 * identifier
   * system = "https://hinq.zno.com/content/id"

@@ -148,7 +148,7 @@
           {
             "code": "Extension",
             "profile": [
-              "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity"
+              "http://medmij.nl/fhir/StructureDefinition/ext-Task.DigitalActivity"
             ]
           }
         ],

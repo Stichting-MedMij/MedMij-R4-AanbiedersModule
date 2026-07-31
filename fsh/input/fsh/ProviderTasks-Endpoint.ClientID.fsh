@@ -1,8 +1,8 @@
-Extension: ExtClientID
-Id: ext-ClientID
-Title: "ext ClientID"
+Extension: ExtEndpointClientID
+Id: ext-Endpoint.ClientID
+Title: "ext Endpoint.ClientID"
 Description: "The client ID is used as an input parameter named audience in the token exchange request between PHR and the DVA authorisation server."
-* ^url = "http://medmij.nl/fhir/StructureDefinition/ext-ClientID"
+* ^url = "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint.ClientID"
 * ^status = #draft
 * insert PublisherAndContact
 * . ..1
