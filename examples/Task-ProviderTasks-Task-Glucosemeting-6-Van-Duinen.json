@@ -4,8 +4,8 @@
   "meta": {
     "tag": [
       {
-        "code": "providertasks",
-        "system": "http://medmij.nl/fhir/CodeSystem/information-standard"
+        "code": "urn:oid:2.16.528.1.1023.5.6",
+        "system": "http://medmij.nl/fhir/CodeSystem/DataService"
       }
     ],
     "profile": [

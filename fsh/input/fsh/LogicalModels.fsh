@@ -9,7 +9,7 @@ Characteristics: #can-be-target
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This LogicalModel represents the DigitalActivity building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This LogicalModel represents the DigitalActivity building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * ^abstract = false
 * .
@@ -65,7 +65,7 @@ Characteristics: #can-be-target
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This LogicalModel represents the DigitalGroupPlan building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This LogicalModel represents the DigitalGroupPlan building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * ^abstract = false
 * .
@@ -101,7 +101,7 @@ Characteristics: #can-be-target
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This LogicalModel represents the ExecutionOrder building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This LogicalModel represents the ExecutionOrder building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * ^abstract = false
 * .
@@ -138,7 +138,7 @@ Description: "Patient-specific task that tells a patient what to do as part of a
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This LogicalModel represents the Task building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This LogicalModel represents the Task building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * ^abstract = false
 * .
@@ -212,7 +212,7 @@ Characteristics: #can-be-target
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This LogicalModel represents the Endpoint building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This LogicalModel represents the Endpoint building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * ^abstract = false
 * .

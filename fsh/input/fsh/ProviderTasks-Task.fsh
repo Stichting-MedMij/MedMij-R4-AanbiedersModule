@@ -6,18 +6,18 @@ Description: "Patient-specific task that tells a patient what to do as part of a
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This Task resource represents the Task building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This Task resource represents the Task building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
-// Tasks in scope for this information standard carry a fixed tag, which is also the
+// Tasks in scope for this data service carry a fixed tag, which is also the
 // search parameter (`_tag`) the PHR filters on. Slicing is open: other tags are allowed.
 * meta.tag ^slicing.discriminator[0].type = #pattern
 * meta.tag ^slicing.discriminator[0].path = "$this"
 * meta.tag ^slicing.rules = #open
 * meta.tag contains dataService 1..1
-* meta.tag[dataService] = $information-standard#providertasks
-  * ^short = "Information standard tag"
-  * ^definition = "Marks this Task as being in scope for the Provider Tasks (Aanbiedertaken) information standard, so it can be distinguished from Tasks used in other contexts."
-  * ^comment = "A tag is used because R4 offers no better place to categorize a Task. `Task.code` is not suitable: it states what kind of work is to be performed (e.g. a blood pressure measurement or a saturation measurement), not which information standard the Task belongs to. Unlike most other resources, Task has no `category` element; this gap has been raised with HL7 in [FHIR-57849](https://jira.hl7.org/browse/FHIR-57849)."
+* meta.tag[dataService] = $DataServiceCodeSystemURL#urn:oid:2.16.528.1.1023.5.6
+  * ^short = "Data service tag"
+  * ^definition = "Marks this Task as being in scope for the Provider Tasks (Aanbiedertaken) data service, so it can be distinguished from Tasks used in other contexts."
+  * ^comment = "A tag is used because R4 offers no better place to categorize a Task. `Task.code` is not suitable: it states what kind of work is to be performed (e.g. a blood pressure measurement or a saturation measurement), not which data service the Task belongs to. Unlike most other resources, Task has no `category` element; this gap has been raised with HL7 in [FHIR-57849](https://jira.hl7.org/browse/FHIR-57849)."
 * . // root element
   * ^short = "Task"
   * ^alias = "Taak"
@@ -40,7 +40,7 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^short = "Status"
   * ^alias = "Status"
 * intent
-  * ^comment = "Within the Provider Tasks information standard all Tasks are expected to have an intent of _order_."
+  * ^comment = "Within the Provider Tasks data service all Tasks are expected to have an intent of _order_."
 * priority
   * ^short = "Priority"
   * ^definition = "Indicates how urgent it is to perform the activity (e.g., routine, urgent, asap)."

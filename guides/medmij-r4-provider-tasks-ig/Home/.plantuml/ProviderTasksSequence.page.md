@@ -31,11 +31,11 @@ note over XIS
   pt-DigitalActivity (+ pt-Endpoint) is generic and
   patient-independent: defined once and reused
 end note
-HP -> XIS : Assign a digital care module to the patient:\ncreate pt-DigitalGroupPlan, pt-Task(s) tagged\n//providertasks//, optional pt-ExecutionOrder
+HP -> XIS : Assign a digital care module to the patient:\ncreate pt-DigitalGroupPlan, pt-Task(s) tagged\n//urn:oid:2.16.528.1.1023.5.6//, optional pt-ExecutionOrder
 
 == Retrieve task list (PULL) ==
 Patient -> PHR : Open task list
-PHR -> XIS : GET [base]/Task?_tag=...|providertasks\n&_include=Task:based-on&_include=Task:focus\n&_include=Task:digital-activity
+PHR -> XIS : GET [base]/Task?_tag=...|urn:oid:2.16.528.1.1023.5.6\n&_include=Task:based-on&_include=Task:focus\n&_include=Task:digital-activity
 XIS --> PHR : 200 OK, searchset Bundle\n(Task + ServiceRequest(s) + ActivityDefinition\n[+ Endpoint, + requester resources])
 opt referenced resource not included in the Bundle
   PHR -> XIS : GET [base]/[type]/[id]\n(e.g. Endpoint, ActivityDefinition)
@@ -55,7 +55,7 @@ MOD -> XIS : PATCH [base]/Task/[id]\n(Task.status = in-progress / completed)
 XIS --> MOD : 200 OK
 
 == Refresh task list ==
-PHR -> XIS : GET [base]/Task?_tag=...|providertasks\n&_lastUpdated=ge[last sync]
+PHR -> XIS : GET [base]/Task?_tag=...|urn:oid:2.16.528.1.1023.5.6\n&_lastUpdated=ge[last sync]
 XIS --> PHR : 200 OK, searchset Bundle (changed Tasks)
 PHR -> Patient : Show updated status
 @enduml

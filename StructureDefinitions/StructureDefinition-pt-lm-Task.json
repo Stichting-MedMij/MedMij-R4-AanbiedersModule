@@ -23,7 +23,7 @@
     }
   ],
   "description": "Patient-specific task that tells a patient what to do as part of a digital care activity. A task is shown in the patient's task list and supports tracking progress and completion over time.",
-  "purpose": "This LogicalModel represents the Task building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
+  "purpose": "This LogicalModel represents the Task building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [

@@ -7,7 +7,7 @@ Alias: $SCT = http://snomed.info/sct
 Alias: $client-id = http://medmij.nl/fhir/StructureDefinition/ext-Endpoint.ClientID
 Alias: $pt-digital-activity = http://medmij.nl/fhir/StructureDefinition/ext-Task.DigitalActivity
 Alias: $pt-endpoint = http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint
-Alias: $information-standard = http://medmij.nl/fhir/CodeSystem/information-standard
+Alias: $DataServiceCodeSystemURL = http://medmij.nl/fhir/CodeSystem/DataService
 
 
 // Koppeltaal specific

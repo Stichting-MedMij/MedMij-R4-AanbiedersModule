@@ -29,7 +29,7 @@
     }
   ],
   "description": "Patient-specific execution order for a digital activity, created by a healthcare professional for a patient.",
-  "purpose": "This LogicalModel represents the ExecutionOrder building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
+  "purpose": "This LogicalModel represents the ExecutionOrder building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
