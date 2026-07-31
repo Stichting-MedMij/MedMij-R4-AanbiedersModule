@@ -6,7 +6,7 @@ Description: "Patient-specific execution order for a digital activity, created b
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This ServiceRequest resource represents the ExecutionOrder building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This ServiceRequest resource represents the ExecutionOrder building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * .
   * ^short = "Execution order"

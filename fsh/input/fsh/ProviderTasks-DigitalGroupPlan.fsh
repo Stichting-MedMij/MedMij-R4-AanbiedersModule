@@ -6,7 +6,7 @@ Description: "Patient-specific digital group plan that groups related tasks belo
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This ServiceRequest resource represents the DigitalGroupPlan building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This ServiceRequest resource represents the DigitalGroupPlan building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * .
   * ^short = "Digital group plan"

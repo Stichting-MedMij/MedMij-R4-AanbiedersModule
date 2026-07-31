@@ -62,8 +62,8 @@ Instance: ProviderTasks-Task-Saturatiemeting-1-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag[dataService]
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+  * system = "http://medmij.nl/fhir/CodeSystem/DataService"
+  * code = #urn:oid:2.16.528.1.1023.5.6
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -91,8 +91,8 @@ Instance: ProviderTasks-Task-Saturatiemeting-2-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag[dataService]
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+  * system = "http://medmij.nl/fhir/CodeSystem/DataService"
+  * code = #urn:oid:2.16.528.1.1023.5.6
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -120,8 +120,8 @@ Instance: ProviderTasks-Task-Saturatiemeting-3-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag[dataService]
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+  * system = "http://medmij.nl/fhir/CodeSystem/DataService"
+  * code = #urn:oid:2.16.528.1.1023.5.6
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -149,8 +149,8 @@ Instance: ProviderTasks-Task-Saturatiemeting-4-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag[dataService]
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+  * system = "http://medmij.nl/fhir/CodeSystem/DataService"
+  * code = #urn:oid:2.16.528.1.1023.5.6
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -178,8 +178,8 @@ Instance: ProviderTasks-Task-Saturatiemeting-5-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag[dataService]
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+  * system = "http://medmij.nl/fhir/CodeSystem/DataService"
+  * code = #urn:oid:2.16.528.1.1023.5.6
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -207,8 +207,8 @@ Instance: ProviderTasks-Task-Saturatiemeting-6-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag[dataService]
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+  * system = "http://medmij.nl/fhir/CodeSystem/DataService"
+  * code = #urn:oid:2.16.528.1.1023.5.6
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -236,8 +236,8 @@ Instance: ProviderTasks-Task-Saturatiemeting-7-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag[dataService]
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+  * system = "http://medmij.nl/fhir/CodeSystem/DataService"
+  * code = #urn:oid:2.16.528.1.1023.5.6
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -285,8 +285,8 @@ Instance: ProviderTasks-Task-Informatie-leven-COPD-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag[dataService]
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+  * system = "http://medmij.nl/fhir/CodeSystem/DataService"
+  * code = #urn:oid:2.16.528.1.1023.5.6
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -332,8 +332,8 @@ Instance: ProviderTasks-Task-Informatie-Inhalatiemedicatie-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag[dataService]
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+  * system = "http://medmij.nl/fhir/CodeSystem/DataService"
+  * code = #urn:oid:2.16.528.1.1023.5.6
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity
@@ -380,8 +380,8 @@ Instance: ProviderTasks-Task-Vragenlijst-Wat-Bereiken-Van-Dijk
 InstanceOf: http://medmij.nl/fhir/StructureDefinition/pt-Task
 Usage: #example
 * meta.tag[dataService]
-  * system = "http://medmij.nl/fhir/CodeSystem/information-standard"
-  * code = #providertasks
+  * system = "http://medmij.nl/fhir/CodeSystem/DataService"
+  * code = #urn:oid:2.16.528.1.1023.5.6
 * insert DefaultNarrativeInstance
 * extension
   * url = $pt-digital-activity

@@ -19,7 +19,7 @@
     }
   ],
   "description": "Technical FHIR REST endpoint of a source system (XIS), used by a Task to retrieve and update task data and the required context for the Provider Tasks use case.",
-  "purpose": "This Endpoint resource represents the Endpoint building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
+  "purpose": "This Endpoint resource represents the Endpoint building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken).",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
