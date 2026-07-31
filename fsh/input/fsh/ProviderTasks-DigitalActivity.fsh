@@ -49,7 +49,7 @@ Description: "Reusable definition of a digital activity (module) that can be sel
 Mapping: ProviderTasksDigitalActivityMedMij-100-alpha1
 Source: PtDigitalActivity
 Id: pt-dataset-100-alpha1-20260511
-Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
 * -> "pt-dataelement-9" "DigitalActivity"
 * identifier -> "pt-dataelement-31" "Identifier"
 * title -> "pt-dataelement-10" "Title"

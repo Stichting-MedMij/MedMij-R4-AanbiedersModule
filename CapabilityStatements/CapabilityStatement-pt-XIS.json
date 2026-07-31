@@ -38,7 +38,7 @@
   "rest": [
     {
       "mode": "server",
-      "documentation": "Minimal requirements for a server (XIS) to fulfill the 'Serve task' transaction and to process task status updates (system role: PT-TGB-1.0.0-alpha.1).",
+      "documentation": "Minimal requirements for a server (XIS) to fulfill the 'Serve task' transaction and to process task status updates (system role: PT-TGB-1.0.0-alpha.2).",
       "resource": [
         {
           "type": "Task",

@@ -40,7 +40,7 @@ Description: "Patient-specific digital group plan that groups related tasks belo
 Mapping: ProviderTasksDigitalGroupPlanMedMij-100-alpha1
 Source: PtDigitalGroupPlan
 Id: pt-dataset-100-alpha1-20260511
-Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
 * -> "pt-dataelement-20" "DigitalGroupPlan"
 * code.text -> "pt-dataelement-21" "Name"
 * status -> "pt-dataelement-22" "Status"

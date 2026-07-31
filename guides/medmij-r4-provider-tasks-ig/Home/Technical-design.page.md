@@ -12,11 +12,12 @@ topic: TO
 <strong>On this page</strong>
 <ul>
   <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#boundaries-and-relationships">Boundaries and relationships</a></li>
   <li><a href="#workflow-model">Workflow model</a></li>
   <li><a href="#actors-involved">Actors involved</a></li>
-  <li><a href="#boundaries-and-relationships">Boundaries and relationships</a></li>
   <li><a href="#relatingFHIR">Relating FHIR (profiles) to its functional counterpart</a></li>
   <li class="toc-sub"><a href="#resource-relationships">Resource relationships</a></li>
+  <li class="toc-sub"><a href="#provider-module">Provider Module</a></li>
   <li><a href="#use-case-provider-tasks">Use case: Provider Tasks</a></li>
   <li class="toc-sub"><a href="#phr-request-message">PHR: request message</a></li>
   <li class="toc-sub"><a href="#module-system-update-task-status">Module system: update task status</a></li>
@@ -28,11 +29,20 @@ topic: TO
 
 ## Introduction {#introduction}
 
-This technical design provides the technical specification of the Provider Tasks (Dutch: Aanbiedertaken) standard.
+This technical design provides the technical specification of the data service belonging to the Provider Tasks (Dutch: Aanbiedertaken) standard.
 
 This technical design is the technical counterpart of the {{pagelink: FO, text: functional design}}. The FHIR version used for this IG is R4 (4.0.1).
 
 Note that in addition to this design, the (technical) guidelines as specified in the [MedMij R4 Core IG](https://simplifier.net/guide/medmij-r4-core-ig?version=1.0.1) and the [MedMij FHIR IG for R4](https://informatiestandaarden.nictiz.nl/wiki/MedMij:IG:V1/FHIR_IG) apply, the latter of which is published by Nictiz.
+
+## Boundaries and relationships {#boundaries-and-relationships}
+
+This technical design includes use cases for exchanging task data between healthcare providers and patients via a PHR.
+
+This technical design assumes that a PHR is able to make a connection to the right XIS that contains the patient's information. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/alpha-of-beta/v14/sd-aanbiedermodules). Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters for patient identification SHALL NOT be included.
+
+Out of scope for this technical design:
+- Exchange of clinical results produced by executing the activity (event resources such as Observation or QuestionnaireResponse).
 
 ## Workflow model {#workflow-model}
 
@@ -48,15 +58,6 @@ This use case follows the [FHIR R4 Workflow specification](https://hl7.org/fhir/
 | Patient | Fulfiller of a digital activity | Provider module | Executes the digital activity after launch | {{pagelink:pt-modulesystem, text: pt-ModuleSystem}} | FHIR client requirements |
 
 **Table 1: Actors, systems and FHIR CapabilityStatements**
-
-## Boundaries and relationships {#boundaries-and-relationships}
-
-This technical design includes use cases for exchanging task data between healthcare providers and patients via a PHR.
-
-This technical design assumes that a PHR is able to make a connection to the right XIS that contains the patient's information. Requirements for infrastructure, security, authentication, and authorization are defined in the [MedMij Solution Design](https://changemanagement.medmij.nl/alpha-of-beta/v14/sd-aanbiedermodules). Each XIS gateway is required to perform filtering based on the patient associated with the context for the request, so only the records associated with the authenticated patient are returned. For this reason, search parameters for patient identification SHALL NOT be included.
-
-Out of scope for this technical design:
-- Exchange of clinical results produced by executing the activity (event resources such as Observation or QuestionnaireResponse).
 
 ## Relating FHIR (profiles) to its functional counterpart {#relatingFHIR}
 
@@ -105,13 +106,18 @@ The PHR read and dislay process for Task lists is as follows:
 - Group Tasks by `Task.basedOn`, using `ServiceRequest.code.text` as the group label.
 - Show `pt-DigitalActivity` for generic activity content and, when present, `pt-ExecutionOrder` for scheduling and instructions.
 
-**Module system** 
+### **Provider Module** {#provider-module}
+
 Reports progress after the patient performs the activity:
 - Update `Task.status` on the source system to reflect progress or completion.
 
 ## Use case: Provider Tasks {#use-case-provider-tasks}
 
+This section introduces the Provider Tasks use case, lists the transactions in scope, and then specifies each interaction.
+
 The healthcare provider initiates digital activities for the patient. The patient retrieves open and (optionally) completed tasks in the PHR. The patient starts (launches) the digital activity, performs it in an external module system, and then sees task status updates in the PHR after the module system writes back task progress/completion to the source system.
+
+The transactions listed in the table below, are covered in the paragraphs hereafter.
 
 | Transaction group | Transaction | Actor | Role |
 | --- | --- | --- | --- |

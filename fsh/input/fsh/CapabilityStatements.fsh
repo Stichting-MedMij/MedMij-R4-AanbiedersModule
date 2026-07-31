@@ -19,7 +19,7 @@ Usage: #definition
 * format[1] = #json
 * rest
   * mode = #client
-  * documentation = "Minimal requirements for a PHR (client) to fulfill the 'Retrieve task' transaction (system role: PT-TGR-1.0.0-alpha.1)."
+  * documentation = "Minimal requirements for a PHR (client) to fulfill the 'Retrieve task' transaction (system role: PT-TGR-1.0.0-alpha.2)."
   * resource[+]
     * type = #Task
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
@@ -115,7 +115,7 @@ Usage: #definition
 * patchFormat = #application/json-patch+json
 * rest
   * mode = #client
-  * documentation = "Minimal requirements for a module system (client) to fulfill the 'Retrieve task' and 'Update task' transactions (system role: PA-DAU-1.0.0-alpha.1). The module system obtains the Task id from the launch context (SMART App Launch `resource` token response field), retrieves the Task and updates `Task.status` to reflect progress or completion of the digital activity."
+  * documentation = "Minimal requirements for a module system (client) to fulfill the 'Retrieve task' and 'Update task' transactions (system role: PA-DAU-1.0.0-alpha.2). The module system obtains the Task id from the launch context (SMART App Launch `resource` token response field), retrieves the Task and updates `Task.status` to reflect progress or completion of the digital activity."
   * resource[+]
     * type = #Task
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
@@ -149,7 +149,7 @@ Usage: #definition
 * patchFormat = #application/json-patch+json
 * rest
   * mode = #server
-  * documentation = "Minimal requirements for a server (XIS) to fulfill the 'Serve task' transaction and to process task status updates (system role: PT-TGB-1.0.0-alpha.1)."
+  * documentation = "Minimal requirements for a server (XIS) to fulfill the 'Serve task' transaction and to process task status updates (system role: PT-TGB-1.0.0-alpha.2)."
   * resource[+]
     * type = #Task
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
