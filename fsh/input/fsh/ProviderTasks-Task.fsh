@@ -82,7 +82,7 @@ Description: "Patient-specific task that tells a patient what to do as part of a
 * owner only Reference(Practitioner or PractitionerRole or Organization or CareTeam or HealthcareService or Patient or Device or RelatedPerson or http://nictiz.nl/fhir/StructureDefinition/nl-core-CareTeam or http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole or http://nictiz.nl/fhir/StructureDefinition/nl-core-ContactPerson)
   * ^short = "Owner"
   * ^definition = "The party currently responsible for executing the task."
-  * ^alias = "Uitvoerder"
+  * ^alias = "Eigenaar"
   * ^comment = """
     In Provider Tasks, the owner is typically the performer of the task (usually the patient), but execution may also be delegated to another responsible party such as a caregiver/contact person or a care team.
 

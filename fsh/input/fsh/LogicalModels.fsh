@@ -183,7 +183,7 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^alias = "Aanvrager"
 * Owner 1..1 Reference(http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient or MedMijCoreLmHealthProfessional or http://nictiz.nl/fhir/StructureDefinition/nl-core-ContactPerson or http://nictiz.nl/fhir/StructureDefinition/nl-core-CareTeam) "The party currently responsible for executing the task."
   * ^short = "Owner"
-  * ^alias = "Uitvoerder"
+  * ^alias = "Eigenaar"
 
 Mapping: PtLmTaskMedMij-100-alpha1
 Source: PtLmTask

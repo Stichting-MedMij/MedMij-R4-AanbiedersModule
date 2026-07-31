@@ -334,7 +334,7 @@
         "short": "Owner",
         "definition": "The party currently responsible for executing the task.",
         "alias": [
-          "Uitvoerder"
+          "Eigenaar"
         ],
         "min": 1,
         "max": "1",
