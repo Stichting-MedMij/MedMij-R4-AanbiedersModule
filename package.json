@@ -1,7 +1,7 @@
 {
   "name": "medmij.fhir.nl.r4.providertasks",
-  "version": "1.0.0-alpha.1",
-  "description": "Package of FHIR R4 conformance resources for MedMij Provider Tasks version 1.0.0-alpha.1.",
+  "version": "1.0.0-alpha.2",
+  "description": "Package of FHIR R4 conformance resources for MedMij Provider Tasks version 1.0.0-alpha.2.",
   "author": "MedMij",
   "license": "CC0-1.0",
   "title": "FHIR implementation of Provider Tasks",
