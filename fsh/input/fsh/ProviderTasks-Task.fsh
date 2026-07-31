@@ -13,11 +13,11 @@ Description: "Patient-specific task that tells a patient what to do as part of a
 * meta.tag ^slicing.discriminator[0].type = #pattern
 * meta.tag ^slicing.discriminator[0].path = "$this"
 * meta.tag ^slicing.rules = #open
-* meta.tag contains informationStandard 1..1
-* meta.tag[informationStandard] = $information-standard#providertasks
+* meta.tag contains dataService 1..1
+* meta.tag[dataService] = $information-standard#providertasks
   * ^short = "Information standard tag"
-  * ^definition = "Marks this Task as being in scope for the Provider Tasks (Aanbiedertaken) information standard, so it can be distinguished from Tasks used in other contexts. Clients filter on this tag with `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`."
-  * ^comment = "A tag is used because R4 offers no better place to categorise a Task. `Task.code` is not suitable: it states what kind of work is to be performed (e.g. a blood pressure measurement or a saturation measurement), not which information standard the Task belongs to. Unlike most other resources, Task has no `category` element; this gap has been raised with HL7 in [FHIR-57849](https://jira.hl7.org/browse/FHIR-57849). Should a `Task.category` become available in a future FHIR version, it is the preferred alternative for this tag."
+  * ^definition = "Marks this Task as being in scope for the Provider Tasks (Aanbiedertaken) information standard, so it can be distinguished from Tasks used in other contexts."
+  * ^comment = "A tag is used because R4 offers no better place to categorize a Task. `Task.code` is not suitable: it states what kind of work is to be performed (e.g. a blood pressure measurement or a saturation measurement), not which information standard the Task belongs to. Unlike most other resources, Task has no `category` element; this gap has been raised with HL7 in [FHIR-57849](https://jira.hl7.org/browse/FHIR-57849)."
 * . // root element
   * ^short = "Task"
   * ^alias = "Taak"
@@ -38,11 +38,9 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^alias = "DigitaalGroepsplan"
 * status
   * ^short = "Status"
-  * ^definition = "Current state of the Task in the workflow (e.g., requested, received, accepted, in-progress, completed, cancelled)."
   * ^alias = "Status"
 * intent
-  * ^comment = "This element is immutable. Proposed tasks, planned tasks, etc. must be distinct instances.
-Within the Provider Tasks information standard all Tasks are expected to have an intent of 'order'."
+  * ^comment = "Within the Provider Tasks information standard all Tasks are expected to have an intent of _order_."
 * priority
   * ^short = "Priority"
   * ^definition = "Indicates how urgent it is to perform the activity (e.g., routine, urgent, asap)."
