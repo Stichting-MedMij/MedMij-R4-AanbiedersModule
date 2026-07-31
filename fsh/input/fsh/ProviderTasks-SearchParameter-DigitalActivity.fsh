@@ -10,7 +10,7 @@ Usage: #definition
 * insert PublisherAndContactInstance
 * description = "Search Tasks based on the referenced digital activity (ActivityDefinition) they instantiate."
 * purpose = "Enables clients and servers to find the Task(s) that are associated with a particular digital activity (ActivityDefinition), which is referenced from the Task via the ext-DigitalActivity extension."
-* code = #digitalActivity
+* code = #digital-activity
 * base = #Task
 * type = #reference
 * target = #ActivityDefinition

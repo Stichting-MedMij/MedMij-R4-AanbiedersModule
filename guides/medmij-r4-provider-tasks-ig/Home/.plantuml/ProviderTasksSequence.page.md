@@ -35,7 +35,7 @@ HP -> XIS : Assign a digital care module to the patient:\ncreate pt-DigitalGroup
 
 == Retrieve task list (PULL) ==
 Patient -> PHR : Open task list
-PHR -> XIS : GET [base]/Task?_tag=...|urn:oid:2.16.528.1.1023.5.6\n&_include=Task:based-on&_include=Task:focus\n&_include=Task:digitalActivity
+PHR -> XIS : GET [base]/Task?_tag=...|urn:oid:2.16.528.1.1023.5.6\n&_include=Task:based-on&_include=Task:focus\n&_include=Task:digital-activity
 XIS --> PHR : 200 OK, searchset Bundle\n(Task + ServiceRequest(s) + ActivityDefinition\n[+ Endpoint, + requester resources])
 opt referenced resource not included in the Bundle
   PHR -> XIS : GET [base]/[type]/[id]\n(e.g. Endpoint, ActivityDefinition)

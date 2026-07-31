@@ -159,10 +159,10 @@ GET [base]/Task
   ?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.6
   &_include=Task:based-on
   &_include=Task:focus
-  &_include=Task:digitalActivity
+  &_include=Task:digital-activity
 ```
 
-The digital activity reference is carried in the `ext-DigitalActivity` extension, which core FHIR search parameters cannot target. For this reason, a custom SearchParameter [`digitalActivity`](http://medmij.nl/fhir/SearchParameter/Task-digitalActivity) is defined so that `_include=Task:digitalActivity` can be used to retrieve the referenced `pt-DigitalActivity` together with the Task. Because `pt-Endpoint` is referenced from `pt-DigitalActivity` (and not directly from Task), it cannot be retrieved with a single-level `_include`; the source system SHOULD include the referenced `pt-Endpoint` resource(s) in the search response Bundle, or the PHR resolves them via a read interaction.
+The digital activity reference is carried in the `ext-DigitalActivity` extension, which core FHIR search parameters cannot target. For this reason, a custom SearchParameter {{pagelink:pt-Task-digitalActivity, text:`digital-activity`}} is defined so that `_include=Task:digital-activity` can be used to retrieve the referenced `pt-DigitalActivity` together with the Task. Because `pt-Endpoint` is referenced from `pt-DigitalActivity` (and not directly from Task), it cannot be retrieved with a single-level `_include`; the source system SHOULD include the referenced `pt-Endpoint` resource(s) in the search response Bundle, or the PHR resolves them via a read interaction.
 
 **Supported search parameters**
 
@@ -170,7 +170,7 @@ The digital activity reference is carried in the `ext-DigitalActivity` extension
 | --- | --- | --- |
 | Filter Tasks belonging to the Provider Tasks data service | `_tag` | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.6` |
 | Filter Tasks changed since (or until) a point in time; prefixes `ge`, `gt`, `le` and `lt` SHALL be supported | `_lastUpdated` | `GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00` |
-| Include the digital activity referenced from the Task | `_include=Task:digitalActivity` | `GET [base]/Task?_include=Task:digitalActivity` |
+| Include the digital activity referenced from the Task | `_include=Task:digital-activity` | `GET [base]/Task?_include=Task:digital-activity` |
 | Include the digital group plan on which the Task is based | `_include=Task:based-on` | `GET [base]/Task?_include=Task:based-on` |
 | Include the execution order referenced from the Task | `_include=Task:focus` | `GET [base]/Task?_include=Task:focus` |
 
