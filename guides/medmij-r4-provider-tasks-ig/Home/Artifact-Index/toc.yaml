@@ -4,3 +4,5 @@
   filename: FHIR-Profiles
 - name: CapabilityStatements
   filename: CapabilityStatements
+- name: SearchParameters
+  filename: SearchParameters
