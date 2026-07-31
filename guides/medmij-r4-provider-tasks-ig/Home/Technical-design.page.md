@@ -12,11 +12,12 @@ topic: TO
 <strong>On this page</strong>
 <ul>
   <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#boundaries-and-relationships">Boundaries and relationships</a></li>
   <li><a href="#workflow-model">Workflow model</a></li>
   <li><a href="#actors-involved">Actors involved</a></li>
-  <li><a href="#boundaries-and-relationships">Boundaries and relationships</a></li>
   <li><a href="#relatingFHIR">Relating FHIR (profiles) to its functional counterpart</a></li>
   <li class="toc-sub"><a href="#resource-relationships">Resource relationships</a></li>
+  <li class="toc-sub"><a href="#provider-module">Provider Module</a></li>
   <li><a href="#use-case-provider-tasks">Use case: Provider Tasks</a></li>
   <li class="toc-sub"><a href="#phr-request-message">PHR: request message</a></li>
   <li class="toc-sub"><a href="#module-system-update-task-status">Module system: update task status</a></li>
@@ -105,7 +106,7 @@ The PHR read and dislay process for Task lists is as follows:
 - Group Tasks by `Task.basedOn`, using `ServiceRequest.code.text` as the group label.
 - Show `pt-DigitalActivity` for generic activity content and, when present, `pt-ExecutionOrder` for scheduling and instructions.
 
-### **Provider Module** 
+### **Provider Module** {#provider-module}
 
 Reports progress after the patient performs the activity:
 - Update `Task.status` on the source system to reflect progress or completion.

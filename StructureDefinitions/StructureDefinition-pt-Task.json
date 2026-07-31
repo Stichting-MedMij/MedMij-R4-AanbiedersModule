@@ -220,6 +220,11 @@
         ]
       },
       {
+        "id": "Task.intent",
+        "path": "Task.intent",
+        "comment": "This element is immutable. Proposed tasks, planned tasks, etc. must be distinct instances.\r\nWithin the Provider Tasks information standard all Tasks are expected to have an intent of 'order'."
+      },
+      {
         "id": "Task.priority",
         "path": "Task.priority",
         "short": "Priority",

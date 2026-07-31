@@ -8,11 +8,6 @@ Description: "Patient-specific task that tells a patient what to do as part of a
 * insert PublisherAndContact
 * ^purpose = "This Task resource represents the Task building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
 * insert Copyright
-* .
-  * ^short = "Task"
-  * ^alias = "Taak"
-* .
-^definition = "Patient-specific task that tells a patient what to do as part of a digital care activity. A Task is shown in the patient's task list and supports tracking progress and completion over time."
 // Tasks in scope for this information standard carry a fixed tag, which is also the
 // search parameter (`_tag`) the PHR filters on. Slicing is open: other tags are allowed.
 * meta.tag ^slicing.discriminator[0].type = #pattern
@@ -23,6 +18,10 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^short = "Information standard tag"
   * ^definition = "Marks this Task as being in scope for the Provider Tasks (Aanbiedertaken) information standard, so it can be distinguished from Tasks used in other contexts. Clients filter on this tag with `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`."
   * ^comment = "A tag is used because R4 offers no better place to categorise a Task. `Task.code` is not suitable: it states what kind of work is to be performed (e.g. a blood pressure measurement or a saturation measurement), not which information standard the Task belongs to. Unlike most other resources, Task has no `category` element; this gap has been raised with HL7 in [FHIR-57849](https://jira.hl7.org/browse/FHIR-57849). Should a `Task.category` become available in a future FHIR version, it is the preferred alternative for this tag."
+* . // root element
+  * ^short = "Task"
+  * ^alias = "Taak"
+  * ^definition = "Patient-specific task that tells a patient what to do as part of a digital care activity. A Task is shown in the patient's task list and supports tracking progress and completion over time."
 * extension contains ExtDigitalActivity named digitalActivity 1..1
   * ^short = "Reference to ActivityDefinition"
   * ^definition = "A link to the ActivityDefinition that defines the launchable eHealth activity (i.e., what module/content should be launched or performed) associated with this Task."
@@ -37,10 +36,13 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^short = "Digital group plan"
   * ^definition = "Reference to the ServiceRequest that initiates the digital group plan for the patient. This is the module-level order and links the Task to the requested digital group plan."
   * ^alias = "DigitaalGroepsplan"
-* status 1..1
+* status
   * ^short = "Status"
   * ^definition = "Current state of the Task in the workflow (e.g., requested, received, accepted, in-progress, completed, cancelled)."
   * ^alias = "Status"
+* intent
+  * ^comment = "This element is immutable. Proposed tasks, planned tasks, etc. must be distinct instances.
+Within the Provider Tasks information standard all Tasks are expected to have an intent of 'order'."
 * priority
   * ^short = "Priority"
   * ^definition = "Indicates how urgent it is to perform the activity (e.g., routine, urgent, asap)."
@@ -60,7 +62,6 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^short = "LastModified"
   * ^definition = "The date and time of last modification to this task."
   * ^alias = "MutatieDatumTijd"
-* focus 0..1
 * focus only Reference(PtExecutionOrder)
   * ^short = "Patient-specific execution details"
   * ^definition = "Reference to the ServiceRequest that contains patient-specific scheduling and/or instructions that deviate from or complement the generic ActivityDefinition guidance."
