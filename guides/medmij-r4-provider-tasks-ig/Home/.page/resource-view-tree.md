@@ -1,6 +1,5 @@
 ---
 topic: resource-view-tree
-expand: 2
 ---
 
 <tabs>
