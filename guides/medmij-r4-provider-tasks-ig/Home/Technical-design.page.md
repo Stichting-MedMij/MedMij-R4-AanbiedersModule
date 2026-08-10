@@ -142,11 +142,11 @@ The PHR executes an HTTP search conform the [FHIR specification](https://hl7.org
 GET [base]/Task{?[parameters]}
 ```
 
-Here, `[parameters]` represents a series of encoded name-value pairs representing the filter for the query. Tasks in scope for this data service are represented by Task resources where `.meta.tag` contains code *urn:oid:2.16.528.1.1023.5.6* from system *http://medmij.nl/fhir/CodeSystem/DataService*, which distinguishes them from Tasks used in other contexts. Hence, the PHR SHALL always include the search parameter `_tag` with the appropriate value in their request, resulting in:
+Here, `[parameters]` represents a series of encoded name-value pairs representing the filter for the query. Tasks in scope for this data service are represented by Task resources where `.meta.tag` contains code *urn:oid:2.16.528.1.1023.5.7* from system *http://medmij.nl/fhir/CodeSystem/DataService*, which distinguishes them from Tasks used in other contexts. Hence, the PHR SHALL always include the search parameter `_tag` with the appropriate value in their request, resulting in:
 
 ```
 GET [base]/Task
-  ?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.6
+  ?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7
   {&[additional parameters]}
 ```
 
@@ -156,7 +156,7 @@ In the request examples on this page, line breaks and indentation are used for r
 
 ```
 GET [base]/Task
-  ?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.6
+  ?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7
   &_include=Task:based-on
   &_include=Task:focus
   &_include=Task:digital-activity
@@ -168,7 +168,7 @@ The digital activity reference is carried in the `ext-Task.DigitalActivity` exte
 
 | Description | FHIR search parameter | Examples |
 | --- | --- | --- |
-| Filter Tasks belonging to the Provider Tasks data service | `_tag` | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.6` |
+| Filter Tasks belonging to the Provider Tasks data service | `_tag` | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7` |
 | Filter Tasks changed since (or until) a point in time; prefixes `ge`, `gt`, `le` and `lt` SHALL be supported | `_lastUpdated` | `GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00` |
 | Include the digital activity referenced from the Task | `_include=Task:digital-activity` | `GET [base]/Task?_include=Task:digital-activity` |
 | Include the digital group plan on which the Task is based | `_include=Task:based-on` | `GET [base]/Task?_include=Task:based-on` |
@@ -239,7 +239,7 @@ The XIS returns an HTTP Status code appropriate to the processing outcome as wel
 
 | Description | CIM NL | HCIM EN | FHIR profile | Search URL |
 | --- | --- | --- | --- | --- |
-| Retrieve task list | Taak | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.6&_include=Task:based-on&_include=Task:focus&_include=Task:digital-activity` |
+| Retrieve task list | Taak | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7&_include=Task:based-on&_include=Task:focus&_include=Task:digital-activity` |
 | Retrieve digital activity | Digitale activiteit | Digital Activity |  {{pagelink: FHIRProfilesIndex, text: pt-DigitalActivity, anchor: ptDigitalActivity}} | `GET [base]/Task?_include=Task:digital-activity` |
 | Retrieve digital group plan | Digitaal groepsplan | Digital Group Plan | {{pagelink: FHIRProfilesIndex, text: pt-DigitalGroupPlan, anchor: ptDigitalGroupPlan}} | `GET [base]/Task?_include=Task:based-on` |
 | Retrieve execution order | Uitvoeringsopdracht | Execution Order | {{pagelink: FHIRProfilesIndex, text: pt-ExecutionOrder, anchor: ptExecutionOrder}} | `GET [base]/Task?_include=Task:focus` |

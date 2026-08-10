@@ -32,7 +32,7 @@ Usage: #definition
       * name = "_tag"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
       * type = #token
-      * documentation = "The client SHALL always scope the search to the Provider Tasks data service, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.6`."
+      * documentation = "The client SHALL always scope the search to the Provider Tasks data service, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7`."
     * searchParam[+]
       * name = "_lastUpdated"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"
@@ -171,7 +171,7 @@ Usage: #definition
       * name = "_tag"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
       * type = #token
-      * documentation = "The server SHALL support filtering on the Provider Tasks data service tag, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.6`."
+      * documentation = "The server SHALL support filtering on the Provider Tasks data service tag, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7`."
     * searchParam[+]
       * name = "_lastUpdated"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"
