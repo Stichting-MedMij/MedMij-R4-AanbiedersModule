@@ -583,7 +583,7 @@ Usage: #example
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#hl7-fhir-rest
 * managingOrganization = Reference(ProviderTasks-Organization-Huisartsenpraktijk-De-Haard)
 * payloadType = $endpoint-payload-type#any
-* address = "https://module.test.5im.nl/web/api/smartonfhir/launch"
+* address = "https://aanbiedermodule.example.org/web/api/smartonfhir/launch"
 
 Instance: ProviderTasks-Patient-Van-Duinen
 InstanceOf: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
