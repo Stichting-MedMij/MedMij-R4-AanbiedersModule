@@ -3,6 +3,7 @@
   "id": "pt-Endpoint",
   "url": "http://medmij.nl/fhir/StructureDefinition/pt-Endpoint",
   "name": "PtEndpoint",
+  "title": "pt Endpoint",
   "status": "draft",
   "publisher": "MedMij",
   "contact": [
@@ -17,7 +18,8 @@
       ]
     }
   ],
-  "description": "This (FHIR) Endpoint profile represents the technical FHIR REST endpoint of a source system (XIS), used by a ProviderTask to retrieve and update task data and the required context for the ProviderTask use case.",
+  "description": "Technical FHIR REST endpoint of a source system (XIS), used by a Task to retrieve and update task data and the required context for the Provider Tasks use case.",
+  "purpose": "This Endpoint resource represents the Endpoint building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken).",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -41,21 +43,6 @@
         }
       },
       {
-        "id": "Endpoint.extension:resource-origin",
-        "path": "Endpoint.extension",
-        "sliceName": "resource-origin",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://koppeltaal.nl/fhir/StructureDefinition/resource-origin"
-            ]
-          }
-        ]
-      },
-      {
         "id": "Endpoint.extension:clientId",
         "path": "Endpoint.extension",
         "sliceName": "clientId",
@@ -65,10 +52,16 @@
           {
             "code": "Extension",
             "profile": [
-              "http://medmij.nl/fhir/StructureDefinition/ext-ClientID"
+              "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint.ClientID"
             ]
           }
         ]
+      },
+      {
+        "id": "Endpoint.status",
+        "path": "Endpoint.status",
+        "short": "Status",
+        "definition": "The operational status of the endpoint (e.g., active, suspended, error, off, entered-in-error)."
       },
       {
         "id": "Endpoint.connectionType",

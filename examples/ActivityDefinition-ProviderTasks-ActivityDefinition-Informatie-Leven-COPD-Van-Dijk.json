@@ -1,0 +1,34 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "ProviderTasks-ActivityDefinition-Informatie-Leven-COPD-Van-Dijk",
+  "meta": {
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint",
+      "valueReference": {
+        "reference": "Endpoint/ProviderTasks-Endpoint-HINQ"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://hinq.zno.com/content/id",
+      "value": "ba7471c5-6b5c-4ac6-83c4-512d195cc9d8"
+    }
+  ],
+  "url": "https://hinq.zno.com/fhir/ActivityDefinition/3b13c173-d788-4ca6-8264-973abb4b95ce",
+  "version": "1.0.0",
+  "name": "InformatieLevenMetCOPD",
+  "title": "Informatie over leven met COPD",
+  "status": "active",
+  "publisher": "HinqZNO",
+  "description": "Informatieve module voor patiënt: leven met COPD, inclusief inhalatiegebruik, energieverdeling, beweging en omgaan met benauwdheid."
+}

@@ -1,8 +1,12 @@
 - name: Index
   filename: Index.page.md
+- name: Digital activity
+  filename: DigitalActivity.page.md
+- name: Digital group plan
+  filename: DigitalGroupPlan.page.md
+- name: Endpoint
+  filename: Endpoint.page.md
+- name: Execution order
+  filename: ExecutionOrder.page.md
 - name: Task
   filename: Task.page.md
-- name: Activity
-  filename: Activity.page.md
-- name: ServiceRequest
-  filename: ServiceRequest.page.md

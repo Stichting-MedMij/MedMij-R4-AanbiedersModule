@@ -1,7 +1,7 @@
 {
   "name": "medmij.fhir.nl.r4.providertasks",
-  "version": "1.0.0-alpha.1",
-  "description": "Package of FHIR R4 conformance resources for MedMij Provider Tasks version 1.0.0-alpha.1.",
+  "version": "1.0.0-alpha.2",
+  "description": "Package of FHIR R4 conformance resources for MedMij Provider Tasks version 1.0.0-alpha.2.",
   "author": "MedMij",
   "license": "CC0-1.0",
   "title": "FHIR implementation of Provider Tasks",
@@ -11,10 +11,9 @@
     }
   ],
   "dependencies": {
-    "hl7.fhir.r4.core": "4.0.1",
     "medmij.fhir.nl.r4.core": "1.0.1",
     "nictiz.fhir.nl.r4.nl-core": "0.12.0-beta.4",
-    "koppeltaalv2.00": "0.15.0"
+    "Koppeltaalv2.00": "0.16.2"
   },
   "fhirVersions": [
     "4.0.1"

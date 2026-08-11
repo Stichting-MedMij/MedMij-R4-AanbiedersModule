@@ -1,10 +1,5 @@
 // All RuleSets used in ProviderTasks
 
-RuleSet: Origin
-* extension contains
-    KT2_ResourceOrigin named resource-origin 0..1
-* extension[resource-origin] ^isModifier = false
-
 RuleSet: PublisherAndContact
 * ^publisher = "MedMij"
 * ^contact.name = "MedMij"
@@ -32,6 +27,11 @@ RuleSet: DefaultNarrative
 * ^text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
 
 RuleSet: DefaultNarrativeInstance
+* text
+  * status = #empty
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+
+RuleSet: DefaultNarrativeInstanceDefinitional
 * text
   * status = #empty
   * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"

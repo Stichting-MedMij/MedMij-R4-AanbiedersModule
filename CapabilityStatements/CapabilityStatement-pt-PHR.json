@@ -1,0 +1,176 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "pt-PHR",
+  "url": "http://medmij.nl/fhir/CapabilityStatement/pt-PHR",
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+  },
+  "name": "PtPHR",
+  "title": "pt PHR",
+  "status": "draft",
+  "date": "2026-07-16",
+  "publisher": "MedMij",
+  "contact": [
+    {
+      "name": "MedMij",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@medmij.nl",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "This CapabilityStatement describes the minimal requirements for a PHR to fulfill the 'Retrieve Task(s)' transaction within Provider Task, in which the PHR retrieves the patient's tasks and resolves the referenced (secondary) resources.",
+  "purpose": "This CapabilityStatement is informative in nature and does not represent the minimum or maximum set of capabilities the client or server should support. The aim is to design the CapabilityStatement as complete as possible, however for the exact set of capabilities the implementation guide should be consulted.",
+  "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "xml",
+    "json"
+  ],
+  "rest": [
+    {
+      "mode": "client",
+      "documentation": "Minimal requirements for a PHR (client) to fulfill the 'Retrieve task' transaction (system role: PT-TGR-1.0.0-alpha.2).",
+      "resource": [
+        {
+          "type": "Task",
+          "supportedProfile": [
+            "http://medmij.nl/fhir/StructureDefinition/pt-Task"
+          ],
+          "interaction": [
+            {
+              "code": "search-type"
+            }
+          ],
+          "searchInclude": [
+            "Task:based-on",
+            "Task:focus",
+            "Task:digital-activity"
+          ],
+          "searchParam": [
+            {
+              "name": "_tag",
+              "definition": "http://hl7.org/fhir/SearchParameter/Resource-tag",
+              "type": "token",
+              "documentation": "The client SHALL always scope the search to the Provider Tasks data service, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7`."
+            },
+            {
+              "name": "_lastUpdated",
+              "definition": "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+              "type": "date",
+              "documentation": "The client SHALL be able to retrieve only those Tasks changed since a given point in time, to support incremental refresh of the task list, e.g. `_lastUpdated=ge2025-11-14T14:58:33+00:00`. The prefixes `ge`, `gt`, `le` and `lt` SHALL be supported; an upper and lower bound MAY be combined to restrict the period."
+            },
+            {
+              "name": "digitalActivity",
+              "definition": "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity",
+              "type": "reference",
+              "documentation": "Custom search parameter targeting the `ext-Task.DigitalActivity` extension, which enables `_include=Task:digital-activity`."
+            }
+          ]
+        },
+        {
+          "type": "ActivityDefinition",
+          "supportedProfile": [
+            "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
+          ],
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+            }
+          ]
+        },
+        {
+          "type": "ServiceRequest",
+          "supportedProfile": [
+            "http://medmij.nl/fhir/StructureDefinition/pt-DigitalGroupPlan",
+            "http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder"
+          ],
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+            }
+          ]
+        },
+        {
+          "type": "Patient",
+          "supportedProfile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
+          ],
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+            }
+          ]
+        },
+        {
+          "type": "PractitionerRole",
+          "supportedProfile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
+          ],
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+            }
+          ]
+        },
+        {
+          "type": "Practitioner",
+          "supportedProfile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner"
+          ],
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+            }
+          ]
+        },
+        {
+          "type": "Organization",
+          "supportedProfile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+          ],
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+            }
+          ]
+        },
+        {
+          "type": "Location",
+          "supportedProfile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider"
+          ],
+          "documentation": "This is a secondary resource that needs to be resolvable, either by supporting a `read` interaction or explicitly including it in the Bundle.",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "If the server includes this (secondary) resource in the Bundle, the client does not need to execute a `read`. However, since a server may choose to not include it in the Bundle, support of the `read` interaction is mandatory for a client."
+            }
+          ]
+        }
+      ],
+      "interaction": [
+        {
+          "code": "search-system"
+        }
+      ]
+    }
+  ]
+}

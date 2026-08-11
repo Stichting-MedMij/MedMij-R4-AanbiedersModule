@@ -12,7 +12,7 @@
   },
   "extension": [
     {
-      "url": "http://medmij.nl/fhir/StructureDefinition/ext-ClientID",
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint.ClientID",
       "valueString": "dvaAanbiedertakensweb"
     }
   ],

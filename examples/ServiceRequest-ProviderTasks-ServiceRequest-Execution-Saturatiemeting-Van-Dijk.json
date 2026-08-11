@@ -1,0 +1,42 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "ProviderTasks-ServiceRequest-Execution-Saturatiemeting-Van-Dijk",
+  "meta": {
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-ExecutionOrder"
+    ]
+  },
+  "intent": "order",
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "identifier": [
+    {
+      "system": "http://hinq.zno.com/servicerequest/id",
+      "value": "2025-11344555"
+    }
+  ],
+  "status": "active",
+  "subject": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
+    "display": "Sanne van Dijk"
+  },
+  "occurrenceTiming": {
+    "repeat": {
+      "boundsPeriod": {
+        "start": "2026-01-05",
+        "end": "2026-01-11"
+      },
+      "period": 1,
+      "periodUnit": "d",
+      "frequency": 1,
+      "frequencyMax": 1
+    }
+  },
+  "requester": {
+    "reference": "PractitionerRole/ProviderTasks-PractitionerRole-Van-Rijn",
+    "display": "M. van Rijn, huisarts"
+  },
+  "patientInstruction": "Meet 7 dagen, 1 keer per dag, uw saturatie."
+}

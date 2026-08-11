@@ -1,0 +1,62 @@
+{
+  "resourceType": "Task",
+  "id": "ProviderTasks-Task-Informatie-leven-COPD-Van-Dijk",
+  "meta": {
+    "tag": [
+      {
+        "code": "urn:oid:2.16.528.1.1023.5.7",
+        "system": "http://medmij.nl/fhir/CodeSystem/DataService"
+      }
+    ],
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-Task"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-Task.DigitalActivity",
+      "valueReference": {
+        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Informatie-Leven-COPD-Van-Dijk",
+        "type": "ActivityDefinition"
+      }
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk",
+      "display": "Digitale zorgmodule COPD"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://hinq.zno.com/taskIdentifier",
+      "value": "TASK-1673834"
+    }
+  ],
+  "status": "received",
+  "intent": "order",
+  "priority": "routine",
+  "description": "Lees de praktische tips om met COPD te leven.",
+  "for": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
+    "display": "Sanne van Dijk"
+  },
+  "executionPeriod": {
+    "start": "2026-01-05",
+    "end": "2026-01-11"
+  },
+  "authoredOn": "2026-01-02T14:20:00+01:00",
+  "lastModified": "2026-01-05T09:05:00+01:00",
+  "requester": {
+    "reference": "PractitionerRole/ProviderTasks-PractitionerRole-Van-Rijn",
+    "display": "M. van Rijn, huisarts"
+  },
+  "owner": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
+    "display": "Sanne van Dijk"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "resourceType": "Task",
+  "id": "ProviderTasks-Task-Saturatiemeting-5-Van-Dijk",
+  "meta": {
+    "tag": [
+      {
+        "code": "urn:oid:2.16.528.1.1023.5.7",
+        "system": "http://medmij.nl/fhir/CodeSystem/DataService"
+      }
+    ],
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-Task"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-Task.DigitalActivity",
+      "valueReference": {
+        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Saturatiemeting-Van-Dijk",
+        "type": "ActivityDefinition"
+      }
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequest-DigitalGroup-COPD-Van-Dijk",
+      "display": "Digitale zorgmodule COPD"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://hinq.zno.com/taskIdentifier",
+      "value": "TASK-Saturatie-5"
+    }
+  ],
+  "status": "received",
+  "intent": "order",
+  "priority": "routine",
+  "description": "Je meet saturatie om te kijken hoeveel zuurstof er in je bloed zit. Dit zegt iets over hoe goed je longen en bloedsomloop functioneren.",
+  "for": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
+    "display": "Sanne van Dijk"
+  },
+  "focus": {
+    "reference": "ServiceRequest/ProviderTasks-ServiceRequest-Execution-Saturatiemeting-Van-Dijk"
+  },
+  "executionPeriod": {
+    "start": "2026-01-09",
+    "end": "2026-01-09"
+  },
+  "authoredOn": "2026-01-02T14:15:00+01:00",
+  "lastModified": "2026-01-05T07:20:00+01:00",
+  "requester": {
+    "reference": "PractitionerRole/ProviderTasks-PractitionerRole-Van-Rijn",
+    "display": "M. van Rijn, huisarts"
+  },
+  "owner": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Dijk",
+    "display": "Sanne van Dijk"
+  }
+}

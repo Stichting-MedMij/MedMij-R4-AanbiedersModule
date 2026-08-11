@@ -1,0 +1,170 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pt-lm-Endpoint",
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-be-target"
+    }
+  ],
+  "url": "http://medmij.nl/fhir/StructureDefinition/pt-lm-Endpoint",
+  "name": "PtLmEndpoint",
+  "title": "Endpoint",
+  "status": "draft",
+  "publisher": "MedMij",
+  "contact": [
+    {
+      "name": "MedMij",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@medmij.nl",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "Technical FHIR REST endpoint of a source system (XIS), used by a Task to retrieve and update task data and the required context for the Provider Tasks use case.",
+  "purpose": "This LogicalModel represents the Endpoint building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken).",
+  "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "pt-dataset-100-alpha1-20260511",
+      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://medmij.nl/fhir/StructureDefinition/pt-lm-Endpoint",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "pt-lm-Endpoint",
+        "path": "pt-lm-Endpoint",
+        "short": "Endpoint",
+        "definition": "Technical FHIR REST endpoint of a source system (XIS), used by a Task to retrieve and update task data and the required context for the Provider Tasks use case.",
+        "alias": [
+          "Endpoint"
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-25",
+            "comment": "Endpoint"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-Endpoint.ClientID",
+        "path": "pt-lm-Endpoint.ClientID",
+        "short": "Client ID",
+        "definition": "The client ID used as the audience input parameter in the token exchange request between PHR and the DVA authorisation server.",
+        "alias": [
+          "ClientID"
+        ],
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-26",
+            "comment": "ClientID"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-Endpoint.Status",
+        "path": "pt-lm-Endpoint.Status",
+        "short": "Status",
+        "definition": "The operational status of the endpoint (e.g., active, suspended, error, off, entered-in-error).",
+        "alias": [
+          "Status"
+        ],
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/endpoint-status"
+        },
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-27",
+            "comment": "Status"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-Endpoint.ConnectionType",
+        "path": "pt-lm-Endpoint.ConnectionType",
+        "short": "Connection type",
+        "definition": "Protocol/profile used to communicate with the endpoint.",
+        "alias": [
+          "Verbindingstype"
+        ],
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://vzvz.nl/fhir/ValueSet/endpoint-connection-type"
+        },
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-28",
+            "comment": "ConnectionType"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-Endpoint.ManagingOrganization",
+        "path": "pt-lm-Endpoint.ManagingOrganization",
+        "short": "Managing organization",
+        "definition": "Organization that manages this endpoint (and not necessarily the technical infrastructure hosting it).",
+        "alias": [
+          "BeherendeOrganisatie"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Organization",
+              "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-29",
+            "comment": "ManagingOrganization"
+          }
+        ]
+      }
+    ]
+  }
+}

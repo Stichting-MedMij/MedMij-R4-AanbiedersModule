@@ -35,6 +35,49 @@ body {
     position: relative;
     padding-top: 40px; }
 
+/* Auto-generated page TOC (scripts/add_page_toc.py). Do not float it: tables may
+   not sit beside a float, so a floated box pushes them down and leaves a white gap.
+   On wide screens it is lifted out of the flow into a right rail instead, so the
+   page text starts at the top. Narrow screens get a plain box above the content. */
+.page-toc {
+  margin: 0 0 1.5em;
+  padding: .7em 1.1em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f9f9f9;
+  font-size: .9em;
+  line-height: 1.35; }
+  .page-toc strong {
+    display: block;
+    margin-bottom: .4em; }
+  .page-toc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .page-toc li {
+    margin: .35em 0;
+    font-weight: 600; }
+  .page-toc li.toc-sub {
+    margin-left: 14px;
+    font-size: .95em;
+    font-weight: normal; }
+
+/* .has-page-toc and the direct-child TOC are both set up by the script in
+   master.html, which guarantees .content is the positioning ancestor and that
+   the gutter is only reserved on pages that actually have a TOC. */
+@media (min-width: 992px) {
+  body .content.has-page-toc {
+    padding-right: 285px; }
+  body .content.has-page-toc > .page-toc {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 255px;
+    margin: 0;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto; }
+}
+
 .dynamic {
     display: none;
     background-color: transparent;
@@ -53,3 +96,53 @@ body {
         background-color: #5cb85c;
         color: #fff;
     }
+
+/* Wide specification tables (9 columns) in Functional-Design/Display-guideline.
+   table-layout: fixed keeps the columns from collapsing around the widest cell;
+   the widths live here so the three tables cannot drift apart. */
+.pgo-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 0 0 24px;
+  font-size: .82em;
+  line-height: 1.4; }
+  .pgo-table th, .pgo-table td {
+    border: 1px solid #ddd;
+    padding: 6px 8px;
+    vertical-align: top;
+    overflow-wrap: anywhere; }
+  .pgo-table thead th {
+    background: #eef1f4;
+    border-bottom: 2px solid #c3ccd5;
+    text-align: left;
+    font-weight: 600; }
+  .pgo-table tbody tr:nth-child(even) {
+    background: #fafafa; }
+  .pgo-table tbody tr:hover {
+    background: #f0f6fb; }
+  .pgo-table code {
+    padding: 0 3px;
+    background: #f2f2f2;
+    border-radius: 3px;
+    font-size: .95em; }
+  /* Column widths, 100% total. Set on the header cells because table-layout:
+     fixed takes its widths from the first row - saves a <colgroup> per table. */
+  .pgo-table th:nth-child(1) { width: 14%; }
+  .pgo-table th:nth-child(2) { width: 8%; }
+  .pgo-table th:nth-child(3) { width: 10%; }
+  .pgo-table th:nth-child(4) { width: 14%; }
+  .pgo-table th:nth-child(5) { width: 8%; }
+  .pgo-table th:nth-child(6) { width: 14%; }
+  .pgo-table th:nth-child(7) { width: 11%; }
+  .pgo-table th:nth-child(8) { width: 15%; }
+  .pgo-table th:nth-child(9) { width: 6%; }
+
+/* Long request URLs in code blocks wrap instead of overflowing horizontally.
+   word-break: normal keeps Bootstrap's break-all from snapping mid-word;
+   overflow-wrap: anywhere is the fallback for tokens with no break point. */
+pre, pre code {
+    white-space: pre-wrap;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}

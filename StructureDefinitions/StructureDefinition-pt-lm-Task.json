@@ -6,9 +6,9 @@
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
   },
   "url": "http://medmij.nl/fhir/StructureDefinition/pt-lm-Task",
-  "name": "LmTask",
+  "name": "PtLmTask",
   "title": "Task",
-  "status": "active",
+  "status": "draft",
   "publisher": "MedMij",
   "contact": [
     {
@@ -22,18 +22,18 @@
       ]
     }
   ],
-  "description": "Patient-specific task that tells a patient what to do as part of a digital care activity. A Task is shown in the patient’s task list and supports tracking progress and completion over time.",
-  "purpose": "To represent a patient-facing task for a digital activity, so the patient can see what is expected, when it should be done, and whether it is open or completed. A Task can represent either a main task or a subtask within the same activity.",
+  "description": "Patient-specific task that tells a patient what to do as part of a digital care activity. A task is shown in the patient's task list and supports tracking progress and completion over time.",
+  "purpose": "This LogicalModel represents the Task building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
       "identity": "pt-dataset-100-alpha1-20260511",
-      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
     }
   ],
   "kind": "logical",
-  "abstract": true,
+  "abstract": false,
   "type": "http://medmij.nl/fhir/StructureDefinition/pt-lm-Task",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
   "derivation": "specialization",
@@ -43,7 +43,7 @@
         "id": "pt-lm-Task",
         "path": "pt-lm-Task",
         "short": "Task",
-        "definition": "Patient-specific task that tells a patient what to do as part of a digital care activity. A Task is shown in the patient’s task list and supports tracking progress and completion over time.",
+        "definition": "Patient-specific task that tells a patient what to do as part of a digital care activity. A task is shown in the patient's task list and supports tracking progress and completion over time.",
         "alias": [
           "Taak"
         ],
@@ -56,20 +56,43 @@
         ]
       },
       {
-        "id": "pt-lm-Task.ActivityDefinition",
-        "path": "pt-lm-Task.ActivityDefinition",
-        "short": "Reference to the digital activity definition associated with this task.",
+        "id": "pt-lm-Task.Identifier",
+        "path": "pt-lm-Task.Identifier",
+        "short": "Identifier",
+        "definition": "Business identifier for this patient task.",
+        "alias": [
+          "Identificatie"
+        ],
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-33",
+            "comment": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-Task.DigitalActivity",
+        "path": "pt-lm-Task.DigitalActivity",
+        "short": "Digital activity",
         "definition": "Reference to the digital activity definition associated with this task.",
         "alias": [
           "DigitaleActiviteit"
         ],
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://medmij.nl/fhir/StructureDefinition/pt-lm-Activity"
+              "http://medmij.nl/fhir/StructureDefinition/pt-lm-DigitalActivity"
             ]
           }
         ],
@@ -77,25 +100,25 @@
           {
             "identity": "pt-dataset-100-alpha1-20260511",
             "map": "pt-dataelement-2",
-            "comment": "ActivityDefinition"
+            "comment": "DigitalActivity"
           }
         ]
       },
       {
-        "id": "pt-lm-Task.BasedOn",
-        "path": "pt-lm-Task.BasedOn",
-        "short": "Clinical order that triggered this patient task. May include patient-specific instructions and the requested schedule.",
-        "definition": "Clinical order that triggered this patient task. May include patient-specific instructions and the requested schedule.",
+        "id": "pt-lm-Task.GroupPlan",
+        "path": "pt-lm-Task.GroupPlan",
+        "short": "Group plan",
+        "definition": "Reference to the digital group plan that groups this task with related tasks in the same digital care module.",
         "alias": [
-          "GebaseerdOp"
+          "DigitaalGroepsplan"
         ],
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://medmij.nl/fhir/StructureDefinition/pt-lm-ServiceRequest"
+              "http://medmij.nl/fhir/StructureDefinition/pt-lm-DigitalGroupPlan"
             ]
           }
         ],
@@ -103,25 +126,55 @@
           {
             "identity": "pt-dataset-100-alpha1-20260511",
             "map": "pt-dataelement-3",
-            "comment": "BasedOn"
+            "comment": "GroupPlan"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-Task.ExecutionOrder",
+        "path": "pt-lm-Task.ExecutionOrder",
+        "short": "Execution order",
+        "definition": "Execution order that triggered this patient task. May include patient-specific instructions and the requested schedule.",
+        "alias": [
+          "Uitvoeringsopdracht"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://medmij.nl/fhir/StructureDefinition/pt-lm-ExecutionOrder"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-19",
+            "comment": "ExecutionOrder"
           }
         ]
       },
       {
         "id": "pt-lm-Task.Status",
         "path": "pt-lm-Task.Status",
-        "short": "Current state of the Task in the workflow (e.g., requested, received, accepted, in-progress, completed, cancelled).",
-        "definition": "Current state of the Task in the workflow (e.g., requested, received, accepted, in-progress, completed, cancelled).",
+        "short": "Status",
+        "definition": "Current state of the task in the workflow.",
         "alias": [
           "Status"
         ],
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {
             "code": "code"
           }
         ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/task-status"
+        },
         "mapping": [
           {
             "identity": "pt-dataset-100-alpha1-20260511",
@@ -133,8 +186,8 @@
       {
         "id": "pt-lm-Task.Priority",
         "path": "pt-lm-Task.Priority",
-        "short": "Indicates how urgent it is to perform the activity (e.g., routine, urgent, asap).",
-        "definition": "Indicates how urgent it is to perform the activity (e.g., routine, urgent, asap).",
+        "short": "Priority",
+        "definition": "Indicates how urgent it is to perform the activity.",
         "alias": [
           "Prioriteit"
         ],
@@ -145,6 +198,10 @@
             "code": "code"
           }
         ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-priority"
+        },
         "mapping": [
           {
             "identity": "pt-dataset-100-alpha1-20260511",
@@ -156,8 +213,8 @@
       {
         "id": "pt-lm-Task.Description",
         "path": "pt-lm-Task.Description",
-        "short": "Short instruction for the patient describing what to do. Keep the text concise and readable on mobile.",
-        "definition": "Short instruction for the patient describing what to do. Keep the text concise and readable on mobile.",
+        "short": "Description",
+        "definition": "Short instruction for the patient describing what to do.",
         "alias": [
           "Omschrijving"
         ],
@@ -179,7 +236,7 @@
       {
         "id": "pt-lm-Task.ExecutionPeriod",
         "path": "pt-lm-Task.ExecutionPeriod",
-        "short": "Time window in which the task should be performed (start/end), if applicable.",
+        "short": "Execution period",
         "definition": "Time window in which the task should be performed (start/end), if applicable.",
         "alias": [
           "Periode"
@@ -200,10 +257,56 @@
         ]
       },
       {
+        "id": "pt-lm-Task.AuthoredOn",
+        "path": "pt-lm-Task.AuthoredOn",
+        "short": "Authored on",
+        "definition": "The date and time this task was created.",
+        "alias": [
+          "CreatieDatumTijd"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-34",
+            "comment": "AuthoredOn"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-Task.LastModified",
+        "path": "pt-lm-Task.LastModified",
+        "short": "Last modified",
+        "definition": "The date and time of last modification to this task.",
+        "alias": [
+          "MutatieDatumTijd"
+        ],
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-35",
+            "comment": "LastModified"
+          }
+        ]
+      },
+      {
         "id": "pt-lm-Task.Requester",
         "path": "pt-lm-Task.Requester",
-        "short": "The person or role who requested or initiated this Task.",
-        "definition": "The person or role who requested or initiated this Task.",
+        "short": "Requester",
+        "definition": "The healthcare professional who requested or initiated this task.",
         "alias": [
           "Aanvrager"
         ],
@@ -222,6 +325,35 @@
             "identity": "pt-dataset-100-alpha1-20260511",
             "map": "pt-dataelement-8",
             "comment": "Requester"
+          }
+        ]
+      },
+      {
+        "id": "pt-lm-Task.Owner",
+        "path": "pt-lm-Task.Owner",
+        "short": "Owner",
+        "definition": "The party currently responsible for executing the task.",
+        "alias": [
+          "Eigenaar"
+        ],
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient",
+              "http://medmij.nl/fhir/StructureDefinition/medmij-core-lm-HealthProfessional",
+              "http://nictiz.nl/fhir/StructureDefinition/nl-core-ContactPerson",
+              "http://nictiz.nl/fhir/StructureDefinition/nl-core-CareTeam"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pt-dataset-100-alpha1-20260511",
+            "map": "pt-dataelement-24",
+            "comment": "Owner"
           }
         ]
       }

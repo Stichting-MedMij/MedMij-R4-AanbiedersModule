@@ -1,0 +1,62 @@
+{
+  "resourceType": "Task",
+  "id": "ProviderTasks-Task-Vragenlijst-WoonLeefsituatie-Van-Duinen",
+  "meta": {
+    "tag": [
+      {
+        "code": "urn:oid:2.16.528.1.1023.5.7",
+        "system": "http://medmij.nl/fhir/CodeSystem/DataService"
+      }
+    ],
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-Task"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No human-readable text provided in this case.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-Task.DigitalActivity",
+      "valueReference": {
+        "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Woonleefsituatie-Van-Duinen",
+        "type": "ActivityDefinition"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://medrie.nl/taskIdentifier",
+      "value": "TASK-Vragenlijst-Woonsituatie-9642"
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/ProviderTasks-ServiceRequest-DigitalGroup-Diabetes-Van-Duinen",
+      "display": "Digitale zorgmodule Diabetes"
+    }
+  ],
+  "status": "requested",
+  "intent": "order",
+  "priority": "routine",
+  "description": "Beantwoord deze vragen over je woon/leefsituatie",
+  "for": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Duinen",
+    "display": "Tom van Duinen"
+  },
+  "executionPeriod": {
+    "start": "2025-12-22",
+    "end": "2025-12-28"
+  },
+  "authoredOn": "2025-12-19T11:40:00+01:00",
+  "lastModified": "2025-12-23T18:45:00+01:00",
+  "requester": {
+    "reference": "PractitionerRole/ProviderTasks-PractitionerRole-De-Haard",
+    "display": "A. de Haard, Huisarts"
+  },
+  "owner": {
+    "reference": "Patient/ProviderTasks-Patient-Van-Duinen",
+    "display": "Tom van Duinen"
+  }
+}

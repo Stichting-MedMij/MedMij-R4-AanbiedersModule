@@ -1,0 +1,34 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "ProviderTasks-ActivityDefinition-Wat-Bereiken-Van-Dijk",
+  "meta": {
+    "profile": [
+      "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
+    ]
+  },
+  "text": {
+    "status": "empty",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No narrative is provided for definitional resources. A human-readable rendering can be found in the implementation guide(s) where this resource is used.</div>"
+  },
+  "extension": [
+    {
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint",
+      "valueReference": {
+        "reference": "Endpoint/ProviderTasks-Endpoint-HINQ"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://hinq.zno.com/content/id",
+      "value": "669734ff-2c72-4758-b6ac-786a4c8474b4"
+    }
+  ],
+  "url": "https://hinq.zno.com/fhir/ActivityDefinition/4df11d7e-3439-4ec7-b912-871f048a3f47",
+  "version": "1.0.0",
+  "name": "VragenlijstWatWiltUBereiken?",
+  "title": "Vragenlijst: Wat wilt u bereiken?",
+  "status": "active",
+  "publisher": "HinqZNO",
+  "description": "Vragenlijst Wat wilt u bereiken? om patiëntdoelen en prioriteiten in kaart te brengen als basis voor gezamenlijke besluitvorming en het behandel-/zelfmanagementplan."
+}

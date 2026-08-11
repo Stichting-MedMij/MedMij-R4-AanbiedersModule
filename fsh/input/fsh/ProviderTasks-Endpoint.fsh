@@ -1,10 +1,15 @@
 Profile: PtEndpoint
 Parent: Endpoint
 Id: pt-Endpoint
-Description: "This (FHIR) Endpoint profile represents the technical FHIR REST endpoint of a source system (XIS), used by a ProviderTask to retrieve and update task data and the required context for the ProviderTask use case."
+Title: "pt Endpoint"
+Description: "Technical FHIR REST endpoint of a source system (XIS), used by a Task to retrieve and update task data and the required context for the Provider Tasks use case."
 * ^status = #draft
 * insert PublisherAndContact
-* insert Origin
-* extension contains PtClientID named clientId 0..*
+* ^purpose = "This Endpoint resource represents the Endpoint building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
+* extension contains ExtEndpointClientID named clientId 0..*
+* status 1..1
+  * ^short = "Status"
+  * ^definition = "The operational status of the endpoint (e.g., active, suspended, error, off, entered-in-error)."
 * connectionType from $koppeltaal-endpoint-connection-type-vs (extensible)
 * managingOrganization only Reference(Organization or http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
+ 

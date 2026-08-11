@@ -1,0 +1,66 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-DigitalActivity.Endpoint",
+  "url": "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint",
+  "name": "ExtDigitalActivityEndpoint",
+  "title": "ext DigitalActivity.Endpoint",
+  "status": "draft",
+  "publisher": "MedMij",
+  "contact": [
+    {
+      "name": "MedMij",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@medmij.nl",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "Reference to the Endpoint that provides the launchable digital activity.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "ActivityDefinition"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "ext DigitalActivity.Endpoint",
+        "definition": "Reference to the Endpoint that provides the launchable digital activity."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://medmij.nl/fhir/StructureDefinition/pt-Endpoint"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
