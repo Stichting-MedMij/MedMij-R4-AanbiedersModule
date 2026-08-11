@@ -23,13 +23,13 @@
     }
   ],
   "description": "Patient-specific digital group plan that groups related tasks belonging to the same digital care module. The digital group plan provides the display label used to present grouped tasks in the patient's task list.",
-  "purpose": "This ServiceRequest resource represents the DigitalGroupPlan building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
+  "purpose": "This ServiceRequest resource represents the DigitalGroupPlan building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
       "identity": "pt-dataset-100-alpha1-20260511",
-      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
     }
   ],
   "kind": "resource",

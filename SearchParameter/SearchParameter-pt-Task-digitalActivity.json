@@ -24,8 +24,8 @@
     }
   ],
   "description": "Search Tasks based on the referenced digital activity (ActivityDefinition) they instantiate.",
-  "purpose": "Enables clients and servers to find the Task(s) that are associated with a particular digital activity (ActivityDefinition), which is referenced from the Task via the ext-DigitalActivity extension.",
-  "code": "digitalActivity",
+  "purpose": "Enables clients and servers to find the Task(s) that are associated with a particular digital activity (ActivityDefinition), which is referenced from the Task via the ext-Task.DigitalActivity extension.",
+  "code": "digital-activity",
   "base": [
     "Task"
   ],
@@ -33,5 +33,5 @@
   "target": [
     "ActivityDefinition"
   ],
-  "expression": "Task.extension('http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity').valueReference"
+  "expression": "Task.extension('http://medmij.nl/fhir/StructureDefinition/ext-Task.DigitalActivity').valueReference"
 }

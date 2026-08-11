@@ -8,12 +8,13 @@ topic: fql-get-lm-mappings
   where
     url = %canonical
   for
-    differential.element 
+    differential.element
   select
     id, join mapping {identity, map, comment}
+  order by identity
   select
     'Mapping name': identity,
     'Concept id': map,
-    'Logical element': id.replace('pt-lm-', '')
-  order by identity
+    'Logical element': id.replace('pt-lm-', ''),
+    Comments: comment
 </fql>

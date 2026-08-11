@@ -9,7 +9,7 @@ Characteristics: #can-be-target
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This LogicalModel represents the DigitalActivity building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This LogicalModel represents the DigitalActivity building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * ^abstract = false
 * .
@@ -45,7 +45,7 @@ Characteristics: #can-be-target
 Mapping: PtLmDigitalActivityMedMij-100-alpha1
 Source: PtLmDigitalActivity
 Id: pt-dataset-100-alpha1-20260511
-Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
 * . -> "pt-dataelement-9" "DigitalActivity"
 * Identifier -> "pt-dataelement-31" "Identifier"
 * Title -> "pt-dataelement-10" "Title"
@@ -65,7 +65,7 @@ Characteristics: #can-be-target
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This LogicalModel represents the DigitalGroupPlan building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This LogicalModel represents the DigitalGroupPlan building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * ^abstract = false
 * .
@@ -86,7 +86,7 @@ Characteristics: #can-be-target
 Mapping: PtLmDigitalGroupPlanMedMij-100-alpha1
 Source: PtLmDigitalGroupPlan
 Id: pt-dataset-100-alpha1-20260511
-Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
 * . -> "pt-dataelement-20" "DigitalGroupPlan"
 * Name -> "pt-dataelement-21" "Name"
 * Status -> "pt-dataelement-22" "Status"
@@ -101,7 +101,7 @@ Characteristics: #can-be-target
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This LogicalModel represents the ExecutionOrder building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This LogicalModel represents the ExecutionOrder building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * ^abstract = false
 * .
@@ -123,7 +123,7 @@ Characteristics: #can-be-target
 Mapping: PtLmExecutionOrderMedMij-100-alpha1
 Source: PtLmExecutionOrder
 Id: pt-dataset-100-alpha1-20260511
-Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
 * . -> "pt-dataelement-15" "ExecutionOrder"
 * Identifier -> "pt-dataelement-32" "Identifier"
 * PatientInstruction -> "pt-dataelement-16" "PatientInstruction"
@@ -138,7 +138,7 @@ Description: "Patient-specific task that tells a patient what to do as part of a
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This LogicalModel represents the Task building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This LogicalModel represents the Task building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * ^abstract = false
 * .
@@ -183,12 +183,12 @@ Description: "Patient-specific task that tells a patient what to do as part of a
   * ^alias = "Aanvrager"
 * Owner 1..1 Reference(http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient or MedMijCoreLmHealthProfessional or http://nictiz.nl/fhir/StructureDefinition/nl-core-ContactPerson or http://nictiz.nl/fhir/StructureDefinition/nl-core-CareTeam) "The party currently responsible for executing the task."
   * ^short = "Owner"
-  * ^alias = "Uitvoerder"
+  * ^alias = "Eigenaar"
 
 Mapping: PtLmTaskMedMij-100-alpha1
 Source: PtLmTask
 Id: pt-dataset-100-alpha1-20260511
-Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
 * . -> "pt-dataelement-1" "Task"
 * Identifier -> "pt-dataelement-33" "Identifier"
 * DigitalActivity -> "pt-dataelement-2" "DigitalActivity"
@@ -212,7 +212,7 @@ Characteristics: #can-be-target
 * insert DefaultNarrative
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This LogicalModel represents the Endpoint building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This LogicalModel represents the Endpoint building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * ^abstract = false
 * .
@@ -238,7 +238,7 @@ Characteristics: #can-be-target
 Mapping: PtLmEndpointMedMij-100-alpha1
 Source: PtLmEndpoint
 Id: pt-dataset-100-alpha1-20260511
-Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
 * . -> "pt-dataelement-25" "Endpoint"
 * ClientID -> "pt-dataelement-26" "ClientID"
 * Status -> "pt-dataelement-27" "Status"

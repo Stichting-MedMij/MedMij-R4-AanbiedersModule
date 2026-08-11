@@ -29,13 +29,13 @@
     }
   ],
   "description": "Technical FHIR REST endpoint of a source system (XIS), used by a Task to retrieve and update task data and the required context for the Provider Tasks use case.",
-  "purpose": "This LogicalModel represents the Endpoint building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
+  "purpose": "This LogicalModel represents the Endpoint building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
       "identity": "pt-dataset-100-alpha1-20260511",
-      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
     }
   ],
   "kind": "logical",

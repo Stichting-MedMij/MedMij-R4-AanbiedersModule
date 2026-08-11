@@ -12,11 +12,12 @@ topic: TO
 <strong>On this page</strong>
 <ul>
   <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#boundaries-and-relationships">Boundaries and relationships</a></li>
   <li><a href="#workflow-model">Workflow model</a></li>
   <li><a href="#actors-involved">Actors involved</a></li>
-  <li><a href="#boundaries-and-relationships">Boundaries and relationships</a></li>
   <li><a href="#relatingFHIR">Relating FHIR (profiles) to its functional counterpart</a></li>
   <li class="toc-sub"><a href="#resource-relationships">Resource relationships</a></li>
+  <li class="toc-sub"><a href="#provider-module">Provider Module</a></li>
   <li><a href="#use-case-provider-tasks">Use case: Provider Tasks</a></li>
   <li class="toc-sub"><a href="#phr-request-message">PHR: request message</a></li>
   <li class="toc-sub"><a href="#module-system-update-task-status">Module system: update task status</a></li>
@@ -45,7 +46,7 @@ Out of scope for this technical design:
 
 ## Workflow model {#workflow-model}
 
-This use case follows the [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html) for request-fulfillment workflows, using the workflow resources `Task`, `ServiceRequest`, and `ActivityDefinition`. Their roles and relationships within this information standard are described below.
+This use case follows the [FHIR R4 Workflow specification](https://hl7.org/fhir/R4/workflow.html) for request-fulfillment workflows, using the workflow resources `Task`, `ServiceRequest`, and `ActivityDefinition`. Their roles and relationships within this data service are described below.
 
 ## Actors involved {#actors-involved}
 
@@ -86,7 +87,7 @@ A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference th
 | --- | --- | --- |
 | `Task.basedOn` | `pt-DigitalGroupPlan` (ServiceRequest) | Groups the Tasks of one digital care module; group label in `ServiceRequest.code.text` |
 | `Task.focus` | `pt-ExecutionOrder` (ServiceRequest, optional) | Patient-specific scheduling (`occurrence[x]`) and `patientInstruction` |
-| `ext-DigitalActivity` extension | `pt-DigitalActivity` (ActivityDefinition) | Generic activity definition; references `pt-Endpoint` when the activity is launchable |
+| `ext-Task.DigitalActivity` extension | `pt-DigitalActivity` (ActivityDefinition) | Generic activity definition; references `pt-Endpoint` when the activity is launchable |
 
 **Table 3: References from `pt-Task`**
 
@@ -94,18 +95,18 @@ A `pt-Task` is one unit of work for one patient. Multiple Tasks may reference th
 
 **Healthcare Information System (XIS)**
 Creates the resources when a healthcare professional assigns a digital care module to a patient:
-- Create a `pt-DigitalActivity` for each activity that can be assigned. This resource is generic and patient-independent: it is defined once, reused by every Task that instantiates it, and only replaced or retired (`ActivityDefinition.status`) when the activity itself changes. Set `url` and `title`, and reference the `pt-Endpoint`(s) at which the activity is launched through the `ext-Endpoint` extension. Use `timingTiming` for a generic recommended schedule; patient-specific scheduling belongs in the `pt-ExecutionOrder`.
+- Create a `pt-DigitalActivity` for each activity that can be assigned. This resource is generic and patient-independent: it is defined once, reused by every Task that instantiates it, and only replaced or retired (`ActivityDefinition.status`) when the activity itself changes. Set `url` and `title`, and reference the `pt-Endpoint`(s) at which the activity is launched through the `ext-DigitalActivity.Endpoint` extension. Use `timingTiming` for a generic recommended schedule; patient-specific scheduling belongs in the `pt-ExecutionOrder`.
 - Create one `pt-DigitalGroupPlan` per module and set `ServiceRequest.code.text` to its display name.
-- Create a `pt-Task` for each unit of work the patient must perform, with `Task.basedOn` to the group plan and `ext-DigitalActivity` to the matching `pt-DigitalActivity`. Multiple Tasks may point to the same group plan and the same digital activity.
+- Create a `pt-Task` for each unit of work the patient must perform, with `Task.basedOn` to the group plan and `ext-Task.DigitalActivity` to the matching `pt-DigitalActivity`. Multiple Tasks may point to the same group plan and the same digital activity.
 - Create a `pt-ExecutionOrder` only when the activity needs patient-specific scheduling or instructions. Use `occurrenceTiming` for a recurring schedule, `occurrenceDateTime` or `occurrencePeriod` for a single occurrence. A recurring schedule SHALL use a `pt-ExecutionOrder`.
 
 **Personal healthcare environment (PHR)**
 The PHR read and dislay process for Task lists is as follows:
-- Search Tasks and resolve `Task.basedOn`, `Task.focus`, and `ext-DigitalActivity` from the response Bundle or via a read interaction.
+- Search Tasks and resolve `Task.basedOn`, `Task.focus`, and `ext-Task.DigitalActivity` from the response Bundle or via a read interaction.
 - Group Tasks by `Task.basedOn`, using `ServiceRequest.code.text` as the group label.
 - Show `pt-DigitalActivity` for generic activity content and, when present, `pt-ExecutionOrder` for scheduling and instructions.
 
-### **Provider Module** 
+### **Provider Module** {#provider-module}
 
 Reports progress after the patient performs the activity:
 - Update `Task.status` on the source system to reflect progress or completion.
@@ -141,11 +142,11 @@ The PHR executes an HTTP search conform the [FHIR specification](https://hl7.org
 GET [base]/Task{?[parameters]}
 ```
 
-Here, `[parameters]` represents a series of encoded name-value pairs representing the filter for the query. Tasks in scope for this information standard are represented by Task resources where `.meta.tag` contains code *providertasks* from system *http://medmij.nl/fhir/CodeSystem/information-standard*, which distinguishes them from Tasks used in other contexts. Hence, the PHR SHALL always include the search parameter `_tag` with the appropriate value in their request, resulting in:
+Here, `[parameters]` represents a series of encoded name-value pairs representing the filter for the query. Tasks in scope for this data service are represented by Task resources where `.meta.tag` contains code *urn:oid:2.16.528.1.1023.5.7* from system *http://medmij.nl/fhir/CodeSystem/DataService*, which distinguishes them from Tasks used in other contexts. Hence, the PHR SHALL always include the search parameter `_tag` with the appropriate value in their request, resulting in:
 
 ```
 GET [base]/Task
-  ?_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks
+  ?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7
   {&[additional parameters]}
 ```
 
@@ -155,21 +156,21 @@ In the request examples on this page, line breaks and indentation are used for r
 
 ```
 GET [base]/Task
-  ?_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks
+  ?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7
   &_include=Task:based-on
   &_include=Task:focus
-  &_include=Task:digitalActivity
+  &_include=Task:digital-activity
 ```
 
-The digital activity reference is carried in the `ext-DigitalActivity` extension, which core FHIR search parameters cannot target. For this reason, a custom SearchParameter [`digitalActivity`](http://medmij.nl/fhir/SearchParameter/Task-digitalActivity) is defined so that `_include=Task:digitalActivity` can be used to retrieve the referenced `pt-DigitalActivity` together with the Task. Because `pt-Endpoint` is referenced from `pt-DigitalActivity` (and not directly from Task), it cannot be retrieved with a single-level `_include`; the source system SHOULD include the referenced `pt-Endpoint` resource(s) in the search response Bundle, or the PHR resolves them via a read interaction.
+The digital activity reference is carried in the `ext-Task.DigitalActivity` extension, which core FHIR search parameters cannot target. For this reason, a custom SearchParameter {{pagelink:pt-Task-digitalActivity, text:`digital-activity`}} is defined so that `_include=Task:digital-activity` can be used to retrieve the referenced `pt-DigitalActivity` together with the Task. Because `pt-Endpoint` is referenced from `pt-DigitalActivity` (and not directly from Task), it cannot be retrieved with a single-level `_include`; the source system SHOULD include the referenced `pt-Endpoint` resource(s) in the search response Bundle, or the PHR resolves them via a read interaction.
 
 **Supported search parameters**
 
 | Description | FHIR search parameter | Examples |
 | --- | --- | --- |
-| Filter Tasks belonging to the Provider Tasks information standard | `_tag` | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard\|providertasks` |
+| Filter Tasks belonging to the Provider Tasks data service | `_tag` | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7` |
 | Filter Tasks changed since (or until) a point in time; prefixes `ge`, `gt`, `le` and `lt` SHALL be supported | `_lastUpdated` | `GET [base]/Task?_lastUpdated=ge2025-11-14T14:58:33+00:00` |
-| Include the digital activity referenced from the Task | `_include=Task:digitalActivity` | `GET [base]/Task?_include=Task:digitalActivity` |
+| Include the digital activity referenced from the Task | `_include=Task:digital-activity` | `GET [base]/Task?_include=Task:digital-activity` |
 | Include the digital group plan on which the Task is based | `_include=Task:based-on` | `GET [base]/Task?_include=Task:based-on` |
 | Include the execution order referenced from the Task | `_include=Task:focus` | `GET [base]/Task?_include=Task:focus` |
 
@@ -213,7 +214,7 @@ Both the module system (client) and the XIS (server) SHALL support the FHIR PATC
 
 **JSON Patch**
 
-JSON Patch is used in this information standard. The client sends a JSON array of operation objects per [JSON Patch (RFC 6902)](https://datatracker.ietf.org/doc/html/rfc6902), with content type `application/json-patch+json`. Example replacing `Task.status` with `completed`:
+JSON Patch is used in this data service. The client sends a JSON array of operation objects per [JSON Patch (RFC 6902)](https://datatracker.ietf.org/doc/html/rfc6902), with content type `application/json-patch+json`. Example replacing `Task.status` with `completed`:
 
 ```
 PATCH [base]/Task/[id]
@@ -238,8 +239,8 @@ The XIS returns an HTTP Status code appropriate to the processing outcome as wel
 
 | Description | CIM NL | HCIM EN | FHIR profile | Search URL |
 | --- | --- | --- | --- | --- |
-| Retrieve task list | Taak | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/information-standard\|providertasks&_include=Task:based-on&_include=Task:focus&_include=Task:digitalActivity` |
-| Retrieve digital activity | Digitale activiteit | Digital Activity |  {{pagelink: FHIRProfilesIndex, text: pt-DigitalActivity, anchor: ptDigitalActivity}} | `GET [base]/Task?_include=Task:digitalActivity` |
+| Retrieve task list | Taak | Task | {{pagelink: FHIRProfilesIndex, text: pt-Task, anchor: ptTask}} | `GET [base]/Task?_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7&_include=Task:based-on&_include=Task:focus&_include=Task:digital-activity` |
+| Retrieve digital activity | Digitale activiteit | Digital Activity |  {{pagelink: FHIRProfilesIndex, text: pt-DigitalActivity, anchor: ptDigitalActivity}} | `GET [base]/Task?_include=Task:digital-activity` |
 | Retrieve digital group plan | Digitaal groepsplan | Digital Group Plan | {{pagelink: FHIRProfilesIndex, text: pt-DigitalGroupPlan, anchor: ptDigitalGroupPlan}} | `GET [base]/Task?_include=Task:based-on` |
 | Retrieve execution order | Uitvoeringsopdracht | Execution Order | {{pagelink: FHIRProfilesIndex, text: pt-ExecutionOrder, anchor: ptExecutionOrder}} | `GET [base]/Task?_include=Task:focus` |
 | Retrieve launch endpoint | Endpoint | Endpoint | {{pagelink: FHIRProfilesIndex, text: pt-Endpoint, anchor: ptEndpoint}} | Resolved via endpoint reference on pt-DigitalActivity |

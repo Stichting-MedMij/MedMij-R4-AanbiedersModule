@@ -23,13 +23,13 @@
     }
   ],
   "description": "Patient-specific task that tells a patient what to do as part of a digital care activity. A Task is shown in the patient's task list and supports tracking progress and completion over time.",
-  "purpose": "This Task resource represents the Task building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
+  "purpose": "This Task resource represents the Task building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
       "identity": "pt-dataset-100-alpha1-20260511",
-      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
     }
   ],
   "kind": "resource",
@@ -70,17 +70,17 @@
         "min": 1
       },
       {
-        "id": "Task.meta.tag:informationStandard",
+        "id": "Task.meta.tag:dataService",
         "path": "Task.meta.tag",
-        "sliceName": "informationStandard",
-        "short": "Information standard tag",
-        "definition": "Marks this Task as being in scope for the Provider Tasks (Aanbiedertaken) information standard, so it can be distinguished from Tasks used in other contexts. Clients filter on this tag with `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`.",
-        "comment": "A tag is used because R4 offers no better place to categorise a Task. `Task.code` is not suitable: it states what kind of work is to be performed (e.g. a blood pressure measurement or a saturation measurement), not which information standard the Task belongs to. Unlike most other resources, Task has no `category` element; this gap has been raised with HL7 in [FHIR-57849](https://jira.hl7.org/browse/FHIR-57849). Should a `Task.category` become available in a future FHIR version, it is the preferred alternative for this tag.",
+        "sliceName": "dataService",
+        "short": "Data service tag",
+        "definition": "Marks this Task as being in scope for the Provider Tasks (Aanbiedertaken) data service, so it can be distinguished from Tasks used in other contexts.",
+        "comment": "A tag is used because R4 offers no better place to categorize a Task. `Task.code` is not suitable: it states what kind of work is to be performed (e.g. a blood pressure measurement or a saturation measurement), not which data service the Task belongs to. Unlike most other resources, Task has no `category` element; this gap has been raised with HL7 in [FHIR-57849](https://jira.hl7.org/browse/FHIR-57849).",
         "min": 1,
         "max": "1",
         "patternCoding": {
-          "code": "providertasks",
-          "system": "http://medmij.nl/fhir/CodeSystem/information-standard"
+          "code": "urn:oid:2.16.528.1.1023.5.7",
+          "system": "http://medmij.nl/fhir/CodeSystem/DataService"
         }
       },
       {
@@ -148,7 +148,7 @@
           {
             "code": "Extension",
             "profile": [
-              "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity"
+              "http://medmij.nl/fhir/StructureDefinition/ext-Task.DigitalActivity"
             ]
           }
         ],
@@ -207,7 +207,6 @@
         "id": "Task.status",
         "path": "Task.status",
         "short": "Status",
-        "definition": "Current state of the Task in the workflow (e.g., requested, received, accepted, in-progress, completed, cancelled).",
         "alias": [
           "Status"
         ],
@@ -218,6 +217,11 @@
             "comment": "Status"
           }
         ]
+      },
+      {
+        "id": "Task.intent",
+        "path": "Task.intent",
+        "comment": "Within the Provider Tasks data service all Tasks are expected to have an intent of _order_."
       },
       {
         "id": "Task.priority",
@@ -369,7 +373,7 @@
         "definition": "The party currently responsible for executing the task.",
         "comment": "In Provider Tasks, the owner is typically the performer of the task (usually the patient), but execution may also be delegated to another responsible party such as a caregiver/contact person or a care team.\n\nEach occurrence of the zib HealthProfessional is normally represented by two FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.\n\nIn rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.",
         "alias": [
-          "Uitvoerder",
+          "Eigenaar",
           "Executer"
         ],
         "min": 1,

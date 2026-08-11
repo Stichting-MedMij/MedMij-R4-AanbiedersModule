@@ -5,13 +5,13 @@ Title: "pt DigitalActivity"
 Description: "Reusable definition of a digital activity (module) that can be selected by a healthcare professional and presented to a patient as part of the care process. The activity describes what the patient will do (e.g., read information, complete a questionnaire, perform a home measurement) and provides the information needed to start or access the activity when applicable."
 * ^status = #draft
 * insert PublisherAndContact
-* ^purpose = "This ActivityDefinition resource represents the DigitalActivity building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken)."
+* ^purpose = "This ActivityDefinition resource represents the DigitalActivity building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken)."
 * insert Copyright
 * .
   * ^short = "Digital Activity"
   * ^definition = "Reusable definition of a digital activity (module) that can be selected by a healthcare professional and presented to a patient as part of the care process. The activity describes what the patient will do (e.g., read information, complete a questionnaire, perform a home measurement) and provides the information needed to start or access the activity when applicable."
   * ^alias = "Digitale Activiteit"
-* extension contains ExtEndpointReference named endpoint 1..*
+* extension contains ExtDigitalActivityEndpoint named endpoint 1..*
 * extension[endpoint] ^short = "Endpoint for launching the activity"
   * ^definition = "Mandatory reference to the service application (endpoint) that provides the launchable digital activity. Can be more than one endpoint."
 * identifier
@@ -49,7 +49,7 @@ Description: "Reusable definition of a digital activity (module) that can be sel
 Mapping: ProviderTasksDigitalActivityMedMij-100-alpha1
 Source: PtDigitalActivity
 Id: pt-dataset-100-alpha1-20260511
-Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+Title: "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
 * -> "pt-dataelement-9" "DigitalActivity"
 * identifier -> "pt-dataelement-31" "Identifier"
 * title -> "pt-dataelement-10" "Title"

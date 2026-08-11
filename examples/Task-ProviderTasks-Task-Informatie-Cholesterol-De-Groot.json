@@ -4,8 +4,8 @@
   "meta": {
     "tag": [
       {
-        "code": "providertasks",
-        "system": "http://medmij.nl/fhir/CodeSystem/information-standard"
+        "code": "urn:oid:2.16.528.1.1023.5.7",
+        "system": "http://medmij.nl/fhir/CodeSystem/DataService"
       }
     ],
     "profile": [
@@ -18,7 +18,7 @@
   },
   "extension": [
     {
-      "url": "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity",
+      "url": "http://medmij.nl/fhir/StructureDefinition/ext-Task.DigitalActivity",
       "valueReference": {
         "reference": "ActivityDefinition/ProviderTasks-ActivityDefinition-Informatie-Cholesterol-De-Groot",
         "type": "ActivityDefinition"

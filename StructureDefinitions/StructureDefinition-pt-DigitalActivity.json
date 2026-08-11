@@ -19,13 +19,13 @@
     }
   ],
   "description": "Reusable definition of a digital activity (module) that can be selected by a healthcare professional and presented to a patient as part of the care process. The activity describes what the patient will do (e.g., read information, complete a questionnaire, perform a home measurement) and provides the information needed to start or access the activity when applicable.",
-  "purpose": "This ActivityDefinition resource represents the DigitalActivity building block for patient use cases in the context of the information standard Provider Tasks (Aanbiedertaken).",
+  "purpose": "This ActivityDefinition resource represents the DigitalActivity building block for patient use cases in the context of the data service Provider Tasks (Aanbiedertaken).",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
       "identity": "pt-dataset-100-alpha1-20260511",
-      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.1 20260511"
+      "name": "Dataset Aanbiedertaken MedMij 1.0.0-alpha.2 20260511"
     }
   ],
   "kind": "resource",
@@ -78,7 +78,7 @@
           {
             "code": "Extension",
             "profile": [
-              "http://medmij.nl/fhir/StructureDefinition/ext-Endpoint"
+              "http://medmij.nl/fhir/StructureDefinition/ext-DigitalActivity.Endpoint"
             ]
           }
         ],

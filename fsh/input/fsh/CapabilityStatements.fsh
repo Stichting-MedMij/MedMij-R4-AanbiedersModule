@@ -19,7 +19,7 @@ Usage: #definition
 * format[1] = #json
 * rest
   * mode = #client
-  * documentation = "Minimal requirements for a PHR (client) to fulfill the 'Retrieve task' transaction (system role: PT-TGR-1.0.0-alpha.1)."
+  * documentation = "Minimal requirements for a PHR (client) to fulfill the 'Retrieve task' transaction (system role: PT-TGR-1.0.0-alpha.2)."
   * resource[+]
     * type = #Task
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
@@ -27,12 +27,12 @@ Usage: #definition
       * code = #search-type
     * searchInclude[0] = "Task:based-on"
     * searchInclude[1] = "Task:focus"
-    * searchInclude[2] = "Task:digitalActivity"
+    * searchInclude[2] = "Task:digital-activity"
     * searchParam[+]
       * name = "_tag"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
       * type = #token
-      * documentation = "The client SHALL always scope the search to the Provider Tasks information standard, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`."
+      * documentation = "The client SHALL always scope the search to the Provider Tasks data service, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7`."
     * searchParam[+]
       * name = "_lastUpdated"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"
@@ -42,7 +42,7 @@ Usage: #definition
       * name = "digitalActivity"
       * definition = "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity"
       * type = #reference
-      * documentation = "Custom search parameter targeting the `ext-DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
+      * documentation = "Custom search parameter targeting the `ext-Task.DigitalActivity` extension, which enables `_include=Task:digital-activity`."
   * resource[+]
     * type = #ActivityDefinition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"
@@ -115,7 +115,7 @@ Usage: #definition
 * patchFormat = #application/json-patch+json
 * rest
   * mode = #client
-  * documentation = "Minimal requirements for a module system (client) to fulfill the 'Retrieve task' and 'Update task' transactions (system role: PA-DAU-1.0.0-alpha.1). The module system obtains the Task id from the launch context (SMART App Launch `resource` token response field), retrieves the Task and updates `Task.status` to reflect progress or completion of the digital activity."
+  * documentation = "Minimal requirements for a module system (client) to fulfill the 'Retrieve task' and 'Update task' transactions (system role: PA-DAU-1.0.0-alpha.2). The module system obtains the Task id from the launch context (SMART App Launch `resource` token response field), retrieves the Task and updates `Task.status` to reflect progress or completion of the digital activity."
   * resource[+]
     * type = #Task
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
@@ -149,7 +149,7 @@ Usage: #definition
 * patchFormat = #application/json-patch+json
 * rest
   * mode = #server
-  * documentation = "Minimal requirements for a server (XIS) to fulfill the 'Serve task' transaction and to process task status updates (system role: PT-TGB-1.0.0-alpha.1)."
+  * documentation = "Minimal requirements for a server (XIS) to fulfill the 'Serve task' transaction and to process task status updates (system role: PT-TGB-1.0.0-alpha.2)."
   * resource[+]
     * type = #Task
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-Task"
@@ -166,12 +166,12 @@ Usage: #definition
     * updateCreate = false
     * searchInclude[0] = "Task:based-on"
     * searchInclude[1] = "Task:focus"
-    * searchInclude[2] = "Task:digitalActivity"
+    * searchInclude[2] = "Task:digital-activity"
     * searchParam[+]
       * name = "_tag"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-tag"
       * type = #token
-      * documentation = "The server SHALL support filtering on the Provider Tasks information standard tag, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/information-standard|providertasks`."
+      * documentation = "The server SHALL support filtering on the Provider Tasks data service tag, i.e. `_tag=http://medmij.nl/fhir/CodeSystem/DataService|urn:oid:2.16.528.1.1023.5.7`."
     * searchParam[+]
       * name = "_lastUpdated"
       * definition = "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"
@@ -181,7 +181,7 @@ Usage: #definition
       * name = "digitalActivity"
       * definition = "http://medmij.nl/fhir/SearchParameter/Task-digitalActivity"
       * type = #reference
-      * documentation = "Custom search parameter targeting the `ext-DigitalActivity` extension, which enables `_include=Task:digitalActivity`."
+      * documentation = "Custom search parameter targeting the `ext-Task.DigitalActivity` extension, which enables `_include=Task:digital-activity`."
   * resource[+]
     * type = #ActivityDefinition
     * supportedProfile = "http://medmij.nl/fhir/StructureDefinition/pt-DigitalActivity"

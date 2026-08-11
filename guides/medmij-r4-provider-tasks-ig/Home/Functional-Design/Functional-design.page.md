@@ -148,9 +148,9 @@ Deze systemen kennen ieder verschillende systeemrollen, die het uitwisselen van 
 
 | Systeem | Naam systeemrol | Systeemrolcode | Omschrijving |
 | --- | --- | --- | --- |
-| PGO | TaakgegevensRaadplegend | PT-TGR-1.0.0-alpha.1 | Raadplegen taken bij de zorgaanbieder |
-| XIS | TaakgegevensBeschikbaarstellend | PT-TGB-1.0.0-alpha.1 | Beschikbaar stellen taken aan de patiënt en verwerken van statusupdates |
-| Modulesysteem | DigitaleActiviteitUitvoerder | PA-DAU-1.0.0-alpha.1 | Levert de digitale activiteit, ondersteunt de uitvoering en koppelt de taakstatus terug naar het XIS |
+| PGO | TaakgegevensRaadplegend | PT-TGR-1.0.0-alpha.2 | Raadplegen taken bij de zorgaanbieder |
+| XIS | TaakgegevensBeschikbaarstellend | PT-TGB-1.0.0-alpha.2 | Beschikbaar stellen taken aan de patiënt en verwerken van statusupdates |
+| Modulesysteem | DigitaleActiviteitUitvoerder | PA-DAU-1.0.0-alpha.2 | Levert de digitale activiteit, ondersteunt de uitvoering en koppelt de taakstatus terug naar het XIS |
 
 **Tabel 2: Systeemrollen**
 
@@ -160,11 +160,11 @@ Het uitwisselen van gegevens tussen de verschillende systeemrollen gebeurt op ba
 
 | Transactiegroep | Transactie | Systeemrolcode | Systeem | Bedrijfsrol |
 | --- | --- | --- | --- | --- |
-| Verzamelen Taakgegevens (PULL) | Beschikbaar stellen Taken | PT-TGB-1.0.0-alpha.1 | XIS | Zorgaanbieder |
-| Verzamelen Taakgegevens (PULL) | Raadplegen Taken | PT-TGR-1.0.0-alpha.1 | PGO | Patiënt |
-| Digitale activiteit uitvoeren (LAUNCH) | Launch naar digitale activiteit | PA-DAU-1.0.0-alpha.1 | Modulesysteem | Patiënt |
-| Bijwerken Taakstatus (UPDATE) | Bijwerken Taakstatus | PA-DAU-1.0.0-alpha.1 | Modulesysteem | Patiënt |
-| Bijwerken Taakstatus (UPDATE) | Verwerken Taakstatus | PT-TGB-1.0.0-alpha.1 | XIS | Zorgaanbieder |
+| Verzamelen Taakgegevens (PULL) | Beschikbaar stellen Taken | PT-TGB-1.0.0-alpha.2 | XIS | Zorgaanbieder |
+| Verzamelen Taakgegevens (PULL) | Raadplegen Taken | PT-TGR-1.0.0-alpha.2 | PGO | Patiënt |
+| Digitale activiteit uitvoeren (LAUNCH) | Launch naar digitale activiteit | PA-DAU-1.0.0-alpha.2 | Modulesysteem | Patiënt |
+| Bijwerken Taakstatus (UPDATE) | Bijwerken Taakstatus | PA-DAU-1.0.0-alpha.2 | Modulesysteem | Patiënt |
+| Bijwerken Taakstatus (UPDATE) | Verwerken Taakstatus | PT-TGB-1.0.0-alpha.2 | XIS | Zorgaanbieder |
 
 **Tabel 3: Transactiegroepen**
 
